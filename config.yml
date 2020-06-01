@@ -1,0 +1,13 @@
+game_settings:
+   spreadplayers:
+      enable: true # True: when start the game, spread players.
+      minimum_distance: 1000 # for spreadplayer command, minimum distance between player = 1000 * number of spreaded players, Default: 1000
+      maximum_area: 5000 # for spreadplayer command, maximum area where a player can be teleported = 5000 * number of spreaded players, must be > minimum_distance parameter, Default: 5000
+   saturation: true # True: give infinite saturation effect to all players
+   rewards: true # True: give reward after each age
+   start_time: 4 #minutes, Default: 4
+   time_added: 2 #minutes added to start_time after each age, Default: 2
+   block_per_age: 10 # number of block to complete to move to the next age, min: 1, Default: 10
+   skip:
+      enable: true
+      age: 2

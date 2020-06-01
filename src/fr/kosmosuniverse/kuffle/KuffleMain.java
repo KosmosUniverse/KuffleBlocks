@@ -1,0 +1,105 @@
+package fr.kosmosuniverse.kuffle;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.bukkit.Bukkit;
+/*import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.scoreboard.DisplaySlot;
+import org.bukkit.scoreboard.Objective;
+import org.bukkit.scoreboard.Scoreboard;
+import org.bukkit.scoreboard.Team;*/
+import org.bukkit.plugin.java.JavaPlugin;
+
+import fr.kosmosuniverse.kuffle.Core.ChooseBlockInList;
+import fr.kosmosuniverse.kuffle.Core.GameTask;
+import fr.kosmosuniverse.kuffle.Core.RewardManager;
+import fr.kosmosuniverse.kuffle.Listeners.PreventMove;
+import fr.kosmosuniverse.kuffle.commands.KufflePause;
+import fr.kosmosuniverse.kuffle.commands.KuffleAdminSkip;
+import fr.kosmosuniverse.kuffle.commands.KuffleList;
+import fr.kosmosuniverse.kuffle.commands.KuffleResume;
+import fr.kosmosuniverse.kuffle.commands.KuffleSkip;
+import fr.kosmosuniverse.kuffle.commands.KuffleStart;
+import fr.kosmosuniverse.kuffle.commands.KuffleStop;
+import fr.kosmosuniverse.kuffle.commands.KuffleValidate;
+
+public class KuffleMain extends JavaPlugin {
+	public HashMap<String, ArrayList<String>> allBlocks = ChooseBlockInList.getAllBlocks(this.getDataFolder());
+	public HashMap<String, HashMap<String, Integer>> allRewards = RewardManager.getAllRewards(this.getDataFolder());
+	public ArrayList<GameTask> games = new ArrayList<GameTask>();
+	public boolean paused = false;
+	/*public Scoreboard score;
+	public Objective objective;
+	public HashMap<String, Team> teams = new HashMap<String, Team>();*/
+	
+	@Override
+	public void onEnable() {
+		saveDefaultConfig();
+		System.out.println("[Kuffle] : Plugin turned ON.");
+		reloadConfig();
+		
+		if (getConfig().getInt("game_settings.block_per_age") < 1) {
+			Bukkit.broadcastMessage("Config for block per age is not correct, use of default value.");
+			getConfig().set("game_settings.block_per_age", 10);
+		}
+		if (getConfig().getInt("game_settings.spreadplayers.minimum_distance") < 1) {
+			Bukkit.broadcastMessage("Config for spreadplayers minimum distance is not correct, use of default value.");
+			getConfig().set("game_settings.spreadplayers.minimum_distance", 1000);
+		}
+		if (getConfig().getInt("game_settings.spreadplayers.maximum_area") < getConfig().getInt("game_settings.spreadplayers.minimum_distance")) {
+			Bukkit.broadcastMessage("Config for spreadplayers maximum area is not correct, use of default value.");
+			getConfig().set("game_settings.spreadplayers.maximum_area", 5000);
+		}
+		if (getConfig().getInt("game_settings.start_time") < 1) {
+			Bukkit.broadcastMessage("Config for start time is not correct, use of default value.");
+			getConfig().set("game_settings.start_time", 4);
+		}
+		if (getConfig().getInt("game_settings.time_added") < 1) {
+			Bukkit.broadcastMessage("Config for time added is not correct, use of default value.");
+			getConfig().set("game_settings.time_added", 2);
+		}
+		
+		/*score = Bukkit.getScoreboardManager().getNewScoreboard();
+		objective = score.registerNewObjective("ages", "dummy", "Ages");
+		objective.setDisplaySlot(DisplaySlot.SIDEBAR);
+		
+		teams.put("Archaic_Age", score.registerNewTeam("Archaic_Age"));
+		teams.put("Classic_Age", score.registerNewTeam("Classic_Age"));
+		teams.put("Netheric_Age", score.registerNewTeam("Netheric_Age"));
+		teams.put("Heroic_Age", score.registerNewTeam("Heroic_Age"));
+		teams.put("Mythic_Age", score.registerNewTeam("Mythic_Age"));
+		
+		teams.get("Archaic_Age").setColor(ChatColor.RED);
+		teams.get("Classic_Age").setColor(ChatColor.GOLD);
+		teams.get("Netheric_Age").setColor(ChatColor.YELLOW);
+		teams.get("Heroic_Age").setColor(ChatColor.GREEN);
+		teams.get("Mythic_Age").setColor(ChatColor.BLUE);*/
+		
+		getServer().getPluginManager().registerEvents(new PreventMove(this), this);
+		
+		getCommand("klist").setExecutor(new KuffleList(this));
+		getCommand("kstart").setExecutor(new KuffleStart(this));
+		getCommand("kstop").setExecutor(new KuffleStop(this));
+		getCommand("kpause").setExecutor(new KufflePause(this));
+		getCommand("kresume").setExecutor(new KuffleResume(this));
+		getCommand("kvalidate").setExecutor(new KuffleValidate(this));
+		getCommand("kadminskip").setExecutor(new KuffleAdminSkip(this));
+		getCommand("kskip").setExecutor(new KuffleSkip(this));
+	}
+	
+	@Override
+	public void onDisable() {
+		if (games != null && games.size() != 0) {
+			for (GameTask gt : games) {
+				gt.exit();
+				gt.kill();
+			}
+			games.clear();
+		}
+		allBlocks.clear();
+		allRewards.clear();
+		System.out.println("[Kuffle] : Plugin turned OFF.");
+	}
+}

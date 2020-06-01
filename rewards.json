@@ -1,0 +1,28 @@
+{
+	"Archaic_Age": {
+		"stonecutter": 1,
+		"iron_pickaxe": 1,
+		"shield": 1,
+		"cooked_beef": 16
+	},
+
+	"Classic_Age": {
+		"diamond_pickaxe": 1,
+		"cooked_porkchop": 32 
+	},
+	
+	"Netheric_Age": {
+		"diamond_pickaxe": 1,
+		"cooked_porkchop": 32 
+	},
+	
+	"Heroic_Age": {
+		"diamond_pickaxe": 1,
+		"cooked_porkchop": 32 
+	},
+	
+	"Mythic_Age": {
+		"diamond_pickaxe": 1,
+		"cooked_porkchop": 32 
+	}
+}

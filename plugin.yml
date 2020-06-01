@@ -1,0 +1,64 @@
+name: Kuffle
+version: 1.0
+author: KosmosUniverse
+main: fr.kosmosuniverse.kuffle.KuffleMain
+api-version: 1.15
+
+commands:
+   klist:
+      usage: /<command> [@a|Players]
+      description: command to add players to the list and view the list
+      permission: inferno.flagrate
+   kstart:
+      usage: /<command>
+      description: command to start the game
+      permission: inferno.flagrate
+   kstop:
+      usage: /<command>
+      description: command to stop the game when it is running
+      permission: inferno.flagrate
+   kpause:
+      usage: /<command>
+      description: command to pause the game when it is running
+      permission: inferno.flagrate
+   kresume:
+      usage: /<command>
+      description: command to resume the game when it is paused
+      permission: inferno.flagrate
+   kvalidate:
+      usage: /<command>
+      description: command to validate a block
+      permission: inferno.flagrate
+   kadminskip:
+      usage: /<command>
+      description: command to skip a block for any player
+      permission: inferno.flagrate
+   kskip:
+      usage: /<command>
+      description: command to skip a block
+
+permissions:
+   klist:
+      description: command to add players to the list and view the list
+      default: op
+   kstart:
+      description: command to start the game
+      default: op
+   kstop:
+      description: command to stop the game when it is running
+      default: op
+   kpause:
+      description: command to pause the game when it is runnin
+      default: op
+   kresume:
+      description: command to resume the game when it is paused
+      default: op
+   kvalidate:
+      description: command to validate a block
+      default: op
+   kadminskip:
+      description: command to skip a block for any player
+      default: op
+   kskip:
+      description: command to skip a block
+      default: true
