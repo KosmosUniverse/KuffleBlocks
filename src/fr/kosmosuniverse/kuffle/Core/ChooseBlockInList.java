@@ -2,11 +2,13 @@ package fr.kosmosuniverse.kuffle.Core;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
+import org.bukkit.Material;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -29,13 +31,19 @@ public class ChooseBlockInList {
 		ArrayList<String> finalList = new ArrayList<String>();
 		JSONObject blocks = new JSONObject();
 		JSONParser jsonParser = new JSONParser();
+		FileWriter writer = null;
 		
 		try {
 			FileReader reader = null;
-			if (dataFolder.getPath().contains("\\"))
+			
+			
+			if (dataFolder.getPath().contains("\\")) {
 				reader = new FileReader(dataFolder.getPath() + "\\blocks.json");
-			else
+				writer = new FileWriter(dataFolder.getPath() + "\\logs.txt");
+			} else {
 				reader = new FileReader(dataFolder.getPath() + "/blocks.json");
+				writer = new FileWriter(dataFolder.getPath() + "/logs.txt");
+			}
 			
 			blocks = (JSONObject) jsonParser.parse(reader);
 		} catch (IOException | ParseException e) {
@@ -50,7 +58,14 @@ public class ChooseBlockInList {
 		for (Object k : ageObject.keySet()) {
 			agePart = (JSONArray) ageObject.get(k);
 			for (int j = 0; j < agePart.size(); j++) {
-				finalList.add((String) agePart.get(j)); 
+				finalList.add((String) agePart.get(j));
+				if (Material.matchMaterial((String) agePart.get(j)) == null) {
+					try {
+						writer.append((String) agePart.get(j));
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
 			}
 		}
 		
