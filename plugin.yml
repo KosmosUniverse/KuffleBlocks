@@ -36,6 +36,9 @@ commands:
    kskip:
       usage: /<command>
       description: command to skip a block
+   kcrafts:
+      usage: /<command>
+      description: command to see custom crafts
 
 permissions:
    klist:
@@ -61,4 +64,7 @@ permissions:
       default: op
    kskip:
       description: command to skip a block
+      default: true
+   kcrafts:
+      description: command to see custom crafts
       default: true

@@ -20,18 +20,23 @@ import fr.kosmosuniverse.kuffle.Core.RewardManager;
 import fr.kosmosuniverse.kuffle.Listeners.PreventMove;
 import fr.kosmosuniverse.kuffle.commands.KufflePause;
 import fr.kosmosuniverse.kuffle.commands.KuffleAdminSkip;
+import fr.kosmosuniverse.kuffle.commands.KuffleCrafts;
 import fr.kosmosuniverse.kuffle.commands.KuffleList;
 import fr.kosmosuniverse.kuffle.commands.KuffleResume;
 import fr.kosmosuniverse.kuffle.commands.KuffleSkip;
 import fr.kosmosuniverse.kuffle.commands.KuffleStart;
 import fr.kosmosuniverse.kuffle.commands.KuffleStop;
 import fr.kosmosuniverse.kuffle.commands.KuffleValidate;
+import fr.kosmosuniverse.kuffle.crafts.ACrafts;
+import fr.kosmosuniverse.kuffle.crafts.ManageCrafts;
 
 public class KuffleMain extends JavaPlugin {
 	public HashMap<String, ArrayList<String>> allBlocks = ChooseBlockInList.getAllBlocks(this.getDataFolder());
 	public HashMap<String, HashMap<String, RewardElem>> allRewards = RewardManager.getAllRewards(this.getDataFolder());
 	public HashMap<String, PotionEffectType> effects = RewardManager.getAllEffects();
 	public ArrayList<GameTask> games = new ArrayList<GameTask>();
+	public ArrayList<ACrafts> recipes = new ManageCrafts(this).getRecipeList();
+	
 	public boolean paused = false;
 	/*public Scoreboard score;
 	public Objective objective;
@@ -90,6 +95,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kvalidate").setExecutor(new KuffleValidate(this));
 		getCommand("kadminskip").setExecutor(new KuffleAdminSkip(this));
 		getCommand("kskip").setExecutor(new KuffleSkip(this));
+		getCommand("kcrafts").setExecutor(new KuffleCrafts(this));
 	}
 	
 	@Override

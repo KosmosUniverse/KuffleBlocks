@@ -13,5 +13,11 @@ public class ManageCrafts {
 		}
 		
 		recipes.add(new RedSand(_km));
+		recipes.add(new MossyCobblestone(_km));
+		recipes.add(new MossyStoneBrick(_km));
+	}
+	
+	public ArrayList<ACrafts> getRecipeList() {
+		return (recipes);
 	}
 }
