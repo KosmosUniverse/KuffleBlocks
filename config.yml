@@ -11,3 +11,4 @@ game_settings:
    skip:
       enable: true
       age: 2
+   custom_crafts: true
