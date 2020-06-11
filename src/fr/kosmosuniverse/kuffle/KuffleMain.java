@@ -28,6 +28,7 @@ import fr.kosmosuniverse.kuffle.Core.RewardElem;
 import fr.kosmosuniverse.kuffle.Core.RewardManager;
 import fr.kosmosuniverse.kuffle.Crafts.ACrafts;
 import fr.kosmosuniverse.kuffle.Crafts.ManageCrafts;
+import fr.kosmosuniverse.kuffle.Listeners.InventoryRecipeListener;
 import fr.kosmosuniverse.kuffle.Listeners.PreventMove;
 
 public class KuffleMain extends JavaPlugin {
@@ -35,7 +36,7 @@ public class KuffleMain extends JavaPlugin {
 	public HashMap<String, HashMap<String, RewardElem>> allRewards = RewardManager.getAllRewards(this.getDataFolder());
 	public HashMap<String, PotionEffectType> effects = RewardManager.getAllEffects();
 	public ArrayList<GameTask> games = new ArrayList<GameTask>();
-	public ArrayList<ACrafts> recipes = new ManageCrafts(this).getRecipeList();
+	public ManageCrafts crafts = new ManageCrafts(this);
 	
 	public boolean paused = false;
 	/*public Scoreboard score;
@@ -85,7 +86,12 @@ public class KuffleMain extends JavaPlugin {
 		teams.get("Heroic_Age").setColor(ChatColor.GREEN);
 		teams.get("Mythic_Age").setColor(ChatColor.BLUE);*/
 		
+		for (ACrafts item : crafts.getRecipeList()) {
+			getServer().addRecipe(item.getRecipe());
+		}
+		
 		getServer().getPluginManager().registerEvents(new PreventMove(this), this);
+		getServer().getPluginManager().registerEvents(new InventoryRecipeListener(this), this);
 		
 		getCommand("klist").setExecutor(new KuffleList(this));
 		getCommand("kstart").setExecutor(new KuffleStart(this));

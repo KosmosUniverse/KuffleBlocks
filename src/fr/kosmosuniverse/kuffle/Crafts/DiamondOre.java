@@ -5,21 +5,23 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.ShapelessRecipe;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
 
-public class MossyCobblestone extends ACrafts {
-	public MossyCobblestone(KuffleMain _km) {
-		name = "MossyCobblestone";
+public class DiamondOre extends ACrafts{
+	public DiamondOre(KuffleMain _km) {
+		name = "DiamondOre";
 		
-		recipe = new ShapelessRecipe(new NamespacedKey(_km, name), new ItemStack(Material.MOSSY_COBBLESTONE));
+		recipe = new ShapedRecipe(new NamespacedKey(_km, name), new ItemStack(Material.DIAMOND_ORE));
 		
-		((ShapelessRecipe) recipe).addIngredient(Material.COBBLESTONE);
-		((ShapelessRecipe) recipe).addIngredient(Material.GRASS);
 		
-		item = new ItemStack(Material.MOSSY_COBBLESTONE);
+		((ShapedRecipe) recipe).shape("SDR", "DSR", "RRR");
+		((ShapedRecipe) recipe).setIngredient('S', Material.STONE);
+		((ShapedRecipe) recipe).setIngredient('D', Material.DIAMOND);
+		
+		item = new ItemStack(Material.DIAMOND_ORE);
 	}
 	
 	public Inventory getInventoryRecipe() {
@@ -42,12 +44,16 @@ public class MossyCobblestone extends ACrafts {
 			if (i == 0) {
 				inv.setItem(i, new ItemStack(redPane));
 			} else if (i == 3) {
-				inv.setItem(i, new ItemStack(Material.COBBLESTONE));
+				inv.setItem(i, new ItemStack(Material.STONE));
 			} else if (i == 4) {
-				inv.setItem(i, new ItemStack(Material.GRASS));
+				inv.setItem(i, new ItemStack(Material.DIAMOND));
+			} else if (i == 12) {
+				inv.setItem(i, new ItemStack(Material.DIAMOND));
+			} else if (i == 13) {
+				inv.setItem(i, new ItemStack(Material.STONE));
 			} else if (i == 16) {
-				inv.setItem(i, new ItemStack(Material.MOSSY_COBBLESTONE));
-			} else if (i == 5 || i == 12 || i == 13 || i == 14 || i == 21 || i == 22 || i == 23) {
+				inv.setItem(i, new ItemStack(Material.DIAMOND_ORE));
+			} else if (i == 5 || i == 14 || i == 21 || i == 22 || i == 23) {
 				inv.setItem(i, new ItemStack(grayPane));
 			} else {
 				inv.setItem(i, new ItemStack(limePane));

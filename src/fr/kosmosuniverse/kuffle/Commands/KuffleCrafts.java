@@ -26,6 +26,8 @@ public class KuffleCrafts implements CommandExecutor {
 			return false;
 		}
 		
+		p.openInventory(km.crafts.getAllCraftsInventory());
+		
 		return true;
 	}
 

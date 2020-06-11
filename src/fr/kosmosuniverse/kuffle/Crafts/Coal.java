@@ -10,16 +10,15 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
 
-public class MossyCobblestone extends ACrafts {
-	public MossyCobblestone(KuffleMain _km) {
-		name = "MossyCobblestone";
+public class Coal extends ACrafts {
+	public Coal(KuffleMain _km) {
+		name = "Coal";
 		
-		recipe = new ShapelessRecipe(new NamespacedKey(_km, name), new ItemStack(Material.MOSSY_COBBLESTONE));
+		recipe = new ShapelessRecipe(new NamespacedKey(_km, name), new ItemStack(Material.COAL, 2));
 		
-		((ShapelessRecipe) recipe).addIngredient(Material.COBBLESTONE);
-		((ShapelessRecipe) recipe).addIngredient(Material.GRASS);
+		((ShapelessRecipe) recipe).addIngredient(Material.COAL_ORE);
 		
-		item = new ItemStack(Material.MOSSY_COBBLESTONE);
+		item = new ItemStack(Material.COAL);
 	}
 	
 	public Inventory getInventoryRecipe() {
@@ -42,12 +41,10 @@ public class MossyCobblestone extends ACrafts {
 			if (i == 0) {
 				inv.setItem(i, new ItemStack(redPane));
 			} else if (i == 3) {
-				inv.setItem(i, new ItemStack(Material.COBBLESTONE));
-			} else if (i == 4) {
-				inv.setItem(i, new ItemStack(Material.GRASS));
+				inv.setItem(i, new ItemStack(Material.COAL_ORE));
 			} else if (i == 16) {
-				inv.setItem(i, new ItemStack(Material.MOSSY_COBBLESTONE));
-			} else if (i == 5 || i == 12 || i == 13 || i == 14 || i == 21 || i == 22 || i == 23) {
+				inv.setItem(i, new ItemStack(Material.COAL, 2));
+			} else if (i == 4 || i == 5 || i == 12 || i == 13 || i == 14 || i == 21 || i == 22 || i == 23) {
 				inv.setItem(i, new ItemStack(grayPane));
 			} else {
 				inv.setItem(i, new ItemStack(limePane));

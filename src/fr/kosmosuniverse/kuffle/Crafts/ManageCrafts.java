@@ -2,6 +2,9 @@ package fr.kosmosuniverse.kuffle.Crafts;
 
 import java.util.ArrayList;
 
+import org.bukkit.Bukkit;
+import org.bukkit.inventory.Inventory;
+
 import fr.kosmosuniverse.kuffle.KuffleMain;
 
 public class ManageCrafts {
@@ -15,9 +18,41 @@ public class ManageCrafts {
 		recipes.add(new RedSand(_km));
 		recipes.add(new MossyCobblestone(_km));
 		recipes.add(new MossyStoneBrick(_km));
+		
+		recipes.add(new Coal(_km));
+		recipes.add(new Lapis(_km));
+		recipes.add(new Diamond(_km));
+		recipes.add(new Emerald(_km));
+		
+		recipes.add(new CoalOre(_km));
+		recipes.add(new DiamondOre(_km));
+		recipes.add(new EmeraldOre(_km));
+		recipes.add(new LapisOre(_km));
 	}
 	
 	public ArrayList<ACrafts> getRecipeList() {
 		return (recipes);
+	}
+	
+	public Inventory getAllCraftsInventory() {
+		Inventory inv = Bukkit.createInventory(null, getNbRows(), "§8AllCustomCrafts");
+		int i = 0;
+		
+		for (ACrafts item : recipes) {
+			inv.setItem(i, item.getItem());
+			i++;
+		}
+		
+		return (inv);
+	}
+	
+	private int getNbRows() {
+		int rows = recipes.size() / 9;
+		
+		if (recipes.size() % 9 == 0) {
+			return rows * 9;
+		} else {
+			return (rows + 1) * 9;
+		}
 	}
 }
