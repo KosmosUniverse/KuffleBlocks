@@ -159,7 +159,7 @@ public class RewardManager {
 				
 				items.add(new ItemStack(it));
 			} else if (k.contains("potion")) {				
-				p.addPotionEffect(new PotionEffect(findEffect(effects, ageReward.get(k).getEffect()), 999999, 2));
+				p.addPotionEffect(new PotionEffect(findEffect(effects, ageReward.get(k).getEffect()), 999999, 1));
 			} else {
 				it = new ItemStack(Material.matchMaterial(k), ageReward.get(k).getAmount());
 				items.add(new ItemStack(it));
