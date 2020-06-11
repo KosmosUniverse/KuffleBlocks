@@ -20,6 +20,7 @@ public class ChooseBlockInList {
 		
 		finalMap.put("Archaic_Age", getAgeBlocks("Archaic_Age", dataFolder));
 		finalMap.put("Classic_Age", getAgeBlocks("Classic_Age", dataFolder));
+		finalMap.put("Mineric_Age", getAgeBlocks("Mineric_Age", dataFolder));
 		finalMap.put("Netheric_Age", getAgeBlocks("Netheric_Age", dataFolder));
 		finalMap.put("Heroic_Age", getAgeBlocks("Heroic_Age", dataFolder));
 		finalMap.put("Mythic_Age", getAgeBlocks("Mythic_Age", dataFolder));

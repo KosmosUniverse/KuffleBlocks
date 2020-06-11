@@ -80,7 +80,7 @@ public class KuffleStart implements CommandExecutor {
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"4\",\"bold\":true,\"color\":\"orange\"}");
+				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"4\",\"bold\":true,\"color\":\"gold\"}");
 			}
 		}, 40 + spread);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {

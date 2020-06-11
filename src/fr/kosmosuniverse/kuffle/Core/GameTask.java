@@ -19,7 +19,7 @@ public class GameTask {
 	private Player player;
 	private ArrayList<String> alreadyGot;
 	private int age = 0;
-	private String[] ageNames = {"Archaic", "Classic", "Netheric", "Heroic", "Mythic"};
+	private String[] ageNames = {"Archaic", "Classic", "Mineric", "Netheric", "Heroic", "Mythic"};
 	private String currentBlock = null;
 	private long previousShuffle = -1;
 	private int time;
@@ -81,12 +81,19 @@ public class GameTask {
 					}
 					
 					if (blockCount == (maxBlock + 1)) {
-						player.playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LARGE_BLAST_FAR, 1f, 1f);
+						player.playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LARGE_BLAST, 1f, 1f);
 						blockCount = 1;
 						alreadyGot.clear();
 						time += 2;
-						if (km.getConfig().getBoolean("game_settings.rewards"))
-							RewardManager.givePlayerReward(km.allRewards.get(ageNames[age] + "_Age"), player, ageNames[age]);
+						
+						if (km.getConfig().getBoolean("game_settings.rewards")) {
+							if (age > 0) {
+								RewardManager.managePreviousEffects(km.allRewards.get(ageNames[age - 1] + "_Age"), km.effects, player, ageNames[age - 1]);
+							}
+							
+							RewardManager.givePlayerReward(km.allRewards.get(ageNames[age] + "_Age"), km.effects, player, ageNames[age]);
+						}
+
 						age++;
 						double tmp = 1 / maxBlock;
 						ageDisplay.setProgress(tmp);
@@ -94,7 +101,7 @@ public class GameTask {
 						Bukkit.broadcastMessage("§1" + player.getName() + " has moved to the §6§l" + ageNames[age] + " Age§1.");
 					}
 					
-					if (age == 2) {
+					if (age == 4) {
 						player.playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_TWINKLE_FAR, 1f, 1f);
 						player.sendMessage("§6§lYou complete this game !§r");
 						exit = true;
@@ -105,14 +112,17 @@ public class GameTask {
 						count -= (System.currentTimeMillis() - previousShuffle);
 						count /= 1000;
 						String dispCurBlock;
+						
 						if (currentBlock == null)
 							dispCurBlock = "Something New...";
 						else if (currentBlock.contains("_"))
 							dispCurBlock = currentBlock.replace("_", " ");
 						else
 							dispCurBlock = currentBlock;
+						
 						dispCurBlock = dispCurBlock.substring(0, 1).toUpperCase() + dispCurBlock.substring(1);
 						String color = null;
+						
 						if (count < 30) {
 							color = "\u00a7c";
 						} else if (count < 60) {
@@ -170,7 +180,8 @@ public class GameTask {
 	
 	public void exit() {
 		exit = true;
-		alreadyGot.clear();
+		if (alreadyGot != null)
+			alreadyGot.clear();
 		age = 0;
 		currentBlock = null;
 		previousShuffle = -1;

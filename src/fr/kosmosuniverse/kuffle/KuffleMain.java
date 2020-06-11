@@ -11,9 +11,11 @@ import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;*/
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffectType;
 
 import fr.kosmosuniverse.kuffle.Core.ChooseBlockInList;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
+import fr.kosmosuniverse.kuffle.Core.RewardElem;
 import fr.kosmosuniverse.kuffle.Core.RewardManager;
 import fr.kosmosuniverse.kuffle.Listeners.PreventMove;
 import fr.kosmosuniverse.kuffle.commands.KufflePause;
@@ -27,7 +29,8 @@ import fr.kosmosuniverse.kuffle.commands.KuffleValidate;
 
 public class KuffleMain extends JavaPlugin {
 	public HashMap<String, ArrayList<String>> allBlocks = ChooseBlockInList.getAllBlocks(this.getDataFolder());
-	public HashMap<String, HashMap<String, Integer>> allRewards = RewardManager.getAllRewards(this.getDataFolder());
+	public HashMap<String, HashMap<String, RewardElem>> allRewards = RewardManager.getAllRewards(this.getDataFolder());
+	public HashMap<String, PotionEffectType> effects = RewardManager.getAllEffects();
 	public ArrayList<GameTask> games = new ArrayList<GameTask>();
 	public boolean paused = false;
 	/*public Scoreboard score;

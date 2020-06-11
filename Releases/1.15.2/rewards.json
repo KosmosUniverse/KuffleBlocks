@@ -16,7 +16,7 @@
 			"Amount": 3,
 			"Enchant": "",
 			"Level": 0,
-			"Effect": "speed"
+			"Effect": "long_swiftness"
 		},
 		"cooked_beef": {
 			"Amount": 16,
@@ -82,7 +82,7 @@
 			"Amount": 3,
 			"Enchant": "",
 			"Level": 0,
-			"Effect": "fire_resistance"
+			"Effect": "long_fire_resistance"
 		},
 		"cooked_chicken": {
 			"Amount": 32,
