@@ -1,4 +1,4 @@
-package fr.kosmosuniverse.kuffle.crafts;
+package fr.kosmosuniverse.kuffle.Crafts;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

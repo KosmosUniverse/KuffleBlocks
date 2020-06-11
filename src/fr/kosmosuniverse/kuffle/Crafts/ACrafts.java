@@ -1,4 +1,4 @@
-package fr.kosmosuniverse.kuffle.crafts;
+package fr.kosmosuniverse.kuffle.Crafts;
 
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;

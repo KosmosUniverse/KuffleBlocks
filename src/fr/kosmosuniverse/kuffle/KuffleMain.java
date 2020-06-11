@@ -13,22 +13,22 @@ import org.bukkit.scoreboard.Team;*/
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffectType;
 
+import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSkip;
+import fr.kosmosuniverse.kuffle.Commands.KuffleCrafts;
+import fr.kosmosuniverse.kuffle.Commands.KuffleList;
+import fr.kosmosuniverse.kuffle.Commands.KufflePause;
+import fr.kosmosuniverse.kuffle.Commands.KuffleResume;
+import fr.kosmosuniverse.kuffle.Commands.KuffleSkip;
+import fr.kosmosuniverse.kuffle.Commands.KuffleStart;
+import fr.kosmosuniverse.kuffle.Commands.KuffleStop;
+import fr.kosmosuniverse.kuffle.Commands.KuffleValidate;
 import fr.kosmosuniverse.kuffle.Core.ChooseBlockInList;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
 import fr.kosmosuniverse.kuffle.Core.RewardElem;
 import fr.kosmosuniverse.kuffle.Core.RewardManager;
+import fr.kosmosuniverse.kuffle.Crafts.ACrafts;
+import fr.kosmosuniverse.kuffle.Crafts.ManageCrafts;
 import fr.kosmosuniverse.kuffle.Listeners.PreventMove;
-import fr.kosmosuniverse.kuffle.commands.KufflePause;
-import fr.kosmosuniverse.kuffle.commands.KuffleAdminSkip;
-import fr.kosmosuniverse.kuffle.commands.KuffleCrafts;
-import fr.kosmosuniverse.kuffle.commands.KuffleList;
-import fr.kosmosuniverse.kuffle.commands.KuffleResume;
-import fr.kosmosuniverse.kuffle.commands.KuffleSkip;
-import fr.kosmosuniverse.kuffle.commands.KuffleStart;
-import fr.kosmosuniverse.kuffle.commands.KuffleStop;
-import fr.kosmosuniverse.kuffle.commands.KuffleValidate;
-import fr.kosmosuniverse.kuffle.crafts.ACrafts;
-import fr.kosmosuniverse.kuffle.crafts.ManageCrafts;
 
 public class KuffleMain extends JavaPlugin {
 	public HashMap<String, ArrayList<String>> allBlocks = ChooseBlockInList.getAllBlocks(this.getDataFolder());

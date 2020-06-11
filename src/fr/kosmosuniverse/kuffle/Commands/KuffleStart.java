@@ -1,4 +1,4 @@
-package fr.kosmosuniverse.kuffle.commands;
+package fr.kosmosuniverse.kuffle.Commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
