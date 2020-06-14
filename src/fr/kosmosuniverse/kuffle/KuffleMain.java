@@ -13,6 +13,8 @@ import org.bukkit.scoreboard.Team;*/
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffectType;
 
+import fr.kosmosuniverse.kuffle.Commands.KuffleAdminLoad;
+import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSave;
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSkip;
 import fr.kosmosuniverse.kuffle.Commands.KuffleCrafts;
 import fr.kosmosuniverse.kuffle.Commands.KuffleList;
@@ -29,6 +31,7 @@ import fr.kosmosuniverse.kuffle.Core.RewardManager;
 import fr.kosmosuniverse.kuffle.Crafts.ACrafts;
 import fr.kosmosuniverse.kuffle.Crafts.ManageCrafts;
 import fr.kosmosuniverse.kuffle.Listeners.InventoryRecipeListener;
+import fr.kosmosuniverse.kuffle.Listeners.PlayerEventListener;
 import fr.kosmosuniverse.kuffle.Listeners.PreventMove;
 
 public class KuffleMain extends JavaPlugin {
@@ -86,13 +89,17 @@ public class KuffleMain extends JavaPlugin {
 		teams.get("Heroic_Age").setColor(ChatColor.GREEN);
 		teams.get("Mythic_Age").setColor(ChatColor.BLUE);*/
 		
+		System.out.println("[Kuffle] Add Custom Crafts.");
 		for (ACrafts item : crafts.getRecipeList()) {
 			getServer().addRecipe(item.getRecipe());
 		}
 		
+		System.out.println("[Kuffle] Add Game Listeners.");
 		getServer().getPluginManager().registerEvents(new PreventMove(this), this);
 		getServer().getPluginManager().registerEvents(new InventoryRecipeListener(this), this);
+		getServer().getPluginManager().registerEvents(new PlayerEventListener(this, this.getDataFolder()), this);
 		
+		System.out.println("[Kuffle] Add Plugin Commands.");
 		getCommand("klist").setExecutor(new KuffleList(this));
 		getCommand("kstart").setExecutor(new KuffleStart(this));
 		getCommand("kstop").setExecutor(new KuffleStop(this));
@@ -100,6 +107,8 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kresume").setExecutor(new KuffleResume(this));
 		getCommand("kvalidate").setExecutor(new KuffleValidate(this));
 		getCommand("kadminskip").setExecutor(new KuffleAdminSkip(this));
+		getCommand("kadminsave").setExecutor(new KuffleAdminSave(this, this.getDataFolder()));
+		getCommand("kadminload").setExecutor(new KuffleAdminLoad(this, this.getDataFolder()));
 		getCommand("kskip").setExecutor(new KuffleSkip(this));
 		getCommand("kcrafts").setExecutor(new KuffleCrafts(this));
 	}
@@ -113,8 +122,10 @@ public class KuffleMain extends JavaPlugin {
 			}
 			games.clear();
 		}
+		
 		allBlocks.clear();
 		allRewards.clear();
+		
 		System.out.println("[Kuffle] : Plugin turned OFF.");
 	}
 }

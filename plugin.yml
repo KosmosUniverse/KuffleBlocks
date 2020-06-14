@@ -1,5 +1,5 @@
 name: Kuffle
-version: 1.1
+version: 1.2
 author: KosmosUniverse
 main: fr.kosmosuniverse.kuffle.KuffleMain
 api-version: 1.15
@@ -33,6 +33,14 @@ commands:
       usage: /<command>
       description: command to skip a block for any player
       permission: inferno.flagrate
+   kadminsave:
+      usage: /<command>
+      description: command to save and end the game of all players
+      permission: inferno.flagrate
+   kadminload:
+      usage: /<command>
+      description: command to load and start the game of all registered players
+      permission: inferno.flagrate
    kskip:
       usage: /<command>
       description: command to skip a block
@@ -61,6 +69,12 @@ permissions:
       default: op
    kadminskip:
       description: command to skip a block for any player
+      default: op
+   kadminsave:
+      description: command to save and end the game of all players
+      default: op
+   kadminload:
+      description: command to load and start the game of all registered players
       default: op
    kskip:
       description: command to skip a block

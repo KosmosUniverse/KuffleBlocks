@@ -11,6 +11,8 @@ import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
 
@@ -31,6 +33,7 @@ public class GameTask {
 	private BossBar ageDisplay;
 	private double maxBlock;
 	private boolean found = false;
+	private double calc = 0;
 	
 	public GameTask(KuffleMain _km, Player _p) {
 		km = _km;
@@ -41,8 +44,8 @@ public class GameTask {
 		ageDisplay = Bukkit.createBossBar(ageNames[age] + " Age: 1", BarColor.PURPLE, BarStyle.SOLID) ;
 		ageDisplay.addPlayer(player);
 		maxBlock = km.getConfig().getDouble("game_settings.block_per_age");
-		double tmp = 1 / maxBlock;
-		ageDisplay.setProgress(tmp);
+		calc = 1 / maxBlock;
+		ageDisplay.setProgress(calc);
 		exit = false;
 		alreadyGot = new ArrayList<String>();
 		time = km.getConfig().getInt("game_settings.start_time");
@@ -54,14 +57,15 @@ public class GameTask {
 					return;
 				}
 				if (enable) {
+					calc = ((double) blockCount) / maxBlock;
+					calc = calc > 1.0 ? 1.0 : calc;
+					ageDisplay.setProgress(calc);
+					ageDisplay.setTitle(ageNames[age] + " Age: " + blockCount);
+					
 					if (currentBlock == null) {
 						previousShuffle = System.currentTimeMillis();
 						currentBlock = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));
 						alreadyGot.add(currentBlock);
-						double tmp = ((double) blockCount) / maxBlock;
-						tmp = tmp > 1.0 ? 1.0 : tmp;
-						ageDisplay.setProgress(tmp);
-						ageDisplay.setTitle(ageNames[age] + " Age: " + blockCount);
 					}
 					
 					if (System.currentTimeMillis() - previousShuffle > (time * 60000)) {
@@ -72,9 +76,9 @@ public class GameTask {
 							player.playSound(player.getLocation(), Sound.BLOCK_BELL_USE, 1f, 1f);
 							currentBlock = null;
 							blockCount++;
-							double tmp = ((double) blockCount) / maxBlock;
-							tmp = tmp > 1.0 ? 1.0 : tmp;
-							ageDisplay.setProgress(tmp);
+							calc = ((double) blockCount) / maxBlock;
+							calc = calc > 1.0 ? 1.0 : calc;
+							ageDisplay.setProgress(calc);
 							ageDisplay.setTitle(ageNames[age] + " Age: " + blockCount);
 							found = false;
 						}
@@ -95,8 +99,8 @@ public class GameTask {
 						}
 
 						age++;
-						double tmp = 1 / maxBlock;
-						ageDisplay.setProgress(tmp);
+						calc = 1 / maxBlock;
+						ageDisplay.setProgress(calc);
 						ageDisplay.setTitle(ageNames[age] + " Age: 1");
 						Bukkit.broadcastMessage("§1" + player.getName() + " has moved to the §6§l" + ageNames[age] + " Age§1.");
 					}
@@ -208,5 +212,41 @@ public class GameTask {
 	
 	public void validate() {
 		found = true;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public String saveGame() {
+		enable = false;
+		
+		JSONObject global = new JSONObject();
+		
+		global.put("age", age);
+		global.put("current", currentBlock);
+		global.put("interval", interval);
+		global.put("time", time);
+		global.put("blockCount", blockCount);
+		
+		JSONArray got = new JSONArray();
+		
+		for (String block : alreadyGot) {
+			got.add(block);
+		}
+		
+		global.put("alreadyGot", got);
+
+		return (global.toString());
+	}
+	
+	public void loadGame(int _age, String _current, long _interval, int _time, int _blockCount, JSONArray _alreadyGot) {
+		age = _age;
+		currentBlock = _current;
+		previousShuffle = System.currentTimeMillis() - _interval;
+		interval = -1;
+		time = _time;
+		blockCount = _blockCount;
+
+		for (int i = 0; i < _alreadyGot.size(); i++) {
+			alreadyGot.add((String) _alreadyGot.get(i));			
+		}
 	}
 }
