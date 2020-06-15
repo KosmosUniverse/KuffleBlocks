@@ -32,12 +32,15 @@ import fr.kosmosuniverse.kuffle.Crafts.ACrafts;
 import fr.kosmosuniverse.kuffle.Crafts.ManageCrafts;
 import fr.kosmosuniverse.kuffle.Listeners.InventoryRecipeListener;
 import fr.kosmosuniverse.kuffle.Listeners.PlayerEventListener;
-import fr.kosmosuniverse.kuffle.Listeners.PreventMove;
+import fr.kosmosuniverse.kuffle.Listeners.PlayerMove;
+import fr.kosmosuniverse.kuffle.MultiBlock.AMultiblock;
+import fr.kosmosuniverse.kuffle.MultiBlock.EndTeleporter;
 
 public class KuffleMain extends JavaPlugin {
 	public HashMap<String, ArrayList<String>> allBlocks = ChooseBlockInList.getAllBlocks(this.getDataFolder());
 	public HashMap<String, HashMap<String, RewardElem>> allRewards = RewardManager.getAllRewards(this.getDataFolder());
 	public HashMap<String, PotionEffectType> effects = RewardManager.getAllEffects();
+	public HashMap<String, AMultiblock> multiBlocks = new HashMap<String, AMultiblock>();
 	public ArrayList<GameTask> games = new ArrayList<GameTask>();
 	public ManageCrafts crafts = new ManageCrafts(this);
 	
@@ -94,8 +97,10 @@ public class KuffleMain extends JavaPlugin {
 			getServer().addRecipe(item.getRecipe());
 		}
 		
+		multiBlocks.put("End", new EndTeleporter());
+		
 		System.out.println("[Kuffle] Add Game Listeners.");
-		getServer().getPluginManager().registerEvents(new PreventMove(this), this);
+		getServer().getPluginManager().registerEvents(new PlayerMove(this), this);
 		getServer().getPluginManager().registerEvents(new InventoryRecipeListener(this), this);
 		getServer().getPluginManager().registerEvents(new PlayerEventListener(this, this.getDataFolder()), this);
 		

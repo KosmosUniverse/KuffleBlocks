@@ -364,6 +364,7 @@
 		"diversity": [
 			"jukebox",
 			"enchanting_table",
+			"bell",
 			"lapis_block",
 			"iron_block",
 			"gold_block",
@@ -408,10 +409,29 @@
 			"magma_block",
 			"nether_wart",
 			"nether_wart_block"
+		],
+		"diversity": [
+			"brewing_stand"
 		]
 	},
 	"Heroic_Age": {
-		"": [
+		"end": [
+			"end_stone",
+			"end_stone_bricks",
+			"end_stone_brick_stairs",
+			"end_stone_brick_wall",
+			"end_stone_brick_slab",
+			"end_rod",
+			"purpur_block",
+			"purpur_pillar",
+			"purpur_stairs",
+			"purpur_slab",
+			"chorus_plant",
+			"chorus_flower"
+		],
+		"diversity": [
+			"end_portal_frame",
+			"ender_chest"
 		]
 	},
 	"Mythic_Age": {
