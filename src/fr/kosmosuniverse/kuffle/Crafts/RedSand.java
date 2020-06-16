@@ -5,19 +5,20 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.ShapelessRecipe;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
 
-public class RedSand extends ACrafts{
+public class RedSand extends ACrafts {
 	
 	public RedSand(KuffleMain _km) {
 		name = "RedSand";
-		recipe = new ShapelessRecipe(new NamespacedKey(_km, name), new ItemStack(Material.RED_SAND));
+		recipe = new ShapedRecipe(new NamespacedKey(_km, name), new ItemStack(Material.RED_SAND, 8));
 		
-		((ShapelessRecipe) recipe).addIngredient(Material.SAND);
-		((ShapelessRecipe) recipe).addIngredient(Material.RED_DYE);
+		((ShapedRecipe) recipe).shape("SSS", "SRS", "SSS");
+		((ShapedRecipe) recipe).setIngredient('S', Material.SAND);
+		((ShapedRecipe) recipe).setIngredient('R', Material.RED_DYE);
 
 		item = new ItemStack(Material.RED_SAND);
 	}
@@ -41,14 +42,12 @@ public class RedSand extends ACrafts{
 		for (int i = 0; i < 27; i++) {
 			if (i == 0) {
 				inv.setItem(i, new ItemStack(redPane));
-			} else if (i == 3) {
+			} else if (i == 3 || i == 4 || i == 5 || i == 12 || i == 14 || i == 21 || i == 22 || i == 23) {
 				inv.setItem(i, new ItemStack(Material.SAND));
-			} else if (i == 4) {
+			} else if (i == 13) {
 				inv.setItem(i, new ItemStack(Material.RED_DYE));
 			} else if (i == 16) {
-				inv.setItem(i, new ItemStack(Material.RED_SAND));
-			} else if (i == 5 || i == 12 || i == 13 || i == 14 || i == 21 || i == 22 || i == 23) {
-				inv.setItem(i, new ItemStack(grayPane));
+				inv.setItem(i, new ItemStack(Material.RED_SAND, 8));
 			} else {
 				inv.setItem(i, new ItemStack(limePane));
 			}
