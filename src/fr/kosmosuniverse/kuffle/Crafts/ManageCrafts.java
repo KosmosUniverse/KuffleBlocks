@@ -3,6 +3,7 @@ package fr.kosmosuniverse.kuffle.Crafts;
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
@@ -56,5 +57,25 @@ public class ManageCrafts {
 		} else {
 			return (rows + 1) * 9;
 		}
+	}
+	
+	public ACrafts findCraftInventoryByItem(Material item) {
+		for (ACrafts craft : recipes) {
+			if (craft.getItem().getType() == item) {
+				return (craft);
+			}
+		}
+		
+		return null;
+	}
+	
+	public ACrafts findCraftByInventoryName(String invName) {
+		for (ACrafts craft : recipes) {
+			if (invName.contains(craft.getName())) {
+				return (craft);
+			}
+		}
+		
+		return null;
 	}
 }

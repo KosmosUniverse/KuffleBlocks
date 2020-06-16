@@ -18,6 +18,7 @@ import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSave;
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSkip;
 import fr.kosmosuniverse.kuffle.Commands.KuffleCrafts;
 import fr.kosmosuniverse.kuffle.Commands.KuffleList;
+import fr.kosmosuniverse.kuffle.Commands.KuffleMultiBlocks;
 import fr.kosmosuniverse.kuffle.Commands.KufflePause;
 import fr.kosmosuniverse.kuffle.Commands.KuffleResume;
 import fr.kosmosuniverse.kuffle.Commands.KuffleSkip;
@@ -33,16 +34,15 @@ import fr.kosmosuniverse.kuffle.Crafts.ManageCrafts;
 import fr.kosmosuniverse.kuffle.Listeners.InventoryRecipeListener;
 import fr.kosmosuniverse.kuffle.Listeners.PlayerEventListener;
 import fr.kosmosuniverse.kuffle.Listeners.PlayerMove;
-import fr.kosmosuniverse.kuffle.MultiBlock.AMultiblock;
-import fr.kosmosuniverse.kuffle.MultiBlock.EndTeleporter;
+import fr.kosmosuniverse.kuffle.MultiBlock.ManageMultiBlock;
 
 public class KuffleMain extends JavaPlugin {
 	public HashMap<String, ArrayList<String>> allBlocks = ChooseBlockInList.getAllBlocks(this.getDataFolder());
 	public HashMap<String, HashMap<String, RewardElem>> allRewards = RewardManager.getAllRewards(this.getDataFolder());
 	public HashMap<String, PotionEffectType> effects = RewardManager.getAllEffects();
-	public HashMap<String, AMultiblock> multiBlocks = new HashMap<String, AMultiblock>();
 	public ArrayList<GameTask> games = new ArrayList<GameTask>();
 	public ManageCrafts crafts = new ManageCrafts(this);
+	public ManageMultiBlock multiBlock = new ManageMultiBlock();
 	
 	public boolean paused = false;
 	/*public Scoreboard score;
@@ -97,8 +97,6 @@ public class KuffleMain extends JavaPlugin {
 			getServer().addRecipe(item.getRecipe());
 		}
 		
-		multiBlocks.put("End", new EndTeleporter());
-		
 		System.out.println("[Kuffle] Add Game Listeners.");
 		getServer().getPluginManager().registerEvents(new PlayerMove(this), this);
 		getServer().getPluginManager().registerEvents(new InventoryRecipeListener(this), this);
@@ -116,6 +114,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kadminload").setExecutor(new KuffleAdminLoad(this, this.getDataFolder()));
 		getCommand("kskip").setExecutor(new KuffleSkip(this));
 		getCommand("kcrafts").setExecutor(new KuffleCrafts(this));
+		getCommand("kmultiBlocks").setExecutor(new KuffleMultiBlocks(this));
 	}
 	
 	@Override

@@ -30,16 +30,12 @@ public class PlayerMove implements Listener {
 		Player player = event.getPlayer();
 		
 		if (player.getLocation().add(0, -1, 0).getBlock().getType() == Material.OBSIDIAN) {
-			checkEndMultiBlock(player);
-		}
-	}
-	
-	private void checkEndMultiBlock(Player player) {
-		if (km.multiBlocks.containsKey("End")) {
-			AMultiblock end = km.multiBlocks.get("End");
+			AMultiblock end;
 			
-			if (end.getMultiblock().checkMultiBlock(player.getLocation().add(0, -1, 0), player)) {
-				end.onActivate(km, player, ActivationType.ACTIVATE);
+			if ((end = km.multiBlock.findMultiBlockByName("End Teleporter")) != null) {
+				if (end.getMultiblock().checkMultiBlock(player.getLocation().add(0, -1, 0), player)) {
+					end.onActivate(km, player, ActivationType.ACTIVATE);
+				}
 			}
 		}
 	}
@@ -48,13 +44,11 @@ public class PlayerMove implements Listener {
 	public void onCorePlacedEvent(BlockPlaceEvent event) {
 		Player player = event.getPlayer();
 		Block block = event.getBlockPlaced();
+		AMultiblock multiBlock;
 		
-		for (String key : km.multiBlocks.keySet()) {
-			if (km.multiBlocks.get(key).getMultiblock().getCore() == block.getType()) {
-				if (km.multiBlocks.get(key).getMultiblock().checkMultiBlock(block.getLocation(), player)) {
-					km.multiBlocks.get(key).onActivate(km, player, ActivationType.ASSEMBLE);
-					return ;
-				}
+		if ((multiBlock = km.multiBlock.findMultiBlockByCore(block.getType())) != null) {
+			if (multiBlock.getMultiblock().checkMultiBlock(block.getLocation(), player)) {
+				multiBlock.onActivate(km, player, ActivationType.ACTIVATE);
 			}
 		}
 	}

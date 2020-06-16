@@ -7,10 +7,10 @@ import org.bukkit.entity.Player;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
 
-public class KuffleCrafts implements CommandExecutor {
+public class KuffleMultiBlocks implements CommandExecutor {
 	private KuffleMain km;
 
-	public KuffleCrafts(KuffleMain _km) {
+	public KuffleMultiBlocks(KuffleMain _km) {
 		km = _km;
 	}
 	
@@ -21,12 +21,12 @@ public class KuffleCrafts implements CommandExecutor {
 		
 		Player p = (Player) sender;
 		
-		if (!p.hasPermission("kcrafts")) {
+		if (!p.hasPermission("kmultiblocks")) {
 			p.sendMessage("You are not allowed to do this command.");
 			return false;
 		}
 		
-		p.openInventory(km.crafts.getAllCraftsInventory());
+		p.openInventory(km.multiBlock.getAllMultiBlocksInventory());
 		
 		return true;
 	}

@@ -47,6 +47,9 @@ commands:
    kcrafts:
       usage: /<command>
       description: command to see custom crafts
+   kmultiblocks:
+      usage: /<command>
+      description: command to see multiBlocks
 
 permissions:
    klist:
@@ -81,4 +84,7 @@ permissions:
       default: true
    kcrafts:
       description: command to see custom crafts
+      default: true
+   kmultiblocks:
+      description: command to see multiBlocks
       default: true
