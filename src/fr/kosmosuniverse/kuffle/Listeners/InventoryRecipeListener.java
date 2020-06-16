@@ -31,7 +31,6 @@ public class InventoryRecipeListener implements Listener {
 			return;
 		}
 		
-		System.out.println(event.getView().getTitle());
 		if (event.getView().getTitle() == "§8AllCustomCrafts") {
 			event.setCancelled(true);
 			if ((craft = km.crafts.findCraftInventoryByItem(item.getType())) != null) {
