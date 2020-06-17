@@ -4,6 +4,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
@@ -37,11 +38,16 @@ public class KuffleStop implements CommandExecutor {
 		
 		for (GameTask gt : km.games) {
 			gt.disable();
+			for (PotionEffect pe : gt.getPlayer().getActivePotionEffects()) {
+				gt.getPlayer().removePotionEffect(pe.getType());
+			}
 		}
 		
 		for (GameTask gt : km.games) {
 			gt.exit();
 		}
+		
+		km.scores.clear();
 		
 		for (GameTask gt : km.games) {
 			gt.kill();

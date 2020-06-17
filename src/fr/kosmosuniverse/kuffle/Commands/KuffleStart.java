@@ -7,6 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scoreboard.DisplaySlot;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
@@ -100,6 +101,13 @@ public class KuffleStart implements CommandExecutor {
 			@Override
 			public void run() {
 				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"1\",\"bold\":true,\"color\":\"blue\"}");
+				
+				
+				if (km.getConfig().getBoolean("game_settings.see_block_count")) {
+					km.scores.setupPlayerScores(DisplaySlot.PLAYER_LIST);
+				} else {
+					km.scores.setupPlayerScores(DisplaySlot.BELOW_NAME);
+				}
 			}
 		}, 100 + spread);
 		

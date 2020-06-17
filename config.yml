@@ -12,3 +12,4 @@ game_settings:
       enable: true
       age: 2
    custom_crafts: true
+   see_block_count: true

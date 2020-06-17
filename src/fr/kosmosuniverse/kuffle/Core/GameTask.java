@@ -3,6 +3,7 @@ package fr.kosmosuniverse.kuffle.Core;
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.boss.BarColor;
@@ -11,6 +12,7 @@ import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
+import org.bukkit.scoreboard.Score;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -34,6 +36,7 @@ public class GameTask {
 	private double maxBlock;
 	private boolean found = false;
 	private double calc = 0;
+	private Score blockScore;
 	
 	public GameTask(KuffleMain _km, Player _p) {
 		km = _km;
@@ -76,6 +79,7 @@ public class GameTask {
 							player.playSound(player.getLocation(), Sound.BLOCK_BELL_USE, 1f, 1f);
 							currentBlock = null;
 							blockCount++;
+							blockScore.setScore(blockCount);
 							calc = ((double) blockCount) / maxBlock;
 							calc = calc > 1.0 ? 1.0 : calc;
 							ageDisplay.setProgress(calc);
@@ -87,6 +91,7 @@ public class GameTask {
 					if (blockCount == (maxBlock + 1)) {
 						player.playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LARGE_BLAST, 1f, 1f);
 						blockCount = 1;
+						blockScore.setScore(blockCount);
 						alreadyGot.clear();
 						time += 2;
 						
@@ -99,13 +104,14 @@ public class GameTask {
 						}
 
 						age++;
+						player.setPlayerListName(getColor() + player.getName());
 						calc = 1 / maxBlock;
 						ageDisplay.setProgress(calc);
 						ageDisplay.setTitle(ageNames[age] + " Age: 1");
 						Bukkit.broadcastMessage("§1" + player.getName() + " has moved to the §6§l" + ageNames[age] + " Age§1.");
 					}
 					
-					if (age == 4) {
+					if (age == 5) {
 						player.playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_TWINKLE_FAR, 1f, 1f);
 						player.sendMessage("§6§lYou complete this game !§r");
 						exit = true;
@@ -158,6 +164,33 @@ public class GameTask {
 	
 	public int getBlockCount() {
 		return blockCount;
+	}
+	
+	public Score getBlockScore() {
+		return blockScore;
+	}
+	
+	public ChatColor getColor() {
+		switch (age) {
+		case 0:
+			return (ChatColor.RED);
+		case 1:
+			return (ChatColor.GOLD);
+		case 2:
+			return (ChatColor.YELLOW);
+		case 3:
+			return (ChatColor.GREEN);
+		case 4:
+			return (ChatColor.DARK_GREEN);
+		case 5:
+			return (ChatColor.DARK_BLUE);
+		default:
+			return (ChatColor.DARK_PURPLE);
+		}
+	}
+	
+	public void setBlockScore(Score score) {
+		blockScore = score;
 	}
 	
 	public void setBlockCount(int _blockCount) {
@@ -244,6 +277,7 @@ public class GameTask {
 		interval = -1;
 		time = _time;
 		blockCount = _blockCount;
+		blockScore.setScore(blockCount);
 
 		for (int i = 0; i < _alreadyGot.size(); i++) {
 			alreadyGot.add((String) _alreadyGot.get(i));			

@@ -29,6 +29,7 @@ import fr.kosmosuniverse.kuffle.Core.ChooseBlockInList;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
 import fr.kosmosuniverse.kuffle.Core.RewardElem;
 import fr.kosmosuniverse.kuffle.Core.RewardManager;
+import fr.kosmosuniverse.kuffle.Core.Scores;
 import fr.kosmosuniverse.kuffle.Crafts.ACrafts;
 import fr.kosmosuniverse.kuffle.Crafts.ManageCrafts;
 import fr.kosmosuniverse.kuffle.Listeners.InventoryRecipeListener;
@@ -43,11 +44,9 @@ public class KuffleMain extends JavaPlugin {
 	public ArrayList<GameTask> games = new ArrayList<GameTask>();
 	public ManageCrafts crafts = new ManageCrafts(this);
 	public ManageMultiBlock multiBlock = new ManageMultiBlock();
+	public Scores scores = new Scores(this);
 	
 	public boolean paused = false;
-	/*public Scoreboard score;
-	public Objective objective;
-	public HashMap<String, Team> teams = new HashMap<String, Team>();*/
 	
 	@Override
 	public void onEnable() {
@@ -75,22 +74,6 @@ public class KuffleMain extends JavaPlugin {
 			Bukkit.broadcastMessage("Config for time added is not correct, use of default value.");
 			getConfig().set("game_settings.time_added", 2);
 		}
-		
-		/*score = Bukkit.getScoreboardManager().getNewScoreboard();
-		objective = score.registerNewObjective("ages", "dummy", "Ages");
-		objective.setDisplaySlot(DisplaySlot.SIDEBAR);
-		
-		teams.put("Archaic_Age", score.registerNewTeam("Archaic_Age"));
-		teams.put("Classic_Age", score.registerNewTeam("Classic_Age"));
-		teams.put("Netheric_Age", score.registerNewTeam("Netheric_Age"));
-		teams.put("Heroic_Age", score.registerNewTeam("Heroic_Age"));
-		teams.put("Mythic_Age", score.registerNewTeam("Mythic_Age"));
-		
-		teams.get("Archaic_Age").setColor(ChatColor.RED);
-		teams.get("Classic_Age").setColor(ChatColor.GOLD);
-		teams.get("Netheric_Age").setColor(ChatColor.YELLOW);
-		teams.get("Heroic_Age").setColor(ChatColor.GREEN);
-		teams.get("Mythic_Age").setColor(ChatColor.BLUE);*/
 		
 		System.out.println("[Kuffle] Add Custom Crafts.");
 		for (ACrafts item : crafts.getRecipeList()) {

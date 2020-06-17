@@ -108,7 +108,7 @@
 		"diamond_sword": {
 			"Amount": 1,
 			"Enchant": "sharpness,sweeping",
-			"Level": 0,
+			"Level": 5,
 			"Effect": ""
 		},
 		"cooked_mutton": {
