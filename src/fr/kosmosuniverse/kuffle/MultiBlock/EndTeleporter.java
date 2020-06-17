@@ -42,6 +42,7 @@ public class EndTeleporter extends AMultiblock {
 				new Pattern(Material.DIAMOND_BLOCK, 0, 2, -1));
 		
 		createInventories();
+		findNormalWorld();
 	}
 
 	@Override
@@ -50,16 +51,18 @@ public class EndTeleporter extends AMultiblock {
 			player.sendMessage("You just constructed " + name);
 		}
 		else if (type == ActivationType.ACTIVATE) {
-			player.sendMessage("You just activated " + name);
-			player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100, 50, false, false, false));
-			Location tmp = new Location(Bukkit.getWorld("world_the_end"), player.getLocation().getX() + 1000, 60.0, player.getLocation().getZ() + 1000);
-			
-			while (tmp.getBlock().getType() != Material.END_STONE) {
-				tmp.add(10, 0, 10);
+			if (world != null) {
+				player.sendMessage("You just activated " + name);
+				player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100, 50, false, false, false));
+				Location tmp = new Location(Bukkit.getWorld(world.getName() + "_the_end"), player.getLocation().getX() + 1000, 60.0, player.getLocation().getZ() + 1000);
+				
+				while (tmp.getBlock().getType() != Material.END_STONE) {
+					tmp.add(10, 0, 10);
+				}
+				
+				player.teleport(tmp.add(0, 10, 0));
+				player.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);	
 			}
-			
-			player.teleport(tmp.add(0, 10, 0));
-			player.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
 		}
 	}
 

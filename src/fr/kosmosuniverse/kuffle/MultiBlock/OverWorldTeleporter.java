@@ -42,6 +42,7 @@ public class OverWorldTeleporter extends AMultiblock {
 				new Pattern(Material.PURPUR_PILLAR, 0, 2, -1));
 		
 		createInventories();
+		findNormalWorld();
 	}
 
 	@Override
@@ -50,12 +51,14 @@ public class OverWorldTeleporter extends AMultiblock {
 			player.sendMessage("You just constructed " + name);
 		}
 		else if (type == ActivationType.ACTIVATE) {
-			player.sendMessage("You just activated " + name);
-			player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100, 50, false, false, false));
-			Location tmp = new Location(Bukkit.getWorld("world"), player.getLocation().getX() - 1000, 80.0, player.getLocation().getZ() - 1000);
-			
-			player.teleport(tmp);
-			player.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
+			if (world != null) {
+				player.sendMessage("You just activated " + name);
+				player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100, 50, false, false, false));
+				Location tmp = new Location(Bukkit.getWorld(world.getName()), player.getLocation().getX() - 1000, 80.0, player.getLocation().getZ() - 1000);
+				
+				player.teleport(tmp);
+				player.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);	
+			}
 		}
 	}
 

@@ -2,7 +2,9 @@ package fr.kosmosuniverse.kuffle.MultiBlock;
 
 import java.util.ArrayList;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -15,6 +17,7 @@ public abstract class AMultiblock {
 	protected MultiBlock multiblock;
 	protected ArrayList<Inventory> invs = new ArrayList<Inventory>();
 	protected ItemStack item;
+	protected World world = null;
 	
 	public abstract void onActivate(KuffleMain _km, Player player, ActivationType type);
 	public abstract void createInventories();
@@ -55,6 +58,14 @@ public abstract class AMultiblock {
 		}
 		
 		return null;
+	}
+	
+	public void findNormalWorld() {
+		for (World w : Bukkit.getWorlds()) {
+			if (!w.getName().contains("nether") && !w.getName().contains("the_end")) {
+				world = w;
+			}
+		}
 	}
 	
 	public String getName() {
