@@ -31,6 +31,8 @@ public class ManageCrafts {
 		recipes.add(new RedstoneOre(_km));
 		recipes.add(new DiamondOre(_km));
 		recipes.add(new EmeraldOre(_km));
+		
+		recipes.add(new EndPortalFrame(_km));
 	}
 	
 	public ArrayList<ACrafts> getRecipeList() {

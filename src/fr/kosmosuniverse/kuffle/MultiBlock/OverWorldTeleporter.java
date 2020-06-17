@@ -12,34 +12,34 @@ import org.bukkit.potion.PotionEffectType;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
 
-public class EndTeleporter extends AMultiblock {
-	public EndTeleporter() {
-		name = "End Teleporter";
+public class OverWorldTeleporter extends AMultiblock {
+	public OverWorldTeleporter() {
+		name = "OverWorld Teleporter";
 		
 		squareSize = 3;
 		
-		item = new ItemStack(Material.OBSIDIAN);
+		item = new ItemStack(Material.END_PORTAL_FRAME);
 		ItemMeta itM = item.getItemMeta();
 		itM.setDisplayName(name);
 		item.setItemMeta(itM);
 		
-		multiblock = new MultiBlock(Material.OBSIDIAN,
-				new Pattern(Material.COAL_BLOCK, -1, 0, -1),
-				new Pattern(Material.COAL_BLOCK, 0, 0, -1),
-				new Pattern(Material.COAL_BLOCK, 1, 0, -1),
-				new Pattern(Material.NETHER_BRICK_STAIRS, -1, 0, 0),
-				new Pattern(Material.NETHER_BRICK_STAIRS, 1, 0, 0),
-				new Pattern(Material.NETHER_BRICK_STAIRS, -1, 0, 1),
-				new Pattern(Material.NETHER_BRICK_STAIRS, 0, 0, 1),
-				new Pattern(Material.NETHER_BRICK_STAIRS, 1, 0, 1),
+		multiblock = new MultiBlock(Material.END_PORTAL_FRAME,
+				new Pattern(Material.END_STONE_BRICKS, -1, 0, -1),
+				new Pattern(Material.QUARTZ_PILLAR, 0, 0, -1),
+				new Pattern(Material.END_STONE_BRICKS, 1, 0, -1),
+				new Pattern(Material.PURPUR_STAIRS, -1, 0, 0),
+				new Pattern(Material.PURPUR_STAIRS, 1, 0, 0),
+				new Pattern(Material.PURPUR_STAIRS, -1, 0, 1),
+				new Pattern(Material.PURPUR_STAIRS, 0, 0, 1),
+				new Pattern(Material.PURPUR_STAIRS, 1, 0, 1),
 				
-				new Pattern(Material.STONE_BRICK_WALL, -1, 1, 0),
-				new Pattern(Material.STONE_BRICK_WALL, 1, 1, 0),
-				new Pattern(Material.RED_NETHER_BRICK_WALL, 0, 1, -1),
-				new Pattern(Material.IRON_BLOCK, -1, 1, -1),
-				new Pattern(Material.GOLD_BLOCK, 1, 1, -1),
+				new Pattern(Material.END_ROD, -1, 1, 0),
+				new Pattern(Material.END_ROD, 1, 1, 0),
+				new Pattern(Material.CHISELED_QUARTZ_BLOCK, 0, 1, -1),
+				new Pattern(Material.PURPUR_PILLAR, -1, 1, -1),
+				new Pattern(Material.PURPUR_PILLAR, 1, 1, -1),
 				
-				new Pattern(Material.DIAMOND_BLOCK, 0, 2, -1));
+				new Pattern(Material.PURPUR_PILLAR, 0, 2, -1));
 		
 		createInventories();
 	}
@@ -52,13 +52,9 @@ public class EndTeleporter extends AMultiblock {
 		else if (type == ActivationType.ACTIVATE) {
 			player.sendMessage("You just activated " + name);
 			player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100, 50, false, false, false));
-			Location tmp = new Location(Bukkit.getWorld("world_the_end"), player.getLocation().getX() + 1000, 60.0, player.getLocation().getZ() + 1000);
+			Location tmp = new Location(Bukkit.getWorld("world"), player.getLocation().getX() - 1000, 80.0, player.getLocation().getZ() - 1000);
 			
-			while (tmp.getBlock().getType() != Material.END_STONE) {
-				tmp.add(10, 0, 10);
-			}
-			
-			player.teleport(tmp.add(0, 10, 0));
+			player.teleport(tmp);
 			player.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
 		}
 	}
@@ -90,12 +86,14 @@ public class EndTeleporter extends AMultiblock {
 				inv.setItem(i, new ItemStack(redPane));
 			} else if (i == 8) {
 				inv.setItem(i, new ItemStack(bluePane));
-			} else if (i == 3 || i == 4 || i == 5) {
-				inv.setItem(i, new ItemStack(Material.COAL_BLOCK));
+			} else if (i == 3 || i == 5) {
+				inv.setItem(i, new ItemStack(Material.END_STONE_BRICKS));
+			} else if (i == 4) {
+				inv.setItem(i, new ItemStack(Material.QUARTZ_PILLAR));
 			} else if (i == 12 || i == 14 || i == 21 || i == 22 || i == 23) {
-				inv.setItem(i, new ItemStack(Material.NETHER_BRICK_STAIRS));
+				inv.setItem(i, new ItemStack(Material.PURPUR_STAIRS));
 			} else if (i == 13) {
-				inv.setItem(i, new ItemStack(Material.OBSIDIAN));
+				inv.setItem(i, new ItemStack(Material.END_PORTAL_FRAME));
 			} else {
 				inv.setItem(i, new ItemStack(limePane));
 			}
@@ -114,14 +112,12 @@ public class EndTeleporter extends AMultiblock {
 				inv.setItem(i, new ItemStack(redPane));
 			} else if (i == 8) {
 				inv.setItem(i, new ItemStack(bluePane));
-			} else if (i == 3) {
-				inv.setItem(i, new ItemStack(Material.IRON_BLOCK));
+			} else if (i == 3 || i == 5) {
+				inv.setItem(i, new ItemStack(Material.PURPUR_PILLAR));
 			} else if (i == 4) {
-				inv.setItem(i, new ItemStack(Material.NETHER_BRICK_WALL));
-			} else if (i == 5) {
-				inv.setItem(i, new ItemStack(Material.GOLD_BLOCK));
+				inv.setItem(i, new ItemStack(Material.CHISELED_QUARTZ_BLOCK));
 			} else if (i == 12 || i == 14) {
-				inv.setItem(i, new ItemStack(Material.STONE_BRICK_WALL));
+				inv.setItem(i, new ItemStack(Material.END_ROD));
 			} else if (i == 13 || i == 21 || i == 22 || i == 23) {
 				inv.setItem(i, new ItemStack(grayPane));
 			} else {
@@ -137,7 +133,7 @@ public class EndTeleporter extends AMultiblock {
 			if (i == 0) {
 				inv.setItem(i, new ItemStack(redPane));
 			} else if (i == 4) {
-				inv.setItem(i, new ItemStack(Material.DIAMOND_BLOCK));
+				inv.setItem(i, new ItemStack(Material.PURPUR_PILLAR));
 			} else if (i == 3 || i == 5 || i == 12 || i == 13 || i == 14|| i == 21 || i == 22 || i == 23) {
 				inv.setItem(i, new ItemStack(grayPane));
 			} else {

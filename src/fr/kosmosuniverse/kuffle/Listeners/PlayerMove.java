@@ -28,13 +28,18 @@ public class PlayerMove implements Listener {
 		}
 		
 		Player player = event.getPlayer();
+		AMultiblock multiBlock;
 		
 		if (player.getLocation().add(0, -1, 0).getBlock().getType() == Material.OBSIDIAN) {
-			AMultiblock end;
-			
-			if ((end = km.multiBlock.findMultiBlockByName("End Teleporter")) != null) {
-				if (end.getMultiblock().checkMultiBlock(player.getLocation().add(0, -1, 0), player)) {
-					end.onActivate(km, player, ActivationType.ACTIVATE);
+			if ((multiBlock = km.multiBlock.findMultiBlockByName("End Teleporter")) != null) {
+				if (multiBlock.getMultiblock().checkMultiBlock(player.getLocation().add(0, -1, 0), player)) {
+					multiBlock.onActivate(km, player, ActivationType.ACTIVATE);
+				}
+			}
+		} else if (player.getLocation().add(0, -1, 0).getBlock().getType() == Material.END_PORTAL_FRAME) {
+			if ((multiBlock = km.multiBlock.findMultiBlockByName("OverWorld Teleporter")) != null) {
+				if (multiBlock.getMultiblock().checkMultiBlock(player.getLocation().add(0, -1, 0), player)) {
+					multiBlock.onActivate(km, player, ActivationType.ACTIVATE);
 				}
 			}
 		}
@@ -48,7 +53,7 @@ public class PlayerMove implements Listener {
 		
 		if ((multiBlock = km.multiBlock.findMultiBlockByCore(block.getType())) != null) {
 			if (multiBlock.getMultiblock().checkMultiBlock(block.getLocation(), player)) {
-				multiBlock.onActivate(km, player, ActivationType.ACTIVATE);
+				multiBlock.onActivate(km, player, ActivationType.ASSEMBLE);
 			}
 		}
 	}
