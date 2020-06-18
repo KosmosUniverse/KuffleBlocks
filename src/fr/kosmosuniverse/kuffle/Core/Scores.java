@@ -1,6 +1,7 @@
 package fr.kosmosuniverse.kuffle.Core;
 
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;
@@ -51,6 +52,20 @@ public class Scores {
 			gt.getBlockScore().setScore(1);
 			gt.getPlayer().setScoreboard(scoreboard);
 			gt.getPlayer().setPlayerListName(ChatColor.RED + gt.getPlayer().getName());
+		}
+	}
+	
+	public void setupPlayerScores(DisplaySlot slot, Player player) {
+		blocks.setDisplaySlot(slot);
+		age.setDisplaySlot(DisplaySlot.SIDEBAR);
+		
+		for (GameTask gt : km.games) {
+			if (gt.getPlayer().getName().equals(player.getName())) {
+				gt.setBlockScore(blocks.getScore(gt.getPlayer().getDisplayName()));
+				gt.getBlockScore().setScore(1);
+				gt.getPlayer().setScoreboard(scoreboard);
+				return ;
+			}
 		}
 	}
 	

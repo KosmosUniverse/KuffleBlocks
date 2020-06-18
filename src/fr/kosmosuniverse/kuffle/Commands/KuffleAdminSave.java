@@ -69,6 +69,8 @@ public class KuffleAdminSave implements CommandExecutor {
 			}
 		}
 		
+		km.scores.clear();
+		
 		for (GameTask gt : km.games) {
 			gt.exit();
 			gt.kill();

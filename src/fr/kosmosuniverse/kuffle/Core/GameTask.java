@@ -12,6 +12,7 @@ import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
+import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Score;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -276,9 +277,17 @@ public class GameTask {
 		previousShuffle = System.currentTimeMillis() - _interval;
 		interval = -1;
 		time = _time;
+		
+		if (km.getConfig().getBoolean("game_settings.see_block_count")) {
+			km.scores.setupPlayerScores(DisplaySlot.PLAYER_LIST, player);
+		} else {
+			km.scores.setupPlayerScores(DisplaySlot.BELOW_NAME, player);
+		}
+		
 		blockCount = _blockCount;
 		blockScore.setScore(blockCount);
-
+		player.setPlayerListName(getColor() + player.getName());
+		
 		for (int i = 0; i < _alreadyGot.size(); i++) {
 			alreadyGot.add((String) _alreadyGot.get(i));			
 		}

@@ -44,7 +44,7 @@ public class KuffleMain extends JavaPlugin {
 	public ArrayList<GameTask> games = new ArrayList<GameTask>();
 	public ManageCrafts crafts = new ManageCrafts(this);
 	public ManageMultiBlock multiBlock = new ManageMultiBlock();
-	public Scores scores = new Scores(this);
+	public Scores scores;
 	
 	public boolean paused = false;
 	
@@ -74,6 +74,8 @@ public class KuffleMain extends JavaPlugin {
 			Bukkit.broadcastMessage("Config for time added is not correct, use of default value.");
 			getConfig().set("game_settings.time_added", 2);
 		}
+		
+		scores = new Scores(this);
 		
 		System.out.println("[Kuffle] Add Custom Crafts.");
 		for (ACrafts item : crafts.getRecipeList()) {

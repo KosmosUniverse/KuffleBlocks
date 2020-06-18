@@ -13,7 +13,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.scoreboard.DisplaySlot;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -75,12 +74,6 @@ public class KuffleAdminLoad implements CommandExecutor {
 			for (GameTask gt : km.games) {
 				gt.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 999999, 10, false, false, false));
 			}
-		}
-		
-		if (km.getConfig().getBoolean("game_settings.see_block_count")) {
-			km.scores.setupPlayerScores(DisplaySlot.PLAYER_LIST);
-		} else {
-			km.scores.setupPlayerScores(DisplaySlot.BELOW_NAME);
 		}
 		
 		for (GameTask gt : km.games) {
