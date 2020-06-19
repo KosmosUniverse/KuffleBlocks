@@ -25,12 +25,16 @@ public class ManageCrafts {
 		recipes.add(new Redstone(_km));
 		recipes.add(new Diamond(_km));
 		recipes.add(new Emerald(_km));
+		recipes.add(new Quartz(_km));
 		
 		recipes.add(new CoalOre(_km));
 		recipes.add(new LapisOre(_km));
 		recipes.add(new RedstoneOre(_km));
 		recipes.add(new DiamondOre(_km));
 		recipes.add(new EmeraldOre(_km));
+		recipes.add(new QuartzOre(_km));
+		
+		recipes.add(new RedNetherBrick(_km));
 		
 		recipes.add(new EndPortalFrame(_km));
 	}
