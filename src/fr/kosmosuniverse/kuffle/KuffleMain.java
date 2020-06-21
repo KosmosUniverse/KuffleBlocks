@@ -31,6 +31,11 @@ import fr.kosmosuniverse.kuffle.Listeners.InventoryRecipeListener;
 import fr.kosmosuniverse.kuffle.Listeners.PlayerEventListener;
 import fr.kosmosuniverse.kuffle.Listeners.PlayerMove;
 import fr.kosmosuniverse.kuffle.MultiBlock.ManageMultiBlock;
+import fr.kosmosuniverse.kuffle.TabCmd.KuffleAdminSkipTab;
+import fr.kosmosuniverse.kuffle.TabCmd.KuffleAdminSpawnTab;
+import fr.kosmosuniverse.kuffle.TabCmd.KuffleListTab;
+import fr.kosmosuniverse.kuffle.TabCmd.KuffleMultiBlocksTab;
+import fr.kosmosuniverse.kuffle.TabCmd.KuffleValidateTab;
 
 public class KuffleMain extends JavaPlugin {
 	public HashMap<String, ArrayList<String>> allBlocks = ChooseBlockInList.getAllBlocks(this.getDataFolder());
@@ -40,6 +45,9 @@ public class KuffleMain extends JavaPlugin {
 	public ManageCrafts crafts = new ManageCrafts(this);
 	public ManageMultiBlock multiBlock = new ManageMultiBlock();
 	public Scores scores;
+	public KuffleListTab listTab = new KuffleListTab();
+	public KuffleAdminSkipTab skipTab = new KuffleAdminSkipTab();
+	public KuffleValidateTab validateTab = new KuffleValidateTab();
 	
 	public boolean paused = false;
 	
@@ -96,6 +104,18 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kskip").setExecutor(new KuffleSkip(this));
 		getCommand("kcrafts").setExecutor(new KuffleCrafts(this));
 		getCommand("kmultiBlocks").setExecutor(new KuffleMultiBlocks(this));
+		
+		System.out.println("[Kuffle] Add Plugin Tab Completer.");
+		
+		listTab = new KuffleListTab();
+		skipTab = new KuffleAdminSkipTab();
+		validateTab = new KuffleValidateTab();
+		
+		getCommand("klist").setTabCompleter(listTab);
+		getCommand("kadminskip").setTabCompleter(skipTab);
+		getCommand("kvalidate").setTabCompleter(validateTab);
+		getCommand("kadminspawn").setTabCompleter(new KuffleAdminSpawnTab(this));
+		getCommand("kmultiblocks").setTabCompleter(new KuffleMultiBlocksTab(this));
 	}
 	
 	@Override
