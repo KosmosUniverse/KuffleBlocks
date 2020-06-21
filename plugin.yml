@@ -33,6 +33,10 @@ commands:
       usage: /<command>
       description: command to skip a block for any player
       permission: inferno.flagrate
+   kadminspawn:
+      usage: /<command>
+      description: command to spawn multiblock structure
+      permission: inferno.flagrate
    kadminsave:
       usage: /<command>
       description: command to save and end the game of all players
@@ -72,6 +76,9 @@ permissions:
       default: op
    kadminskip:
       description: command to skip a block for any player
+      default: op
+   kadminspawn:
+      description: command to spawn multiblock structure
       default: op
    kadminsave:
       description: command to save and end the game of all players

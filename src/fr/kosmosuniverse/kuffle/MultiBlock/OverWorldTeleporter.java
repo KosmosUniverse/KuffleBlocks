@@ -14,7 +14,7 @@ import fr.kosmosuniverse.kuffle.KuffleMain;
 
 public class OverWorldTeleporter extends AMultiblock {
 	public OverWorldTeleporter() {
-		name = "OverWorld Teleporter";
+		name = "OverWorldTeleporter";
 		
 		squareSize = 3;
 		

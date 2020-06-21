@@ -4,18 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.bukkit.Bukkit;
-/*import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.scoreboard.DisplaySlot;
-import org.bukkit.scoreboard.Objective;
-import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.Team;*/
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffectType;
 
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminLoad;
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSave;
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSkip;
+import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSpawn;
 import fr.kosmosuniverse.kuffle.Commands.KuffleCrafts;
 import fr.kosmosuniverse.kuffle.Commands.KuffleList;
 import fr.kosmosuniverse.kuffle.Commands.KuffleMultiBlocks;
@@ -95,6 +90,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kresume").setExecutor(new KuffleResume(this));
 		getCommand("kvalidate").setExecutor(new KuffleValidate(this));
 		getCommand("kadminskip").setExecutor(new KuffleAdminSkip(this));
+		getCommand("kadminspawn").setExecutor(new KuffleAdminSpawn(this));
 		getCommand("kadminsave").setExecutor(new KuffleAdminSave(this, this.getDataFolder()));
 		getCommand("kadminload").setExecutor(new KuffleAdminLoad(this, this.getDataFolder()));
 		getCommand("kskip").setExecutor(new KuffleSkip(this));

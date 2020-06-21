@@ -10,8 +10,8 @@ public class ManageMultiBlock {
 	public HashMap<String, AMultiblock> multiBlocks = new HashMap<String, AMultiblock>();
 	
 	public ManageMultiBlock() {
-		multiBlocks.put("End Teleporter", new EndTeleporter());
-		multiBlocks.put("OverWorld Teleporter", new OverWorldTeleporter());
+		multiBlocks.put("EndTeleporter", new EndTeleporter());
+		multiBlocks.put("OverWorldTeleporter", new OverWorldTeleporter());
 	}
 	
 	public HashMap<String, AMultiblock> getMultiBlocks() {

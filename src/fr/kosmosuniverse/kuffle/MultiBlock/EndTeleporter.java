@@ -14,7 +14,7 @@ import fr.kosmosuniverse.kuffle.KuffleMain;
 
 public class EndTeleporter extends AMultiblock {
 	public EndTeleporter() {
-		name = "End Teleporter";
+		name = "EndTeleporter";
 		
 		squareSize = 3;
 		

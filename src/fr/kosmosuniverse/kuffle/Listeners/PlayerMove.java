@@ -31,13 +31,13 @@ public class PlayerMove implements Listener {
 		AMultiblock multiBlock;
 		
 		if (player.getLocation().add(0, -1, 0).getBlock().getType() == Material.OBSIDIAN) {
-			if ((multiBlock = km.multiBlock.findMultiBlockByName("End Teleporter")) != null) {
+			if ((multiBlock = km.multiBlock.findMultiBlockByName("EndTeleporter")) != null) {
 				if (multiBlock.getMultiblock().checkMultiBlock(player.getLocation().add(0, -1, 0), player)) {
 					multiBlock.onActivate(km, player, ActivationType.ACTIVATE);
 				}
 			}
 		} else if (player.getLocation().add(0, -1, 0).getBlock().getType() == Material.END_PORTAL_FRAME) {
-			if ((multiBlock = km.multiBlock.findMultiBlockByName("OverWorld Teleporter")) != null) {
+			if ((multiBlock = km.multiBlock.findMultiBlockByName("OverWorldTeleporter")) != null) {
 				if (multiBlock.getMultiblock().checkMultiBlock(player.getLocation().add(0, -1, 0), player)) {
 					multiBlock.onActivate(km, player, ActivationType.ACTIVATE);
 				}
