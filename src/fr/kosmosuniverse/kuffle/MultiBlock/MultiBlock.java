@@ -9,11 +9,11 @@ import org.bukkit.entity.Player;
 
 public class MultiBlock {
 	private Material Core;
-	private Pattern[] patterns;
+	private Pattern[] patternsNS;
 	
 	public MultiBlock(Material _m, Pattern... _patterns) {
 		Core = _m;
-		patterns = _patterns;
+		patternsNS = _patterns;
 	}
 		
 	public Material getCore() {
@@ -21,7 +21,7 @@ public class MultiBlock {
 	}
 	
 	public Pattern[] getPatterns() {
-		return patterns;
+		return patternsNS;
 	}
 	
 	public List<Material> getBlockTypes() {
@@ -29,7 +29,7 @@ public class MultiBlock {
 		
 		types.add(Core);
 		
-		for (Pattern p : patterns) {
+		for (Pattern p : patternsNS) {
 			if (!types.contains(p.getMaterial()))
 				types.add(p.getMaterial());
 		}
@@ -49,7 +49,7 @@ public class MultiBlock {
 	private boolean checkNorthSouth(Location loc, double direction) {
 		Location tmp;
 		
-		for (Pattern p : patterns) {
+		for (Pattern p : patternsNS) {
 			tmp = loc.clone();
 			tmp.add(p.getX() * direction, p.getY(), p.getZ() * direction);
 			if (tmp.getBlock().getType() != p.getMaterial())
@@ -149,7 +149,7 @@ public class MultiBlock {
 
 		newLoc.getBlock().setType(this.Core);
 
-		for (Pattern p : patterns) {
+		for (Pattern p : patternsNS) {
 			tmp = newLoc.clone();
 			tmp.add(p.getX(), p.getY(), p.getZ());
 			tmp.getBlock().setType(p.getMaterial());

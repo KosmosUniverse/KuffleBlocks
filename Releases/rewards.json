@@ -116,6 +116,12 @@
 			"Enchant": "",
 			"Level": 0,
 			"Effect": ""
+		},
+		"obsidian": {
+			"Amount": 1,
+			"Enchant": "",
+			"Level": 0,
+			"Effect": ""
 		}
 	},
 	
@@ -128,6 +134,12 @@
 		},
 		"cooked_rabbit": {
 			"Amount": 32,
+			"Enchant": "",
+			"Level": 0,
+			"Effect": ""
+		},
+		"obsidian": {
+			"Amount": 1,
 			"Enchant": "",
 			"Level": 0,
 			"Effect": ""

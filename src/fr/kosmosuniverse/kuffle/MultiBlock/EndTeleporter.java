@@ -120,7 +120,7 @@ public class EndTeleporter extends AMultiblock {
 			} else if (i == 3) {
 				inv.setItem(i, new ItemStack(Material.IRON_BLOCK));
 			} else if (i == 4) {
-				inv.setItem(i, new ItemStack(Material.NETHER_BRICK_WALL));
+				inv.setItem(i, new ItemStack(Material.RED_NETHER_BRICK_WALL));
 			} else if (i == 5) {
 				inv.setItem(i, new ItemStack(Material.GOLD_BLOCK));
 			} else if (i == 12 || i == 14) {
