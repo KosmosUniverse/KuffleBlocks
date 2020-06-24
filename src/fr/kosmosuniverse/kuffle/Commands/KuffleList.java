@@ -96,25 +96,6 @@ public class KuffleList implements CommandExecutor {
 			}
 		}
 		
-		/*List<Player> players = new ArrayList<>(Bukkit.getOnlinePlayers());
-		
-		for (String arg : args) {
-			if (arg.contains("@a")) {
-				for (Player p : players) {
-					km.games.add(new GameTask(km, p));
-				}
-				return true;
-			}
-		}
-		
-		Player retComp;
-		
-		for (String arg  : args) {
-			if ((retComp = searchPlayerByName(players, arg)) != null) {
-				km.games.add(new GameTask(km, retComp));
-			}
-		}*/
-		
 		return false;
 	}
 	
