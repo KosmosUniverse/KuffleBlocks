@@ -23,23 +23,40 @@ public class EndTeleporter extends AMultiblock {
 		itM.setDisplayName(name);
 		item.setItemMeta(itM);
 		
-		multiblock = new MultiBlock(Material.OBSIDIAN,
+		multiblock = new MultiBlock(Material.OBSIDIAN);
+		
+		multiblock.addLevel(new Level(0, 3,
 				new Pattern(Material.COAL_BLOCK, -1, 0, -1),
 				new Pattern(Material.COAL_BLOCK, 0, 0, -1),
 				new Pattern(Material.COAL_BLOCK, 1, 0, -1),
 				new Pattern(Material.NETHER_BRICK_STAIRS, -1, 0, 0),
+				new Pattern(Material.OBSIDIAN, 0, 0, 0),
 				new Pattern(Material.NETHER_BRICK_STAIRS, 1, 0, 0),
 				new Pattern(Material.NETHER_BRICK_STAIRS, -1, 0, 1),
 				new Pattern(Material.NETHER_BRICK_STAIRS, 0, 0, 1),
-				new Pattern(Material.NETHER_BRICK_STAIRS, 1, 0, 1),
-				
-				new Pattern(Material.STONE_BRICK_WALL, -1, 1, 0),
-				new Pattern(Material.STONE_BRICK_WALL, 1, 1, 0),
-				new Pattern(Material.RED_NETHER_BRICK_WALL, 0, 1, -1),
+				new Pattern(Material.NETHER_BRICK_STAIRS, 1, 0, 1)));
+		
+		multiblock.addLevel(new Level(1, 3,
 				new Pattern(Material.IRON_BLOCK, -1, 1, -1),
+				new Pattern(Material.RED_NETHER_BRICK_WALL, 0, 1, -1),
 				new Pattern(Material.GOLD_BLOCK, 1, 1, -1),
-				
-				new Pattern(Material.DIAMOND_BLOCK, 0, 2, -1));
+				new Pattern(Material.STONE_BRICK_WALL, -1, 1, 0),
+				new Pattern(Material.AIR, 0, 1, 0),
+				new Pattern(Material.STONE_BRICK_WALL, 1, 1, 0),
+				new Pattern(Material.AIR, -1, 1, 1),
+				new Pattern(Material.AIR, 0, 1, 1),
+				new Pattern(Material.AIR, 1, 1, 1)));
+		
+		multiblock.addLevel(new Level(2, 3,
+				new Pattern(Material.AIR, -1, 2, -1),
+				new Pattern(Material.DIAMOND_BLOCK, 0, 2, -1),
+				new Pattern(Material.AIR, 1, 2, -1),
+				new Pattern(Material.AIR, -1, 2, 0),
+				new Pattern(Material.AIR, 0, 2, 0),
+				new Pattern(Material.AIR, 1, 2, 0),
+				new Pattern(Material.AIR, -1, 2, 1),
+				new Pattern(Material.AIR, 0, 2, 1),
+				new Pattern(Material.AIR, 1, 2, 1)));
 		
 		createInventories();
 		findNormalWorld();

@@ -22,7 +22,6 @@ public class PlayerMove implements Listener {
 	@EventHandler
 	public void onPauseEvent(PlayerMoveEvent event) {
 		if (km.paused) {
-//			event.setTo(event.getFrom());
 			event.setCancelled(true);
 			return ;
 		}

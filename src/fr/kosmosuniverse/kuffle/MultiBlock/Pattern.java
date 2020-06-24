@@ -30,4 +30,20 @@ public class Pattern {
 	public int getZ() {
 		return this.z;
 	}
+	
+	public void setMaterial(Material _m) {
+		m = _m;
+	}
+	
+	public void setX(int x) {
+		this.x = x;
+	}
+	
+	public void setY(int y) {
+		this.y = y;
+	}
+	
+	public void setZ(int z) {
+		this.z = z;
+	}
 }

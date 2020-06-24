@@ -23,23 +23,40 @@ public class OverWorldTeleporter extends AMultiblock {
 		itM.setDisplayName(name);
 		item.setItemMeta(itM);
 		
-		multiblock = new MultiBlock(Material.END_PORTAL_FRAME,
+		multiblock = new MultiBlock(Material.END_PORTAL_FRAME);
+		
+		multiblock.addLevel(new Level(0, 3,
 				new Pattern(Material.END_STONE_BRICKS, -1, 0, -1),
 				new Pattern(Material.QUARTZ_PILLAR, 0, 0, -1),
 				new Pattern(Material.END_STONE_BRICKS, 1, 0, -1),
 				new Pattern(Material.PURPUR_STAIRS, -1, 0, 0),
+				new Pattern(Material.END_PORTAL_FRAME, 0, 0, 0),
 				new Pattern(Material.PURPUR_STAIRS, 1, 0, 0),
 				new Pattern(Material.PURPUR_STAIRS, -1, 0, 1),
 				new Pattern(Material.PURPUR_STAIRS, 0, 0, 1),
-				new Pattern(Material.PURPUR_STAIRS, 1, 0, 1),
-				
-				new Pattern(Material.END_ROD, -1, 1, 0),
-				new Pattern(Material.END_ROD, 1, 1, 0),
-				new Pattern(Material.CHISELED_QUARTZ_BLOCK, 0, 1, -1),
+				new Pattern(Material.PURPUR_STAIRS, 1, 0, 1)));
+		
+		multiblock.addLevel(new Level(1, 3,
 				new Pattern(Material.PURPUR_PILLAR, -1, 1, -1),
+				new Pattern(Material.CHISELED_QUARTZ_BLOCK, 0, 1, -1),
 				new Pattern(Material.PURPUR_PILLAR, 1, 1, -1),
-				
-				new Pattern(Material.PURPUR_PILLAR, 0, 2, -1));
+				new Pattern(Material.END_ROD, -1, 1, 0),
+				new Pattern(Material.AIR, 0, 1, 0),
+				new Pattern(Material.END_ROD, 1, 1, 0),
+				new Pattern(Material.AIR, -1, 1, 1),
+				new Pattern(Material.AIR, 0, 1, 1),
+				new Pattern(Material.AIR, 1, 1, 1)));
+		
+		multiblock.addLevel(new Level(2, 3,
+				new Pattern(Material.AIR, -1, 2, -1),
+				new Pattern(Material.PURPUR_PILLAR, 0, 2, -1),
+				new Pattern(Material.AIR, 1, 2, -1),
+				new Pattern(Material.AIR, -1, 2, 0),
+				new Pattern(Material.AIR, 0, 2, 0),
+				new Pattern(Material.AIR, 1, 2, 0),
+				new Pattern(Material.AIR, -1, 2, 1),
+				new Pattern(Material.AIR, 0, 2, 1),
+				new Pattern(Material.AIR, 1, 2, 1)));
 		
 		createInventories();
 		findNormalWorld();
