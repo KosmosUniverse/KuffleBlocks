@@ -46,9 +46,57 @@ public class KuffleList implements CommandExecutor {
 				player.sendMessage("The player list contain: " + sb.toString());
 			}
 			return true;
+		} else if (args.length == 1) {
+			if (args[0].equals("reset")) {
+				if (km.games.size() == 0) {
+					player.sendMessage("No players in the list.");
+					return false;
+				}
+				km.games.clear();
+				return true;
+			}
+		} else if (args.length == 2) {
+			List<Player> players = new ArrayList<>(Bukkit.getOnlinePlayers());
+
+			if (args[0].equals("add")) {
+				if (args[1].equals("@a")) {
+					for (Player p : players) {
+						if (playerIsInList(p.getName()) == -1) {
+							km.games.add(new GameTask(km, p));
+						}
+					}
+					return true;
+				} else {
+					Player retComp;
+					
+					if ((retComp = searchPlayerByName(players, args[1])) != null) {
+						if (playerIsInList(args[1]) == -1) {
+							km.games.add(new GameTask(km, retComp));
+							return true;
+						} else {
+							player.sendMessage("This player is already in game list.");
+							return false;
+						}
+					} else {
+						return false;
+					}
+				}
+			} else if (args[0].equals("remove")) {
+				if (km.games.size() == 0) {
+					player.sendMessage("No players in the list.");
+					return false;
+				}
+				
+				int ret;
+				
+				if ((ret = playerIsInList(args[1])) != -1) {
+					km.games.remove(ret);
+					return true;
+				}
+			}
 		}
 		
-		List<Player> players = new ArrayList<>(Bukkit.getOnlinePlayers());
+		/*List<Player> players = new ArrayList<>(Bukkit.getOnlinePlayers());
 		
 		for (String arg : args) {
 			if (arg.contains("@a")) {
@@ -65,9 +113,19 @@ public class KuffleList implements CommandExecutor {
 			if ((retComp = searchPlayerByName(players, arg)) != null) {
 				km.games.add(new GameTask(km, retComp));
 			}
+		}*/
+		
+		return false;
+	}
+	
+	private int playerIsInList(String player) {
+		for (int i = 0; i < km.games.size(); i++) {
+			if (km.games.get(i).getPlayer().getName().equals(player)) {
+				return i;
+			}
 		}
 		
-		return true;
+		return -1;
 	}
 	
 	private Player searchPlayerByName(List<Player> players, String name) {

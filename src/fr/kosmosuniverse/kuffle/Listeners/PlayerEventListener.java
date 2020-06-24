@@ -33,7 +33,7 @@ public class PlayerEventListener implements Listener {
 		JSONParser parser = new JSONParser();
 		boolean enable;
 		
-		km.listTab.reset();
+		//km.listTab.reset();
 		km.skipTab.reset();
 		km.validateTab.reset();
 		
@@ -89,7 +89,7 @@ public class PlayerEventListener implements Listener {
 		Player player = event.getPlayer();
 		GameTask gt;
 		
-		km.listTab.reset();
+		//km.listTab.reset();
 		km.skipTab.reset();
 		km.validateTab.reset();
 		

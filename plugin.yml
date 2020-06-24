@@ -1,13 +1,13 @@
 name: Kuffle
-version: 1.7
+version: 1.8
 author: KosmosUniverse
 main: fr.kosmosuniverse.kuffle.KuffleMain
 api-version: 1.15
 
 commands:
    klist:
-      usage: /<command> [@a|Players]
-      description: command to add players to the list and view the list
+      usage: /<command> [reset | remove <Player name> | add <@a | Player name>]
+      description: command to add/remove players to the list and view/reset the list
       permission: inferno.flagrate
    kstart:
       usage: /<command>
@@ -26,15 +26,15 @@ commands:
       description: command to resume the game when it is paused
       permission: inferno.flagrate
    kvalidate:
-      usage: /<command>
+      usage: /<command> <Player name>
       description: command to validate a block
       permission: inferno.flagrate
    kadminskip:
-      usage: /<command>
+      usage: /<command> <Player name>
       description: command to skip a block for any player
       permission: inferno.flagrate
    kadminspawn:
-      usage: /<command>
+      usage: /<command> <Multiblock name>
       description: command to spawn multiblock structure
       permission: inferno.flagrate
    kadminsave:
