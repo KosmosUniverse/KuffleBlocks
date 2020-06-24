@@ -32,10 +32,7 @@ public class PlayerEventListener implements Listener {
 		Player player = event.getPlayer();
 		JSONParser parser = new JSONParser();
 		boolean enable;
-		
-		km.skipTab.reset();
-		km.validateTab.reset();
-		
+
 		if (km.games.size() == 0) {
 			return;
 		} else {
@@ -87,9 +84,6 @@ public class PlayerEventListener implements Listener {
 	public void onPlayerDeconnectEvent(PlayerQuitEvent event) {
 		Player player = event.getPlayer();
 		GameTask gt;
-		
-		km.skipTab.reset();
-		km.validateTab.reset();
 		
 		if (km.games.size() == 0) {
 			return ;	

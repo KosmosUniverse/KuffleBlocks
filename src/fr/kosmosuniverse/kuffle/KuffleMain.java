@@ -45,8 +45,6 @@ public class KuffleMain extends JavaPlugin {
 	public ManageCrafts crafts = new ManageCrafts(this);
 	public ManageMultiBlock multiBlock = new ManageMultiBlock();
 	public Scores scores;
-	public KuffleAdminSkipTab skipTab;
-	public KuffleValidateTab validateTab;
 	
 	public boolean paused = false;
 	
@@ -105,12 +103,9 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kmultiBlocks").setExecutor(new KuffleMultiBlocks(this));
 		
 		System.out.println("[Kuffle] Add Plugin Tab Completer.");
-		skipTab = new KuffleAdminSkipTab();
-		validateTab = new KuffleValidateTab();
-		
 		getCommand("klist").setTabCompleter(new KuffleListTab(this));
-		getCommand("kadminskip").setTabCompleter(skipTab);
-		getCommand("kvalidate").setTabCompleter(validateTab);
+		getCommand("kadminskip").setTabCompleter(new KuffleAdminSkipTab(this));
+		getCommand("kvalidate").setTabCompleter(new KuffleValidateTab(this));
 		getCommand("kadminspawn").setTabCompleter(new KuffleAdminSpawnTab(this));
 		getCommand("kmultiblocks").setTabCompleter(new KuffleMultiBlocksTab(this));
 	}

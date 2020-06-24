@@ -3,19 +3,19 @@ package fr.kosmosuniverse.kuffle.TabCmd;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
+import fr.kosmosuniverse.kuffle.KuffleMain;
+import fr.kosmosuniverse.kuffle.Core.GameTask;
+
 public class KuffleAdminSkipTab implements TabCompleter {
-	private ArrayList<String> list = new ArrayList<String>();
+	private KuffleMain km;
 	
-	public KuffleAdminSkipTab() {
-		for (Player player : Bukkit.getOnlinePlayers()) {
-			list.add(player.getName());
-		}
+	public KuffleAdminSkipTab(KuffleMain _km) {
+		km = _km;
 	}
 	
 	@Override
@@ -23,15 +23,15 @@ public class KuffleAdminSkipTab implements TabCompleter {
 		if (cmd.getName().equalsIgnoreCase("kadminskip")) {
 			if (!(sender instanceof Player))
 				return null;
+			ArrayList<String> list = new ArrayList<String>();
+			
+			for (GameTask gt : km.games) {
+				list.add(gt.getPlayer().getName());
+			}
+			
 			return list;
 		}
 		
 		return null;
-	}
-	
-	public void reset() {
-		for (Player player : Bukkit.getOnlinePlayers()) {
-			list.add(player.getName());
-		}
 	}
 }

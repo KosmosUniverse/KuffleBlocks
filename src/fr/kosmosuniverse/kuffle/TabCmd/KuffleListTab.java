@@ -53,12 +53,4 @@ public class KuffleListTab implements TabCompleter {
 		
 		return null;
 	}
-	
-	public void reset() {
-		list.add("@a");
-		
-		for (Player player : Bukkit.getOnlinePlayers()) {
-			list.add(player.getName());
-		}
-	}
 }
