@@ -34,8 +34,6 @@ public class MultiBlock {
 	}
 	
 	public boolean checkNorthSouth(Location loc, double direction) {
-		System.out.println("NS : " + direction);
-		
 		for (Level l : pattern) {
 			if (!l.checkRowsNS(loc, direction))
 				return false;
@@ -45,8 +43,6 @@ public class MultiBlock {
 	}
 	
 	public boolean checkEastWest(Location loc, double direction) {
-		System.out.println("EW : " + direction);
-		
 		for (Level l : pattern) {
 			if (!l.checkRowsEW(loc, direction))
 				return false;
