@@ -13,3 +13,4 @@ game_settings:
       age: 2
    custom_crafts: true
    see_block_count: true
+   keep_inventory: true
