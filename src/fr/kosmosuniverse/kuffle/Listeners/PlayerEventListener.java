@@ -5,9 +5,11 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.json.simple.JSONArray;
@@ -111,7 +113,14 @@ public class PlayerEventListener implements Listener {
 		}
 	}
 	
-	
+	@EventHandler
+	public void onPlayerDeathEvent(PlayerDeathEvent event) {
+		Player player = event.getEntity();
+		Location deathLoc = player.getLocation();
+		
+		if (km.backCmd.containsKey(player.getDisplayName()))
+			km.backCmd.put(player.getDisplayName(), deathLoc);
+	}
 	
 	private GameTask playerIsInGame(String name) {
 		for (GameTask gt : km.games) {

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffectType;
 
@@ -11,6 +12,7 @@ import fr.kosmosuniverse.kuffle.Commands.KuffleAdminLoad;
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSave;
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSkip;
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSpawn;
+import fr.kosmosuniverse.kuffle.Commands.KuffleBack;
 import fr.kosmosuniverse.kuffle.Commands.KuffleCrafts;
 import fr.kosmosuniverse.kuffle.Commands.KuffleList;
 import fr.kosmosuniverse.kuffle.Commands.KuffleMultiBlocks;
@@ -45,34 +47,54 @@ public class KuffleMain extends JavaPlugin {
 	public ManageCrafts crafts = new ManageCrafts(this);
 	public ManageMultiBlock multiBlock = new ManageMultiBlock();
 	public Scores scores;
+	public HashMap<String, Location> backCmd = new HashMap<>();
 	
 	public boolean paused = false;
 	
 	@Override
 	public void onEnable() {
 		saveDefaultConfig();
-		System.out.println("[Kuffle] : Plugin turned ON.");
 		reloadConfig();
 		
-		if (getConfig().getInt("game_settings.block_per_age") < 1) {
+		if (!getConfig().contains("game_settings.block_per_age") || getConfig().getInt("game_settings.block_per_age") < 1) {
 			Bukkit.broadcastMessage("Config for block per age is not correct, use of default value.");
-			getConfig().set("game_settings.block_per_age", 10);
+			getConfig().set("game_settings.block_per_age", 5);
 		}
-		if (getConfig().getInt("game_settings.spreadplayers.minimum_distance") < 1) {
+		if (!getConfig().contains("game_settings.spreadplayers.minimum_distance") || getConfig().getInt("game_settings.spreadplayers.minimum_distance") < 1) {
 			Bukkit.broadcastMessage("Config for spreadplayers minimum distance is not correct, use of default value.");
-			getConfig().set("game_settings.spreadplayers.minimum_distance", 1000);
+			getConfig().set("game_settings.spreadplayers.minimum_distance", 100);
 		}
-		if (getConfig().getInt("game_settings.spreadplayers.maximum_area") < getConfig().getInt("game_settings.spreadplayers.minimum_distance")) {
+		if (!getConfig().contains("game_settings.spreadplayers.maximum_distance") || getConfig().getInt("game_settings.spreadplayers.maximum_area") < getConfig().getInt("game_settings.spreadplayers.minimum_distance")) {
 			Bukkit.broadcastMessage("Config for spreadplayers maximum area is not correct, use of default value.");
-			getConfig().set("game_settings.spreadplayers.maximum_area", 5000);
+			getConfig().set("game_settings.spreadplayers.maximum_area", 500);
 		}
-		if (getConfig().getInt("game_settings.start_time") < 1) {
+		if (!getConfig().contains("game_settings.start_time") || getConfig().getInt("game_settings.start_time") < 1) {
 			Bukkit.broadcastMessage("Config for start time is not correct, use of default value.");
 			getConfig().set("game_settings.start_time", 4);
 		}
-		if (getConfig().getInt("game_settings.time_added") < 1) {
+		if (!getConfig().contains("game_settings.time_added") || getConfig().getInt("game_settings.time_added") < 1) {
 			Bukkit.broadcastMessage("Config for time added is not correct, use of default value.");
 			getConfig().set("game_settings.time_added", 2);
+		}
+		if (!getConfig().contains("game_settings.skip.enable")) {
+			Bukkit.broadcastMessage("Config for enabling skip is not correct, use of default value.");
+			getConfig().set("game_settings.skip.enable", true);
+		}
+		if (!getConfig().contains("game_settings.skip.age") || getConfig().getInt("game_settings.skip.age") < 1) {
+			Bukkit.broadcastMessage("Config for min skip age is not correct, use of default value.");
+			getConfig().set("game_settings.skip.age", 2);
+		}
+		if (!getConfig().contains("game_settings.custom_crafts")) {
+			Bukkit.broadcastMessage("Config for enabling custom crafts is not correct, use of default value.");
+			getConfig().set("game_settings.custom_crafts", true);
+		}
+		if (!getConfig().contains("game_settings.see_block_count")) {
+			Bukkit.broadcastMessage("Config for enabling block count display is not correct, use of default value.");
+			getConfig().set("game_settings.see_block_count", true);
+		}
+		if (!getConfig().contains("game_settings.keep_inventory")) {
+			Bukkit.broadcastMessage("Config for enabling keep inventory is not correct, use of default value.");
+			getConfig().set("game_settings.keep_inventory", true);
 		}
 		
 		scores = new Scores(this);
@@ -98,6 +120,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kadminspawn").setExecutor(new KuffleAdminSpawn(this));
 		getCommand("kadminsave").setExecutor(new KuffleAdminSave(this, this.getDataFolder()));
 		getCommand("kadminload").setExecutor(new KuffleAdminLoad(this, this.getDataFolder()));
+		getCommand("kback").setExecutor(new KuffleBack(this));
 		getCommand("kskip").setExecutor(new KuffleSkip(this));
 		getCommand("kcrafts").setExecutor(new KuffleCrafts(this));
 		getCommand("kmultiBlocks").setExecutor(new KuffleMultiBlocks(this));
@@ -108,6 +131,8 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kvalidate").setTabCompleter(new KuffleValidateTab(this));
 		getCommand("kadminspawn").setTabCompleter(new KuffleAdminSpawnTab(this));
 		getCommand("kmultiblocks").setTabCompleter(new KuffleMultiBlocksTab(this));
+		
+		System.out.println("[Kuffle] Plugin turned ON.");
 	}
 	
 	@Override

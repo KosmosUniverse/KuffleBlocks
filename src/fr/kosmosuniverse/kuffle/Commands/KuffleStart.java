@@ -54,12 +54,6 @@ public class KuffleStart implements CommandExecutor {
 		int spread = 0;
 		
 		if (km.getConfig().getBoolean("game_settings.spreadplayers.enable")) {
-/*			StringBuilder sb = new StringBuilder();
-			
-			for (GameTask gt : km.games) {
-				sb.append(" ").append(gt.getPlayer().getName());
-			}*/
-			
 			Bukkit.dispatchCommand(sender, "spreadplayers " + p.getLocation().getBlockX() + " " + p.getLocation().getBlockZ() + " " + (km.getConfig().getInt("game_settings.spreadplayers.minimum_distance") * km.games.size()) + " " + (km.getConfig().getInt("game_settings.spreadplayers.maximum_area") * km.games.size()) + " false @a");
 			
 			for (GameTask gt : km.games) {

@@ -1,5 +1,5 @@
 name: Kuffle
-version: 1.8
+version: 2.0
 author: KosmosUniverse
 main: fr.kosmosuniverse.kuffle.KuffleMain
 api-version: 1.15
@@ -45,6 +45,9 @@ commands:
       usage: /<command>
       description: command to load and start the game of all registered players
       permission: inferno.flagrate
+   kback:
+      usage: /<command>
+      description: command to teleport back to death position
    kskip:
       usage: /<command>
       description: command to skip a block
@@ -86,6 +89,9 @@ permissions:
    kadminload:
       description: command to load and start the game of all registered players
       default: op
+   kback:
+      description: command to teleport back to death position
+      default: true
    kskip:
       description: command to skip a block
       default: true
