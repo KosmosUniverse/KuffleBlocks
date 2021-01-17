@@ -1,7 +1,6 @@
 package fr.kosmosuniverse.kuffle.Core;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,38 +14,33 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class ChooseBlockInList {
-	public static HashMap<String, ArrayList<String>> getAllBlocks(File dataFolder) {
+	public static HashMap<String, ArrayList<String>> getAllBlocks(String blocksContent, File dataFolder) {
 		HashMap<String, ArrayList<String>> finalMap = new HashMap<String, ArrayList<String>>();
 		
-		finalMap.put("Archaic_Age", getAgeBlocks("Archaic_Age", dataFolder));
-		finalMap.put("Classic_Age", getAgeBlocks("Classic_Age", dataFolder));
-		finalMap.put("Mineric_Age", getAgeBlocks("Mineric_Age", dataFolder));
-		finalMap.put("Netheric_Age", getAgeBlocks("Netheric_Age", dataFolder));
-		finalMap.put("Heroic_Age", getAgeBlocks("Heroic_Age", dataFolder));
-		finalMap.put("Mythic_Age", getAgeBlocks("Mythic_Age", dataFolder));
+		finalMap.put("Archaic_Age", getAgeBlocks("Archaic_Age", blocksContent, dataFolder));
+		finalMap.put("Classic_Age", getAgeBlocks("Classic_Age", blocksContent, dataFolder));
+		finalMap.put("Mineric_Age", getAgeBlocks("Mineric_Age", blocksContent, dataFolder));
+		finalMap.put("Netheric_Age", getAgeBlocks("Netheric_Age", blocksContent, dataFolder));
+		finalMap.put("Heroic_Age", getAgeBlocks("Heroic_Age", blocksContent, dataFolder));
+		finalMap.put("Mythic_Age", getAgeBlocks("Mythic_Age", blocksContent, dataFolder));
 		
 		return finalMap;
 	}
 	
-	public static synchronized ArrayList<String> getAgeBlocks(String age, File dataFolder) {
+	public static synchronized ArrayList<String> getAgeBlocks(String age, String blocksContent, File dataFolder) {
 		ArrayList<String> finalList = new ArrayList<String>();
 		JSONObject blocks = new JSONObject();
 		JSONParser jsonParser = new JSONParser();
 		FileWriter writer = null;
 		
 		try {
-			FileReader reader = null;
-			
-			
 			if (dataFolder.getPath().contains("\\")) {
-				reader = new FileReader(dataFolder.getPath() + "\\blocks.json");
 				writer = new FileWriter(dataFolder.getPath() + "\\logs.txt");
 			} else {
-				reader = new FileReader(dataFolder.getPath() + "/blocks.json");
 				writer = new FileWriter(dataFolder.getPath() + "/logs.txt");
 			}
 			
-			blocks = (JSONObject) jsonParser.parse(reader);
+			blocks = (JSONObject) jsonParser.parse(blocksContent);
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}

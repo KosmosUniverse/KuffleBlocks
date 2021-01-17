@@ -114,7 +114,8 @@ public class GameTask {
 					
 					if (age == 5) {
 						player.playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_TWINKLE_FAR, 1f, 1f);
-						player.sendMessage("§6§lYou complete this game !§r");
+						Bukkit.broadcastMessage("§1" + player.getName() + " §6§lcomplete this game !§r");
+						//player.sendMessage("§6§lYou complete this game !§r");
 						exit = true;
 					}
 					

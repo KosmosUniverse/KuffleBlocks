@@ -1,5 +1,7 @@
 package fr.kosmosuniverse.kuffle;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -38,16 +40,17 @@ import fr.kosmosuniverse.kuffle.TabCmd.KuffleAdminSpawnTab;
 import fr.kosmosuniverse.kuffle.TabCmd.KuffleListTab;
 import fr.kosmosuniverse.kuffle.TabCmd.KuffleMultiBlocksTab;
 import fr.kosmosuniverse.kuffle.TabCmd.KuffleValidateTab;
+import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class KuffleMain extends JavaPlugin {
-	public HashMap<String, ArrayList<String>> allBlocks = ChooseBlockInList.getAllBlocks(this.getDataFolder());
-	public HashMap<String, HashMap<String, RewardElem>> allRewards = RewardManager.getAllRewards(this.getDataFolder());
-	public HashMap<String, PotionEffectType> effects = RewardManager.getAllEffects();
-	public ArrayList<GameTask> games = new ArrayList<GameTask>();
-	public ManageCrafts crafts = new ManageCrafts(this);
-	public ManageMultiBlock multiBlock = new ManageMultiBlock();
+	public HashMap<String, ArrayList<String>> allBlocks;
+	public HashMap<String, HashMap<String, RewardElem>> allRewards;
+	public HashMap<String, PotionEffectType> effects;
+	public ArrayList<GameTask> games;
+	public ManageCrafts crafts;
+	public ManageMultiBlock multiBlock;
 	public Scores scores;
-	public HashMap<String, Location> backCmd = new HashMap<>();
+	public HashMap<String, Location> backCmd;
 	
 	public boolean paused = false;
 	
@@ -97,7 +100,24 @@ public class KuffleMain extends JavaPlugin {
 			getConfig().set("game_settings.keep_inventory", true);
 		}
 		
+		try {
+			InputStream in = getResource("blocks.json");
+			String result = Utils.readJSONFile(in);
+			allBlocks = ChooseBlockInList.getAllBlocks(result, this.getDataFolder());
+			
+			in = getResource("rewards.json");
+			result = Utils.readJSONFile(in);
+			allRewards = RewardManager.getAllRewards(result, this.getDataFolder());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+				
+		effects = RewardManager.getAllEffects();
+		games = new ArrayList<GameTask>();
+		crafts = new ManageCrafts(this);
+		multiBlock = new ManageMultiBlock();
 		scores = new Scores(this);
+		backCmd = new HashMap<>();
 		
 		System.out.println("[Kuffle] Add Custom Crafts.");
 		for (ACrafts item : crafts.getRecipeList()) {
