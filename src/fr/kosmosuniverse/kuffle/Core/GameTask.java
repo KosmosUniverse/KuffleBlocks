@@ -65,6 +65,7 @@ public class GameTask {
 					calc = calc > 1.0 ? 1.0 : calc;
 					ageDisplay.setProgress(calc);
 					ageDisplay.setTitle(ageNames[age] + " Age: " + blockCount);
+					blockScore.setScore(blockCount);
 					
 					if (currentBlock == null) {
 						previousShuffle = System.currentTimeMillis();
