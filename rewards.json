@@ -126,20 +126,38 @@
 	},
 	
 	"Heroic_Age": {
-		"diamond_pickaxe":  {
-			"Amount": 1,
-			"Enchant": "silk_touch,efficiency",
-			"Level": 4,
-			"Effect": ""
-		},
-		"cooked_rabbit": {
-			"Amount": 32,
+		"potion": {
+			"Amount": 3,
 			"Enchant": "",
 			"Level": 0,
+			"Effect": "speed"
+		},
+		"diamond_helmet": {
+			"Amount": 1,
+			"Enchant": "protection",
+			"Level": 1,
 			"Effect": ""
 		},
-		"obsidian": {
+		"diamond_chestplate": {
 			"Amount": 1,
+			"Enchant": "protection",
+			"Level": 1,
+			"Effect": ""
+		},
+		"diamond_leggings": {
+			"Amount": 1,
+			"Enchant": "protection",
+			"Level": 1,
+			"Effect": ""
+		},
+		"diamond_boots": {
+			"Amount": 1,
+			"Enchant": "protection",
+			"Level": 1,
+			"Effect": ""
+		},
+		"cooked_porkchop": {
+			"Amount": 64,
 			"Enchant": "",
 			"Level": 0,
 			"Effect": ""
@@ -147,17 +165,5 @@
 	},
 	
 	"Mythic_Age": {
-		"diamond_pickaxe":  {
-			"Amount": 1,
-			"Enchant": "silk_touch,efficiency",
-			"Level": 4,
-			"Effect": ""
-		},
-		"cooked_chicken": {
-			"Amount": 32,
-			"Enchant": "",
-			"Level": 0,
-			"Effect": ""
-		}
 	}
 }

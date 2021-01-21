@@ -64,10 +64,13 @@ public class GameTask {
 					calc = ((double) blockCount) / maxBlock;
 					calc = calc > 1.0 ? 1.0 : calc;
 					ageDisplay.setProgress(calc);
-					ageDisplay.setTitle(ageNames[age] + " Age: " + blockCount);
+					if (age == ageNames.length)
+						ageDisplay.setTitle(ageNames[age - 1] + " Age: " + blockCount);
+					else
+						ageDisplay.setTitle(ageNames[age] + " Age: " + blockCount);
 					blockScore.setScore(blockCount);
 					
-					if (currentBlock == null) {
+					if (currentBlock == null || age == 6) {
 						previousShuffle = System.currentTimeMillis();
 						currentBlock = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));
 						alreadyGot.add(currentBlock);
@@ -109,14 +112,21 @@ public class GameTask {
 						player.setPlayerListName(getColor() + player.getName());
 						calc = 1 / maxBlock;
 						ageDisplay.setProgress(calc);
-						ageDisplay.setTitle(ageNames[age] + " Age: 1");
-						Bukkit.broadcastMessage("§1" + player.getName() + " has moved to the §6§l" + ageNames[age] + " Age§1.");
+						
+						if (age == ageNames.length) {
+							ageDisplay.setTitle(ageNames[age - 1] + " Age: Done !!!");
+						} else {
+							ageDisplay.setTitle(ageNames[age] + " Age: 1" + blockCount);
+							Bukkit.broadcastMessage("§1" + player.getName() + " has moved to the §6§l" + ageNames[age] + " Age§1.");
+						}
 					}
 					
-					if (age == 5) {
+					if (age == 6) {
 						player.playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_TWINKLE_FAR, 1f, 1f);
 						Bukkit.broadcastMessage("§1" + player.getName() + " §6§lcomplete this game !§r");
 						exit = true;
+						previousShuffle = -1;
+						ageDisplay.setProgress(1.0);
 					}
 					
 					if (previousShuffle != -1) {
@@ -144,8 +154,6 @@ public class GameTask {
 						}
 						
 						ActionBar.sendMessage(color + "Time Left: " + count + " seconds to find: " + dispCurBlock + ".", player);
-					} else {
-						ActionBar.sendMessage("\\u00a73XX:XX", player);
 					}
 				}
 			}
