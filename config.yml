@@ -13,4 +13,3 @@ game_settings:
       age: 2 # First age that allow skipping block, Default: 2
    custom_crafts: true # allow players to use custom crafts, Default: true
    see_block_count: true # allow players to know others player progress, Default: true
-   keep_inventory: true # allow player to keep their inventory after death, Default: true

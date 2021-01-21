@@ -95,10 +95,6 @@ public class KuffleMain extends JavaPlugin {
 			Bukkit.broadcastMessage("Config for enabling block count display is not correct, use of default value.");
 			getConfig().set("game_settings.see_block_count", true);
 		}
-		if (!getConfig().contains("game_settings.keep_inventory")) {
-			Bukkit.broadcastMessage("Config for enabling keep inventory is not correct, use of default value.");
-			getConfig().set("game_settings.keep_inventory", true);
-		}
 		
 		try {
 			InputStream in = getResource("blocks.json");

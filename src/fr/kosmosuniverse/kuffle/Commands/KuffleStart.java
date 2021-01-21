@@ -47,10 +47,6 @@ public class KuffleStart implements CommandExecutor {
 			}
 		}
 		
-		if (km.getConfig().getBoolean("game_settings.keep_inventory")) {
-			Bukkit.dispatchCommand(sender, "gamerule keepInventory true");
-		}
-		
 		int spread = 0;
 		
 		if (km.getConfig().getBoolean("game_settings.spreadplayers.enable")) {
