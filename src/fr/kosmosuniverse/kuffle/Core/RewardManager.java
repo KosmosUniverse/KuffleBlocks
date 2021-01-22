@@ -174,7 +174,13 @@ public class RewardManager {
 		itM.setDisplayName(age + "_Age");
 		container.setItemMeta(itM);
 		
-		p.getInventory().addItem(container);
+		HashMap<Integer, ItemStack> ret = p.getInventory().addItem(container);
+		
+		if (ret != null) {
+			for (Integer i : ret.keySet()) {
+				p.getWorld().dropItem(p.getLocation(), ret.get(i));
+			}
+		}
 	}
 	
 	public static void managePreviousEffects(HashMap<String, RewardElem> ageReward, HashMap<String, PotionEffectType> effects, Player p, String age) {
