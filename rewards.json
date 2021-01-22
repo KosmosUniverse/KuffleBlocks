@@ -135,25 +135,25 @@
 		"diamond_helmet": {
 			"Amount": 1,
 			"Enchant": "protection",
-			"Level": 1,
+			"Level": 4,
 			"Effect": ""
 		},
 		"diamond_chestplate": {
 			"Amount": 1,
 			"Enchant": "protection",
-			"Level": 1,
+			"Level": 4,
 			"Effect": ""
 		},
 		"diamond_leggings": {
 			"Amount": 1,
 			"Enchant": "protection",
-			"Level": 1,
+			"Level": 4,
 			"Effect": ""
 		},
 		"diamond_boots": {
 			"Amount": 1,
 			"Enchant": "protection",
-			"Level": 1,
+			"Level": 4,
 			"Effect": ""
 		},
 		"cooked_porkchop": {

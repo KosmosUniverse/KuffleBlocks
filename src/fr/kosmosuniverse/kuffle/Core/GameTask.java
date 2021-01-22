@@ -116,7 +116,7 @@ public class GameTask {
 						if (age == ageNames.length) {
 							ageDisplay.setTitle(ageNames[age - 1] + " Age: Done !!!");
 						} else {
-							ageDisplay.setTitle(ageNames[age] + " Age: 1" + blockCount);
+							ageDisplay.setTitle(ageNames[age] + " Age: 1");
 							Bukkit.broadcastMessage("§1" + player.getName() + " has moved to the §6§l" + ageNames[age] + " Age§1.");
 						}
 					}

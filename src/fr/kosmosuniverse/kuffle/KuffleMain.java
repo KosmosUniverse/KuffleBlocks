@@ -97,7 +97,7 @@ public class KuffleMain extends JavaPlugin {
 		}
 		
 		try {
-			InputStream in = getResource("blocks.json");
+			InputStream in = getResource("blocks_" + getVersion() + ".json");
 			String result = Utils.readJSONFile(in);
 			allBlocks = ChooseBlockInList.getAllBlocks(result, this.getDataFolder());
 			
@@ -165,5 +165,14 @@ public class KuffleMain extends JavaPlugin {
 		allRewards.clear();
 		
 		System.out.println("[Kuffle] : Plugin turned OFF.");
+	}
+	
+	public static String getVersion() {
+		String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
+		
+		version = version.split("v")[1];
+		version = version.split("_")[0] + "." + version.split("_")[1];
+		
+		return version;
 	}
 }

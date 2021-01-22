@@ -187,7 +187,7 @@ public class RewardManager {
 	
 	private static Enchantment getEnchantment(String enchant) {
 		for (Enchantment e : Enchantment.values()) {
-			if (e.getKey().toString().contains(enchant)) {
+			if (e.getKey().toString().split(":")[1].equals(enchant)) {
 				return e;
 			}
 		}
