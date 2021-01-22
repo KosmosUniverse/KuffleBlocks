@@ -57,6 +57,9 @@ commands:
    kmultiblocks:
       usage: /<command>
       description: command to see multiBlocks
+   kageblocks:
+      usage: /<command>
+      description: command to see current age blocks
 
 permissions:
    klist:
@@ -100,4 +103,7 @@ permissions:
       default: true
    kmultiblocks:
       description: command to see multiBlocks
+      default: true
+   kageblocks:
+      description: command to see current age blocks
       default: true

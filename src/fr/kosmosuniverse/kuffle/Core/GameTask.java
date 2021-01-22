@@ -172,6 +172,10 @@ public class GameTask {
 		return age;
 	}
 	
+	public String getAgeName() {
+		return ageNames[age] + "_Age";
+	}
+	
 	public int getBlockCount() {
 		return blockCount;
 	}

@@ -14,6 +14,7 @@ import fr.kosmosuniverse.kuffle.Commands.KuffleAdminLoad;
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSave;
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSkip;
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSpawn;
+import fr.kosmosuniverse.kuffle.Commands.KuffleAgeBlocks;
 import fr.kosmosuniverse.kuffle.Commands.KuffleBack;
 import fr.kosmosuniverse.kuffle.Commands.KuffleCrafts;
 import fr.kosmosuniverse.kuffle.Commands.KuffleList;
@@ -140,6 +141,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kskip").setExecutor(new KuffleSkip(this));
 		getCommand("kcrafts").setExecutor(new KuffleCrafts(this));
 		getCommand("kmultiBlocks").setExecutor(new KuffleMultiBlocks(this));
+		getCommand("kageblocks").setExecutor(new KuffleAgeBlocks(this));
 		
 		System.out.println("[Kuffle] Add Plugin Tab Completer.");
 		getCommand("klist").setTabCompleter(new KuffleListTab(this));
