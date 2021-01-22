@@ -1,5 +1,12 @@
 {
 	"Archaic_Age" : {
+		"flower" : [
+			"dandelion",
+			"poppy",
+			"flower_pot",
+			"potted_dandelion",
+			"potted_poppy"
+		],
 		"rock" : [
 			"andesite",
 			"cobblestone",
@@ -61,13 +68,6 @@
 			"grass_block",
 			"grass_path",
 			"gravel"
-		],
-		"flower" : [
-			"dandelion",
-			"poppy",
-			"flower_pot",
-			"potted_dandelion",
-			"potted_poppy"
 		],
 		"plant" : [
 			"grass",
@@ -144,12 +144,6 @@
 		]
 	},
 	"Classic_Age" : {
-		"flower" : [
-			"azure_bluet",
-			"oxeye_daisy",
-			"potted_azure_bluet",
-			"potted_oxeye_daisy"
-		],
 		"plant" : [
 			"beetroots",
 			"cactus",
@@ -180,6 +174,12 @@
 		"dirt" : [
 			"coarse_dirt",
 			"podzol"
+		],
+		"flower" : [
+			"azure_bluet",
+			"oxeye_daisy",
+			"potted_azure_bluet",
+			"potted_oxeye_daisy"
 		],
 		"dark_oak" : [
 			"dark_oak_leaves",
@@ -278,7 +278,7 @@
 			"iron_trapdoor",
 			"hopper",
 			"stone_button",
-			"traped_chest",
+			"trapped_chest",
 			"tripwire_hook"
 		],
 		"diversity" : [
@@ -379,7 +379,7 @@
 			"tnt",
 			"redstone_torch",
 			"stone_pressure_plate",
-			"noteblock"
+			"note_block"
 		],
 		"moving" : [
 			"powered_rail",
@@ -530,31 +530,6 @@
 			"acacia_fence_gate",
 			"acacia_sign"
 		],
-		"flower" : [
-			"allium",
-			"cornflower",
-			"lilac",
-			"lily_of_the_valley",
-			"peony",
-			"red_tulip",
-			"rose_tulip",
-			"sunflower",
-			"potted_allium",
-			"potted_blue_orchid",
-			"potted_cornflower",
-			"potted_lilac",
-			"potted_lily_of_the_valley",
-			"potted_orange_tulip",
-			"potted_peony",
-			"potted_pink_tulip",
-			"potted_red_tulip",
-			"potted_rose_tulip",
-			"potted_sunflower",
-			"potted_white_tulip",
-			"white_tulip",
-			"orange_tulip",
-			"pink_tulip"
-		],
 		"plant" : [
 			"bamboo"
 		],
@@ -564,6 +539,30 @@
 			"wet_sponge",
 			"bone_block",
 			"emerald_block"
+		],
+		"flower" : [
+			"blue_orchid",
+			"allium",
+			"red_tulip",
+			"orange_tulip",
+			"white_tulip",
+			"pink_tulip",
+			"cornflower",
+			"lily_of_the_valley",
+			"wither_rose",
+			"sunflower",
+			"potted_blue_orchid",
+			"potted_allium",
+			"potted_red_tulip",
+			"potted_orange_tulip",
+			"potted_white_tulip",
+			"potted_pink_tulip",
+			"potted_cornflower",
+			"potted_lily_of_the_valley",
+			"potted_wither_rose",
+			"lilac",
+			"rose_bush",
+			"peony"
 		],
 		"ore" : [
 			"emerald_ore"

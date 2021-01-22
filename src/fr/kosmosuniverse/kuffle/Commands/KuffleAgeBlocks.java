@@ -6,6 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
@@ -29,9 +30,9 @@ public class KuffleAgeBlocks implements CommandExecutor  {
 				String age;
 				
 				if ((age = getPlayerAge(player.getName())) != null) {
-					ArrayList<String> ageBlocks = km.allBlocks.get(age);
+					ArrayList<Inventory> ageBlocks = km.BlocksInvs.get(age);
 					
-					
+					player.openInventory(ageBlocks.get(0));
 				} else {
 					player.sendMessage("You are not playing in this game.");
 				}

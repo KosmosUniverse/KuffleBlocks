@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffectType;
 
@@ -45,6 +46,7 @@ import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class KuffleMain extends JavaPlugin {
 	public HashMap<String, ArrayList<String>> allBlocks;
+	public HashMap<String, ArrayList<Inventory>> BlocksInvs;
 	public HashMap<String, HashMap<String, RewardElem>> allRewards;
 	public HashMap<String, PotionEffectType> effects;
 	public ArrayList<GameTask> games;
@@ -108,7 +110,8 @@ public class KuffleMain extends JavaPlugin {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-				
+		
+		BlocksInvs = ChooseBlockInList.getBlocksInvs(allBlocks);
 		effects = RewardManager.getAllEffects();
 		games = new ArrayList<GameTask>();
 		crafts = new ManageCrafts(this);

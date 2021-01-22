@@ -7,7 +7,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -79,5 +83,90 @@ public class ChooseBlockInList {
 		Random r = new Random();
 		
 		return finalList.get(r.nextInt(finalList.size()));
+	}
+	
+	public static synchronized HashMap<String, ArrayList<Inventory>> getBlocksInvs(HashMap<String, ArrayList<String>> allblocks) {
+		HashMap<String, ArrayList<Inventory>> invs = new HashMap<String, ArrayList<Inventory>>();
+		
+		for (String age : allblocks.keySet()) {
+			invs.put(age, getAgeInvs(age, allblocks.get(age)));
+		}
+		
+		
+		for (String age : invs.keySet()) {
+			System.out.println(age + " : " + invs.get(age).size());
+		}
+
+		return invs;
+	}
+	
+	public static ArrayList<Inventory> getAgeInvs(String age, ArrayList<String> ageBlocks) {
+		ArrayList<Inventory> invs = new ArrayList<Inventory>();
+		Inventory inv;
+		int invCnt = 0;
+		int nbInv = 1;
+		
+		ItemStack limePane = new ItemStack(Material.LIME_STAINED_GLASS_PANE);
+		ItemStack redPane = new ItemStack(Material.RED_STAINED_GLASS_PANE);
+		ItemStack bluePane = new ItemStack(Material.BLUE_STAINED_GLASS_PANE);
+		ItemMeta itM = limePane.getItemMeta();
+
+		itM = limePane.getItemMeta();
+		itM.setDisplayName(" ");
+		limePane.setItemMeta(itM);
+		itM = redPane.getItemMeta();
+		itM.setDisplayName("<- Back");
+		redPane.setItemMeta(itM);
+		itM = bluePane.getItemMeta();
+		itM.setDisplayName("Next ->");
+		bluePane.setItemMeta(itM);
+		
+		if (ageBlocks.size() > 45) {
+			inv = Bukkit.createInventory(null, 54, "§8" + age + " Tab 1");
+		} else {
+			inv = Bukkit.createInventory(null, 54, "§8" + age);
+		}
+		
+		for (; invCnt < 9; invCnt++) {
+			if (invCnt == 0) {
+				inv.setItem(invCnt, redPane);
+			} else if (invCnt == 8) {
+				inv.setItem(invCnt, bluePane);
+			} else {
+				inv.setItem(invCnt, limePane);
+			}
+		}
+		
+		for (String item : ageBlocks) {
+			try {
+			inv.setItem(invCnt, new ItemStack(Material.matchMaterial(item)));
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+				System.out.println("[Kuffle] : " + item);
+			}
+			
+			if (invCnt == 53) {
+				invCnt = 0;
+				invs.add(inv);
+				nbInv++;
+				inv = Bukkit.createInventory(null, 54, "§8" + age + " Tab " + nbInv);
+				
+				itM = redPane.getItemMeta();
+				itM.setDisplayName("<- Previous");
+				redPane.setItemMeta(itM);
+				
+				for (; invCnt < 9; invCnt++) {
+					if (invCnt == 0) {
+						inv.setItem(invCnt, redPane);
+					} else if (invCnt == 8) {
+						inv.setItem(invCnt, bluePane);
+					} else {
+						inv.setItem(invCnt, limePane);
+					}
+				}
+			}
+		}
+		
+		return invs;
 	}
 }
