@@ -19,6 +19,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
+import fr.kosmosuniverse.kuffle.Core.ActionBar;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
 
 public class KuffleAdminLoad implements CommandExecutor {
@@ -108,41 +109,50 @@ public class KuffleAdminLoad implements CommandExecutor {
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"5\",\"bold\":true,\"color\":\"red\"}");
+				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"5\",\"bold\":true,\"color\":\"red\"}", gt.getPlayer());
+				}
 			}
 		}, 20);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"4\",\"bold\":true,\"color\":\"gold\"}");
+				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"4\",\"bold\":true,\"color\":\"gold\"}", gt.getPlayer());
+				}
 			}
 		}, 40);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"3\",\"bold\":true,\"color\":\"yellow\"}");
+				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"3\",\"bold\":true,\"color\":\"yellow\"}", gt.getPlayer());
+				}
 			}
 		}, 60);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"2\",\"bold\":true,\"color\":\"green\"}");
+				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"2\",\"bold\":true,\"color\":\"green\"}", gt.getPlayer());
+				}
 			}
 		}, 80);
 		
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"1\",\"bold\":true,\"color\":\"blue\"}");
+				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"1\",\"bold\":true,\"color\":\"blue\"}", gt.getPlayer());
+				}
 			}
 		}, 100);
 		
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"GO!\"}");
-				
 				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"GO!\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
 					gt.enable();
 				}
 				

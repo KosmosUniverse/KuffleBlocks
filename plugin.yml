@@ -1,5 +1,5 @@
 name: Kuffle
-version: 3.2
+version: 3.3
 author: KosmosUniverse
 main: fr.kosmosuniverse.kuffle.KuffleMain
 api-version: 1.15
