@@ -47,6 +47,10 @@ public class KuffleStart implements CommandExecutor {
 			}
 		}
 		
+		for (GameTask gt : km.games) {
+			km.playerRank.put(gt.getPlayer().getDisplayName(), false);
+		}
+		
 		int spread = 0;
 		
 		if (km.getConfig().getBoolean("game_settings.spreadplayers.enable")) {

@@ -54,6 +54,7 @@ public class KuffleMain extends JavaPlugin {
 	public ManageMultiBlock multiBlock;
 	public Scores scores;
 	public HashMap<String, Location> backCmd;
+	public HashMap<String, Boolean> playerRank = new HashMap<String, Boolean>();
 	
 	public boolean paused = false;
 	

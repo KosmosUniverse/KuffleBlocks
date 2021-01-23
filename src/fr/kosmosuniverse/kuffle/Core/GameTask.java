@@ -1,6 +1,7 @@
 package fr.kosmosuniverse.kuffle.Core;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -58,6 +59,7 @@ public class GameTask {
 			@Override
 			public void run() {
 				if (exit) {
+					ageDisplay.setColor(getRandomColor());
 					return;
 				}
 				if (enable) {
@@ -114,7 +116,7 @@ public class GameTask {
 						ageDisplay.setProgress(calc);
 						
 						if (age == ageNames.length) {
-							ageDisplay.setTitle(ageNames[age - 1] + " Age: Done !!!");
+							ageDisplay.setTitle("Game Done ! Rank : " + getGameRank());
 						} else {
 							ageDisplay.setTitle(ageNames[age] + " Age: 1");
 							Bukkit.broadcastMessage("§1" + player.getName() + " has moved to the §6§l" + ageNames[age] + " Age§1.");
@@ -201,6 +203,19 @@ public class GameTask {
 		default:
 			return (ChatColor.DARK_PURPLE);
 		}
+	}
+	
+	private String getGameRank() {
+		km.playerRank.put(player.getDisplayName(), true);
+		
+		int count = 0;
+		
+		for (String player : km.playerRank.keySet()) {
+			if (km.playerRank.get(player))
+				count++;
+		}
+		
+		return "" + count;
 	}
 	
 	public void setBlockScore(Score score) {
@@ -304,5 +319,11 @@ public class GameTask {
 		for (int i = 0; i < _alreadyGot.size(); i++) {
 			alreadyGot.add((String) _alreadyGot.get(i));			
 		}
+	}
+	
+	private BarColor getRandomColor() {
+		Random r = new Random();
+		
+		return (BarColor.values()[r.nextInt(BarColor.values().length)]);
 	}
 }
