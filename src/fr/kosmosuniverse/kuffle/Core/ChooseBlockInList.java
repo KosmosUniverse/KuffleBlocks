@@ -84,22 +84,17 @@ public class ChooseBlockInList {
 		
 		return finalList.get(r.nextInt(finalList.size()));
 	}
-	
-	public static synchronized HashMap<String, ArrayList<Inventory>> getBlocksInvs(HashMap<String, ArrayList<String>> allblocks) {
+
+	public static HashMap<String, ArrayList<Inventory>> getBlocksInvs(HashMap<String, ArrayList<String>> allblocks) {
 		HashMap<String, ArrayList<Inventory>> invs = new HashMap<String, ArrayList<Inventory>>();
 		
 		for (String age : allblocks.keySet()) {
 			invs.put(age, getAgeInvs(age, allblocks.get(age)));
 		}
 		
-		
-		for (String age : invs.keySet()) {
-			System.out.println(age + " : " + invs.get(age).size());
-		}
-
 		return invs;
 	}
-	
+
 	public static ArrayList<Inventory> getAgeInvs(String age, ArrayList<String> ageBlocks) {
 		ArrayList<Inventory> invs = new ArrayList<Inventory>();
 		Inventory inv;
@@ -109,28 +104,26 @@ public class ChooseBlockInList {
 		ItemStack limePane = new ItemStack(Material.LIME_STAINED_GLASS_PANE);
 		ItemStack redPane = new ItemStack(Material.RED_STAINED_GLASS_PANE);
 		ItemStack bluePane = new ItemStack(Material.BLUE_STAINED_GLASS_PANE);
-		ItemMeta itM = limePane.getItemMeta();
-
+		ItemMeta itM =  limePane.getItemMeta();
+		
 		itM = limePane.getItemMeta();
 		itM.setDisplayName(" ");
 		limePane.setItemMeta(itM);
 		itM = redPane.getItemMeta();
-		itM.setDisplayName("<- Back");
+		itM.setDisplayName("<- Previous");
 		redPane.setItemMeta(itM);
 		itM = bluePane.getItemMeta();
 		itM.setDisplayName("Next ->");
 		bluePane.setItemMeta(itM);
 		
 		if (ageBlocks.size() > 45) {
-			inv = Bukkit.createInventory(null, 54, "§8" + age + " Tab 1");
+			inv = Bukkit.createInventory(null, 54, "§8" + age + " blocks Tab 1");
 		} else {
-			inv = Bukkit.createInventory(null, 54, "§8" + age);
+			inv = Bukkit.createInventory(null, 54, "§8" + age + " blocks");
 		}
 		
 		for (; invCnt < 9; invCnt++) {
-			if (invCnt == 0) {
-				inv.setItem(invCnt, redPane);
-			} else if (invCnt == 8) {
+			if (invCnt == 8) {
 				inv.setItem(invCnt, bluePane);
 			} else {
 				inv.setItem(invCnt, limePane);
@@ -139,21 +132,16 @@ public class ChooseBlockInList {
 		
 		for (String item : ageBlocks) {
 			try {
-			inv.setItem(invCnt, new ItemStack(Material.matchMaterial(item)));
+				inv.setItem(invCnt, getMaterial(item));
 			} catch (IllegalArgumentException e) {
 				e.printStackTrace();
-				System.out.println("[Kuffle] : " + item);
 			}
 			
 			if (invCnt == 53) {
 				invCnt = 0;
 				invs.add(inv);
 				nbInv++;
-				inv = Bukkit.createInventory(null, 54, "§8" + age + " Tab " + nbInv);
-				
-				itM = redPane.getItemMeta();
-				itM.setDisplayName("<- Previous");
-				redPane.setItemMeta(itM);
+				inv = Bukkit.createInventory(null, 54, "§8" + age + " blocks Tab " + nbInv);
 				
 				for (; invCnt < 9; invCnt++) {
 					if (invCnt == 0) {
@@ -164,9 +152,53 @@ public class ChooseBlockInList {
 						inv.setItem(invCnt, limePane);
 					}
 				}
+			} else {
+				invCnt++;
 			}
 		}
 		
+		inv.setItem(8, limePane);
+		
+		invs.add(inv);
+		
 		return invs;
+	}
+	
+	private static ItemStack getMaterial(String item) {
+		for (Material mat : Material.values()) {
+			if (mat.getKey().toString().split(":")[1].equals(item) && mat.isItem()) {
+				return new ItemStack(mat);
+			}
+		}
+		
+		ItemStack retItem;
+		
+		for (Material mat : Material.values()) {
+			if (mat.getKey().toString().split(":")[1].contains(item) && mat.isItem()) {
+				retItem = new ItemStack(mat);
+
+				ItemMeta itM = retItem.getItemMeta();
+				
+				itM.setDisplayName(item);
+				retItem.setItemMeta(itM);
+				
+				return retItem;
+			}
+		}
+		
+		for (Material mat : Material.values()) {
+			if (item.contains(mat.getKey().toString().split(":")[1]) && mat.isItem()) {
+				retItem = new ItemStack(mat);
+
+				ItemMeta itM = retItem.getItemMeta();
+				
+				itM.setDisplayName(item);
+				retItem.setItemMeta(itM);
+				
+				return retItem;
+			}
+		}
+		
+		return null;
 	}
 }

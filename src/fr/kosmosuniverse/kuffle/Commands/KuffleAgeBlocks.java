@@ -30,7 +30,7 @@ public class KuffleAgeBlocks implements CommandExecutor  {
 				String age;
 				
 				if ((age = getPlayerAge(player.getName())) != null) {
-					ArrayList<Inventory> ageBlocks = km.BlocksInvs.get(age);
+					ArrayList<Inventory> ageBlocks = km.blocksInvs.get(age);
 					
 					player.openInventory(ageBlocks.get(0));
 				} else {
@@ -41,7 +41,7 @@ public class KuffleAgeBlocks implements CommandExecutor  {
 			player.sendMessage("The game has not launched yet.");			
 		}
 
-		return false;
+		return true;
 	}
 	
 	private String getPlayerAge(String player) {

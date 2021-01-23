@@ -46,7 +46,7 @@ import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class KuffleMain extends JavaPlugin {
 	public HashMap<String, ArrayList<String>> allBlocks;
-	public HashMap<String, ArrayList<Inventory>> BlocksInvs;
+	public HashMap<String, ArrayList<Inventory>> blocksInvs;
 	public HashMap<String, HashMap<String, RewardElem>> allRewards;
 	public HashMap<String, PotionEffectType> effects;
 	public ArrayList<GameTask> games;
@@ -104,14 +104,18 @@ public class KuffleMain extends JavaPlugin {
 			String result = Utils.readJSONFile(in);
 			allBlocks = ChooseBlockInList.getAllBlocks(result, this.getDataFolder());
 			
+			in.close();
+			
 			in = getResource("rewards.json");
 			result = Utils.readJSONFile(in);
 			allRewards = RewardManager.getAllRewards(result, this.getDataFolder());
+			
+			in.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		BlocksInvs = ChooseBlockInList.getBlocksInvs(allBlocks);
+		blocksInvs = ChooseBlockInList.getBlocksInvs(allBlocks);
 		effects = RewardManager.getAllEffects();
 		games = new ArrayList<GameTask>();
 		crafts = new ManageCrafts(this);

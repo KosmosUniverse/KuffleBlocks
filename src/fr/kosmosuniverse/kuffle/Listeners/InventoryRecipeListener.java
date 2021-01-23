@@ -1,5 +1,7 @@
 package fr.kosmosuniverse.kuffle.Listeners;
 
+import java.util.ArrayList;
+
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -54,6 +56,23 @@ public class InventoryRecipeListener implements Listener {
 			event.setCancelled(true);
 			if ((inv = multiBlock.getInventory(current, item, km.multiBlock.getAllMultiBlocksInventory(), false)) != null) {
 				player.openInventory(inv);
+			}
+		} else if (event.getView().getTitle().contains(" blocks ")) {
+			for (String age : km.blocksInvs.keySet()) {
+				if (event.getView().getTitle().contains(age)) {
+					event.setCancelled(true);
+					ArrayList<Inventory> tmpInvs = km.blocksInvs.get(age);
+					
+					if (tmpInvs.size() > 1) {
+						int invIdx = tmpInvs.indexOf(current);
+						
+						if (item.getItemMeta().getDisplayName().equals("<- Previous")) {
+							player.openInventory(tmpInvs.get(invIdx - 1));
+						} else if (item.getItemMeta().getDisplayName().equals("Next ->")) {
+							player.openInventory(tmpInvs.get(invIdx + 1));
+						}
+					}
+				}
 			}
 		}
 	}
