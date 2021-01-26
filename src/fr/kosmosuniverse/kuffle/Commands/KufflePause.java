@@ -42,8 +42,8 @@ public class KufflePause implements CommandExecutor {
 		
 		for (GameTask gt : km.games) {
 			gt.disable();
+			ActionBar.sendRawTitle("{\"text\":\"Game Paused..\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
 			gt.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 999999, 10, false, false, false));
-			ActionBar.sendRawTitle("{\"text\":\"Game Paused...\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
 		}
 		
 		km.paused = true;

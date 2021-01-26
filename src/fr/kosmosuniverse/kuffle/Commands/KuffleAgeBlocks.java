@@ -25,6 +25,11 @@ public class KuffleAgeBlocks implements CommandExecutor  {
 		
 		Player player = (Player) sender;
 		
+		if (!player.hasPermission("kageblocks")) {
+			player.sendMessage("You are not allowed to do this command.");
+			return false;
+		}
+		
 		if (km.games.size() != 0) {
 			if (km.games.get(0).getEnable()) {
 				String age;
@@ -46,7 +51,7 @@ public class KuffleAgeBlocks implements CommandExecutor  {
 	
 	private String getPlayerAge(String player) {
 		for (GameTask gt : km.games) {
-			if (gt.getPlayer().getName().equals(player)) {
+			if (gt.getPlayer().getDisplayName().equals(player)) {
 				return (gt.getAgeName());
 			}
 		}

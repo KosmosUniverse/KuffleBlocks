@@ -5,6 +5,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
+
 public class Utils {
 	public static String readJSONFile(InputStream in) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -16,5 +22,35 @@ public class Utils {
         }
  
         return sb.toString();
+	}
+	
+	public static ItemStack getHead(Player player) {
+        ItemStack item = new ItemStack(Material.PLAYER_HEAD);
+        SkullMeta skull = (SkullMeta) item.getItemMeta();
+        
+        skull.setDisplayName(player.getName());
+        skull.setOwningPlayer(player);
+        item.setItemMeta(skull);
+        
+        return item;
+    }
+	
+	public static ChatColor getColor(int age) {
+		switch (age) {
+		case 0:
+			return (ChatColor.RED);
+		case 1:
+			return (ChatColor.GOLD);
+		case 2:
+			return (ChatColor.YELLOW);
+		case 3:
+			return (ChatColor.GREEN);
+		case 4:
+			return (ChatColor.DARK_GREEN);
+		case 5:
+			return (ChatColor.DARK_BLUE);
+		default:
+			return (ChatColor.DARK_PURPLE);
+		}
 	}
 }

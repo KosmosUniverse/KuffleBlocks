@@ -44,8 +44,8 @@ public class KuffleResume implements CommandExecutor {
 			@Override
 			public void run() {
 				for (GameTask gt : km.games) {
-				ActionBar.sendRawTitle("{\"text\":\"3\",\"bold\":true,\"color\":\"red\"}", gt.getPlayer());
-			}
+					ActionBar.sendRawTitle("{\"text\":\"3\",\"bold\":true,\"color\":\"red\"}", gt.getPlayer());
+				}
 			}
 		}, 20);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
@@ -77,6 +77,7 @@ public class KuffleResume implements CommandExecutor {
 				
 				for (GameTask gt : km.games) {
 					gt.enable();
+					ActionBar.sendRawTitle("{\"text\":\"Game Resumed!\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
 					gt.getPlayer().removePotionEffect(PotionEffectType.INVISIBILITY);
 				}
 			}

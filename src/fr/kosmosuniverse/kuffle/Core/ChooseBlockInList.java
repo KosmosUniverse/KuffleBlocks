@@ -84,10 +84,10 @@ public class ChooseBlockInList {
 		
 		return finalList.get(r.nextInt(finalList.size()));
 	}
-
+	
 	public static HashMap<String, ArrayList<Inventory>> getBlocksInvs(HashMap<String, ArrayList<String>> allblocks) {
 		HashMap<String, ArrayList<Inventory>> invs = new HashMap<String, ArrayList<Inventory>>();
-		
+
 		for (String age : allblocks.keySet()) {
 			invs.put(age, getAgeInvs(age, allblocks.get(age)));
 		}

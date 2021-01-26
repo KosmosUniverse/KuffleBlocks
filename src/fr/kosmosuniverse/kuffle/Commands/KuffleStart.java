@@ -12,6 +12,7 @@ import org.bukkit.scoreboard.DisplaySlot;
 import fr.kosmosuniverse.kuffle.KuffleMain;
 import fr.kosmosuniverse.kuffle.Core.ActionBar;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
+import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class KuffleStart implements CommandExecutor {
 	private KuffleMain km;
@@ -61,12 +62,21 @@ public class KuffleStart implements CommandExecutor {
 				if (gt.getPlayer().isOp()) {
 					gt.getPlayer().performCommand("spawnpoint");
 				} else {
-					Bukkit.dispatchCommand(sender, "op " + gt.getPlayer().getName());
-					gt.getPlayer().performCommand("spawnpoint");
-					Bukkit.dispatchCommand(sender, "deop " + gt.getPlayer().getName());
+					gt.getPlayer().setBedSpawnLocation(gt.getPlayer().getLocation(), true);
 				}
 			}
 			spread = 20;
+		}
+		
+		int invCnt = 0;
+		
+		km.playersHeads = Bukkit.createInventory(null, 54, "§8Teleport");
+		
+		for (GameTask gt : km.games) {
+			km.playerRank.put(gt.getPlayer().getDisplayName(), false);
+			km.playersHeads.setItem(invCnt, Utils.getHead(gt.getPlayer()));
+			
+			invCnt++;
 		}
 		
 		km.paused = true;
@@ -111,7 +121,6 @@ public class KuffleStart implements CommandExecutor {
 					ActionBar.sendRawTitle("{\"text\":\"1\",\"bold\":true,\"color\":\"blue\"}", gt.getPlayer());
 				}
 				
-				
 				if (km.getConfig().getBoolean("game_settings.see_block_count")) {
 					km.scores.setupPlayerScores(DisplaySlot.PLAYER_LIST);
 				} else {
@@ -130,6 +139,7 @@ public class KuffleStart implements CommandExecutor {
 				
 				for (GameTask gt : km.games) {
 					gt.enable();
+					ActionBar.sendRawTitle("{\"text\":\"GO!\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
 				}
 				
 				km.paused = false;

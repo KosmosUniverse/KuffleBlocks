@@ -15,23 +15,14 @@ public class ActionBar {
 	}
 	
 	public static void sendTitle(String msg, Player player) {
-		try {
-			Object enumTitle = getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0].getField("TITLE").get(null);
-			Object chat = getNMSClass("IChatBaseComponent").getDeclaredClasses()[0].getMethod("a", String.class).invoke(null, "{\"text\": \"" + msg + "\"}");
-			
-			Constructor<?> titleConstructor = getNMSClass("PacketPlayOutTitle").getConstructor(getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0], getNMSClass("IChatBaseComponent"));
-			Object packet = titleConstructor.newInstance(enumTitle, chat);
-			
-			sendPacket(player, packet);
-		} catch (NoSuchMethodException | SecurityException | IllegalArgumentException | IllegalAccessException | NoSuchFieldException | InvocationTargetException | InstantiationException e) {
-			e.printStackTrace();
-		}
+		sendRawTitle("{\"text\": \"" + msg + "\"}", player);
 	}
 	
-	public static void sendRawTitle(String text, Player player) {
+	public static void sendRawTitle(String msg, Player player) {
 		try {
 			Object enumTitle = getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0].getField("TITLE").get(null);
-			Object chat = getNMSClass("IChatBaseComponent").getDeclaredClasses()[0].getMethod("a", String.class).invoke(null, text);
+
+			Object chat = getNMSClass("IChatBaseComponent").getDeclaredClasses()[0].getMethod("a", String.class).invoke(null, "{\"text\": \"" + msg + "\"}");
 			
 			Constructor<?> titleConstructor = getNMSClass("PacketPlayOutTitle").getConstructor(getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0], getNMSClass("IChatBaseComponent"));
 			Object packet = titleConstructor.newInstance(enumTitle, chat);

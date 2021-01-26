@@ -21,6 +21,7 @@ import org.json.simple.parser.ParseException;
 import fr.kosmosuniverse.kuffle.KuffleMain;
 import fr.kosmosuniverse.kuffle.Core.ActionBar;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
+import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class KuffleAdminLoad implements CommandExecutor {
 	private KuffleMain km;
@@ -104,6 +105,17 @@ public class KuffleAdminLoad implements CommandExecutor {
 			}
 		}
 		
+		int invCnt = 0;
+		
+		km.playersHeads = Bukkit.createInventory(null, 54, "§8Teleport");
+		
+		for (GameTask gt : km.games) {
+			km.playerRank.put(gt.getPlayer().getDisplayName(), false);
+			km.playersHeads.setItem(invCnt, Utils.getHead(gt.getPlayer()));
+			
+			invCnt++;
+		}
+		
 		km.paused = true;
 		
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
@@ -154,6 +166,7 @@ public class KuffleAdminLoad implements CommandExecutor {
 				for (GameTask gt : km.games) {
 					ActionBar.sendRawTitle("{\"text\":\"GO!\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
 					gt.enable();
+					ActionBar.sendRawTitle("{\"text\":\"GO!\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
 				}
 				
 				km.paused = false;

@@ -25,6 +25,7 @@ import fr.kosmosuniverse.kuffle.Commands.KuffleResume;
 import fr.kosmosuniverse.kuffle.Commands.KuffleSkip;
 import fr.kosmosuniverse.kuffle.Commands.KuffleStart;
 import fr.kosmosuniverse.kuffle.Commands.KuffleStop;
+import fr.kosmosuniverse.kuffle.Commands.KuffleTeleport;
 import fr.kosmosuniverse.kuffle.Commands.KuffleValidate;
 import fr.kosmosuniverse.kuffle.Core.ChooseBlockInList;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
@@ -45,16 +46,18 @@ import fr.kosmosuniverse.kuffle.TabCmd.KuffleValidateTab;
 import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class KuffleMain extends JavaPlugin {
-	public HashMap<String, ArrayList<String>> allBlocks;
-	public HashMap<String, ArrayList<Inventory>> blocksInvs;
+
 	public HashMap<String, HashMap<String, RewardElem>> allRewards;
+	public HashMap<String, ArrayList<Inventory>> blocksInvs;
+	public HashMap<String, ArrayList<String>> allBlocks;
+	public HashMap<String, Boolean> playerRank = new HashMap<String, Boolean>();
+	public HashMap<String, Location> backCmd;
 	public HashMap<String, PotionEffectType> effects;
 	public ArrayList<GameTask> games;
 	public ManageCrafts crafts;
 	public ManageMultiBlock multiBlock;
 	public Scores scores;
-	public HashMap<String, Location> backCmd;
-	public HashMap<String, Boolean> playerRank = new HashMap<String, Boolean>();
+	public Inventory playersHeads;
 	
 	public boolean paused = false;
 	
@@ -150,6 +153,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kcrafts").setExecutor(new KuffleCrafts(this));
 		getCommand("kmultiBlocks").setExecutor(new KuffleMultiBlocks(this));
 		getCommand("kageblocks").setExecutor(new KuffleAgeBlocks(this));
+		getCommand("kteleport").setExecutor(new KuffleTeleport(this));
 		
 		System.out.println("[Kuffle] Add Plugin Tab Completer.");
 		getCommand("klist").setTabCompleter(new KuffleListTab(this));

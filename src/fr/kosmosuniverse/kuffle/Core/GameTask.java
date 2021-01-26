@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.boss.BarColor;
@@ -19,6 +18,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
+import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class GameTask {
 	private BukkitTask runnable;
@@ -111,7 +111,7 @@ public class GameTask {
 						}
 
 						age++;
-						player.setPlayerListName(getColor() + player.getName());
+						player.setPlayerListName(Utils.getColor(age) + player.getName());
 						calc = 1 / maxBlock;
 						ageDisplay.setProgress(calc);
 						
@@ -166,6 +166,10 @@ public class GameTask {
 		return enable;
 	}
 	
+	public boolean getExit() {
+		return exit;
+	}
+	
 	public Player getPlayer() {
 		return player;
 	}
@@ -178,31 +182,29 @@ public class GameTask {
 		return ageNames[age] + "_Age";
 	}
 	
+	public String[] getAgeNames() {
+		return ageNames;
+	}
+	
 	public int getBlockCount() {
 		return blockCount;
 	}
 	
-	public Score getBlockScore() {
-		return blockScore;
+	private String getGameRank1() {
+		km.playerRank.put(player.getDisplayName(), true);
+		
+		int count = 0;
+		
+		for (String player : km.playerRank.keySet()) {
+			if (km.playerRank.get(player))
+				count++;
+		}
+		
+		return "" + count;
 	}
 	
-	public ChatColor getColor() {
-		switch (age) {
-		case 0:
-			return (ChatColor.RED);
-		case 1:
-			return (ChatColor.GOLD);
-		case 2:
-			return (ChatColor.YELLOW);
-		case 3:
-			return (ChatColor.GREEN);
-		case 4:
-			return (ChatColor.DARK_GREEN);
-		case 5:
-			return (ChatColor.DARK_BLUE);
-		default:
-			return (ChatColor.DARK_PURPLE);
-		}
+	public Score getBlockScore() {
+		return blockScore;
 	}
 	
 	private String getGameRank() {
@@ -227,6 +229,12 @@ public class GameTask {
 	}
 	
 	public void enable() {
+		if (age == 6) {
+			exit = true;
+			enable = true;
+			return;
+		}
+		
 		if (interval != -1) {
 			previousShuffle = System.currentTimeMillis() - interval;
 		}
@@ -314,10 +322,15 @@ public class GameTask {
 		
 		blockCount = _blockCount;
 		blockScore.setScore(blockCount);
-		player.setPlayerListName(getColor() + player.getName());
+		player.setPlayerListName(Utils.getColor(age) + player.getName());
 		
 		for (int i = 0; i < _alreadyGot.size(); i++) {
 			alreadyGot.add((String) _alreadyGot.get(i));			
+		}
+		
+		if (age == ageNames.length) {
+			ageDisplay.setTitle("Game Done ! Rank : " + getGameRank1());
+			ageDisplay.setProgress(1.0);
 		}
 	}
 	
