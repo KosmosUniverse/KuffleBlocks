@@ -15,9 +15,13 @@ public class ActionBar {
 	}
 	
 	public static void sendTitle(String msg, Player player) {
+		sendRawTitle("{\"text\": \"" + msg + "\"}", player);
+	}
+	
+	public static void sendRawTitle(String msg, Player player) {
 		try {
 			Object enumTitle = getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0].getField("TITLE").get(null);
-			Object chat = getNMSClass("IChatBaseComponent").getMethod("a", String.class).invoke(null, "{\"text\": \"" + msg + "\"}");
+			Object chat = getNMSClass("IChatBaseComponent").getDeclaredClasses()[0].getMethod("a", String.class).invoke(null, msg);
 			
 			Constructor<?> titleConstructor = getNMSClass("PacketPlayOutTitle").getConstructor(getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0], getNMSClass("IChatBaseComponent"));
 			Object packet = titleConstructor.newInstance(enumTitle, chat);

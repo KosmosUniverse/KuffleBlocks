@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffectType;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
+import fr.kosmosuniverse.kuffle.Core.ActionBar;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
 
 public class KuffleResume implements CommandExecutor {
@@ -42,31 +43,37 @@ public class KuffleResume implements CommandExecutor {
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"3\",\"bold\":true,\"color\":\"red\"}");
+				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"3\",\"bold\":true,\"color\":\"red\"}", gt.getPlayer());
+				}
 			}
 		}, 20);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"2\",\"bold\":true,\"color\":\"yellow\"}");
+				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"2\",\"bold\":true,\"color\":\"yellow\"}", gt.getPlayer());
+				}
 			}
 		}, 40);
 		
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"1\",\"bold\":true,\"color\":\"green\"}");
+				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"1\",\"bold\":true,\"color\":\"green\"}", gt.getPlayer());
+				}
 			}
 		}, 60);
 		
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"Game Resumed!\",\"bold\":true,\"color\":\"dark_purple\"}");
 				km.paused = false;
 				
 				for (GameTask gt : km.games) {
 					gt.enable();
+					ActionBar.sendRawTitle("{\"text\":\"Game Resumed!\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
 					gt.getPlayer().removePotionEffect(PotionEffectType.INVISIBILITY);
 				}
 			}

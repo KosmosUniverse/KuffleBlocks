@@ -10,7 +10,9 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scoreboard.DisplaySlot;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
+import fr.kosmosuniverse.kuffle.Core.ActionBar;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
+import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class KuffleStart implements CommandExecutor {
 	private KuffleMain km;
@@ -56,12 +58,21 @@ public class KuffleStart implements CommandExecutor {
 				if (gt.getPlayer().isOp()) {
 					gt.getPlayer().performCommand("spawnpoint");
 				} else {
-					Bukkit.dispatchCommand(sender, "op " + gt.getPlayer().getName());
-					gt.getPlayer().performCommand("spawnpoint");
-					Bukkit.dispatchCommand(sender, "deop " + gt.getPlayer().getName());
+					gt.getPlayer().setBedSpawnLocation(gt.getPlayer().getLocation(), true);
 				}
 			}
 			spread = 20;
+		}
+		
+		int invCnt = 0;
+		
+		km.playersHeads = Bukkit.createInventory(null, 54, "§8Teleport");
+		
+		for (GameTask gt : km.games) {
+			km.playerRank.put(gt.getPlayer().getDisplayName(), false);
+			km.playersHeads.setItem(invCnt, Utils.getHead(gt.getPlayer()));
+			
+			invCnt++;
 		}
 		
 		km.paused = true;
@@ -69,33 +80,42 @@ public class KuffleStart implements CommandExecutor {
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"5\",\"bold\":true,\"color\":\"red\"}");
+				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"5\",\"bold\":true,\"color\":\"red\"}", gt.getPlayer());
+				}
 			}
 		}, 20 + spread);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"4\",\"bold\":true,\"color\":\"gold\"}");
+				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"4\",\"bold\":true,\"color\":\"gold\"}", gt.getPlayer());
+				}
 			}
 		}, 40 + spread);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"3\",\"bold\":true,\"color\":\"yellow\"}");
+				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"3\",\"bold\":true,\"color\":\"yellow\"}", gt.getPlayer());
+				}
 			}
 		}, 60 + spread);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"2\",\"bold\":true,\"color\":\"green\"}");
+				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"2\",\"bold\":true,\"color\":\"green\"}", gt.getPlayer());
+				}
 			}
 		}, 80 + spread);
 		
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"1\",\"bold\":true,\"color\":\"blue\"}");
-				
+				for (GameTask gt : km.games) {
+					ActionBar.sendRawTitle("{\"text\":\"1\",\"bold\":true,\"color\":\"blue\"}", gt.getPlayer());
+				}
 				
 				if (km.getConfig().getBoolean("game_settings.see_block_count")) {
 					km.scores.setupPlayerScores(DisplaySlot.PLAYER_LIST);
@@ -108,13 +128,13 @@ public class KuffleStart implements CommandExecutor {
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"GO!\"}");
 				for (GameTask gt : km.games) {
 					gt.startRunnable();
 				}
 				
 				for (GameTask gt : km.games) {
 					gt.enable();
+					ActionBar.sendRawTitle("{\"text\":\"GO!\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
 				}
 				
 				km.paused = false;

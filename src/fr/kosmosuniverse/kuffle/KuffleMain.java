@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffectType;
 
@@ -14,6 +15,7 @@ import fr.kosmosuniverse.kuffle.Commands.KuffleAdminLoad;
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSave;
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSkip;
 import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSpawn;
+import fr.kosmosuniverse.kuffle.Commands.KuffleAgeBlocks;
 import fr.kosmosuniverse.kuffle.Commands.KuffleBack;
 import fr.kosmosuniverse.kuffle.Commands.KuffleCrafts;
 import fr.kosmosuniverse.kuffle.Commands.KuffleList;
@@ -23,6 +25,7 @@ import fr.kosmosuniverse.kuffle.Commands.KuffleResume;
 import fr.kosmosuniverse.kuffle.Commands.KuffleSkip;
 import fr.kosmosuniverse.kuffle.Commands.KuffleStart;
 import fr.kosmosuniverse.kuffle.Commands.KuffleStop;
+import fr.kosmosuniverse.kuffle.Commands.KuffleTeleport;
 import fr.kosmosuniverse.kuffle.Commands.KuffleValidate;
 import fr.kosmosuniverse.kuffle.Core.ChooseBlockInList;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
@@ -43,14 +46,17 @@ import fr.kosmosuniverse.kuffle.TabCmd.KuffleValidateTab;
 import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class KuffleMain extends JavaPlugin {
-	public HashMap<String, ArrayList<String>> allBlocks;
 	public HashMap<String, HashMap<String, RewardElem>> allRewards;
+	public HashMap<String, ArrayList<Inventory>> blocksInvs;
+	public HashMap<String, ArrayList<String>> allBlocks;
+	public HashMap<String, Boolean> playerRank = new HashMap<String, Boolean>();
+	public HashMap<String, Location> backCmd;
 	public HashMap<String, PotionEffectType> effects;
 	public ArrayList<GameTask> games;
 	public ManageCrafts crafts;
 	public ManageMultiBlock multiBlock;
 	public Scores scores;
-	public HashMap<String, Location> backCmd;
+	public Inventory playersHeads;
 	
 	public boolean paused = false;
 	
@@ -107,7 +113,8 @@ public class KuffleMain extends JavaPlugin {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-				
+		
+		blocksInvs = ChooseBlockInList.getBlocksInvs(allBlocks);
 		effects = RewardManager.getAllEffects();
 		games = new ArrayList<GameTask>();
 		crafts = new ManageCrafts(this);
@@ -140,6 +147,8 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kskip").setExecutor(new KuffleSkip(this));
 		getCommand("kcrafts").setExecutor(new KuffleCrafts(this));
 		getCommand("kmultiBlocks").setExecutor(new KuffleMultiBlocks(this));
+		getCommand("kageblocks").setExecutor(new KuffleAgeBlocks(this));
+		getCommand("kteleport").setExecutor(new KuffleTeleport(this));
 		
 		System.out.println("[Kuffle] Add Plugin Tab Completer.");
 		getCommand("klist").setTabCompleter(new KuffleListTab(this));

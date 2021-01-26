@@ -1,5 +1,7 @@
 package fr.kosmosuniverse.kuffle.Core;
 
+import java.util.ArrayList;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;
@@ -8,6 +10,7 @@ import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
+import fr.kosmosuniverse.kuffle.utils.Utils;
 import net.md_5.bungee.api.ChatColor;
 
 public class Scores {
@@ -15,12 +18,8 @@ public class Scores {
 	private Scoreboard scoreboard;
 	private Objective age;
 	private Objective blocks;
-	private Score archaic;
-	private Score classic;
-	private Score mineric;
-	private Score netheric;
-	private Score heroic;
-	private Score mythic;
+	private String[] ageNames = {"Archaic", "Classic", "Mineric", "Netheric", "Heroic", "Mythic"};
+	private ArrayList<Score> S_ages = new ArrayList<Score>();
 	
 	public Scores(KuffleMain _km) {
 		km = _km;
@@ -28,19 +27,19 @@ public class Scores {
 		age = scoreboard.registerNewObjective("ages", "dummy", ChatColor.LIGHT_PURPLE + "Ages");
 		blocks = scoreboard.registerNewObjective("blocks", "dummy", "Blocks");
 		
-		archaic = age.getScore(ChatColor.RED + "Archaic Age");
-		classic = age.getScore(ChatColor.GOLD + "Classic Age");
-		mineric = age.getScore(ChatColor.YELLOW + "Mineric Age");
-		netheric = age.getScore(ChatColor.GREEN + "Netheric Age");
-		heroic = age.getScore(ChatColor.DARK_GREEN + "Heroic Age");
-		mythic = age.getScore(ChatColor.DARK_BLUE + "Mythic Age");
+		int ageCnt = 0;
 		
-		archaic.setScore(1);
-		classic.setScore(1);
-		mineric.setScore(1);
-		netheric.setScore(1);
-		heroic.setScore(1);
-		mythic.setScore(1);
+		for (String ageStr : ageNames) {
+			S_ages.add(age.getScore(Utils.getColor(ageCnt) + ageStr + " Age"));
+			ageCnt++;
+		}
+		
+		ageCnt = 1;
+		
+		for (Score ageScore : S_ages) {
+			ageScore.setScore(ageCnt);
+			ageCnt++;
+		}
 	}
 	
 	public void setupPlayerScores(DisplaySlot slot) {

@@ -1,6 +1,5 @@
 package fr.kosmosuniverse.kuffle.Commands;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,6 +8,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
+import fr.kosmosuniverse.kuffle.Core.ActionBar;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
 
 public class KufflePause implements CommandExecutor {
@@ -42,10 +42,10 @@ public class KufflePause implements CommandExecutor {
 		
 		for (GameTask gt : km.games) {
 			gt.disable();
+			ActionBar.sendRawTitle("{\"text\":\"Game Paused..\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
 			gt.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 999999, 10, false, false, false));
 		}
 		
-		Bukkit.dispatchCommand(sender, "title @a title {\"text\":\"Game Paused...\",\"bold\":true,\"color\":\"dark_purple\"}");
 		km.paused = true;
 		
 		return true;
