@@ -63,6 +63,9 @@ commands:
    kteleport:
       usage: /<command>
       description: command to tp to other players after game end
+   klang:
+      usage: /<command>
+      description: command to see or change personnal lang
 
 permissions:
    klist:
@@ -113,3 +116,6 @@ permissions:
    kteleport:
       description: command to tp to other players after game end
       default: true
+   klang:
+      description: command to see or change personnal lang
+      default: true 

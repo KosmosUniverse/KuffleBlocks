@@ -3,6 +3,7 @@ package fr.kosmosuniverse.kuffle.Core;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -73,5 +74,17 @@ public class LangManager {
 		}
 			
 		return res;
+	}
+	
+	public static ArrayList<String> findAllLangs(HashMap<String, HashMap<String, String>> allBlocksLangs) {
+		ArrayList<String> allLangs = new ArrayList<String>();
+		
+		HashMap<String, String> first = allBlocksLangs.get(allBlocksLangs.keySet().toArray()[0]);
+		
+		for (String key : first.keySet()) {
+			allLangs.add(key);
+		}
+		
+		return allLangs;
 	}
 }

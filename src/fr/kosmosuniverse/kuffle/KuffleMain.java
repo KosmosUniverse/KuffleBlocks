@@ -35,6 +35,7 @@ public class KuffleMain extends JavaPlugin {
 	public HashMap<String, Location> backCmd;
 	public HashMap<String, PotionEffectType> effects;
 	public ArrayList<GameTask> games;
+	public ArrayList<String> langs;
 	public ManageCrafts crafts;
 	public ManageMultiBlock multiBlock;
 	public Scores scores;
@@ -106,6 +107,7 @@ public class KuffleMain extends JavaPlugin {
 			e.printStackTrace();
 		}
 		
+		langs = LangManager.findAllLangs(allLang);
 		blocksInvs = ChooseBlockInList.getBlocksInvs(allBlocks);
 		effects = RewardManager.getAllEffects();
 		games = new ArrayList<GameTask>();
@@ -141,6 +143,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kmultiBlocks").setExecutor(new KuffleMultiBlocks(this));
 		getCommand("kageblocks").setExecutor(new KuffleAgeBlocks(this));
 		getCommand("kteleport").setExecutor(new KuffleTeleport(this));
+		getCommand("klang").setExecutor(new KuffleLang(this));
 		
 		System.out.println("[Kuffle] Add Plugin Tab Completer.");
 		getCommand("klist").setTabCompleter(new KuffleListTab(this));
@@ -148,6 +151,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kvalidate").setTabCompleter(new KuffleValidateTab(this));
 		getCommand("kadminspawn").setTabCompleter(new KuffleAdminSpawnTab(this));
 		getCommand("kmultiblocks").setTabCompleter(new KuffleMultiBlocksTab(this));
+		getCommand("klang").setTabCompleter(new KuffleLangTab(this));
 		
 		System.out.println("[Kuffle] Plugin turned ON.");
 	}

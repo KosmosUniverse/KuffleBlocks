@@ -140,15 +140,6 @@ public class GameTask {
 						count /= 1000;
 						String dispCurBlock;
 						
-						/*if (currentBlock == null)
-							dispCurBlock = "Something New...";
-						else if (currentBlock.contains("_"))
-							dispCurBlock = currentBlock.replace("_", " ");
-						else
-							dispCurBlock = currentBlock;
-						
-						dispCurBlock = dispCurBlock.substring(0, 1).toUpperCase() + dispCurBlock.substring(1);*/
-						
 						if (currentBlock == null)
 							dispCurBlock = "Something New...";
 						else
@@ -227,6 +218,22 @@ public class GameTask {
 		}
 		
 		return "" + count;
+	}
+	
+	public String getLang() {
+		return configLang;
+	}
+	
+	public void setLang(String _configLang) {
+		if (_configLang.equals(configLang)) {
+			return ;
+		}
+		
+		configLang = _configLang;
+		
+		if (currentBlock != null) {
+			blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
+		}
 	}
 	
 	public void setBlockScore(Score score) {
