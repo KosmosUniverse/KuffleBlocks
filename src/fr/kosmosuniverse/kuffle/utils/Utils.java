@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -12,7 +13,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 
 public class Utils {
-	public static String readJSONFile(InputStream in) throws IOException {
+	public static String readFileContent(InputStream in) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         StringBuilder sb = new StringBuilder();
  
@@ -52,5 +53,14 @@ public class Utils {
 		default:
 			return (ChatColor.DARK_PURPLE);
 		}
+	}
+	
+	public static String getVersion() {
+		String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
+		
+		version = version.split("v")[1];
+		version = version.split("_")[0] + "." + version.split("_")[1];
+		
+		return version;
 	}
 }

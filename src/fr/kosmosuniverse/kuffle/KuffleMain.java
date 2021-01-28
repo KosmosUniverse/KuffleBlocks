@@ -11,43 +11,24 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffectType;
 
-import fr.kosmosuniverse.kuffle.Commands.KuffleAdminLoad;
-import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSave;
-import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSkip;
-import fr.kosmosuniverse.kuffle.Commands.KuffleAdminSpawn;
-import fr.kosmosuniverse.kuffle.Commands.KuffleAgeBlocks;
-import fr.kosmosuniverse.kuffle.Commands.KuffleBack;
-import fr.kosmosuniverse.kuffle.Commands.KuffleCrafts;
-import fr.kosmosuniverse.kuffle.Commands.KuffleList;
-import fr.kosmosuniverse.kuffle.Commands.KuffleMultiBlocks;
-import fr.kosmosuniverse.kuffle.Commands.KufflePause;
-import fr.kosmosuniverse.kuffle.Commands.KuffleResume;
-import fr.kosmosuniverse.kuffle.Commands.KuffleSkip;
-import fr.kosmosuniverse.kuffle.Commands.KuffleStart;
-import fr.kosmosuniverse.kuffle.Commands.KuffleStop;
-import fr.kosmosuniverse.kuffle.Commands.KuffleTeleport;
-import fr.kosmosuniverse.kuffle.Commands.KuffleValidate;
+import fr.kosmosuniverse.kuffle.Commands.*;
 import fr.kosmosuniverse.kuffle.Core.ChooseBlockInList;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
+import fr.kosmosuniverse.kuffle.Core.LangManager;
 import fr.kosmosuniverse.kuffle.Core.RewardElem;
 import fr.kosmosuniverse.kuffle.Core.RewardManager;
 import fr.kosmosuniverse.kuffle.Core.Scores;
 import fr.kosmosuniverse.kuffle.Crafts.ACrafts;
 import fr.kosmosuniverse.kuffle.Crafts.ManageCrafts;
-import fr.kosmosuniverse.kuffle.Listeners.InventoryRecipeListener;
-import fr.kosmosuniverse.kuffle.Listeners.PlayerEventListener;
-import fr.kosmosuniverse.kuffle.Listeners.PlayerMove;
+import fr.kosmosuniverse.kuffle.Listeners.*;
 import fr.kosmosuniverse.kuffle.MultiBlock.ManageMultiBlock;
-import fr.kosmosuniverse.kuffle.TabCmd.KuffleAdminSkipTab;
-import fr.kosmosuniverse.kuffle.TabCmd.KuffleAdminSpawnTab;
-import fr.kosmosuniverse.kuffle.TabCmd.KuffleListTab;
-import fr.kosmosuniverse.kuffle.TabCmd.KuffleMultiBlocksTab;
-import fr.kosmosuniverse.kuffle.TabCmd.KuffleValidateTab;
+import fr.kosmosuniverse.kuffle.TabCmd.*;
 import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class KuffleMain extends JavaPlugin {
 
 	public HashMap<String, HashMap<String, RewardElem>> allRewards;
+	public HashMap<String, HashMap<String, String>> allLang;
 	public HashMap<String, ArrayList<Inventory>> blocksInvs;
 	public HashMap<String, ArrayList<String>> allBlocks;
 	public HashMap<String, Boolean> playerRank = new HashMap<String, Boolean>();
@@ -104,15 +85,21 @@ public class KuffleMain extends JavaPlugin {
 		}
 		
 		try {
-			InputStream in = getResource("blocks_" + getVersion() + ".json");
-			String result = Utils.readJSONFile(in);
+			InputStream in = getResource("blocks_" + Utils.getVersion() + ".json");
+			String result = Utils.readFileContent(in);
 			allBlocks = ChooseBlockInList.getAllBlocks(result, this.getDataFolder());
 			
 			in.close();
 			
 			in = getResource("rewards.json");
-			result = Utils.readJSONFile(in);
+			result = Utils.readFileContent(in);
 			allRewards = RewardManager.getAllRewards(result, this.getDataFolder());
+			
+			in.close();
+			
+			in = getResource("blocks_lang.json");
+			result = Utils.readFileContent(in);
+			allLang = LangManager.getAllBlocksLang(result, this.getDataFolder());
 			
 			in.close();
 		} catch (IOException e) {
@@ -177,16 +164,10 @@ public class KuffleMain extends JavaPlugin {
 		
 		allBlocks.clear();
 		allRewards.clear();
+		allLang.clear();
 		
 		System.out.println("[Kuffle] : Plugin turned OFF.");
 	}
 	
-	public static String getVersion() {
-		String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
-		
-		version = version.split("v")[1];
-		version = version.split("_")[0] + "." + version.split("_")[1];
-		
-		return version;
-	}
+	
 }

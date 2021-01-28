@@ -133,7 +133,6 @@ public class KuffleStart implements CommandExecutor {
 			@Override
 			public void run() {
 				for (GameTask gt : km.games) {
-					ActionBar.sendRawTitle("{\"text\":\"GO!\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
 					gt.startRunnable();
 				}
 				

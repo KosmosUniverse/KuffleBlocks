@@ -23,10 +23,12 @@ import fr.kosmosuniverse.kuffle.utils.Utils;
 public class GameTask {
 	private BukkitTask runnable;
 	private Player player;
+	private String configLang = "en";
 	private ArrayList<String> alreadyGot;
 	private int age = 0;
 	private String[] ageNames = {"Archaic", "Classic", "Mineric", "Netheric", "Heroic", "Mythic"};
 	private String currentBlock = null;
+	private String blockDisplay = null;
 	private long previousShuffle = -1;
 	private int time;
 	private long interval = -1;
@@ -75,6 +77,7 @@ public class GameTask {
 					if (currentBlock == null || age == 6) {
 						previousShuffle = System.currentTimeMillis();
 						currentBlock = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));
+						blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
 						alreadyGot.add(currentBlock);
 					}
 					
@@ -137,14 +140,20 @@ public class GameTask {
 						count /= 1000;
 						String dispCurBlock;
 						
-						if (currentBlock == null)
+						/*if (currentBlock == null)
 							dispCurBlock = "Something New...";
 						else if (currentBlock.contains("_"))
 							dispCurBlock = currentBlock.replace("_", " ");
 						else
 							dispCurBlock = currentBlock;
 						
-						dispCurBlock = dispCurBlock.substring(0, 1).toUpperCase() + dispCurBlock.substring(1);
+						dispCurBlock = dispCurBlock.substring(0, 1).toUpperCase() + dispCurBlock.substring(1);*/
+						
+						if (currentBlock == null)
+							dispCurBlock = "Something New...";
+						else
+							dispCurBlock = blockDisplay;
+						
 						String color = null;
 						
 						if (count < 30) {
@@ -331,6 +340,7 @@ public class GameTask {
 		if (age == ageNames.length) {
 			ageDisplay.setTitle("Game Done ! Rank : " + getGameRank1());
 			ageDisplay.setProgress(1.0);
+			km.playerRank.put(player.getDisplayName(), true);
 		}
 	}
 	

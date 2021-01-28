@@ -1,9 +1,5 @@
 name: Kuffle
-<<<<<<< HEAD
-version: 3.3
-=======
 version: 3.4
->>>>>>> refs/heads/develop
 author: KosmosUniverse
 main: fr.kosmosuniverse.kuffle.KuffleMain
 api-version: 1.15
@@ -64,12 +60,9 @@ commands:
    kageblocks:
       usage: /<command>
       description: command to see current age blocks
-<<<<<<< HEAD
-=======
    kteleport:
       usage: /<command>
       description: command to tp to other players after game end
->>>>>>> refs/heads/develop
 
 permissions:
    klist:
@@ -116,10 +109,7 @@ permissions:
       default: true
    kageblocks:
       description: command to see current age blocks
-<<<<<<< HEAD
-=======
       default: true
    kteleport:
       description: command to tp to other players after game end
->>>>>>> refs/heads/develop
       default: true
