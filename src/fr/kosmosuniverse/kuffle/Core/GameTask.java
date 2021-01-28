@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
+import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
@@ -41,6 +44,7 @@ public class GameTask {
 	private boolean found = false;
 	private double calc = 0;
 	private Score blockScore;
+	private ArmorStand display;
 	
 	public GameTask(KuffleMain _km, Player _p) {
 		km = _km;
@@ -56,6 +60,9 @@ public class GameTask {
 		exit = false;
 		alreadyGot = new ArrayList<String>();
 		time = km.getConfig().getInt("game_settings.start_time");
+		display = (ArmorStand) player.getWorld().spawnEntity(player.getLocation(), EntityType.ARMOR_STAND);
+		display.setVisible(false);
+		display.setCustomNameVisible(true);
 		
 		runnable = new BukkitRunnable() {
 			@Override
@@ -68,16 +75,20 @@ public class GameTask {
 					calc = ((double) blockCount) / maxBlock;
 					calc = calc > 1.0 ? 1.0 : calc;
 					ageDisplay.setProgress(calc);
-					if (age == ageNames.length)
+					
+					if (age == ageNames.length) {
 						ageDisplay.setTitle(ageNames[age - 1] + " Age: " + blockCount);
-					else
+					} else {
 						ageDisplay.setTitle(ageNames[age] + " Age: " + blockCount);
+					}
+					
 					blockScore.setScore(blockCount);
 					
 					if (currentBlock == null || age == 6) {
 						previousShuffle = System.currentTimeMillis();
 						currentBlock = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));
 						blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
+						display.setCustomName(Utils.getColor(age) + blockDisplay);
 						alreadyGot.add(currentBlock);
 					}
 					
@@ -132,6 +143,7 @@ public class GameTask {
 						exit = true;
 						previousShuffle = -1;
 						ageDisplay.setProgress(1.0);
+						display.remove();
 					}
 					
 					if (previousShuffle != -1) {
@@ -190,19 +202,6 @@ public class GameTask {
 		return blockCount;
 	}
 	
-	private String getGameRank1() {
-		km.playerRank.put(player.getDisplayName(), true);
-		
-		int count = 0;
-		
-		for (String player : km.playerRank.keySet()) {
-			if (km.playerRank.get(player))
-				count++;
-		}
-		
-		return "" + count;
-	}
-	
 	public Score getBlockScore() {
 		return blockScore;
 	}
@@ -244,10 +243,27 @@ public class GameTask {
 		blockCount = _blockCount;
 	}
 	
+	public void blockDisplayTp() {
+		Location playerLoc = player.getLocation();
+		double newX;
+        double newZ;
+        float nang = player.getLocation().getYaw() + 90;
+       
+        if(nang < 0) nang += 360;
+       
+        newX = Math.cos(Math.toRadians(nang));
+        newZ = Math.sin(Math.toRadians(nang));
+		
+        Location newLoc = new Location(player.getWorld(), playerLoc.getX() - newX, playerLoc.getY(), playerLoc.getZ() - newZ, playerLoc.getYaw(), playerLoc.getPitch());
+        
+		display.teleport(newLoc);
+	}
+	
 	public void enable() {
 		if (age == 6) {
 			exit = true;
 			enable = true;
+			display.remove();
 			return;
 		}
 		
@@ -279,6 +295,7 @@ public class GameTask {
 		enable = false;
 		blockCount = 1;
 		time = km.getConfig().getInt("game_settings.start_time");
+		display.remove();
 		if (ageDisplay != null && ageDisplay.getPlayers().size() != 0) {
 			ageDisplay.removeAll();
 			ageDisplay = null;
@@ -336,6 +353,9 @@ public class GameTask {
 			km.scores.setupPlayerScores(DisplaySlot.BELOW_NAME, player);
 		}
 		
+		blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
+		display.setCustomName(Utils.getColor(age) + blockDisplay);
+		
 		blockCount = _blockCount;
 		blockScore.setScore(blockCount);
 		player.setPlayerListName(Utils.getColor(age) + player.getName());
@@ -345,9 +365,11 @@ public class GameTask {
 		}
 		
 		if (age == ageNames.length) {
-			ageDisplay.setTitle("Game Done ! Rank : " + getGameRank1());
+			display.remove();
+			ageDisplay.setTitle("Game Done ! Rank : " + getGameRank());
 			ageDisplay.setProgress(1.0);
 			km.playerRank.put(player.getDisplayName(), true);
+			display.remove();
 		}
 	}
 	
