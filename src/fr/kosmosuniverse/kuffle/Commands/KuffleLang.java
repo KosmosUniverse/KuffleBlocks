@@ -52,27 +52,7 @@ public class KuffleLang implements CommandExecutor {
 				return false;
 			}
 		}
-		
-		/*ArmorStand armorStand = (ArmorStand) player.getWorld().spawnEntity(player.getLocation(), EntityType.ARMOR_STAND);
-		armorStand.setGlowing(true);
-        armorStand.setVisible(false);
-		armorStand.setCustomName("§eTest");
-        armorStand.setCustomNameVisible(true);
-		
-        Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
-			@Override
-			public void run() {
-				armorStand.setCustomName("§e§lNew");
-			}
-		}, 60);
-        
-		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
-			@Override
-			public void run() {
-		        armorStand.remove();
-			}
-		}, 120);*/
-		
+
 		player.sendMessage("The game has not launched yet.");
 		return true;
 	}
