@@ -1,0 +1,2590 @@
+{
+	"acacia_leaves" : {
+		"en" : "Acacia Leaves",
+		"fr" : "Feuilles d'Acacia"
+	},
+	"acacia_log" : {
+		"en" : "Acacia Log",
+		"fr" : "Bûche d'Acacia"
+	},
+	"acacia_sapling" : {
+		"en" : "Acacia Sapling",
+		"fr" : "Pousse d'Acacia"
+	},
+	"dandelion" : {
+		"en" : "Dandelion",
+		"fr" : "Pissenlit"
+	},
+	"ancient_debris" : {
+		"en" : "Ancient Debris",
+		"fr" : "Débris Antiques"
+	},
+	"andesite" : {
+		"en" : "Andesite",
+		"fr" : "Andésite"
+	},
+	"poppy" : {
+		"en" : "Poppy",
+		"fr" : "Coquelicot"
+	},
+	"bamboo" : {
+		"en" : "Bamboo",
+		"fr" : "Bambou"
+	},
+	"basalt" : {
+		"en" : "Basalt",
+		"fr" : "Basalte"
+	},
+	"bedrock" : {
+		"en" : "Bedrock",
+		"fr" : "Bedrock"
+	},
+	"bee_nest" : {
+		"en" : "Bee Nest",
+		"fr" : "Ruche"
+	},
+	"beetroots" : {
+		"en" : "Beetroots",
+		"fr" : "Betterave"
+	},
+	"bell" : {
+		"en" : "Bell",
+		"fr" : "Cloche"
+	},
+	"birch_leaves" : {
+		"en" : "Birch Leaves",
+		"fr" : "Feuilles de Bouleau"
+	},
+	"birch_log" : {
+		"en" : "Birch Log",
+		"fr" : "Bûche de Bouleau"
+	},
+	"birch_sapling" : {
+		"en" : "Birch Sapling",
+		"fr" : "Pousse de Boulot"
+	},
+	"blackstone" : {
+		"en" : "Blackstone",
+		"fr" : "Roche Noire"
+	},
+	"blaze_rod" : {
+		"en" : "Blaze Rod",
+		"fr" : "Bâton de Blaze"
+	},
+	"blue_orchid" : {
+		"en" : "Blue Orchid",
+		"fr" : "Orchidée bleue"
+	},
+	"bone" : {
+		"en" : "Bone",
+		"fr" : "Os"
+	},
+	"brain_coral" : {
+		"en" : "Brain Coral",
+		"fr" : "Corail Cerveau"
+	},
+	"brain_coral_block" : {
+		"en" : "Brain Coral Block",
+		"fr" : "Bloc de Corail Cerveau"
+	},
+	"brain_coral_fan" : {
+		"en" : "Brain Coral Fan",
+		"fr" : "Gorgone de Corail Cerveau"
+	},
+	"bubble_coral" : {
+		"en" : "Bubble Coral",
+		"fr" : "Corail Bulle"
+	},
+	"bubble_coral_block" : {
+		"en" : "Bubble Coral Block",
+		"fr" : "Bloc de Corail Bulle"
+	},
+	"bubble_coral_fan" : {
+		"en" : "Bubble Coral Fan",
+		"fr" : "Gorgone de Corail bulle"
+	},
+	"cactus" : {
+		"en" : "Cactus",
+		"fr" : "Cactus"
+	},
+	"carrots" : {
+		"en" : "Carrots",
+		"fr" : "Carrotes"
+	},
+	"carved_pumpkin" : {
+		"en" : "Carved Pumpkin",
+		"fr" : "Citrouille Sculptée"
+	},
+	"chorus_flower" : {
+		"en" : "Chorus Flower",
+		"fr" : "Fleur de Chorus"
+	},
+	"chorus_plant" : {
+		"en" : "Chorus Plant",
+		"fr" : "Plante de Chorus"
+	},
+	"clay" : {
+		"en" : "Clay",
+		"fr" : "Bloc d'Argile"
+	},
+	"clay_ball" : {
+		"en" : "Clay Ball",
+		"fr" : "Boule d'Argile"
+	},
+	"coal" : {
+		"en" : "Coal",
+		"fr" : "Charbon"
+	},
+	"coal_ore" : {
+		"en" : "Coal Ore",
+		"fr" : "Minerais de Charbon"
+	},
+	"coarse_dirt" : {
+		"en" : "Coarse Dirt",
+		"fr" : "Terre Stérile"
+	},
+	"cobblestone" : {
+		"en" : "Cobblestone",
+		"fr" : "Pierres"
+	},
+	"allium" : {
+		"en" : "Allium",
+		"fr" : "Allium"
+	},
+	"crimson_fungus" : {
+		"en" : "Crimson Fungus",
+		"fr" : "Champignon Carmin"
+	},
+	"crimson_nylium" : {
+		"en" : "Crimson Nylium",
+		"fr" : "Nylium Carmin"
+	},
+	"crimson_roots" : {
+		"en" : "Crimson Roots",
+		"fr" : "Racines Carmin"
+	},
+	"crimson_stem" : {
+		"en" : "Crimson Stem",
+		"fr" : "Hyphes carmin"
+	},
+	"crying_obsidian" : {
+		"en" : "Crying Obsidian",
+		"fr" : "Obsidienne Pleureuse"
+	},
+	"azure_bluet" : {
+		"en" : "Azure Bluet",
+		"fr" : "Houstonie Bleue"
+	},
+	"dark_oak_leaves" : {
+		"en" : "Dark Oak Leaves",
+		"fr" : "Feuilles de Chêne Noir"
+	},
+	"dark_oak_log" : {
+		"en" : "Dark Oak Log",
+		"fr" : "Bûche de Chêne Noir"
+	},
+	"dark_oak_sapling" : {
+		"en" : "Dark Oak Sapling",
+		"fr" : "Pousse de Chêne Noir"
+	},
+	"dark_prismarine" : {
+		"en" : "Dark Prismarine",
+		"fr" : "Prismarine Sombre"
+	},
+	"dead_brain_coral" : {
+		"en" : "Dead Brain Coral",
+		"fr" : "Corail Cerveau Mort"
+	},
+	"dead_brain_coral_block" : {
+		"en" : "Dead Brain Coral Block",
+		"fr" : "Bloc de Corail Cerveau Mort"
+	},
+	"dead_brain_coral_fan" : {
+		"en" : "Dead Brain Coral Fan",
+		"fr" : "Gorgone de Corail Cerveau Morte"
+	},
+	"dead_bubble_coral" : {
+		"en" : "Dead Bubble Coral",
+		"fr" : "Corail Bulle Mort"
+	},
+	"dead_bubble_coral_block" : {
+		"en" : "Dead Bubble Coral Block",
+		"fr" : "Bloc de Corail Bulle Mort"
+	},
+	"dead_bubble_coral_fan" : {
+		"en" : "Dead Bubble Coral Fan",
+		"fr" : "Gorgone de Corail Bulle Morte"
+	},
+	"dead_bush" : {
+		"en" : "Dead Bush",
+		"fr" : "Arbuste Mort"
+	},
+	"dead_fire_coral" : {
+		"en" : "Dead Fire Coral",
+		"fr" : "Corail de Feu Mort"
+	},
+	"dead_fire_coral_block" : {
+		"en" : "Dead Fire Coral Block",
+		"fr" : "Bloc de Corail de Feu Mort"
+	},
+	"dead_fire_coral_fan" : {
+		"en" : "Dead Fire Coral Fan",
+		"fr" : "Gorgone de Corail de Feu Morte"
+	},
+	"dead_horn_coral" : {
+		"en" : "Dead Horn Coral",
+		"fr" : "Corail Corné Mort"
+	},
+	"dead_horn_coral_block" : {
+		"en" : "Dead Horn Coral Block",
+		"fr" : "Bloc de Corail Corné Mort"
+	},
+	"dead_horn_coral_fan" : {
+		"en" : "Dead Horn Coral Fan",
+		"fr" : "Gorgone de Corail Corné Morte"
+	},
+	"dead_tube_coral" : {
+		"en" : "Dead Tube Coral",
+		"fr" : "Corail Tubulaire Mort"
+	},
+	"dead_tube_coral_block" : {
+		"en" : "Dead Tube Coral Block",
+		"fr" : "Bloc de Corail Tubulaire Mort"
+	},
+	"dead_tube_coral_fan" : {
+		"en" : "Dead Tube Coral Fan",
+		"fr" : "Gorgone de Corail Tubulaire Morte"
+	},
+	"diamond" : {
+		"en" : "Diamond",
+		"fr" : "Diamant"
+	},
+	"diamond_ore" : {
+		"en" : "Diamond Ore",
+		"fr" : "Minerais de Diamant"
+	},
+	"diorite" : {
+		"en" : "Diorite",
+		"fr" : "Diorite"
+	},
+	"dirt" : {
+		"en" : "Dirt",
+		"fr" : "Terre"
+	},
+	"emerald" : {
+		"en" : "Emerald",
+		"fr" : "Emeraude"
+	},
+	"emerald_ore" : {
+		"en" : "Emerald Ore",
+		"fr" : "Minerais d'Emeraude"
+	},
+	"end_rod" : {
+		"en" : "End Rod",
+		"fr" : "Barre de l'End"
+	},
+	"end_stone" : {
+		"en" : "End Stone",
+		"fr" : "Pierre de l'End"
+	},
+	"ender_pearl" : {
+		"en" : "Ender Pearl",
+		"fr" : "Perle de l'Ender"
+	},
+	"farmland" : {
+		"en" : "Farmland",
+		"fr" : "Terre Labourée"
+	},
+	"fern" : {
+		"en" : "Fern",
+		"fr" : "Fougère"
+	},
+	"fire" : {
+		"en" : "Fire",
+		"fr" : "Feu"
+	},
+	"fire_coral" : {
+		"en" : "Fire Coral",
+		"fr" : "Corail de Feu"
+	},
+	"fire_coral_block" : {
+		"en" : "Fire Coral Block",
+		"fr" : "Bloc de Corail de Feu"
+	},
+	"fire_coral_fan" : {
+		"en" : "Fire Coral Fan",
+		"fr" : "Gorgone de Corail de Feu"
+	},
+	"flint" : {
+		"en" : "Flint",
+		"fr" : "Silex"
+	},
+	"flower" : {
+		"en" : "Flower",
+		"fr" : "Fleur"
+	},
+	"gilded_blackstone" : {
+		"en" : "Gilded Blackstone",
+		"fr" : "Roche Noire dorée"
+	},
+	"glowstone" : {
+		"en" : "Glowstone",
+		"fr" : "Pierre Lumineuse"
+	},
+	"gold_ore" : {
+		"en" : "Gold Ore",
+		"fr" : "Minerais d'Or"
+	},
+	"granite" : {
+		"en" : "Granite",
+		"fr" : "Granite"
+	},
+	"grass" : {
+		"en" : "Grass",
+		"fr" : "Herbe"
+	},
+	"grass_block" : {
+		"en" : "Grass Block",
+		"fr" : "Bloc d'Herbe"
+	},
+	"grass_path" : {
+		"en" : "Grass Path",
+		"fr" : "Chemin d'Herbe"
+	},
+	"gravel" : {
+		"en" : "Gravel",
+		"fr" : "Gravier"
+	},
+	"gunpowder" : {
+		"en" : "Gunpowder",
+		"fr" : "Poudre à Canon"
+	},
+	"horn_coral" : {
+		"en" : "Horn Coral",
+		"fr" : "Corail Corné"
+	},
+	"horn_coral_block" : {
+		"en" : "Horn Coral Block",
+		"fr" : "Bloc de Corail Corné"
+	},
+	"horn_coral_fan" : {
+		"en" : "Horn Coral Fan",
+		"fr" : "Gorgone de Corail Corné"
+	},
+	"ice" : {
+		"en" : "Ice",
+		"fr" : "Glace"
+	},
+	"iron_ore" : {
+		"en" : "Iron Ore",
+		"fr" : "Minerais de Fer"
+	},
+	"kelp" : {
+		"en" : "Kelp",
+		"fr" : "Algue"
+	},
+	"lapis_lazuli" : {
+		"en" : "Lapis Lazuli",
+		"fr" : "Lapis-Lazuli"
+	},
+	"lapis_ore" : {
+		"en" : "Lapis Ore",
+		"fr" : "Minerais de Lapis"
+	},
+	"large_fern" : {
+		"en" : "Large Fern",
+		"fr" : "Haute Fougère"
+	},
+	"lava" : {
+		"en" : "Lava",
+		"fr" : "Lave"
+	},
+	"leather" : {
+		"en" : "Leather",
+		"fr" : "Cuir"
+	},
+	"red_tulip" : {
+		"en" : "Red Tulip",
+		"fr" : "Tulipe Rouge"
+	},
+	"orange_tulip" : {
+		"en" : "Orange Tulip",
+		"fr" : "Tulipe Orange"
+	},
+	"lily_pad" : {
+		"en" : "Lily Pad",
+		"fr" : "Nénuphar"
+	},
+	"magma_block" : {
+		"en" : "Magma Block",
+		"fr" : "Bloc de Magma"
+	},
+	"melon" : {
+		"en" : "Melon",
+		"fr" : "Pastèque"
+	},
+	"melon_stem" : {
+		"en" : "Melon Stem",
+		"fr" : "Tige de Pastèque"
+	},
+	"mossy_cobblestone" : {
+		"en" : "Mossy Cobblestone",
+		"fr" : "Pierres Moussues"
+	},
+	"mossy_stone_bricks" : {
+		"en" : "Mossy Stone Bricks",
+		"fr" : "Pierre Taillée Moussue"
+	},
+	"mushroom_stem" : {
+		"en" : "Mushroom Stem",
+		"fr" : "Tige de Champignon"
+	},
+	"mycelium" : {
+		"en" : "Mycelium",
+		"fr" : "Mycélium"
+	},
+	"nether_bricks" : {
+		"en" : "Nether Bricks",
+		"fr" : "Briques du Nether"
+	},
+	"nether_gold_ore" : {
+		"en" : "Nether Gold Ore",
+		"fr" : "Minerais d'Or du Nether"
+	},
+	"nether_quartz_ore" : {
+		"en" : "Nether Quartz Ore",
+		"fr" : "Minerais de Quartz du Nether"
+	},
+	"nether_sprouts" : {
+		"en" : "Nether Sprouts",
+		"fr" : "Germes du Nether"
+	},
+	"nether_star" : {
+		"en" : "Nether Star",
+		"fr" : "Etoile du Nether"
+	},
+	"nether_wart" : {
+		"en" : "Nether Wart",
+		"fr" : "Verrue du Nether"
+	},
+	"netherrack" : {
+		"en" : "Netherrack",
+		"fr" : "Netherrack"
+	},
+	"obsidian" : {
+		"en" : "Obsidian",
+		"fr" : "Obsidienne"
+	},
+	"white_tulip" : {
+		"en" : "White Tulip",
+		"fr" : "Tulipe Blanche"
+	},
+	"packed_ice" : {
+		"en" : "Packed Ice",
+		"fr" : "Glace Compactée"
+	},
+	"pink_tulip" : {
+		"en" : "Pink Tulip",
+		"fr" : "Tulipe Rose"
+	},
+	"podzol" : {
+		"en" : "Podzol",
+		"fr" : "Podzol"
+	},
+	"oxeye_daisy" : {
+		"en" : "Oxeye Daisy",
+		"fr" : "Marguerite"
+	},
+	"potatoes" : {
+		"en" : "Potatoes",
+		"fr" : "Pomme de Terre"
+	},
+	"prismarine" : {
+		"en" : "Prismarine",
+		"fr" : "Prismarine"
+	},
+	"prismarine_bricks" : {
+		"en" : "Prismarine Bricks",
+		"fr" : "Prismarine Taillée"
+	},
+	"pumpkin" : {
+		"en" : "Pumpkin",
+		"fr" : "Cirtouille"
+	},
+	"pumpkin_stem" : {
+		"en" : "Pumpkin Stem",
+		"fr" : "Tige de Citrouille"
+	},
+	"purpur_block" : {
+		"en" : "Purpur Block",
+		"fr" : "Bloc de Purpur"
+	},
+	"purpur_pillar" : {
+		"en" : "Purpur Pillar",
+		"fr" : "Pilier de Purpur"
+	},
+	"purpur_stairs" : {
+		"en" : "Purpur Stairs",
+		"fr" : "Escaliers de Purpur"
+	},
+	"quartz" : {
+		"en" : "Quartz",
+		"fr" : "Quartz du Nether"
+	},
+	"red_sand" : {
+		"en" : "Red Sand",
+		"fr" : "Sable Rouge"
+	},
+	"red_sandstone" : {
+		"en" : "Red Sandstone",
+		"fr" : "Grès Rouge"
+	},
+	"cornflower" : {
+		"en" : "Cornflower",
+		"fr" : "Bleuet"
+	},
+	"redstone_ore" : {
+		"en" : "Redstone Ore",
+		"fr" : "Minerais de Redstone"
+	},
+	"redstone_wire" : {
+		"en" : "Redstone Wire",
+		"fr" : "Fil de Redstone"
+	},
+	"lily_of_the_valley" : {
+		"en" : "Lily Of The Valley",
+		"fr" : "Muguet"
+	},
+	"sand" : {
+		"en" : "Sand",
+		"fr" : "Sable"
+	},
+	"sandstone" : {
+		"en" : "Sandstone",
+		"fr" : "Grès"
+	},
+	"sea_lantern" : {
+		"en" : "Sea Lantern",
+		"fr" : "Lanterne Aquatique"
+	},
+	"sea_pickle" : {
+		"en" : "Sea Pickle",
+		"fr" : "Cornichon de Mer"
+	},
+	"seagrass" : {
+		"en" : "Seagrass",
+		"fr" : "Herbe Aquatique"
+	},
+	"shroomlight" : {
+		"en" : "Shroomlight",
+		"fr" : "Champilampe"
+	},
+	"slime_ball" : {
+		"en" : "Slime Ball",
+		"fr" : "Boule de Slime"
+	},
+	"snow" : {
+		"en" : "Snow",
+		"fr" : "Neige"
+	},
+	"snow_block" : {
+		"en" : "Snow Block",
+		"fr" : "Bloc de Neige"
+	},
+	"soul_fire" : {
+		"en" : "Soul Fire",
+		"fr" : "Feu des Âmes"
+	},
+	"soul_sand" : {
+		"en" : "Soul Sand",
+		"fr" : "Sable des Âmes"
+	},
+	"soul_soil" : {
+		"en" : "Soul Soil",
+		"fr" : "Terre des Âmes"
+	},
+	"sponge" : {
+		"en" : "Sponge",
+		"fr" : "Eponge"
+	},
+	"spruce_leaves" : {
+		"en" : "Spruce Leaves",
+		"fr" : "Feuilles de sapin"
+	},
+	"spruce_log" : {
+		"en" : "Spruce Log",
+		"fr" : "Bûche de sapin"
+	},
+	"spruce_sapling" : {
+		"en" : "Spruce Sapling",
+		"fr" : "Pousse de sapin"
+	},
+	"stone" : {
+		"en" : "Stone",
+		"fr" : "Roche"
+	},
+	"string" : {
+		"en" : "String",
+		"fr" : "Ficelle"
+	},
+	"stripped_acacia_log" : {
+		"en" : "Stripped Acacia Log",
+		"fr" : "Bûche d'acacia écorcée"
+	},
+	"stripped_acacia_wood" : {
+		"en" : "Stripped Acacia Wood",
+		"fr" : "Bois d'acacia écorcée"
+	},
+	"stripped_birch_log" : {
+		"en" : "Stripped Birch Log",
+		"fr" : "Bûche de bouleau écorcée"
+	},
+	"stripped_birch_wood" : {
+		"en" : "Stripped Birch Wood",
+		"fr" : "Bois de bouleau écorcée"
+	},
+	"stripped_dark_oak_log" : {
+		"en" : "Stripped Dark Oak Log",
+		"fr" : "Bûche de chêne noir écorcée"
+	},
+	"stripped_dark_oak_wood" : {
+		"en" : "Stripped Dark Oak Wood",
+		"fr" : "Bois de chêne noir écorcée"
+	},
+	"stripped_jungle_log" : {
+		"en" : "Stripped Jungle Log",
+		"fr" : "Bûche d'acajou écorcée"
+	},
+	"stripped_jungle_wood" : {
+		"en" : "Stripped Jungle Wood",
+		"fr" : "Bois d'acajou écorcée"
+	},
+	"stripped_oak_log" : {
+		"en" : "Stripped Oak Log",
+		"fr" : "Bûche de chêne écorcée"
+	},
+	"stripped_oak_wood" : {
+		"en" : "Stripped Oak Wood",
+		"fr" : "Bois de chêne écorcée"
+	},
+	"stripped_spruce_log" : {
+		"en" : "Stripped Spruce Log",
+		"fr" : "Bûche de sapin écorcée"
+	},
+	"stripped_spruce_wood" : {
+		"en" : "Stripped Spruce Wood",
+		"fr" : "Bois de sapin écorcée"
+	},
+	"sugar_cane" : {
+		"en" : "Sugar Cane",
+		"fr" : "Canne à Sucre"
+	},
+	"wither_rose" : {
+		"en" : "Wither Rose",
+		"fr" : "Rose du Nether"
+	},
+	"tall_grass" : {
+		"en" : "Tall Grass",
+		"fr" : "Haute Herbes"
+	},
+	"tube_coral" : {
+		"en" : "Tube Coral",
+		"fr" : "Corail tubulaire"
+	},
+	"tube_coral_block" : {
+		"en" : "Tube Coral Block",
+		"fr" : "Bloc de corail tubulaire"
+	},
+	"tube_coral_fan" : {
+		"en" : "Tube Coral Fan",
+		"fr" : "Gorgone de corail tubulaire"
+	},
+	"twisting_vines" : {
+		"en" : "Twisting Vines",
+		"fr" : "Lianes Tortueuses"
+	},
+	"twisting_vines_plant" : {
+		"en" : "Twisting Vines Plant",
+		"fr" : "Plant de Lianes Tortueuses"
+	},
+	"vine" : {
+		"en" : "Vine",
+		"fr" : "Lianes"
+	},
+	"warped_fungus" : {
+		"en" : "Warped Fungus",
+		"fr" : "Champignon Biscornu"
+	},
+	"warped_nylium" : {
+		"en" : "Warped Nylium",
+		"fr" : "Nylium Biscornu"
+	},
+	"warped_roots" : {
+		"en" : "Warped Roots",
+		"fr" : "Racines Biscornues"
+	},
+	"warped_stem" : {
+		"en" : "Warped Stem",
+		"fr" : "Tige Biscornue"
+	},
+	"warped_wart_block" : {
+		"en" : "Warped Wart Block",
+		"fr" : "Bloc de Verrues Biscornues"
+	},
+	"water" : {
+		"en" : "Water",
+		"fr" : "Eau"
+	},
+	"weeping_vines" : {
+		"en" : "Weeping Vines",
+		"fr" : "Lianes Pleureuses"
+	},
+	"weeping_vines_plant" : {
+		"en" : "Weeping Vines Plant",
+		"fr" : "Plant de Lianes Pleureuses"
+	},
+	"wet_sponge" : {
+		"en" : "Wet Sponge",
+		"fr" : "Eponge Mouillée"
+	},
+	"wheat" : {
+		"en" : "Wheat",
+		"fr" : "Blé"
+	},
+	"white_wool" : {
+		"en" : "White Wool",
+		"fr" : "Laine Blanche"
+	},
+	"sunflower" : {
+		"en" : "Sunflower",
+		"fr" : "Tournesol"
+	},
+	"wood_log" : {
+		"en" : "Wood Log",
+		"fr" : "Bois"
+	},
+	"acacia_planks" : {
+		"en" : "Acacia Planks",
+		"fr" : "Planche d'Acacia"
+	},
+	"acacia_wood" : {
+		"en" : "Acacia Wood",
+		"fr" : "Bois d'Acacia"
+	},
+	"acacia_button" : {
+		"en" : "Acacia Button",
+		"fr" : "Bouton d'Acacia"
+	},
+	"acacia_door" : {
+		"en" : "Acacia Door",
+		"fr" : "Porte d'Acacia"
+	},
+	"acacia_pressure_plate" : {
+		"en" : "Acacia Pressure Plate",
+		"fr" : "Plaque de Pression d'Acacia"
+	},
+	"acacia_slab" : {
+		"en" : "Acacia Slab",
+		"fr" : "Dalle d'Acacia"
+	},
+	"acacia_stairs" : {
+		"en" : "Acacia Stairs",
+		"fr" : "Escaliers d'Acacia"
+	},
+	"acacia_trapdoor" : {
+		"en" : "Acacia Trapdoor",
+		"fr" : "Trappe d'Acacia"
+	},
+	"acacia_fence" : {
+		"en" : "Acacia Fence",
+		"fr" : "Barrière d'Acacia"
+	},
+	"acacia_fence_gate" : {
+		"en" : "Acacia Fence Gate",
+		"fr" : "Portillon d'Acacia"
+	},
+	"acacia_sign" : {
+		"en" : "Acacia Sign",
+		"fr" : "Panneau d'Acacia"
+	},
+	"netherite_scrap" : {
+		"en" : "Netherite Scrap",
+		"fr" : "Fragments de Netherite"
+	},
+	"andesite_slab" : {
+		"en" : "Andesite Slab",
+		"fr" : "Dalle d'Andésite"
+	},
+	"andesite_stairs" : {
+		"en" : "Andesite Stairs",
+		"fr" : "Escaliers d'Andésite"
+	},
+	"andesite_wall" : {
+		"en" : "Andesite Wall",
+		"fr" : "Mur d'Andésite"
+	},
+	"polished_andesite" : {
+		"en" : "Polished Andesite",
+		"fr" : "Andésite Polie"
+	},
+	"scaffolding" : {
+		"en" : "Scaffolding",
+		"fr" : "Echaffaudage"
+	},
+	"polished_basalt" : {
+		"en" : "Polished Basalt",
+		"fr" : "Basalte Poli"
+	},
+	"birch_planks" : {
+		"en" : "Birch Planks",
+		"fr" : "Planches de Boulot"
+	},
+	"birch_wood" : {
+		"en" : "Birch Wood",
+		"fr" : "Bois de bouleau"
+	},
+	"jungle_leaves" : {
+		"en" : "Jungle Leaves",
+		"fr" : "Feuilles d'acajou"
+	},
+	"jungle_planks" : {
+		"en" : "Jungle Planks",
+		"fr" : "Planches d'Acajou"
+	},
+	"jungle_wood" : {
+		"en" : "Jungle Wood",
+		"fr" : "Bois d'Acajou"
+	},
+	"oak_leaves" : {
+		"en" : "Oak Leaves",
+		"fr" : "Feuilles de chêne"
+	},
+	"birch_button" : {
+		"en" : "Birch Button",
+		"fr" : "Bouton de Bouleau"
+	},
+	"birch_door" : {
+		"en" : "Birch Door",
+		"fr" : "Porte de Bouleau"
+	},
+	"birch_pressure_plate" : {
+		"en" : "Birch Pressure Plate",
+		"fr" : "Plaque de Pression de Bouleau"
+	},
+	"birch_slab" : {
+		"en" : "Birch Slab",
+		"fr" : "Dalle de Bouleau"
+	},
+	"birch_stairs" : {
+		"en" : "Birch Stairs",
+		"fr" : "Escaliers de Bouleau"
+	},
+	"birch_trapdoor" : {
+		"en" : "Birch Trapdoor",
+		"fr" : "Trappe de Bouleau"
+	},
+	"jungle_button" : {
+		"en" : "Jungle Button",
+		"fr" : "Bouton d'Acajou"
+	},
+	"jungle_door" : {
+		"en" : "Jungle Door",
+		"fr" : "Porte d'Acajou"
+	},
+	"jungle_log" : {
+		"en" : "Jungle Log",
+		"fr" : "Bûche d'acajou"
+	},
+	"jungle_pressure_plate" : {
+		"en" : "Jungle Pressure Plate",
+		"fr" : "Plaque de Pression d'Acajou"
+	},
+	"jungle_slab" : {
+		"en" : "Jungle Slab",
+		"fr" : "Dalle d'Acajou"
+	},
+	"jungle_stairs" : {
+		"en" : "Jungle Stairs",
+		"fr" : "Escaliers d'Acajou"
+	},
+	"jungle_trapdoor" : {
+		"en" : "Jungle Trapdoor",
+		"fr" : "Trappe d'Acajou"
+	},
+	"oak_log" : {
+		"en" : "Oak Log",
+		"fr" : "Bûche de chêne"
+	},
+	"birch_fence" : {
+		"en" : "Birch Fence",
+		"fr" : "Barrière de Bouleau"
+	},
+	"birch_fence_gate" : {
+		"en" : "Birch Fence Gate",
+		"fr" : "Portillon de Bouleau"
+	},
+	"birch_sign" : {
+		"en" : "Birch Sign",
+		"fr" : "Panneau de Boulot"
+	},
+	"jungle_fence" : {
+		"en" : "Jungle Fence",
+		"fr" : "Barrière d'Acajou"
+	},
+	"jungle_fence_gate" : {
+		"en" : "Jungle Fence Gate",
+		"fr" : "Portillon d'Acajou"
+	},
+	"jungle_sign" : {
+		"en" : "Jungle Sign",
+		"fr" : "Panneau d'Acajou"
+	},
+	"black_concrete" : {
+		"en" : "Black Concrete",
+		"fr" : "Béton Noir"
+	},
+	"black_stained_glass_pane" : {
+		"en" : "Black Stained Glass Pane",
+		"fr" : "Vitre Noire"
+	},
+	"black_glazed_terracotta" : {
+		"en" : "Black Glazed Terracotta",
+		"fr" : "Terre Cuite Emaillée Noire"
+	},
+	"black_carpet" : {
+		"en" : "Black Carpet",
+		"fr" : "Tapis Noir"
+	},
+	"blackstone_slab" : {
+		"en" : "Blackstone Slab",
+		"fr" : "Dalle de Roche Noire"
+	},
+	"blackstone_stairs" : {
+		"en" : "Blackstone Stairs",
+		"fr" : "Escaliers de Roche Noire"
+	},
+	"blackstone_wall" : {
+		"en" : "Blackstone Wall",
+		"fr" : "Mur de Roche noire"
+	},
+	"polished_blackstone" : {
+		"en" : "Polished Blackstone",
+		"fr" : "Pierre Noire"
+	},
+	"blue_concrete" : {
+		"en" : "Blue Concrete",
+		"fr" : "Béton Bleu"
+	},
+	"brown_concrete" : {
+		"en" : "Brown Concrete",
+		"fr" : "Béton Marron"
+	},
+	"blue_stained_glass_pane" : {
+		"en" : "Blue Stained Glass Pane",
+		"fr" : "Vitre Bleue"
+	},
+	"brown_stained_glass_pane" : {
+		"en" : "Brown Stained Glass Pane",
+		"fr" : "Vitre Marron"
+	},
+	"blue_glazed_terracotta" : {
+		"en" : "Blue Glazed Terracotta",
+		"fr" : "Terre Cuite Emaillée Bleue"
+	},
+	"brown_mushroom" : {
+		"en" : "Brown Mushroom",
+		"fr" : "Champigon Marron"
+	},
+	"blue_carpet" : {
+		"en" : "Blue Carpet",
+		"fr" : "Tapis Bleu"
+	},
+	"bone_block" : {
+		"en" : "Bone Block",
+		"fr" : "Bloc d'Os"
+	},
+	"bricks" : {
+		"en" : "Bricks",
+		"fr" : "Briques"
+	},
+	"flower_pot" : {
+		"en" : "Flower Pot",
+		"fr" : "Pot de Fleur"
+	},
+	"brick_slab" : {
+		"en" : "Brick Slab",
+		"fr" : "Dalle de Briques"
+	},
+	"brick_stairs" : {
+		"en" : "Brick Stairs",
+		"fr" : "Escaliers de Briques"
+	},
+	"brick_wall" : {
+		"en" : "Brick Wall",
+		"fr" : "Mur de Briques"
+	},
+	"brown_glazed_terracotta" : {
+		"en" : "Brown Glazed Terracotta",
+		"fr" : "Terre Cuite Emaillée Marron"
+	},
+	"brown_carpet" : {
+		"en" : "Brown Carpet",
+		"fr" : "Tapis Marron"
+	},
+	"lodestone" : {
+		"en" : "Lodestone",
+		"fr" : "Magnétite"
+	},
+	"terracotta" : {
+		"en" : "Terracotta",
+		"fr" : "Terre Cuite"
+	},
+	"brick" : {
+		"en" : "Brick",
+		"fr" : "Brique"
+	},
+	"coal_block" : {
+		"en" : "Coal Block",
+		"fr" : "Bloc de Charbon"
+	},
+	"torch" : {
+		"en" : "Torch",
+		"fr" : "Torche"
+	},
+	"soul_torch" : {
+		"en" : "Soul Torch",
+		"fr" : "Torche des Âmes"
+	},
+	"cobblestone_slab" : {
+		"en" : "Cobblestone Slab",
+		"fr" : "Dalle de Pierres"
+	},
+	"cobblestone_stairs" : {
+		"en" : "Cobblestone Stairs",
+		"fr" : "Escaliers de Pierres"
+	},
+	"cobblestone_wall" : {
+		"en" : "Cobblestone Wall",
+		"fr" : "Mur de Pierres"
+	},
+	"furnace" : {
+		"en" : "Furnace",
+		"fr" : "Fourneau"
+	},
+	"brewing_stand" : {
+		"en" : "Brewing Stand",
+		"fr" : "Alambic"
+	},
+	"dropper" : {
+		"en" : "Dropper",
+		"fr" : "Dropper"
+	},
+	"dispenser" : {
+		"en" : "Dispenser",
+		"fr" : "Distributeur"
+	},
+	"observer" : {
+		"en" : "Observer",
+		"fr" : "Observateur"
+	},
+	"lever" : {
+		"en" : "Lever",
+		"fr" : "Levier"
+	},
+	"piston" : {
+		"en" : "Piston",
+		"fr" : "Piston"
+	},
+	"crimson_planks" : {
+		"en" : "Crimson Planks",
+		"fr" : "Planches Carmin"
+	},
+	"stripped_crimson_stem" : {
+		"en" : "Stripped Crimson Stem",
+		"fr" : "Tige Carmin Dénudée"
+	},
+	"cut_red_sandstone_slab" : {
+		"en" : "Cut Red Sandstone Slab",
+		"fr" : "Dalle de Grès Rouge Taillé"
+	},
+	"cut_sandstone_slab" : {
+		"en" : "Cut Sandstone Slab",
+		"fr" : "Dalle de Grès Taillé"
+	},
+	"cyan_concrete" : {
+		"en" : "Cyan Concrete",
+		"fr" : "Béton Cyan"
+	},
+	"cyan_stained_glass_pane" : {
+		"en" : "Cyan Stained Glass Pane",
+		"fr" : "Vitre Cyan"
+	},
+	"cyan_glazed_terracotta" : {
+		"en" : "Cyan Glazed Terracotta",
+		"fr" : "Terre Cuite Emaillée Cyan"
+	},
+	"cyan_carpet" : {
+		"en" : "Cyan Carpet",
+		"fr" : "Tapis Cyan"
+	},
+	"dark_oak_planks" : {
+		"en" : "Dark Oak Planks",
+		"fr" : "Planche de Chêne Noir"
+	},
+	"dark_oak_wood" : {
+		"en" : "Dark Oak Wood",
+		"fr" : "Bois de Chêne Noir"
+	},
+	"dark_oak_button" : {
+		"en" : "Dark Oak Button",
+		"fr" : "Bouton de Chêne Noir"
+	},
+	"dark_oak_door" : {
+		"en" : "Dark Oak Door",
+		"fr" : "Porte de Chêne Noir"
+	},
+	"dark_oak_pressure_plate" : {
+		"en" : "Dark Oak Pressure Plate",
+		"fr" : "Plaque de Pression de Chêne Noir"
+	},
+	"dark_oak_slab" : {
+		"en" : "Dark Oak Slab",
+		"fr" : "Dalle de Chêne Noir"
+	},
+	"dark_oak_stairs" : {
+		"en" : "Dark Oak Stairs",
+		"fr" : "Escaliers de Chêne Noir"
+	},
+	"dark_oak_trapdoor" : {
+		"en" : "Dark Oak Trapdoor",
+		"fr" : "Trappe de Chêne Noir"
+	},
+	"dark_oak_fence" : {
+		"en" : "Dark Oak Fence",
+		"fr" : "Barrière de Chêne Noir"
+	},
+	"dark_oak_fence_gate" : {
+		"en" : "Dark Oak Fence Gate",
+		"fr" : "Portillon de Chêne Noir"
+	},
+	"dark_oak_sign" : {
+		"en" : "Dark Oak Sign",
+		"fr" : "Panneau de Chêne Noir"
+	},
+	"dark_prismarine_slab" : {
+		"en" : "Dark Prismarine Slab",
+		"fr" : "Dalle de Prismarine Sombre"
+	},
+	"dark_prismarine_stairs" : {
+		"en" : "Dark Prismarine Stairs",
+		"fr" : "Escaliers de Prismarine Sombre"
+	},
+	"diamond_block" : {
+		"en" : "Diamond Block",
+		"fr" : "Bloc de Diamant"
+	},
+	"diorite_slab" : {
+		"en" : "Diorite Slab",
+		"fr" : "Dalle de Diorite"
+	},
+	"diorite_stairs" : {
+		"en" : "Diorite Stairs",
+		"fr" : "Escaliers de Diorite"
+	},
+	"diorite_wall" : {
+		"en" : "Diorite Wall",
+		"fr" : "Mur de Diorite"
+	},
+	"polished_diorite" : {
+		"en" : "Polished Diorite",
+		"fr" : "Diorite Polie"
+	},
+	"dried_kelp_block" : {
+		"en" : "Dried Kelp Block",
+		"fr" : "Bloc d'Algues Séchées"
+	},
+	"emerald_block" : {
+		"en" : "Emerald Block",
+		"fr" : "Bloc d'Emeraudes"
+	},
+	"end_stone_bricks" : {
+		"en" : "End Stone Bricks",
+		"fr" : "Pierre Taillée de l'End"
+	},
+	"end_stone_brick_slab" : {
+		"en" : "End Stone Brick Slab",
+		"fr" : "Dalle de Pierre Taillée de l'End"
+	},
+	"end_stone_brick_stairs" : {
+		"en" : "End Stone Brick Stairs",
+		"fr" : "Escalier de Pierre Taillée de l'End"
+	},
+	"end_stone_brick_wall" : {
+		"en" : "End Stone Brick Wall",
+		"fr" : "Mur de Pierre Taillée de l'End"
+	},
+	"ender_eye" : {
+		"en" : "Ender Eye",
+		"fr" : "Œil de l'Ender"
+	},
+	"dyes" : {
+		"en" : "Dyes",
+		"fr" : "Colorants"
+	},
+	"potted_dandelion" : {
+		"en" : "Potted Dandelion",
+		"fr" : "Pissenlit en Pot"
+	},
+	"potted_poppy" : {
+		"en" : "Potted Poppy",
+		"fr" : "Coquelicot en Pot"
+	},
+	"potted_blue_orchid" : {
+		"en" : "Potted Blue Orchid",
+		"fr" : "Orchidée bleue en Pot"
+	},
+	"potted_allium" : {
+		"en" : "Potted Allium",
+		"fr" : "Allium en Pot"
+	},
+	"potted_azure_bluet" : {
+		"en" : "Potted Azure Bluet",
+		"fr" : "Houstonie Bleue en Pot"
+	},
+	"potted_red_tulip" : {
+		"en" : "Potted Red Tulip",
+		"fr" : "Tulipe Rouge en Pot"
+	},
+	"potted_orange_tulip" : {
+		"en" : "Potted Orange Tulip",
+		"fr" : "Tulipe Orange  en Pot"
+	},
+	"potted_white_tulip" : {
+		"en" : "Potted White Tulip",
+		"fr" : "Tulipe Blanche en Pot"
+	},
+	"potted_pink_tulip" : {
+		"en" : "Potted Pink Tulip",
+		"fr" : "Tulipe Rose en Pot"
+	},
+	"potted_oxeye_daisy" : {
+		"en" : "Potted Oxeye Daisy",
+		"fr" : "Marguerite en Pot"
+	},
+	"potted_cornflower" : {
+		"en" : "Potted Cornflower",
+		"fr" : "Bleuet en Pot"
+	},
+	"potted_lily_of_the_valley" : {
+		"en" : "Potted Lily Of The Valley",
+		"fr" : "Muguet en Pot"
+	},
+	"potted_wither_rose" : {
+		"en" : "Potted Wither Rose",
+		"fr" : "Rose de Wither en Pot"
+	},
+	"glass_pane" : {
+		"en" : "Glass Pane",
+		"fr" : "Vitre"
+	},
+	"black_stained_glass" : {
+		"en" : "Black Stained Glass",
+		"fr" : "Verre Noir"
+	},
+	"blue_stained_glass" : {
+		"en" : "Blue Stained Glass",
+		"fr" : "Verre Bleu"
+	},
+	"brown_stained_glass" : {
+		"en" : "Brown Stained Glass",
+		"fr" : "Verre Marron"
+	},
+	"cyan_stained_glass" : {
+		"en" : "Cyan Stained Glass",
+		"fr" : "Verre Cyan"
+	},
+	"gray_stained_glass" : {
+		"en" : "Gray Stained Glass",
+		"fr" : "Verre Gris"
+	},
+	"green_stained_glass" : {
+		"en" : "Green Stained Glass",
+		"fr" : "Verre Vert"
+	},
+	"light_blue_stained_glass" : {
+		"en" : "Light Blue Stained Glass",
+		"fr" : "Verre Bleu Clair"
+	},
+	"light_gray_stained_glass" : {
+		"en" : "Light Gray Stained Glass",
+		"fr" : "Verre Gris Clair"
+	},
+	"lime_stained_glass" : {
+		"en" : "Lime Stained Glass",
+		"fr" : "Verre Vert Clair"
+	},
+	"magenta_stained_glass" : {
+		"en" : "Magenta Stained Glass",
+		"fr" : "Verre Magenta"
+	},
+	"orange_stained_glass" : {
+		"en" : "Orange Stained Glass",
+		"fr" : "Verre Orange"
+	},
+	"pink_stained_glass" : {
+		"en" : "Pink Stained Glass",
+		"fr" : "Verre Rose"
+	},
+	"purple_stained_glass" : {
+		"en" : "Purple Stained Glass",
+		"fr" : "Verre Violet"
+	},
+	"red_mushroom" : {
+		"en" : "Red Mushroom",
+		"fr" : "Champignon Rouge"
+	},
+	"red_stained_glass" : {
+		"en" : "Red Stained Glass",
+		"fr" : "Verre Rouge"
+	},
+	"white_stained_glass" : {
+		"en" : "White Stained Glass",
+		"fr" : "Verre Blanc"
+	},
+	"white_stained_glass_pane" : {
+		"en" : "White Stained Glass Pane",
+		"fr" : "Vitre Blanche"
+	},
+	"yellow_stained_glass" : {
+		"en" : "Yellow Stained Glass",
+		"fr" : "Verre Jaune"
+	},
+	"beacon" : {
+		"en" : "Beacon",
+		"fr" : "Balise"
+	},
+	"daylight_detector" : {
+		"en" : "Daylight Detector",
+		"fr" : "Capteur de Lumière"
+	},
+	"respawn_anchor" : {
+		"en" : "Respawn Anchor",
+		"fr" : "Ancre de Réapparition"
+	},
+	"redstone_lamp" : {
+		"en" : "Redstone Lamp",
+		"fr" : "Lampe à Redstone"
+	},
+	"gold_block" : {
+		"en" : "Gold Block",
+		"fr" : "Bloc d'Or"
+	},
+	"light_weighted_pressure_plate" : {
+		"en" : "Light Weighted Pressure Plate",
+		"fr" : "Plaquer de Pression Pondérée Légère"
+	},
+	"powered_rail" : {
+		"en" : "Powered Rail",
+		"fr" : "Rails de Propulsion"
+	},
+	"gold" : {
+		"en" : "Gold",
+		"fr" : "Or"
+	},
+	"granite_slab" : {
+		"en" : "Granite Slab",
+		"fr" : "Dalle de Granite"
+	},
+	"granite_stairs" : {
+		"en" : "Granite Stairs",
+		"fr" : "Escaliers de Granite"
+	},
+	"granite_wall" : {
+		"en" : "Granite Wall",
+		"fr" : "Mur de Granite"
+	},
+	"polished_granite" : {
+		"en" : "Polished Granite",
+		"fr" : "Granite Poli"
+	},
+	"gray_concrete" : {
+		"en" : "Gray Concrete",
+		"fr" : "Béton Gris"
+	},
+	"gray_stained_glass_pane" : {
+		"en" : "Gray Stained Glass Pane",
+		"fr" : "Vitre Grise"
+	},
+	"gray_glazed_terracotta" : {
+		"en" : "Gray Glazed Terracotta",
+		"fr" : "Terre Cuite Grise"
+	},
+	"gray_carpet" : {
+		"en" : "Gray Carpet",
+		"fr" : "Tapis Gris"
+	},
+	"green_concrete" : {
+		"en" : "Green Concrete",
+		"fr" : "Béton Vert"
+	},
+	"green_stained_glass_pane" : {
+		"en" : "Green Stained Glass Pane",
+		"fr" : "Vitre Verte"
+	},
+	"green_glazed_terracotta" : {
+		"en" : "Green Glazed Terracotta",
+		"fr" : "Terre Cuite Verte"
+	},
+	"green_carpet" : {
+		"en" : "Green Carpet",
+		"fr" : "Tapis Vert"
+	},
+	"cauldron" : {
+		"en" : "Cauldron",
+		"fr" : "Chaudron"
+	},
+	"heavy_weighted_pressure_plate" : {
+		"en" : "Heavy Weighted Pressure Plate",
+		"fr" : "Plaquer de Pression Pondérée Lourde"
+	},
+	"iron_bars" : {
+		"en" : "Iron Bars",
+		"fr" : "Barreaux de Fer"
+	},
+	"iron_block" : {
+		"en" : "Iron Block",
+		"fr" : "Bloc de Fer"
+	},
+	"iron_door" : {
+		"en" : "Iron Door",
+		"fr" : "Porte de Fer"
+	},
+	"iron_nugget" : {
+		"en" : "Iron Nugget",
+		"fr" : "Pépite de Fer"
+	},
+	"iron_trapdoor" : {
+		"en" : "Iron Trapdoor",
+		"fr" : "Trappe de Fer"
+	},
+	"hopper" : {
+		"en" : "Hopper",
+		"fr" : "Entonnoir"
+	},
+	"blast_furnace" : {
+		"en" : "Blast Furnace",
+		"fr" : "Haut Fourneau"
+	},
+	"chain" : {
+		"en" : "Chain",
+		"fr" : "Chaîne"
+	},
+	"rail" : {
+		"en" : "Rail",
+		"fr" : "Rails"
+	},
+	"activator_rail" : {
+		"en" : "Activator Rail",
+		"fr" : "Rails déclencheurs"
+	},
+	"detector_rail" : {
+		"en" : "Detector Rail",
+		"fr" : "Rails Détecteurs"
+	},
+	"soul_lantern" : {
+		"en" : "Soul Lantern",
+		"fr" : "Lanterne des Âmes"
+	},
+	"lantern" : {
+		"en" : "Lantern",
+		"fr" : "Lanterne"
+	},
+	"iron_ingot" : {
+		"en" : "Iron Ingot",
+		"fr" : "Lingot de Fer"
+	},
+	"jungle_sapling" : {
+		"en" : "Jungle Sapling",
+		"fr" : "Pousse d'acajou"
+	},
+	"dried_kelp" : {
+		"en" : "Dried Kelp",
+		"fr" : "Algues Séchées"
+	},
+	"lapis_block" : {
+		"en" : "Lapis Block",
+		"fr" : "Bloc de Lapis"
+	},
+	"light_blue_concrete" : {
+		"en" : "Light Blue Concrete",
+		"fr" : "Béton Bleu Clair"
+	},
+	"light_blue_stained_glass_pane" : {
+		"en" : "Light Blue Stained Glass Pane",
+		"fr" : "Vitre Bleu Clair"
+	},
+	"light_blue_glazed_terracotta" : {
+		"en" : "Light Blue Glazed Terracotta",
+		"fr" : "Terre Cuite Emaillée Bleu Clair"
+	},
+	"light_blue_carpet" : {
+		"en" : "Light Blue Carpet",
+		"fr" : "Tapis Bleu Clair"
+	},
+	"light_gray_concrete" : {
+		"en" : "Light Gray Concrete",
+		"fr" : "Béton Gris Clair"
+	},
+	"light_gray_stained_glass_pane" : {
+		"en" : "Light Gray Stained Glass Pane",
+		"fr" : "Vitre Gris Clair"
+	},
+	"light_gray_glazed_terracotta" : {
+		"en" : "Light Gray Glazed Terracotta",
+		"fr" : "Terre Cuite Emaillée Gris Clair"
+	},
+	"light_gray_carpet" : {
+		"en" : "Light Gray Carpet",
+		"fr" : "Tapis Gris Clair"
+	},
+	"lime_concrete" : {
+		"en" : "Lime Concrete",
+		"fr" : "Béton Vert Clair"
+	},
+	"lime_stained_glass_pane" : {
+		"en" : "Lime Stained Glass Pane",
+		"fr" : "Vitre Vert Clair"
+	},
+	"lime_glazed_terracotta" : {
+		"en" : "Lime Glazed Terracotta",
+		"fr" : "Terre Cuite Emaillée Vert Clair"
+	},
+	"lime_carpet" : {
+		"en" : "Lime Carpet",
+		"fr" : "Tapis Vert Clair"
+	},
+	"magenta_concrete" : {
+		"en" : "Magenta Concrete",
+		"fr" : "Béton Magenta"
+	},
+	"magenta_stained_glass_pane" : {
+		"en" : "Magenta Stained Glass Pane",
+		"fr" : "Vitre Magenta"
+	},
+	"magenta_glazed_terracotta" : {
+		"en" : "Magenta Glazed Terracotta",
+		"fr" : "Terre Cuite Emaillée Magenta"
+	},
+	"magenta_carpet" : {
+		"en" : "Magenta Carpet",
+		"fr" : "Tapis Magenta"
+	},
+	"mossy_cobblestone_slab" : {
+		"en" : "Mossy Cobblestone Slab",
+		"fr" : "Dalle de Pierres Moussues"
+	},
+	"mossy_cobblestone_stairs" : {
+		"en" : "Mossy Cobblestone Stairs",
+		"fr" : "Escaliers de Pierres Moussues"
+	},
+	"mossy_cobblestone_wall" : {
+		"en" : "Mossy Cobblestone Wall",
+		"fr" : "Mur de Pierres Moussues"
+	},
+	"mossy_stone_brick_slab" : {
+		"en" : "Mossy Stone Brick Slab",
+		"fr" : "Dalle de Pierres Taillées Moussues"
+	},
+	"mossy_stone_brick_stairs" : {
+		"en" : "Mossy Stone Brick Stairs",
+		"fr" : "Escaliers de Pierres Taillées Moussues"
+	},
+	"mossy_stone_brick_wall" : {
+		"en" : "Mossy Stone Brick Wall",
+		"fr" : "Mur de Pierres Taillées Moussues"
+	},
+	"red_nether_bricks" : {
+		"en" : "Red Nether Bricks",
+		"fr" : "Briques rouges du Nether"
+	},
+	"chiseled_nether_bricks" : {
+		"en" : "Chiseled Nether Bricks",
+		"fr" : "Briques du Nether Sculptées"
+	},
+	"cracked_nether_bricks" : {
+		"en" : "Cracked Nether Bricks",
+		"fr" : "Briques du Nether Craquelées"
+	},
+	"nether_brick_fence" : {
+		"en" : "Nether Brick Fence",
+		"fr" : "Barrière en Briques du Nether"
+	},
+	"nether_brick_slab" : {
+		"en" : "Nether Brick Slab",
+		"fr" : "Dalle en Briques du Nether"
+	},
+	"nether_brick_stairs" : {
+		"en" : "Nether Brick Stairs",
+		"fr" : "Escaliers en Briques du Nether"
+	},
+	"nether_brick_wall" : {
+		"en" : "Nether Brick Wall",
+		"fr" : "Mur en Briques du Nether"
+	},
+	"nether_wart_block" : {
+		"en" : "Nether Wart Block",
+		"fr" : "Bloc de Verrues du Nether"
+	},
+	"netherite_block" : {
+		"en" : "Netherite Block",
+		"fr" : "Bloc de Netherite"
+	},
+	"netherite_ingot" : {
+		"en" : "Netherite Ingot",
+		"fr" : "Lingot de Netherite"
+	},
+	"nether_brick" : {
+		"en" : "Nether Brick",
+		"fr" : "Briques du Nether"
+	},
+	"oak_planks" : {
+		"en" : "Oak Planks",
+		"fr" : "Planches de Chêne"
+	},
+	"oak_sapling" : {
+		"en" : "Oak Sapling",
+		"fr" : "Pousse de chêne"
+	},
+	"oak_wood" : {
+		"en" : "Oak Wood",
+		"fr" : "Bois de Chêne"
+	},
+	"oak_button" : {
+		"en" : "Oak Button",
+		"fr" : "Bouton de Chêne"
+	},
+	"oak_door" : {
+		"en" : "Oak Door",
+		"fr" : "Porte de Chêne"
+	},
+	"oak_pressure_plate" : {
+		"en" : "Oak Pressure Plate",
+		"fr" : "Plaque de Pression de Chêne"
+	},
+	"oak_slab" : {
+		"en" : "Oak Slab",
+		"fr" : "Dalle de Chêne"
+	},
+	"oak_stairs" : {
+		"en" : "Oak Stairs",
+		"fr" : "Escaliers de Chêne"
+	},
+	"oak_trapdoor" : {
+		"en" : "Oak Trapdoor",
+		"fr" : "Trappe de Chêne"
+	},
+	"oak_fence" : {
+		"en" : "Oak Fence",
+		"fr" : "Barrière de Chêne"
+	},
+	"oak_fence_gate" : {
+		"en" : "Oak Fence Gate",
+		"fr" : "Portillon de Chêne"
+	},
+	"oak_sign" : {
+		"en" : "Oak Sign",
+		"fr" : "Panneau de Chêne"
+	},
+	"enchanting_table" : {
+		"en" : "Enchanting Table",
+		"fr" : "Table d'Enchantement"
+	},
+	"end_portal_frame" : {
+		"en" : "End Portal Frame",
+		"fr" : "Cadre du Portail de l'End"
+	},
+	"ender_chest" : {
+		"en" : "Ender Chest",
+		"fr" : "Coffre de l'Ender"
+	},
+	"orange_concrete" : {
+		"en" : "Orange Concrete",
+		"fr" : "Béton Orange"
+	},
+	"orange_stained_glass_pane" : {
+		"en" : "Orange Stained Glass Pane",
+		"fr" : "Vitre Orange"
+	},
+	"orange_glazed_terracotta" : {
+		"en" : "Orange Glazed Terracotta",
+		"fr" : "Terre Cuite Emaillée Orange"
+	},
+	"orange_carpet" : {
+		"en" : "Orange Carpet",
+		"fr" : "Tapis orange"
+	},
+	"blue_ice" : {
+		"en" : "Blue Ice",
+		"fr" : "Glace Bleue"
+	},
+	"brown_mushroom_block" : {
+		"en" : "Brown Mushroom Block",
+		"fr" : "Bloc de Champignon Marron"
+	},
+	"books" : {
+		"en" : "Books",
+		"fr" : "Livres"
+	},
+	"pink_concrete" : {
+		"en" : "Pink Concrete",
+		"fr" : "Béton Rose"
+	},
+	"pink_stained_glass_pane" : {
+		"en" : "Pink Stained Glass Pane",
+		"fr" : "Vitre Rose"
+	},
+	"pink_glazed_terracotta" : {
+		"en" : "Pink Glazed Terracotta",
+		"fr" : "Terre Cuite Emaillée Rose"
+	},
+	"pink_carpet" : {
+		"en" : "Pink Carpet",
+		"fr" : "Tapis Rose"
+	},
+	"sticky_piston" : {
+		"en" : "Sticky Piston",
+		"fr" : "Piston Collant"
+	},
+	"polished_andesite_slab" : {
+		"en" : "Polished Andesite Slab",
+		"fr" : "Dalle d'Andésite Polie"
+	},
+	"polished_andesite_stairs" : {
+		"en" : "Polished Andesite Stairs",
+		"fr" : "Escaliers d'Andésite Polie"
+	},
+	"polished_blackstone_bricks" : {
+		"en" : "Polished Blackstone Bricks",
+		"fr" : "Pierre Noire Taillée"
+	},
+	"polished_blackstone_button" : {
+		"en" : "Polished Blackstone Button",
+		"fr" : "Bouton en Pierre Noire"
+	},
+	"polished_blackstone_pressure_plate" : {
+		"en" : "Polished Blackstone Pressure Plate",
+		"fr" : "Plaque de Pression en Pierre Noire"
+	},
+	"polished_blackstone_slab" : {
+		"en" : "Polished Blackstone Slab",
+		"fr" : "Dalle en Pierre Noire"
+	},
+	"polished_blackstone_stairs" : {
+		"en" : "Polished Blackstone Stairs",
+		"fr" : "Escaliers en Pierre Noire"
+	},
+	"polished_blackstone_wall" : {
+		"en" : "Polished Blackstone Wall",
+		"fr" : "Mur en Pierre Noire"
+	},
+	"cracked_polished_blackstone_bricks" : {
+		"en" : "Cracked Polished Blackstone Bricks",
+		"fr" : "Pierre Noire Taillée Craquelée"
+	},
+	"polished_blackstone_brick_slab" : {
+		"en" : "Polished Blackstone Brick Slab",
+		"fr" : "Dalle de Pierre Noire Taillée"
+	},
+	"polished_blackstone_brick_stairs" : {
+		"en" : "Polished Blackstone Brick Stairs",
+		"fr" : "Escaliers de Pierre Noire Taillée"
+	},
+	"polished_blackstone_brick_wall" : {
+		"en" : "Polished Blackstone Brick Wall",
+		"fr" : "Mur de Pierre Noire Taillée"
+	},
+	"chiseled_polished_blackstone" : {
+		"en" : "Chiseled Polished Blackstone",
+		"fr" : "Pierre Noire Sculptée"
+	},
+	"polished_diorite_slab" : {
+		"en" : "Polished Diorite Slab",
+		"fr" : "Dalle de Diorite Polie"
+	},
+	"polished_diorite_stairs" : {
+		"en" : "Polished Diorite Stairs",
+		"fr" : "Escaliers de Diorite polie"
+	},
+	"polished_granite_slab" : {
+		"en" : "Polished Granite Slab",
+		"fr" : "Dalle de Granite Poli"
+	},
+	"polished_granite_stairs" : {
+		"en" : "Polished Granite Stairs",
+		"fr" : "Escaliers de Granite Poli"
+	},
+	"prismarine_slab" : {
+		"en" : "Prismarine Slab",
+		"fr" : "Dalle de Prismarine"
+	},
+	"prismarine_stairs" : {
+		"en" : "Prismarine Stairs",
+		"fr" : "Escaliers de Prismarine"
+	},
+	"prismarine_wall" : {
+		"en" : "Prismarine Wall",
+		"fr" : "Mur de Prismarine"
+	},
+	"prismarine_brick_slab" : {
+		"en" : "Prismarine Brick Slab",
+		"fr" : "Briques de Prismarine"
+	},
+	"prismarine_brick_stairs" : {
+		"en" : "Prismarine Brick Stairs",
+		"fr" : "Escaliers de Prismarine"
+	},
+	"purple_concrete" : {
+		"en" : "Purple Concrete",
+		"fr" : "Béton Violet"
+	},
+	"purple_stained_glass_pane" : {
+		"en" : "Purple Stained Glass Pane",
+		"fr" : "Vitre Violette"
+	},
+	"red_mushroom_block" : {
+		"en" : "Red Mushroom Block",
+		"fr" : "Bloc de Champignon Rouge"
+	},
+	"purple_glazed_terracotta" : {
+		"en" : "Purple Glazed Terracotta",
+		"fr" : "Terre Cuite Emaillée Violette"
+	},
+	"purple_carpet" : {
+		"en" : "Purple Carpet",
+		"fr" : "Tapis Violet"
+	},
+	"purpur_slab" : {
+		"en" : "Purpur Slab",
+		"fr" : "Dalle de Purpur"
+	},
+	"quartz_block" : {
+		"en" : "Quartz Block",
+		"fr" : "Bloc de Quartz"
+	},
+	"smooth_quartz" : {
+		"en" : "Smooth Quartz",
+		"fr" : "Bloc de Quartz Lisse"
+	},
+	"quartz_bricks" : {
+		"en" : "Quartz Bricks",
+		"fr" : "Briques de Quartz"
+	},
+	"quartz_pillar" : {
+		"en" : "Quartz Pillar",
+		"fr" : "Pilier de Quartz"
+	},
+	"quartz_slab" : {
+		"en" : "Quartz Slab",
+		"fr" : "Dalle de Quartz"
+	},
+	"quartz_stairs" : {
+		"en" : "Quartz Stairs",
+		"fr" : "Escaliers de Quartz"
+	},
+	"chiseled_quartz_block" : {
+		"en" : "Chiseled Quartz Block",
+		"fr" : "Bloc de Quartz Sculpté"
+	},
+	"red_concrete" : {
+		"en" : "Red Concrete",
+		"fr" : "Béton Rouge"
+	},
+	"red_nether_brick_slab" : {
+		"en" : "Red Nether Brick Slab",
+		"fr" : "Dalle de Briques Rouge du Nether"
+	},
+	"red_nether_brick_stairs" : {
+		"en" : "Red Nether Brick Stairs",
+		"fr" : "Escaliers de Briques Rouge du Nether"
+	},
+	"red_nether_brick_wall" : {
+		"en" : "Red Nether Brick Wall",
+		"fr" : "Mur de Briques Rouge du Nether"
+	},
+	"cut_red_sandstone" : {
+		"en" : "Cut Red Sandstone",
+		"fr" : "Grès Rouge Taillé"
+	},
+	"red_sandstone_slab" : {
+		"en" : "Red Sandstone Slab",
+		"fr" : "Dalle de Grès Rouge"
+	},
+	"red_sandstone_stairs" : {
+		"en" : "Red Sandstone Stairs",
+		"fr" : "Escaliers de Grès Rouge"
+	},
+	"red_sandstone_wall" : {
+		"en" : "Red Sandstone Wall",
+		"fr" : "Mur de Grès Rouge"
+	},
+	"smooth_red_sandstone" : {
+		"en" : "Smooth Red Sandstone",
+		"fr" : "Grès Rouge Lisse"
+	},
+	"chiseled_red_sandstone" : {
+		"en" : "Chiseled Red Sandstone",
+		"fr" : "Grès Rouge Sculpté"
+	},
+	"red_stained_glass_pane" : {
+		"en" : "Red Stained Glass Pane",
+		"fr" : "Vitre Rouge"
+	},
+	"red_glazed_terracotta" : {
+		"en" : "Red Glazed Terracotta",
+		"fr" : "Terre Cuite Emaillée Rouge"
+	},
+	"red_carpet" : {
+		"en" : "Red Carpet",
+		"fr" : "Tapis Rouge"
+	},
+	"redstone_block" : {
+		"en" : "Redstone Block",
+		"fr" : "Bloc de Redstone"
+	},
+	"target" : {
+		"en" : "Target",
+		"fr" : "Cible"
+	},
+	"redstone" : {
+		"en" : "Redstone",
+		"fr" : "Redstone"
+	},
+	"repeater" : {
+		"en" : "Repeater",
+		"fr" : "Répéteur"
+	},
+	"glass" : {
+		"en" : "Glass",
+		"fr" : "Verre"
+	},
+	"black_concrete_powder" : {
+		"en" : "Black Concrete Powder",
+		"fr" : "Béton Noir en Poudre"
+	},
+	"blue_concrete_powder" : {
+		"en" : "Blue Concrete Powder",
+		"fr" : "Béton Bleu en Poudre"
+	},
+	"brown_concrete_powder" : {
+		"en" : "Brown Concrete Powder",
+		"fr" : "Béton Marron en Poudre"
+	},
+	"cyan_concrete_powder" : {
+		"en" : "Cyan Concrete Powder",
+		"fr" : "Béton Cyan en Poudre"
+	},
+	"gray_concrete_powder" : {
+		"en" : "Gray Concrete Powder",
+		"fr" : "Béton Gris en Poudre"
+	},
+	"green_concrete_powder" : {
+		"en" : "Green Concrete Powder",
+		"fr" : "Béton Vert en Poudre"
+	},
+	"light_blue_concrete_powder" : {
+		"en" : "Light Blue Concrete Powder",
+		"fr" : "Béton Bleu Clair en Poudre"
+	},
+	"light_gray_concrete_powder" : {
+		"en" : "Light Gray Concrete Powder",
+		"fr" : "Béton Gris Clair en Poudre"
+	},
+	"lime_concrete_powder" : {
+		"en" : "Lime Concrete Powder",
+		"fr" : "Béton Vert Clair en Poudre"
+	},
+	"magenta_concrete_powder" : {
+		"en" : "Magenta Concrete Powder",
+		"fr" : "Béton Magenta en Poudre"
+	},
+	"orange_concrete_powder" : {
+		"en" : "Orange Concrete Powder",
+		"fr" : "Béton Orange en Poudre"
+	},
+	"pink_concrete_powder" : {
+		"en" : "Pink Concrete Powder",
+		"fr" : "Béton Rose en Poudre"
+	},
+	"purple_concrete_powder" : {
+		"en" : "Purple Concrete Powder",
+		"fr" : "Béton Violet en Poudre"
+	},
+	"red_concrete_powder" : {
+		"en" : "Red Concrete Powder",
+		"fr" : "Béton Rouge en Poudre"
+	},
+	"white_concrete_powder" : {
+		"en" : "White Concrete Powder",
+		"fr" : "Béton Blanc en Poudre"
+	},
+	"yellow_concrete_powder" : {
+		"en" : "Yellow Concrete Powder",
+		"fr" : "Béton Jaune en Poudre"
+	},
+	"tnt" : {
+		"en" : "TNT",
+		"fr" : "TNT"
+	},
+	"cut_sandstone" : {
+		"en" : "Cut Sandstone",
+		"fr" : "Grès Taillé"
+	},
+	"sandstone_slab" : {
+		"en" : "Sandstone Slab",
+		"fr" : "Dalle de Grès"
+	},
+	"sandstone_stairs" : {
+		"en" : "Sandstone Stairs",
+		"fr" : "Escaliers de Grès"
+	},
+	"sandstone_wall" : {
+		"en" : "Sandstone Wall",
+		"fr" : "Mur de Grès"
+	},
+	"smooth_sandstone" : {
+		"en" : "Smooth Sandstone",
+		"fr" : "Grès Lisse"
+	},
+	"chiseled_sandstone" : {
+		"en" : "Chiseled Sandstone",
+		"fr" : "Grès Sculpté"
+	},
+	"smooth_quartz_slab" : {
+		"en" : "Smooth Quartz Slab",
+		"fr" : "Dalle de Quartz Lisse"
+	},
+	"smooth_quartz_stairs" : {
+		"en" : "Smooth Quartz Stairs",
+		"fr" : "Escaliers de Quartz Lisse"
+	},
+	"smooth_red_sandstone_slab" : {
+		"en" : "Smooth Red Sandstone Slab",
+		"fr" : "Dalle de Grès Rouge Lisse"
+	},
+	"smooth_red_sandstone_stairs" : {
+		"en" : "Smooth Red Sandstone Stairs",
+		"fr" : "Escaliers de Grès Rouge Lisse"
+	},
+	"smooth_sandstone_slab" : {
+		"en" : "Smooth Sandstone Slab",
+		"fr" : "Dalle de Grès Lisse"
+	},
+	"smooth_sandstone_stairs" : {
+		"en" : "Smooth Sandstone Stairs",
+		"fr" : "Escaliers de Grès Lisse"
+	},
+	"smooth_stone_slab" : {
+		"en" : "Smooth Stone Slab",
+		"fr" : "Dalle de Roche Lisse"
+	},
+	"spruce_planks" : {
+		"en" : "Spruce Planks",
+		"fr" : "Planches de Sapin"
+	},
+	"spruce_wood" : {
+		"en" : "Spruce Wood",
+		"fr" : "Bois de Sapin"
+	},
+	"spruce_button" : {
+		"en" : "Spruce Button",
+		"fr" : "Bouton de Sapin"
+	},
+	"spruce_door" : {
+		"en" : "Spruce Door",
+		"fr" : "Porte de Sapin"
+	},
+	"spruce_pressure_plate" : {
+		"en" : "Spruce Pressure Plate",
+		"fr" : "Plaque de Pression de Sapin"
+	},
+	"spruce_slab" : {
+		"en" : "Spruce Slab",
+		"fr" : "Dalle de Sapin"
+	},
+	"spruce_stairs" : {
+		"en" : "Spruce Stairs",
+		"fr" : "Escaliers de Sapin"
+	},
+	"spruce_trapdoor" : {
+		"en" : "Spruce Trapdoor",
+		"fr" : "Trappe de Sapin"
+	},
+	"spruce_fence" : {
+		"en" : "Spruce Fence",
+		"fr" : "Barrière de Sapin"
+	},
+	"spruce_fence_gate" : {
+		"en" : "Spruce Fence Gate",
+		"fr" : "Portillon de Sapin"
+	},
+	"spruce_sign" : {
+		"en" : "Spruce Sign",
+		"fr" : "Panneau de Sapin"
+	},
+	"ladder" : {
+		"en" : "Ladder",
+		"fr" : "Echelle"
+	},
+	"black_banner" : {
+		"en" : "Black Banner",
+		"fr" : "Bannière Noire"
+	},
+	"blue_banner" : {
+		"en" : "Blue Banner",
+		"fr" : "Bannière Bleue"
+	},
+	"brown_banner" : {
+		"en" : "Brown Banner",
+		"fr" : "Bannière Marron"
+	},
+	"cyan_banner" : {
+		"en" : "Cyan Banner",
+		"fr" : "Bannière Cyan"
+	},
+	"gray_banner" : {
+		"en" : "Gray Banner",
+		"fr" : "Bannière Grise"
+	},
+	"green_banner" : {
+		"en" : "Green Banner",
+		"fr" : "Bannière Verte"
+	},
+	"item_frame" : {
+		"en" : "Item Frame",
+		"fr" : "Cadre"
+	},
+	"light_blue_banner" : {
+		"en" : "Light Blue Banner",
+		"fr" : "Bannière Bleu Clair"
+	},
+	"light_gray_banner" : {
+		"en" : "Light Gray Banner",
+		"fr" : "Bannière Gris Clair"
+	},
+	"lime_banner" : {
+		"en" : "Lime Banner",
+		"fr" : "Bannière Vert Clair"
+	},
+	"magenta_banner" : {
+		"en" : "Magenta Banner",
+		"fr" : "Bannière Magenta"
+	},
+	"orange_banner" : {
+		"en" : "Orange Banner",
+		"fr" : "Bannière Orange"
+	},
+	"pink_banner" : {
+		"en" : "Pink Banner",
+		"fr" : "Bannière Rose"
+	},
+	"purple_banner" : {
+		"en" : "Purple Banner",
+		"fr" : "Bannière Violette"
+	},
+	"red_banner" : {
+		"en" : "Red Banner",
+		"fr" : "Bannière Rouge"
+	},
+	"redstone_torch" : {
+		"en" : "Redstone Torch",
+		"fr" : "Torche de Redstone"
+	},
+	"bow" : {
+		"en" : "Bow",
+		"fr" : "Arc"
+	},
+	"white_banner" : {
+		"en" : "White Banner",
+		"fr" : "Bannière Blanche"
+	},
+	"yellow_banner" : {
+		"en" : "Yellow Banner",
+		"fr" : "Bannière Jaune"
+	},
+	"smooth_stone" : {
+		"en" : "Smooth Stone",
+		"fr" : "Roche Lisse"
+	},
+	"stone_bricks" : {
+		"en" : "Stone Bricks",
+		"fr" : "Pierre Taillée"
+	},
+	"stone_button" : {
+		"en" : "Stone Button",
+		"fr" : "Bouton en pierre"
+	},
+	"stone_pressure_plate" : {
+		"en" : "Stone Pressure Plate",
+		"fr" : "Plaque de Pression en Pierre"
+	},
+	"stone_slab" : {
+		"en" : "Stone Slab",
+		"fr" : "Dalle en Pierre"
+	},
+	"stone_stairs" : {
+		"en" : "Stone Stairs",
+		"fr" : "Escaliers en Pierre"
+	},
+	"stonecutter" : {
+		"en" : "Stonecutter",
+		"fr" : "Tailleur de Pierre"
+	},
+	"comparator" : {
+		"en" : "Comparator",
+		"fr" : "Comparateur"
+	},
+	"chiseled_stone_bricks" : {
+		"en" : "Chiseled Stone Bricks",
+		"fr" : "Pierre Sculptée"
+	},
+	"stone_brick_slab" : {
+		"en" : "Stone Brick Slab",
+		"fr" : "Dalle de Pierre Taillée"
+	},
+	"stone_brick_stairs" : {
+		"en" : "Stone Brick Stairs",
+		"fr" : "Escaliers de Pierre Taillée"
+	},
+	"stone_brick_wall" : {
+		"en" : "Stone Brick Wall",
+		"fr" : "Mur de Pierre Taillée"
+	},
+	"paper" : {
+		"en" : "Paper",
+		"fr" : "Papier"
+	},
+	"black_terracotta" : {
+		"en" : "Black Terracotta",
+		"fr" : "Terre Cuite Noire"
+	},
+	"blue_terracotta" : {
+		"en" : "Blue Terracotta",
+		"fr" : "Terre Cuite Bleue"
+	},
+	"brown_terracotta" : {
+		"en" : "Brown Terracotta",
+		"fr" : "Terre Cuite Marron"
+	},
+	"cyan_terracotta" : {
+		"en" : "Cyan Terracotta",
+		"fr" : "Terre Cuite Cyan"
+	},
+	"gray_terracotta" : {
+		"en" : "Gray Terracotta",
+		"fr" : "Terre Cuite Grise"
+	},
+	"green_terracotta" : {
+		"en" : "Green Terracotta",
+		"fr" : "Terre Cuite Verte"
+	},
+	"light_blue_terracotta" : {
+		"en" : "Light Blue Terracotta",
+		"fr" : "Terre Cuite Bleu Clair"
+	},
+	"light_gray_terracotta" : {
+		"en" : "Light Gray Terracotta",
+		"fr" : "Terre Cuite Gris Clair"
+	},
+	"lime_terracotta" : {
+		"en" : "Lime Terracotta",
+		"fr" : "Terre Cuite Vert Clair"
+	},
+	"magenta_terracotta" : {
+		"en" : "Magenta Terracotta",
+		"fr" : "Terre Cuite Magenta"
+	},
+	"orange_terracotta" : {
+		"en" : "Orange Terracotta",
+		"fr" : "Terre Cuite Orange"
+	},
+	"pink_terracotta" : {
+		"en" : "Pink Terracotta",
+		"fr" : "Terre Cuite Rose"
+	},
+	"purple_terracotta" : {
+		"en" : "Purple Terracotta",
+		"fr" : "Terre Cuite Violette"
+	},
+	"red_terracotta" : {
+		"en" : "Red Terracotta",
+		"fr" : "Terre Cuite Rouge"
+	},
+	"lilac" : {
+		"en" : "Lilac",
+		"fr" : "Lilas"
+	},
+	"yellow_terracotta" : {
+		"en" : "Yellow Terracotta",
+		"fr" : "Terre Cuite Jaune"
+	},
+	"jack_o_lantern" : {
+		"en" : "Jack O Lantern",
+		"fr" : "Citrouille-Lanterne"
+	},
+	"trapped_chest" : {
+		"en" : "Trapped Chest",
+		"fr" : "Coffre Piégé"
+	},
+	"stripped_warped_stem" : {
+		"en" : "Stripped Warped Stem",
+		"fr" : "Tige Carmin Dénudée"
+	},
+	"warped_planks" : {
+		"en" : "Warped Planks",
+		"fr" : "Planches Biscornues"
+	},
+	"hay_block" : {
+		"en" : "Hay Block",
+		"fr" : "Bloc de Paille"
+	},
+	"white_concrete" : {
+		"en" : "White Concrete",
+		"fr" : "Béton Blanc"
+	},
+	"white_terracotta" : {
+		"en" : "White Terracotta",
+		"fr" : "Terre Cuite Blanche"
+	},
+	"white_glazed_terracotta" : {
+		"en" : "White Glazed Terracotta",
+		"fr" : "Terre Cuite Emaillée Blanche"
+	},
+	"white_carpet" : {
+		"en" : "White Carpet",
+		"fr" : "Tapis Blanc"
+	},
+	"black_wool" : {
+		"en" : "Black Wool",
+		"fr" : "Laine Noire"
+	},
+	"blue_wool" : {
+		"en" : "Blue Wool",
+		"fr" : "Laine Bleue"
+	},
+	"brown_wool" : {
+		"en" : "Brown Wool",
+		"fr" : "Laine Marron"
+	},
+	"cyan_wool" : {
+		"en" : "Cyan Wool",
+		"fr" : "Laine Cyan"
+	},
+	"gray_wool" : {
+		"en" : "Gray Wool",
+		"fr" : "Laine Grise"
+	},
+	"green_wool" : {
+		"en" : "Green Wool",
+		"fr" : "Laine Verte"
+	},
+	"light_blue_wool" : {
+		"en" : "Light Blue Wool",
+		"fr" : "Laine Bleu Clair"
+	},
+	"light_gray_wool" : {
+		"en" : "Light Gray Wool",
+		"fr" : "Laine Gris Clair"
+	},
+	"lime_wool" : {
+		"en" : "Lime Wool",
+		"fr" : "Laine Vert Clair"
+	},
+	"magenta_wool" : {
+		"en" : "Magenta Wool",
+		"fr" : "Laine Magenta"
+	},
+	"rose_bush" : {
+		"en" : "Rose Bush",
+		"fr" : "Rosier"
+	},
+	"orange_wool" : {
+		"en" : "Orange Wool",
+		"fr" : "Laine Orange"
+	},
+	"peony" : {
+		"en" : "Peony",
+		"fr" : "Pivoine"
+	},
+	"pink_wool" : {
+		"en" : "Pink Wool",
+		"fr" : "Laine Rose"
+	},
+	"purple_wool" : {
+		"en" : "Purple Wool",
+		"fr" : "Laine Violette"
+	},
+	"red_wool" : {
+		"en" : "Red Wool",
+		"fr" : "Laine Rouge"
+	},
+	"yellow_wool" : {
+		"en" : "Yellow Wool",
+		"fr" : "Laine Jaune"
+	},
+	"wood_planks" : {
+		"en" : "Wood Planks",
+		"fr" : "Planches"
+	},
+	"smoker" : {
+		"en" : "Smoker",
+		"fr" : "Fumoir"
+	},
+	"campfire" : {
+		"en" : "Campfire",
+		"fr" : "Feu de Camp"
+	},
+	"soul_campfire" : {
+		"en" : "Soul Campfire",
+		"fr" : "Feu de Camp des Âmes"
+	},
+	"chest" : {
+		"en" : "Chest",
+		"fr" : "Coffre"
+	},
+	"crafting_table" : {
+		"en" : "Crafting Table",
+		"fr" : "Etabli"
+	},
+	"stick" : {
+		"en" : "Stick",
+		"fr" : "Bâton"
+	},
+	"wood_slabs" : {
+		"en" : "Wood Slabs",
+		"fr" : "Dalles de Bois"
+	},
+	"black_bed" : {
+		"en" : "Black Bed",
+		"fr" : "Lit Noir"
+	},
+	"blue_bed" : {
+		"en" : "Blue Bed",
+		"fr" : "Lit Bleu"
+	},
+	"bookshelf" : {
+		"en" : "Bookshelf",
+		"fr" : "Bibliothèque"
+	},
+	"brown_bed" : {
+		"en" : "Brown Bed",
+		"fr" : "Lit Marron"
+	},
+	"cyan_bed" : {
+		"en" : "Cyan Bed",
+		"fr" : "Lit Cyan"
+	},
+	"jukebox" : {
+		"en" : "Jukebox",
+		"fr" : "Jukebox"
+	},
+	"fletching_table" : {
+		"en" : "Fletching Table",
+		"fr" : "Table d'Archerie"
+	},
+	"gray_bed" : {
+		"en" : "Gray Bed",
+		"fr" : "Lit Gris"
+	},
+	"green_bed" : {
+		"en" : "Green Bed",
+		"fr" : "Lit Vert"
+	},
+	"smithing_table" : {
+		"en" : "Smithing Table",
+		"fr" : "Table de Forgeron"
+	},
+	"light_blue_bed" : {
+		"en" : "Light Blue Bed",
+		"fr" : "Lit Bleu Clair"
+	},
+	"light_gray_bed" : {
+		"en" : "Light Gray Bed",
+		"fr" : "Lit Gris Clair"
+	},
+	"lime_bed" : {
+		"en" : "Lime Bed",
+		"fr" : "Lit Vert Clair"
+	},
+	"magenta_bed" : {
+		"en" : "Magenta Bed",
+		"fr" : "Lit Magenta"
+	},
+	"orange_bed" : {
+		"en" : "Orange Bed",
+		"fr" : "Lit Orange"
+	},
+	"pink_bed" : {
+		"en" : "Pink Bed",
+		"fr" : "Lit Rose"
+	},
+	"purple_bed" : {
+		"en" : "Purple Bed",
+		"fr" : "Lit Violet"
+	},
+	"red_bed" : {
+		"en" : "Red Bed",
+		"fr" : "Lit Rouge"
+	},
+	"note_block" : {
+		"en" : "Note Block",
+		"fr" : "Bloc Musical"
+	},
+	"tripwire_hook" : {
+		"en" : "Tripwire Hook",
+		"fr" : "Crochet"
+	},
+	"grindstone" : {
+		"en" : "Grindstone",
+		"fr" : "Meule"
+	},
+	"loom" : {
+		"en" : "Loom",
+		"fr" : "Métier à Tisser"
+	},
+	"white_bed" : {
+		"en" : "White Bed",
+		"fr" : "Lit Blanc"
+	},
+	"barrel" : {
+		"en" : "Barrel",
+		"fr" : "Tonneau"
+	},
+	"yellow_bed" : {
+		"en" : "Yellow Bed",
+		"fr" : "Lit Jaune"
+	},
+	"composter" : {
+		"en" : "Composter",
+		"fr" : "Composteur"
+	},
+	"lectern" : {
+		"en" : "Lectern",
+		"fr" : "Pupitre"
+	},
+	"yellow_concrete" : {
+		"en" : "Yellow Concrete",
+		"fr" : "Béton Jaune"
+	},
+	"yellow_stained_glass_pane" : {
+		"en" : "Yellow Stained Glass Pane",
+		"fr" : "Vitre Jaune"
+	},
+	"yellow_glazed_terracotta" : {
+		"en" : "Yellow Glazed Terracotta",
+		"fr" : "Terre Cuite Jaune"
+	},
+	"yellow_carpet" : {
+		"en" : "Yellow Carpet",
+		"fr" : "Tapis Jaune"
+	}
+}
