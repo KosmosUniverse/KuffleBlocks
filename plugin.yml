@@ -64,7 +64,7 @@ commands:
       usage: /<command>
       description: command to tp to other players after game end
    klang:
-      usage: /<command>
+      usage: /<command> [lang]
       description: command to see or change personnal lang
 
 permissions:

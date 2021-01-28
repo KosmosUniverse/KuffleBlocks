@@ -51,6 +51,6 @@ public class KuffleListTab implements TabCompleter {
 			}
 		}
 		
-		return null;
+		return new ArrayList<String>();
 	}
 }

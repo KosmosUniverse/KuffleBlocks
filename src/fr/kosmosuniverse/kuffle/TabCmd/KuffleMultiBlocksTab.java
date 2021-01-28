@@ -24,12 +24,15 @@ public class KuffleMultiBlocksTab implements TabCompleter {
 	
 	@Override
 	public List<String> onTabComplete(CommandSender sender,  Command cmd, String msg, String[] args) {
+		if (!(sender instanceof Player))
+			return null;
+		
 		if (cmd.getName().equalsIgnoreCase("kmultiblocks")) {
-			if (!(sender instanceof Player))
-				return null;
-			return list;
+			if (args.length == 1) {
+				return list;	
+			}
 		}
 		
-		return null;
+		return new ArrayList<String>();
 	}
 }

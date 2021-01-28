@@ -24,12 +24,15 @@ public class KuffleAdminSpawnTab implements TabCompleter {
 	
 	@Override
 	public List<String> onTabComplete(CommandSender sender,  Command cmd, String msg, String[] args) {
+		if (!(sender instanceof Player))
+			return null;
+		
 		if (cmd.getName().equalsIgnoreCase("kadminspawn")) {
-			if (!(sender instanceof Player))
-				return null;
-			return list;
+			if (args.length == 1) {
+				return list;	
+			}
 		}
 		
-		return null;
+		return new ArrayList<String>();
 	}
 }
