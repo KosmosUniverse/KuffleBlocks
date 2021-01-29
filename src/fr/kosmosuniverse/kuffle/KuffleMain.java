@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -13,6 +12,7 @@ import org.bukkit.potion.PotionEffectType;
 
 import fr.kosmosuniverse.kuffle.Commands.*;
 import fr.kosmosuniverse.kuffle.Core.ChooseBlockInList;
+import fr.kosmosuniverse.kuffle.Core.Config;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
 import fr.kosmosuniverse.kuffle.Core.LangManager;
 import fr.kosmosuniverse.kuffle.Core.RewardElem;
@@ -26,7 +26,6 @@ import fr.kosmosuniverse.kuffle.TabCmd.*;
 import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class KuffleMain extends JavaPlugin {
-
 	public HashMap<String, HashMap<String, RewardElem>> allRewards;
 	public HashMap<String, HashMap<String, String>> allLang;
 	public HashMap<String, ArrayList<Inventory>> blocksInvs;
@@ -36,6 +35,7 @@ public class KuffleMain extends JavaPlugin {
 	public HashMap<String, PotionEffectType> effects;
 	public ArrayList<GameTask> games;
 	public ArrayList<String> langs;
+	public Config config;
 	public ManageCrafts crafts;
 	public ManageMultiBlock multiBlock;
 	public Scores scores;
@@ -47,43 +47,6 @@ public class KuffleMain extends JavaPlugin {
 	public void onEnable() {
 		saveDefaultConfig();
 		reloadConfig();
-		
-		if (!getConfig().contains("game_settings.block_per_age") || getConfig().getInt("game_settings.block_per_age") < 1) {
-			Bukkit.broadcastMessage("Config for block per age is not correct, use of default value.");
-			getConfig().set("game_settings.block_per_age", 5);
-		}
-		if (!getConfig().contains("game_settings.spreadplayers.minimum_distance") || getConfig().getInt("game_settings.spreadplayers.minimum_distance") < 1) {
-			Bukkit.broadcastMessage("Config for spreadplayers minimum distance is not correct, use of default value.");
-			getConfig().set("game_settings.spreadplayers.minimum_distance", 100);
-		}
-		if (!getConfig().contains("game_settings.spreadplayers.maximum_distance") || getConfig().getInt("game_settings.spreadplayers.maximum_area") < getConfig().getInt("game_settings.spreadplayers.minimum_distance")) {
-			Bukkit.broadcastMessage("Config for spreadplayers maximum area is not correct, use of default value.");
-			getConfig().set("game_settings.spreadplayers.maximum_area", 500);
-		}
-		if (!getConfig().contains("game_settings.start_time") || getConfig().getInt("game_settings.start_time") < 1) {
-			Bukkit.broadcastMessage("Config for start time is not correct, use of default value.");
-			getConfig().set("game_settings.start_time", 4);
-		}
-		if (!getConfig().contains("game_settings.time_added") || getConfig().getInt("game_settings.time_added") < 1) {
-			Bukkit.broadcastMessage("Config for time added is not correct, use of default value.");
-			getConfig().set("game_settings.time_added", 2);
-		}
-		if (!getConfig().contains("game_settings.skip.enable")) {
-			Bukkit.broadcastMessage("Config for enabling skip is not correct, use of default value.");
-			getConfig().set("game_settings.skip.enable", true);
-		}
-		if (!getConfig().contains("game_settings.skip.age") || getConfig().getInt("game_settings.skip.age") < 1) {
-			Bukkit.broadcastMessage("Config for min skip age is not correct, use of default value.");
-			getConfig().set("game_settings.skip.age", 2);
-		}
-		if (!getConfig().contains("game_settings.custom_crafts")) {
-			Bukkit.broadcastMessage("Config for enabling custom crafts is not correct, use of default value.");
-			getConfig().set("game_settings.custom_crafts", true);
-		}
-		if (!getConfig().contains("game_settings.see_block_count")) {
-			Bukkit.broadcastMessage("Config for enabling block count display is not correct, use of default value.");
-			getConfig().set("game_settings.see_block_count", true);
-		}
 		
 		try {
 			InputStream in = getResource("blocks_" + Utils.getVersion() + ".json");
@@ -115,6 +78,8 @@ public class KuffleMain extends JavaPlugin {
 		multiBlock = new ManageMultiBlock();
 		scores = new Scores(this);
 		backCmd = new HashMap<>();
+		
+		config.setupConfig(this, getConfig());
 		
 		System.out.println("[Kuffle] Add Custom Crafts.");
 		for (ACrafts item : crafts.getRecipeList()) {

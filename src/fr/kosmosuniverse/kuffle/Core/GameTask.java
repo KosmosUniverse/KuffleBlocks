@@ -54,12 +54,12 @@ public class GameTask {
 	public void startRunnable() {
 		ageDisplay = Bukkit.createBossBar(ageNames[age] + " Age: 1", BarColor.PURPLE, BarStyle.SOLID) ;
 		ageDisplay.addPlayer(player);
-		maxBlock = km.getConfig().getDouble("game_settings.block_per_age");
+		maxBlock = km.config.blockPerAge;
 		calc = 1 / maxBlock;
 		ageDisplay.setProgress(calc);
 		exit = false;
 		alreadyGot = new ArrayList<String>();
-		time = km.getConfig().getInt("game_settings.start_time");
+		time = km.config.startTime;
 		display = (ArmorStand) player.getWorld().spawnEntity(player.getLocation(), EntityType.ARMOR_STAND);
 		display.setVisible(false);
 		display.setCustomNameVisible(true);
@@ -114,9 +114,9 @@ public class GameTask {
 						blockCount = 1;
 						blockScore.setScore(blockCount);
 						alreadyGot.clear();
-						time += 2;
+						time += km.config.addedTime;
 						
-						if (km.getConfig().getBoolean("game_settings.rewards")) {
+						if (km.config.rewards) {
 							if (age > 0) {
 								RewardManager.managePreviousEffects(km.allRewards.get(ageNames[age - 1] + "_Age"), km.effects, player, ageNames[age - 1]);
 							}
@@ -294,7 +294,7 @@ public class GameTask {
 		interval = -1;
 		enable = false;
 		blockCount = 1;
-		time = km.getConfig().getInt("game_settings.start_time");
+		time = km.config.startTime;
 		display.remove();
 		if (ageDisplay != null && ageDisplay.getPlayers().size() != 0) {
 			ageDisplay.removeAll();
@@ -347,7 +347,7 @@ public class GameTask {
 		interval = -1;
 		time = _time;
 		
-		if (km.getConfig().getBoolean("game_settings.see_block_count")) {
+		if (km.config.seeBlockCnt) {
 			km.scores.setupPlayerScores(DisplaySlot.PLAYER_LIST, player);
 		} else {
 			km.scores.setupPlayerScores(DisplaySlot.BELOW_NAME, player);

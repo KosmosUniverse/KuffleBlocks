@@ -72,7 +72,7 @@ public class KuffleAdminLoad implements CommandExecutor {
 		JSONParser parser = new JSONParser();
 		JSONObject mainObject = new JSONObject();
 		
-		if (km.getConfig().getBoolean("game_settings.saturation")) {
+		if (km.config.saturation) {
 			for (GameTask gt : km.games) {
 				gt.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 999999, 10, false, false, false));
 			}

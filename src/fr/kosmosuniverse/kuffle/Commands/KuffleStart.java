@@ -43,7 +43,7 @@ public class KuffleStart implements CommandExecutor {
 			return false;
 		}
 		
-		if (km.getConfig().getBoolean("game_settings.saturation")) {
+		if (km.config.saturation) {
 			for (GameTask gt : km.games) {
 				gt.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 999999, 10, false, false, false));
 			}
@@ -55,8 +55,8 @@ public class KuffleStart implements CommandExecutor {
 		
 		int spread = 0;
 		
-		if (km.getConfig().getBoolean("game_settings.spreadplayers.enable")) {
-			Bukkit.dispatchCommand(sender, "spreadplayers " + p.getLocation().getBlockX() + " " + p.getLocation().getBlockZ() + " " + (km.getConfig().getInt("game_settings.spreadplayers.minimum_distance") * km.games.size()) + " " + (km.getConfig().getInt("game_settings.spreadplayers.maximum_area") * km.games.size()) + " false @a");
+		if (km.config.spread) {
+			Bukkit.dispatchCommand(sender, "spreadplayers " + p.getLocation().getBlockX() + " " + p.getLocation().getBlockZ() + " " + (km.config.spreadMin * km.games.size()) + " " + (km.config.spreadMax * km.games.size()) + " false @a");
 			
 			for (GameTask gt : km.games) {
 				if (gt.getPlayer().isOp()) {
@@ -121,7 +121,7 @@ public class KuffleStart implements CommandExecutor {
 					ActionBar.sendRawTitle("{\"text\":\"1\",\"bold\":true,\"color\":\"blue\"}", gt.getPlayer());
 				}
 				
-				if (km.getConfig().getBoolean("game_settings.see_block_count")) {
+				if (km.config.seeBlockCnt) {
 					km.scores.setupPlayerScores(DisplaySlot.PLAYER_LIST);
 				} else {
 					km.scores.setupPlayerScores(DisplaySlot.BELOW_NAME);
