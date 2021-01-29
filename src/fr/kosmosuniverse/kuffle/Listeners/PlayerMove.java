@@ -49,7 +49,7 @@ public class PlayerMove implements Listener {
 	
 	private void moveBlockDisplay(Player player) {
 		for (GameTask gt : km.games) {
-			if (gt.getPlayer().getDisplayName().equals(player.getDisplayName())) {			
+			if (gt.getPlayer().getDisplayName().equals(player.getDisplayName()) && gt.getEnable()) {			
 				gt.blockDisplayTp();
 				return ;
 			}
