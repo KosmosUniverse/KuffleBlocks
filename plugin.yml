@@ -45,6 +45,10 @@ commands:
       usage: /<command>
       description: command to load and start the game of all registered players
       permission: inferno.flagrate
+   kconfig:
+      usage: /<command>
+      description: command to see or change game configuration
+      permission: inferno.flagrate
    kback:
       usage: /<command>
       description: command to teleport back to death position

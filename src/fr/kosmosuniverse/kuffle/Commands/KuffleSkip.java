@@ -35,14 +35,14 @@ public class KuffleSkip implements CommandExecutor {
 			return false;
 		}
 
-		if (!km.config.skip) {
+		if (!km.config.getSkip()) {
 			p.sendMessage("This command is disabled in config.");
 			return false;
 		}
 		
 		for (GameTask gt : km.games) {
 			if (gt.getPlayer().equals(p)) {
-				if ((gt.getAge() + 1) < km.config.skipAge) {
+				if ((gt.getAge() + 1) < km.config.getSkipAge()) {
 					p.sendMessage("You can't skip block this age.");
 					return false;
 				}

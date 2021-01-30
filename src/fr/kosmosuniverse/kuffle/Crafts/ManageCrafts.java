@@ -12,7 +12,7 @@ public class ManageCrafts {
 	private ArrayList<ACrafts> recipes = new ArrayList<ACrafts>();
 	
 	public ManageCrafts(KuffleMain _km) {
-		if (!_km.config.crafts) {
+		if (!_km.config.getCrafts()) {
 			return;
 		}
 		

@@ -74,12 +74,14 @@ public class KuffleMain extends JavaPlugin {
 		blocksInvs = ChooseBlockInList.getBlocksInvs(allBlocks);
 		effects = RewardManager.getAllEffects();
 		games = new ArrayList<GameTask>();
+		
+		config = new Config(this);
+		config.setupConfig(this, getConfig());
+		
 		crafts = new ManageCrafts(this);
 		multiBlock = new ManageMultiBlock();
 		scores = new Scores(this);
 		backCmd = new HashMap<>();
-		
-		config.setupConfig(this, getConfig());
 		
 		System.out.println("[Kuffle] Add Custom Crafts.");
 		for (ACrafts item : crafts.getRecipeList()) {
@@ -109,6 +111,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kageblocks").setExecutor(new KuffleAgeBlocks(this));
 		getCommand("kteleport").setExecutor(new KuffleTeleport(this));
 		getCommand("klang").setExecutor(new KuffleLang(this));
+		getCommand("kconfig").setExecutor(new KuffleConfig(this));
 		
 		System.out.println("[Kuffle] Add Plugin Tab Completer.");
 		getCommand("klist").setTabCompleter(new KuffleListTab(this));
@@ -117,6 +120,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kadminspawn").setTabCompleter(new KuffleAdminSpawnTab(this));
 		getCommand("kmultiblocks").setTabCompleter(new KuffleMultiBlocksTab(this));
 		getCommand("klang").setTabCompleter(new KuffleLangTab(this));
+		getCommand("kconfig").setTabCompleter(new KuffleConfigTab(this));
 		
 		System.out.println("[Kuffle] Plugin turned ON.");
 	}

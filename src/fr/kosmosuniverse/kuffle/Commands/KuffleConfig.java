@@ -1,5 +1,7 @@
 package fr.kosmosuniverse.kuffle.Commands;
 
+import java.lang.reflect.InvocationTargetException;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -31,11 +33,11 @@ public class KuffleConfig implements CommandExecutor {
 		}
 		
 		if (args.length == 0) {
-			km.config.displayConfig();
+			player.sendMessage(km.config.displayConfig());
 		} else {
+			String before = "";
+			
 			for (int i = 0; i < args.length; i++) {
-				String before = "";
-				
 				if (i % 2 == 0) {
 					if (before != "") {
 						before = "";
@@ -43,36 +45,45 @@ public class KuffleConfig implements CommandExecutor {
 					
 					before = args[i];
 				} else {
-					if (before == "SATURATION") {
-						km.config.saturation = Boolean.getBoolean(args[i]);
-					} else if (before == "SPREADPLAYERS") {
-						
-					} else if (before == "SPREAD_MIN_DISTANCE") {
-						
-					} else if (before == "SPREAD_MAX_DISTANCE") {
-						
-					} else if (before == "REWARDS") {
-						
-					} else if (before == "SKIP") {
-						
-					} else if (before == "CUSTOM_CRAFTS") {
-						
-					} else if (before == "SEE_BLOCK_CNT") {
-						
-					} else if (before == "BLOCK_PER_AGE") {
-						
-					} else if (before == "FIRST_AGE_SKIP") {
-						
-					} else if (before == "NB_AGE") {
-						
-					} else if (before == "START_DURATION") {
-						
-					} else if (before == "ADDED_DURATION") {
-						
-					} else if (before == "LANG") {
-						
-					} else if (before == "LEVEL") {
-						
+					if (km.config.stringElems.containsKey(before)) {
+						try {
+							if (!km.langs.contains(args[i].toLowerCase())) {
+								player.sendMessage(km.config.stringErrorMsg);
+							}
+							
+							Class.forName("fr.kosmosuniverse.kuffle.Core.Config").getMethod(km.config.stringElems.get(before), String.class).invoke(km.config, args[i]);
+						} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
+								| NoSuchMethodException | SecurityException | ClassNotFoundException e) {
+							e.printStackTrace();
+						}
+					} else if (km.config.booleanElems.containsKey(before)) {
+						try {
+							String tmp = args[i].toLowerCase();
+							
+							if (!tmp.equals("true") && !tmp.equals("false")) {
+								player.sendMessage(km.config.booleanErrorMsg);
+							}
+							
+							boolean boolValue = Boolean.parseBoolean(tmp);
+							
+							Class.forName("fr.kosmosuniverse.kuffle.Core.Config").getMethod(km.config.booleanElems.get(before), boolean.class).invoke(km.config, boolValue);
+						} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
+								| NoSuchMethodException | SecurityException | ClassNotFoundException e) {
+							e.printStackTrace();
+						}
+					} else if (km.config.intElems.containsKey(before)) {
+						try {
+							int intValue = Integer.parseInt(args[i]);
+							
+							Class.forName("fr.kosmosuniverse.kuffle.Core.Config").getMethod(km.config.intElems.get(before), int.class).invoke(km.config, intValue);
+						} catch (NumberFormatException e) {
+							player.sendMessage(km.config.intErrorMsg);
+						} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
+								| NoSuchMethodException | SecurityException | ClassNotFoundException e) {
+							e.printStackTrace();
+						} 
+					} else {
+						player.sendMessage("Key " + before + " not recognized.");
 					}
 				}
 			}
