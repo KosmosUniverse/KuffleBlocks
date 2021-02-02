@@ -24,38 +24,47 @@ import fr.kosmosuniverse.kuffle.KuffleMain;
 import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class GameTask {
-	private BukkitTask runnable;
-	private Player player;
-	private String configLang = "en";
 	private ArrayList<String> alreadyGot;
-	private int age = 0;
+	
+	private KuffleMain km;
+	
 	private String[] ageNames = {"Archaic", "Classic", "Mineric", "Netheric", "Heroic", "Mythic"};
+
 	private String currentBlock = null;
 	private String blockDisplay = null;
-	private long previousShuffle = -1;
+	private String configLang;
+	
+	private int age = 0;
 	private int time;
+	private int blockCount = 1;
+	private int gameRank;
+	
+	private long previousShuffle = -1;
 	private long interval = -1;
+	
 	private boolean enable = false;
 	private boolean exit = false;
-	private int blockCount = 1;
-	private KuffleMain km;
-	private BossBar ageDisplay;
-	private double maxBlock;
 	private boolean found = false;
+	
 	private double calc = 0;
+	
+	private BukkitTask runnable;
+	private Player player;
+	private BossBar ageDisplay;
 	private Score blockScore;
 	private ArmorStand display;
 	
 	public GameTask(KuffleMain _km, Player _p) {
 		km = _km;
 		player = _p;
+		
+		configLang = km.config.getLang();
 	}
 	
 	public void startRunnable() {
 		ageDisplay = Bukkit.createBossBar(ageNames[age] + " Age: 1", BarColor.PURPLE, BarStyle.SOLID) ;
 		ageDisplay.addPlayer(player);
-		maxBlock = km.config.getBlockPerAge();
-		calc = 1 / maxBlock;
+		calc = 1 / km.config.getBlockPerAge();
 		ageDisplay.setProgress(calc);
 		exit = false;
 		alreadyGot = new ArrayList<String>();
@@ -72,19 +81,20 @@ public class GameTask {
 					return;
 				}
 				if (enable) {
-					calc = ((double) blockCount) / maxBlock;
+					time = km.config.getStartTime() + (km.config.getAddedTime() * age);
+					calc = ((double) blockCount) / km.config.getBlockPerAge();
 					calc = calc > 1.0 ? 1.0 : calc;
 					ageDisplay.setProgress(calc);
 					
-					if (age == ageNames.length) {
-						ageDisplay.setTitle(ageNames[age - 1] + " Age: " + blockCount);
+					if (age == km.config.getMaxAges()) {
+						ageDisplay.setTitle("Game Done ! Rank : " + gameRank);
 					} else {
 						ageDisplay.setTitle(ageNames[age] + " Age: " + blockCount);
 					}
 					
 					blockScore.setScore(blockCount);
 					
-					if (currentBlock == null || age == 6) {
+					if (currentBlock == null || age == km.config.getMaxAges()) {
 						previousShuffle = System.currentTimeMillis();
 						currentBlock = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));
 						blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
@@ -101,7 +111,7 @@ public class GameTask {
 							currentBlock = null;
 							blockCount++;
 							blockScore.setScore(blockCount);
-							calc = ((double) blockCount) / maxBlock;
+							calc = ((double) blockCount) / km.config.getBlockPerAge();;
 							calc = calc > 1.0 ? 1.0 : calc;
 							ageDisplay.setProgress(calc);
 							ageDisplay.setTitle(ageNames[age] + " Age: " + blockCount);
@@ -109,12 +119,11 @@ public class GameTask {
 						}
 					}
 					
-					if (blockCount == (maxBlock + 1)) {
+					if (blockCount >= (km.config.getBlockPerAge() + 1)) {
 						player.playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LARGE_BLAST, 1f, 1f);
 						blockCount = 1;
 						blockScore.setScore(blockCount);
 						alreadyGot.clear();
-						time += km.config.getAddedTime();
 						
 						if (km.config.getRewards()) {
 							if (age > 0) {
@@ -126,18 +135,19 @@ public class GameTask {
 
 						age++;
 						player.setPlayerListName(Utils.getColor(age) + player.getName());
-						calc = 1 / maxBlock;
+						calc = 1 / km.config.getBlockPerAge();
 						ageDisplay.setProgress(calc);
 						
 						if (age == ageNames.length) {
-							ageDisplay.setTitle("Game Done ! Rank : " + getGameRank());
+							gameRank = getGameRank();
+							ageDisplay.setTitle("Game Done ! Rank : " + gameRank);
 						} else {
 							ageDisplay.setTitle(ageNames[age] + " Age: 1");
 							Bukkit.broadcastMessage("§1" + player.getName() + " has moved to the §6§l" + ageNames[age] + " Age§1.");
 						}
 					}
 					
-					if (age == 6) {
+					if (age == km.config.getMaxAges()) {
 						player.playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_TWINKLE_FAR, 1f, 1f);
 						Bukkit.broadcastMessage("§1" + player.getName() + " §6§lcomplete this game !§r");
 						exit = true;
@@ -206,7 +216,7 @@ public class GameTask {
 		return blockScore;
 	}
 	
-	private String getGameRank() {
+	private int getGameRank() {
 		km.playerRank.put(player.getDisplayName(), true);
 		
 		int count = 0;
@@ -216,7 +226,7 @@ public class GameTask {
 				count++;
 		}
 		
-		return "" + count;
+		return count;
 	}
 	
 	public String getLang() {
@@ -324,6 +334,7 @@ public class GameTask {
 		JSONObject global = new JSONObject();
 		
 		global.put("age", age);
+		global.put("maxAge", km.config.getMaxAges());
 		global.put("current", currentBlock);
 		global.put("interval", interval);
 		global.put("time", time);
@@ -340,12 +351,12 @@ public class GameTask {
 		return (global.toString());
 	}
 	
-	public void loadGame(int _age, String _current, long _interval, int _time, int _blockCount, JSONArray _alreadyGot) {
+	public void loadGame(int _age, int maxAge, String _current, long _interval, int _time, int _blockCount, JSONArray _alreadyGot) {
 		age = _age;
 		currentBlock = _current;
 		previousShuffle = System.currentTimeMillis() - _interval;
 		interval = -1;
-		time = _time;
+		time = km.config.getStartTime() + (km.config.getAddedTime() * age);
 		
 		if (km.config.getSeeBlockCnt()) {
 			km.scores.setupPlayerScores(DisplaySlot.PLAYER_LIST, player);
@@ -364,7 +375,7 @@ public class GameTask {
 			alreadyGot.add((String) _alreadyGot.get(i));			
 		}
 		
-		if (age == ageNames.length) {
+		if (age == km.config.getMaxAges()) {
 			display.remove();
 			ageDisplay.setTitle("Game Done ! Rank : " + getGameRank());
 			ageDisplay.setProgress(1.0);

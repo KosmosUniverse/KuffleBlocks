@@ -96,7 +96,7 @@ public class KuffleAdminLoad implements CommandExecutor {
 					e.printStackTrace();
 				}
 				
-				gt.loadGame(Integer.parseInt(((Long) mainObject.get("age")).toString()), (String) mainObject.get("current"), (Long) mainObject.get("interval") - 7000, Integer.parseInt(((Long) mainObject.get("time")).toString()), Integer.parseInt(((Long) mainObject.get("blockCount")).toString()), (JSONArray) mainObject.get("alreadyGot"));
+				gt.loadGame(Integer.parseInt(((Long) mainObject.get("age")).toString()), Integer.parseInt(mainObject.get("maxAge").toString()), (String) mainObject.get("current"), (Long) mainObject.get("interval"), Integer.parseInt(((Long) mainObject.get("time")).toString()), Integer.parseInt(((Long) mainObject.get("blockCount")).toString()), (JSONArray) mainObject.get("alreadyGot"));
 				
 				reader.close();
 				

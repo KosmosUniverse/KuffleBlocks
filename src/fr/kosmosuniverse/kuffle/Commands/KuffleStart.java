@@ -75,6 +75,7 @@ public class KuffleStart implements CommandExecutor {
 		for (GameTask gt : km.games) {
 			km.playerRank.put(gt.getPlayer().getDisplayName(), false);
 			km.playersHeads.setItem(invCnt, Utils.getHead(gt.getPlayer()));
+			km.backCmd.put(gt.getPlayer().getDisplayName(), null);
 			
 			invCnt++;
 		}

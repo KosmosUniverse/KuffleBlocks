@@ -73,11 +73,11 @@ public class KuffleMain extends JavaPlugin {
 		langs = LangManager.findAllLangs(allLang);
 		blocksInvs = ChooseBlockInList.getBlocksInvs(allBlocks);
 		effects = RewardManager.getAllEffects();
-		games = new ArrayList<GameTask>();
 		
 		config = new Config(this);
 		config.setupConfig(this, getConfig());
 		
+		games = new ArrayList<GameTask>();
 		crafts = new ManageCrafts(this);
 		multiBlock = new ManageMultiBlock();
 		scores = new Scores(this);
