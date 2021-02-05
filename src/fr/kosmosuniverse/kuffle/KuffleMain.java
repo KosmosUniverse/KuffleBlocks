@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffectType;
 
@@ -106,7 +108,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kcrafts").setExecutor(new KuffleCrafts(this));
 		getCommand("kmultiBlocks").setExecutor(new KuffleMultiBlocks(this));
 		getCommand("kageblocks").setExecutor(new KuffleAgeBlocks(this));
-		getCommand("kteleport").setExecutor(new KuffleTeleport(this));
+		getCommand("kplayers").setExecutor(new KufflePlayers(this));
 		getCommand("klang").setExecutor(new KuffleLang(this));
 		getCommand("kconfig").setExecutor(new KuffleConfig(this));
 		
@@ -120,6 +122,25 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kconfig").setTabCompleter(new KuffleConfigTab(this));
 		
 		System.out.println("[Kuffle] Plugin turned ON.");
+	}
+	
+	public void updatePlayersHead(String player, String currentBlock) {
+		ItemMeta itM;
+		
+		for (ItemStack item : playersHeads) {
+			if (item != null) {
+				itM = item.getItemMeta();
+				
+				if (itM.getDisplayName().equals(player)) {
+					ArrayList<String> lore = new ArrayList<String>();
+					
+					lore.add(currentBlock);
+					
+					itM.setLore(lore);
+					item.setItemMeta(itM);
+				}
+			}
+		}
 	}
 	
 	@Override

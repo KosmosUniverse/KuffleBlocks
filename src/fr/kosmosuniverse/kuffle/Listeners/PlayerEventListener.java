@@ -21,6 +21,7 @@ import org.json.simple.parser.ParseException;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
+import fr.kosmosuniverse.kuffle.Core.Level;
 import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class PlayerEventListener implements Listener {
@@ -124,8 +125,12 @@ public class PlayerEventListener implements Listener {
 		
 		for (GameTask gt : km.games) {
 			if (gt.getPlayer().getName().equals(player.getDisplayName())) {
-				gt.setDeathLoc(deathLoc);
-				gt.savePlayerInv();
+				if (km.config.getLevel() == Level.ULTRA) {
+					gt.setExit(true);
+				} else {
+					gt.setDeathLoc(deathLoc);
+					gt.savePlayerInv();
+				}
 				return;
 			}
 		}
@@ -147,8 +152,10 @@ public class PlayerEventListener implements Listener {
 			public void run() {
 				for (GameTask gt : km.games) {
 					if (gt.getPlayer().getName().equals(player.getDisplayName())) {
-						gt.reloadEffects();
-						player.sendMessage("You can tp back to your death spot in " + Utils.minSecondsWithLevel(km.config.getLevel()) + " seconds. In " + Utils.maxSecondsWithLevel(km.config.getLevel()) + " seconds your stuff will be destroyed");
+						if (km.config.getLevel() != Level.ULTRA) {
+							gt.reloadEffects();
+							player.sendMessage("You can tp back to your death spot in " + Utils.minSecondsWithLevel(km.config.getLevel()) + " seconds. In " + Utils.maxSecondsWithLevel(km.config.getLevel()) + " seconds your stuff will be destroyed");
+						}
 						return;
 					}
 				}

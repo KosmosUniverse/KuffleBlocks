@@ -64,7 +64,7 @@ commands:
    kageblocks:
       usage: /<command>
       description: command to see current age blocks
-   kteleport:
+   kplayers:
       usage: /<command>
       description: command to tp to other players after game end
    klang:
@@ -117,7 +117,7 @@ permissions:
    kageblocks:
       description: command to see current age blocks
       default: true
-   kteleport:
+   kplayers:
       description: command to tp to other players after game end
       default: true
    klang:

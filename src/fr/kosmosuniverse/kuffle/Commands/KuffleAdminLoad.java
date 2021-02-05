@@ -82,6 +82,17 @@ public class KuffleAdminLoad implements CommandExecutor {
 			gt.startRunnable();
 		}
 		
+		int invCnt = 0;
+		
+		km.playersHeads = Bukkit.createInventory(null, 54, "§8Teleport");
+		
+		for (GameTask gt : km.games) {
+			km.playerRank.put(gt.getPlayer().getDisplayName(), false);
+			km.playersHeads.setItem(invCnt, Utils.getHead(gt.getPlayer()));
+			
+			invCnt++;
+		}
+		
 		for (GameTask gt : km.games) {
 			try {
 				if (dataFolder.getPath().contains("\\")) {
@@ -103,17 +114,6 @@ public class KuffleAdminLoad implements CommandExecutor {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}
-		
-		int invCnt = 0;
-		
-		km.playersHeads = Bukkit.createInventory(null, 54, "§8Teleport");
-		
-		for (GameTask gt : km.games) {
-			km.playerRank.put(gt.getPlayer().getDisplayName(), false);
-			km.playersHeads.setItem(invCnt, Utils.getHead(gt.getPlayer()));
-			
-			invCnt++;
 		}
 		
 		km.paused = true;

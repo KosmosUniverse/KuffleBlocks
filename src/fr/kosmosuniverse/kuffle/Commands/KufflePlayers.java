@@ -8,10 +8,11 @@ import org.bukkit.entity.Player;
 import fr.kosmosuniverse.kuffle.KuffleMain;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
 
-public class KuffleTeleport implements CommandExecutor {
+public class KufflePlayers implements CommandExecutor {
+
 	private KuffleMain km;
 
-	public KuffleTeleport(KuffleMain _km) {
+	public KufflePlayers(KuffleMain _km) {
 		km = _km;
 	}
 	
@@ -22,23 +23,20 @@ public class KuffleTeleport implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
-		if (!player.hasPermission("kteleport")) {
+		if (!player.hasPermission("kplayers")) {
 			player.sendMessage("You are not allowed to do this command.");
 			return false;
 		}
 		
 		if (km.games.size() == 0 || !km.games.get(0).getEnable()) {
 			player.sendMessage("The game has not launched yet.");
+			
 			return false;
 		}
 		
 		for (GameTask gt : km.games) {
 			if (gt.getPlayer() == player) {
-				if (gt.getExit()) {
-					player.openInventory(km.playersHeads);
-				} else {
-					player.sendMessage("You can not use this command until yout finished the game !");
-				}
+				player.openInventory(km.playersHeads);
 			}
 		}
 		

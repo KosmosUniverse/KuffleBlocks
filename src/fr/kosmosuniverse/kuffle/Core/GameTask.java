@@ -82,9 +82,16 @@ public class GameTask {
 			@Override
 			public void run() {
 				if (exit) {
-					ageDisplay.setColor(getRandomColor());
+					if (age != km.config.getMaxAges()) {
+						ageDisplay.setColor(BarColor.RED);
+						ageDisplay.setTitle("Game Done ! Rank : " + getOppositeGameRank());
+					} else {
+						ageDisplay.setColor(getRandomColor());	
+					}
+					
 					return;
 				}
+				
 				if (enable) {
 					time = km.config.getStartTime() + (km.config.getAddedTime() * age);
 					calc = ((double) blockCount) / km.config.getBlockPerAge();
@@ -104,6 +111,7 @@ public class GameTask {
 						currentBlock = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));
 						blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
 						alreadyGot.add(currentBlock);
+						km.updatePlayersHead(player.getDisplayName(), blockDisplay);
 					}
 					
 					if (System.currentTimeMillis() - previousShuffle > (time * 60000)) {
@@ -142,7 +150,7 @@ public class GameTask {
 						calc = 1 / km.config.getBlockPerAge();
 						ageDisplay.setProgress(calc);
 						
-						if (age == ageNames.length) {
+						if (age == km.config.getMaxAges()) {
 							gameRank = getGameRank();
 							ageDisplay.setTitle("Game Done ! Rank : " + gameRank);
 						} else {
@@ -244,8 +252,25 @@ public class GameTask {
 		return count;
 	}
 	
+	private int getOppositeGameRank() {
+		km.playerRank.put(player.getDisplayName(), true);
+		
+		int count = 0;
+		
+		for (String player : km.playerRank.keySet()) {
+			if (km.playerRank.get(player))
+				count++;
+		}
+		
+		return km.games.size() - count + 1;
+	}
+	
 	public String getLang() {
 		return configLang;
+	}
+	
+	public void setExit(boolean _exit) {
+		exit = _exit;
 	}
 	
 	public void setDeathLoc(Location _deathLoc) {
@@ -445,10 +470,8 @@ public class GameTask {
 			deathLoc = new Location(Bukkit.getWorld((String) death.get("World")), (double) death.get("X"), (double) death.get("Y"), (double) death.get("Z"));	
 		}
 		
-		player.sendMessage(spawnLoc.toString());
-		player.sendMessage(deathLoc.toString());
-		
 		blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
+		km.updatePlayersHead(player.getDisplayName(), blockDisplay);
 		
 		blockCount = _blockCount;
 		blockScore.setScore(blockCount);
