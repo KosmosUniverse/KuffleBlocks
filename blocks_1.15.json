@@ -84,7 +84,6 @@
 			"glass_pane",
 			"glass",
 			"ladder",
-			"item_frame",
 			"campfire",
 			"chest",
 			"crafting_table",
@@ -485,7 +484,6 @@
 			"pink_tulip",
 			"cornflower",
 			"lily_of_the_valley",
-			"wither_rose",
 			"sunflower",
 			"potted_blue_orchid",
 			"potted_allium",
@@ -495,7 +493,6 @@
 			"potted_pink_tulip",
 			"potted_cornflower",
 			"potted_lily_of_the_valley",
-			"potted_wither_rose",
 			"lilac",
 			"rose_bush",
 			"peony"
