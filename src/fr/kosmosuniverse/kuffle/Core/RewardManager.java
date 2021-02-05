@@ -101,6 +101,14 @@ public class RewardManager {
 		return effectMap;
 	}
 	
+	public static synchronized void givePlayerRewardEffect(HashMap<String, RewardElem> ageReward, HashMap<String, PotionEffectType> effects, Player p, String age) {
+		for (String k : ageReward.keySet()) {
+			if (k.contains("potion")) {				
+				p.addPotionEffect(new PotionEffect(findEffect(effects, ageReward.get(k).getEffect()), 999999, 1));
+			}
+		}
+	}
+	
 	public static synchronized void givePlayerReward(HashMap<String, RewardElem> ageReward, HashMap<String, PotionEffectType> effects, Player p, String age) {
 		ArrayList<ItemStack> items = new ArrayList<ItemStack>();
 		ItemStack container;

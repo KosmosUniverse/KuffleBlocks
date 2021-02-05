@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Random;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -11,6 +12,8 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
+
+import fr.kosmosuniverse.kuffle.Core.Level;
 
 public class Utils {
 	public static String readFileContent(InputStream in) throws IOException {
@@ -62,5 +65,31 @@ public class Utils {
 		version = version.split("_")[0] + "." + version.split("_")[1];
 		
 		return version;
+	}
+	
+	public static long minSecondsWithLevel(Level level) {
+		Random r = new Random();
+		
+		if (level == Level.EASY) {
+			return 3;
+		} else if (level == Level.NORMAL) {
+			return 6;
+		} else if (level == Level.EXPERT) {
+			return (6 * (r.nextInt(9) + 1));
+		}
+		
+		return -1;
+	}
+	
+	public static long maxSecondsWithLevel(Level level) {
+		if (level == Level.EASY) {
+			return 40;
+		} else if (level == Level.NORMAL) {
+			return 30;
+		} else if (level == Level.EXPERT) {
+			return 20;
+		}
+		
+		return -1;
 	}
 }

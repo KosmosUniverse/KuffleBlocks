@@ -9,7 +9,6 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
-import fr.kosmosuniverse.kuffle.Core.GameTask;
 import fr.kosmosuniverse.kuffle.MultiBlock.AMultiblock;
 import fr.kosmosuniverse.kuffle.MultiBlock.ActivationType;
 
@@ -30,8 +29,6 @@ public class PlayerMove implements Listener {
 		Player player = event.getPlayer();
 		AMultiblock multiBlock;
 		
-		moveBlockDisplay(player);
-		
 		if (player.getLocation().add(0, -1, 0).getBlock().getType() == Material.OBSIDIAN) {
 			if ((multiBlock = km.multiBlock.findMultiBlockByCore(Material.OBSIDIAN)) != null) {
 				if (multiBlock.getMultiblock().checkMultiBlock(player.getLocation().add(0, -1, 0), player)) {
@@ -43,15 +40,6 @@ public class PlayerMove implements Listener {
 				if (multiBlock.getMultiblock().checkMultiBlock(player.getLocation().add(0, -1, 0), player)) {
 					multiBlock.onActivate(km, player, ActivationType.ACTIVATE);
 				}
-			}
-		}
-	}
-	
-	private void moveBlockDisplay(Player player) {
-		for (GameTask gt : km.games) {
-			if (gt.getPlayer().getDisplayName().equals(player.getDisplayName()) && gt.getEnable()) {			
-				gt.blockDisplayTp();
-				return ;
 			}
 		}
 	}

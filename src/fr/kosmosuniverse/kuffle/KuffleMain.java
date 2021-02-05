@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.bukkit.Location;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffectType;
@@ -31,7 +30,6 @@ public class KuffleMain extends JavaPlugin {
 	public HashMap<String, ArrayList<Inventory>> blocksInvs;
 	public HashMap<String, ArrayList<String>> allBlocks;
 	public HashMap<String, Boolean> playerRank = new HashMap<String, Boolean>();
-	public HashMap<String, Location> backCmd;
 	public HashMap<String, PotionEffectType> effects;
 	public ArrayList<GameTask> games;
 	public ArrayList<String> langs;
@@ -81,7 +79,6 @@ public class KuffleMain extends JavaPlugin {
 		crafts = new ManageCrafts(this);
 		multiBlock = new ManageMultiBlock();
 		scores = new Scores(this);
-		backCmd = new HashMap<>();
 		
 		System.out.println("[Kuffle] Add Custom Crafts.");
 		for (ACrafts item : crafts.getRecipeList()) {

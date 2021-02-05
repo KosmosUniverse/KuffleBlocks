@@ -1,6 +1,7 @@
 package fr.kosmosuniverse.kuffle.Core;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 import org.bukkit.Bukkit;
@@ -10,9 +11,11 @@ import org.bukkit.Sound;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
-import org.bukkit.entity.ArmorStand;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.scoreboard.DisplaySlot;
@@ -28,6 +31,11 @@ public class GameTask {
 	
 	private KuffleMain km;
 	
+	private Location spawnLoc;
+	private Location deathLoc;
+	
+	private Inventory deathInv = null;
+	
 	private String[] ageNames = {"Archaic", "Classic", "Mineric", "Netheric", "Heroic", "Mythic"};
 
 	private String currentBlock = null;
@@ -41,6 +49,7 @@ public class GameTask {
 	
 	private long previousShuffle = -1;
 	private long interval = -1;
+	private long deathTime = 0;
 	
 	private boolean enable = false;
 	private boolean exit = false;
@@ -52,7 +61,6 @@ public class GameTask {
 	private Player player;
 	private BossBar ageDisplay;
 	private Score blockScore;
-	private ArmorStand display;
 	
 	public GameTask(KuffleMain _km, Player _p) {
 		km = _km;
@@ -69,9 +77,6 @@ public class GameTask {
 		exit = false;
 		alreadyGot = new ArrayList<String>();
 		time = km.config.getStartTime();
-		display = (ArmorStand) player.getWorld().spawnEntity(player.getLocation(), EntityType.ARMOR_STAND);
-		display.setVisible(false);
-		display.setCustomNameVisible(true);
 		
 		runnable = new BukkitRunnable() {
 			@Override
@@ -98,7 +103,6 @@ public class GameTask {
 						previousShuffle = System.currentTimeMillis();
 						currentBlock = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));
 						blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
-						display.setCustomName(Utils.getColor(age) + blockDisplay);
 						alreadyGot.add(currentBlock);
 					}
 					
@@ -153,7 +157,6 @@ public class GameTask {
 						exit = true;
 						previousShuffle = -1;
 						ageDisplay.setProgress(1.0);
-						display.remove();
 					}
 					
 					if (previousShuffle != -1) {
@@ -196,6 +199,18 @@ public class GameTask {
 		return player;
 	}
 	
+	public Location getDeathLoc() {
+		return deathLoc;
+	}
+	
+	public Long getDeathTime() {
+		return deathTime;
+	}
+	
+	public Location getSpawnLoc() {
+		return spawnLoc;
+	}
+	
 	public int getAge() {
 		return age;
 	}
@@ -233,6 +248,15 @@ public class GameTask {
 		return configLang;
 	}
 	
+	public void setDeathLoc(Location _deathLoc) {
+		deathLoc = _deathLoc;
+		deathTime = System.currentTimeMillis();
+	}
+	
+	public void setSpawnLoc(Location _spawnLoc) {
+		spawnLoc = _spawnLoc;
+	}
+	
 	public void setLang(String _configLang) {
 		if (_configLang.equals(configLang)) {
 			return ;
@@ -253,27 +277,59 @@ public class GameTask {
 		blockCount = _blockCount;
 	}
 	
-	public void blockDisplayTp() {
-		Location playerLoc = player.getLocation();
-		double newX;
-        double newZ;
-        float nang = player.getLocation().getYaw() + 90;
-       
-        if(nang < 0) nang += 360;
-       
-        newX = Math.cos(Math.toRadians(nang));
-        newZ = Math.sin(Math.toRadians(nang));
+	public void reloadEffects() {
+		if (km.config.getRewards()) {
+			if (km.config.getSaturation()) {
+				player.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 999999, 10, false, false, false));
+			}
+			
+			int tmp = age - 1;
+			
+			if (tmp < 0) 
+				return;
+
+			RewardManager.givePlayerRewardEffect(km.allRewards.get(ageNames[tmp] + "_Age"), km.effects, player, ageNames[tmp]);
+		}
+	}
+	
+	
+	public void savePlayerInv() {
+		deathInv = Bukkit.createInventory(null, 54);
 		
-        Location newLoc = new Location(player.getWorld(), playerLoc.getX() - newX, playerLoc.getY(), playerLoc.getZ() - newZ, playerLoc.getYaw(), playerLoc.getPitch());
-        
-		display.teleport(newLoc);
+		for (ItemStack item : player.getInventory().getContents()) {
+			if (item != null) {
+				deathInv.addItem(item);
+			}
+		}
+	}
+	
+	public void restorePlayerInv() {
+		if (System.currentTimeMillis() - deathTime > (Utils.maxSecondsWithLevel(km.config.getLevel()) * 1000)) {
+			player.sendMessage("You waited too much to return to your death spot, your stuff is now unreachable.");
+			deathInv.clear();
+			deathInv = null;
+			return;
+		}
+		
+		for (ItemStack item : deathInv.getContents()) {
+			if (item != null) {
+				HashMap<Integer, ItemStack> ret = player.getInventory().addItem(item);
+				if (!ret.isEmpty()) {
+					for (Integer cnt : ret.keySet()) {
+						player.getWorld().dropItem(player.getLocation(), ret.get(cnt));
+					}
+				}
+			}
+		}
+		
+		deathInv.clear();
+		deathInv = null;
 	}
 	
 	public void enable() {
 		if (age == 6) {
 			exit = true;
 			enable = true;
-			display.remove();
 			return;
 		}
 		
@@ -305,7 +361,6 @@ public class GameTask {
 		enable = false;
 		blockCount = 1;
 		time = km.config.getStartTime();
-		display.remove();
 		if (ageDisplay != null && ageDisplay.getPlayers().size() != 0) {
 			ageDisplay.removeAll();
 			ageDisplay = null;
@@ -331,6 +386,23 @@ public class GameTask {
 	public String saveGame() {
 		enable = false;
 		
+		JSONObject jsonSpawn = new JSONObject();
+		
+		jsonSpawn.put("World", spawnLoc.getWorld().getName());
+		jsonSpawn.put("X", spawnLoc.getX());
+		jsonSpawn.put("Y", spawnLoc.getY());
+		jsonSpawn.put("Z", spawnLoc.getZ());
+		
+		JSONObject jsonDeath = new JSONObject();
+		if (deathLoc == null) {
+			jsonDeath = null;
+		} else {
+			jsonDeath.put("World", deathLoc.getWorld().getName());
+			jsonDeath.put("X", deathLoc.getX());
+			jsonDeath.put("Y", deathLoc.getY());
+			jsonDeath.put("Z", deathLoc.getZ());
+		}
+		
 		JSONObject global = new JSONObject();
 		
 		global.put("age", age);
@@ -339,6 +411,8 @@ public class GameTask {
 		global.put("interval", interval);
 		global.put("time", time);
 		global.put("blockCount", blockCount);
+		global.put("spawn", jsonSpawn);
+		global.put("death", jsonDeath);
 		
 		JSONArray got = new JSONArray();
 		
@@ -351,7 +425,7 @@ public class GameTask {
 		return (global.toString());
 	}
 	
-	public void loadGame(int _age, int maxAge, String _current, long _interval, int _time, int _blockCount, JSONArray _alreadyGot) {
+	public void loadGame(int _age, int maxAge, String _current, long _interval, int _time, int _blockCount, JSONArray _alreadyGot, JSONObject spawn, JSONObject death) {
 		age = _age;
 		currentBlock = _current;
 		previousShuffle = System.currentTimeMillis() - _interval;
@@ -363,9 +437,18 @@ public class GameTask {
 		} else {
 			km.scores.setupPlayerScores(DisplaySlot.BELOW_NAME, player);
 		}
+
+		spawnLoc = new Location(Bukkit.getWorld((String) spawn.get("World")), (double) spawn.get("X"), (double) spawn.get("Y"), (double) spawn.get("Z"));
+		if (death == null) {
+			deathLoc = null;
+		} else {
+			deathLoc = new Location(Bukkit.getWorld((String) death.get("World")), (double) death.get("X"), (double) death.get("Y"), (double) death.get("Z"));	
+		}
+		
+		player.sendMessage(spawnLoc.toString());
+		player.sendMessage(deathLoc.toString());
 		
 		blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
-		display.setCustomName(Utils.getColor(age) + blockDisplay);
 		
 		blockCount = _blockCount;
 		blockScore.setScore(blockCount);
@@ -376,11 +459,9 @@ public class GameTask {
 		}
 		
 		if (age == km.config.getMaxAges()) {
-			display.remove();
 			ageDisplay.setTitle("Game Done ! Rank : " + getGameRank());
 			ageDisplay.setProgress(1.0);
 			km.playerRank.put(player.getDisplayName(), true);
-			display.remove();
 		}
 	}
 	

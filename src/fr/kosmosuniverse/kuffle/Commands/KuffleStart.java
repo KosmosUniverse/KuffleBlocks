@@ -1,6 +1,8 @@
 package fr.kosmosuniverse.kuffle.Commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -59,13 +61,19 @@ public class KuffleStart implements CommandExecutor {
 			Bukkit.dispatchCommand(sender, "spreadplayers " + p.getLocation().getBlockX() + " " + p.getLocation().getBlockZ() + " " + (km.config.getSpreadMin() * km.games.size()) + " " + (km.config.getSpreadMax() * km.games.size()) + " false @a");
 			
 			for (GameTask gt : km.games) {
-				if (gt.getPlayer().isOp()) {
-					gt.getPlayer().performCommand("spawnpoint");
-				} else {
-					gt.getPlayer().setBedSpawnLocation(gt.getPlayer().getLocation(), true);
-				}
+				gt.getPlayer().setBedSpawnLocation(gt.getPlayer().getLocation(), true);
+				gt.setSpawnLoc(gt.getPlayer().getLocation());
+				gt.getSpawnLoc().add(0, -1, 0).getBlock().setType(Material.BEDROCK);
 			}
 			spread = 20;
+		} else {
+			Location spawn = km.games.get(0).getPlayer().getLocation().getWorld().getSpawnLocation();
+			
+			spawn.add(0, -1, 0).getBlock().setType(Material.BEDROCK);
+			
+			for (GameTask gt : km.games) {
+				gt.setSpawnLoc(spawn);
+			}
 		}
 		
 		int invCnt = 0;
@@ -75,7 +83,7 @@ public class KuffleStart implements CommandExecutor {
 		for (GameTask gt : km.games) {
 			km.playerRank.put(gt.getPlayer().getDisplayName(), false);
 			km.playersHeads.setItem(invCnt, Utils.getHead(gt.getPlayer()));
-			km.backCmd.put(gt.getPlayer().getDisplayName(), null);
+			gt.setDeathLoc(null);
 			
 			invCnt++;
 		}

@@ -22,8 +22,8 @@ public class Config {
 	private int maxAges;
 	private int startTime;
 	private int addedTime;
+	private int level;
 	private String lang;
-	private Level level;
 	
 	private ArrayList<String> ret = new ArrayList<String>();
 	
@@ -121,8 +121,8 @@ public class Config {
 		
 		ret = new ArrayList<String>();
 		
-		for (int i = 0; i < Level.values().length; i++) {
-			ret.add("" + i);
+		for (Level l : Level.values()) {
+			ret.add(l.toString());
 		}
 		
 		intRet.put("LEVEL", ret);
@@ -207,7 +207,12 @@ public class Config {
 		maxAges = configFile.getInt("game_settings.max_age");
 		startTime = configFile.getInt("game_settings.start_time");
 		addedTime = configFile.getInt("game_settings.time_added");
-		level = Level.values()[configFile.getInt("game_settings.level")];
+		
+		for (int cnt = 0; cnt < Level.values().length; cnt++) {
+			if (Level.valueOf(configFile.getString("game_settings.level")) == Level.values()[cnt]) {
+				level = cnt;
+			}
+		}
 		
 		lang = configFile.getString("game_settings.lang");
 		
@@ -295,7 +300,7 @@ public class Config {
 	}
 	
 	public Level getLevel() {
-		return level;
+		return Level.values()[level];
 	}
 	
 	public String getLang() {
@@ -361,8 +366,12 @@ public class Config {
 		addedTime = _addedTime;
 	}
 	
-	public void setLevel(int _level) {
-		level =  Level.values()[_level];
+	public void setLevel(String _level) {
+		for (int cnt = 0; cnt < Level.values().length; cnt++) {
+			if (Level.valueOf(_level) == Level.values()[cnt]) {
+				level = cnt;
+			}
+		}
 	}
 	
 	public void setLang(String _lang) {
