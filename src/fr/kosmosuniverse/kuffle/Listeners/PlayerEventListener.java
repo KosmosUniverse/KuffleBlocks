@@ -7,13 +7,17 @@ import java.io.IOException;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.inventory.ItemStack;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -161,6 +165,39 @@ public class PlayerEventListener implements Listener {
 				}
 			}
 		}, 20);
+	}
+	
+	@EventHandler
+	public void onFireWorkThrow(PlayerInteractEvent event) {
+		ItemStack item;
+		Action action = event.getAction();
+		Player player = event.getPlayer();
+
+		if (km.games.size() == 0 || !km.games.get(0).getEnable() || playerIsInGame(player.getDisplayName()) == null) {
+			return ;
+		}
+		
+		if (action != Action.RIGHT_CLICK_AIR && action != Action.RIGHT_CLICK_BLOCK) {
+			return ;
+		}
+		
+		if (event.getItem() != null && event.getItem().getType() == Material.FIREWORK_ROCKET) {
+			item = event.getItem();
+			
+			if (item.getAmount() == 1) {
+				item.setAmount(64);
+				player.getInventory().setItemInMainHand(item);
+			}
+		} else if (player.getInventory().getItemInOffHand() != null && player.getInventory().getItemInOffHand().getType() == Material.FIREWORK_ROCKET) {
+			item = player.getInventory().getItemInOffHand();
+			
+			if (item.getAmount() == 1) {
+				item.setAmount(64);
+				player.getInventory().setItemInOffHand(item);
+			}
+		} else {
+			return;
+		}
 	}
 	
 	private GameTask playerIsInGame(String name) {
