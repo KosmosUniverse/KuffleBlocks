@@ -278,6 +278,10 @@ public class GameTask {
 		deathTime = System.currentTimeMillis();
 	}
 	
+	public void setDeathTime(long time) {
+		deathTime = time;
+	}
+	
 	public void setSpawnLoc(Location _spawnLoc) {
 		spawnLoc = _spawnLoc;
 	}

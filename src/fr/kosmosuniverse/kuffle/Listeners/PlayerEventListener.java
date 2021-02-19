@@ -127,6 +127,10 @@ public class PlayerEventListener implements Listener {
 		Location deathLoc = player.getLocation();
 		event.setKeepInventory(true);
 		
+		if (event.getDrops().size() > 0) {	
+			event.getDrops().clear();
+		}
+		
 		for (GameTask gt : km.games) {
 			if (gt.getPlayer().getName().equals(player.getDisplayName())) {
 				if (km.config.getLevel() == Level.ULTRA) {
@@ -158,6 +162,7 @@ public class PlayerEventListener implements Listener {
 					if (gt.getPlayer().getName().equals(player.getDisplayName())) {
 						if (km.config.getLevel() != Level.ULTRA) {
 							gt.reloadEffects();
+							gt.setDeathTime(System.currentTimeMillis());
 							player.sendMessage("You can tp back to your death spot in " + Utils.minSecondsWithLevel(km.config.getLevel()) + " seconds. In " + Utils.maxSecondsWithLevel(km.config.getLevel()) + " seconds your stuff will be destroyed");
 						}
 						return;

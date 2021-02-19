@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Random;
 
 import org.bukkit.Bukkit;
@@ -13,6 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 
+import fr.kosmosuniverse.kuffle.Core.GameTask;
 import fr.kosmosuniverse.kuffle.Core.Level;
 
 public class Utils {
@@ -91,5 +93,15 @@ public class Utils {
 		}
 		
 		return -1;
+	}
+	
+	public static ArrayList<Player> getPlayerList(ArrayList<GameTask> games) {
+		ArrayList<Player> players = new ArrayList<Player>();
+		
+		for (GameTask gt : games) {
+			players.add(gt.getPlayer());
+		}
+		
+		return players;
 	}
 }

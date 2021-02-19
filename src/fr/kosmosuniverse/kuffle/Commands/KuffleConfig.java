@@ -47,10 +47,6 @@ public class KuffleConfig implements CommandExecutor {
 				} else {
 					if (km.config.stringElems.containsKey(before)) {
 						try {
-							if (!km.langs.contains(args[i].toLowerCase())) {
-								player.sendMessage(km.config.stringErrorMsg);
-							}
-							
 							Class.forName("fr.kosmosuniverse.kuffle.Core.Config").getMethod(km.config.stringElems.get(before), String.class).invoke(km.config, args[i]);
 						} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
 								| NoSuchMethodException | SecurityException | ClassNotFoundException e) {

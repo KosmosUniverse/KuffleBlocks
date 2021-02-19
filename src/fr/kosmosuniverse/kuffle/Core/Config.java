@@ -64,7 +64,6 @@ public class Config {
 		intElems.put("NB_AGE", "setMaxAge");
 		intElems.put("START_DURATION", "setStartTime");
 		intElems.put("ADDED_DURATION", "setAddedTime");
-		intElems.put("LEVEL", "setLevel");
 		
 		ret = new ArrayList<String>();
 		
@@ -125,11 +124,11 @@ public class Config {
 			ret.add(l.toString());
 		}
 		
-		intRet.put("LEVEL", ret);
-		
 		stringElems.put("LANG", "setLang");
+		stringElems.put("LEVEL", "setLevel");
 		
 		stringRet.put("LANG", km.langs);
+		stringRet.put("LEVEL", ret);
 	}
 	
 	public void setupConfig(KuffleMain km, FileConfiguration configFile) {
@@ -242,7 +241,7 @@ public class Config {
 		sb.append("Start duration: ").append(startTime).append("\n");
 		sb.append("Added duration: ").append(addedTime).append("\n");
 		sb.append("Lang: ").append(lang).append("\n");
-		sb.append("Level: ").append(level).append("\n");
+		sb.append("Level: ").append(Level.values()[level]).append("\n");
 		
 		return sb.toString();
 	}
@@ -368,8 +367,9 @@ public class Config {
 	
 	public void setLevel(String _level) {
 		for (int cnt = 0; cnt < Level.values().length; cnt++) {
-			if (Level.valueOf(_level) == Level.values()[cnt]) {
+			if (_level.equals(Level.values()[cnt].toString().toUpperCase())) {
 				level = cnt;
+				return;
 			}
 		}
 	}

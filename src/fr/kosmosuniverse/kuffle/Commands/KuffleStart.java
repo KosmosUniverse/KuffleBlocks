@@ -14,6 +14,7 @@ import org.bukkit.scoreboard.DisplaySlot;
 import fr.kosmosuniverse.kuffle.KuffleMain;
 import fr.kosmosuniverse.kuffle.Core.ActionBar;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
+import fr.kosmosuniverse.kuffle.Core.SpreadPlayer;
 import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class KuffleStart implements CommandExecutor {
@@ -58,13 +59,16 @@ public class KuffleStart implements CommandExecutor {
 		int spread = 0;
 		
 		if (km.config.getSpread()) {
-			Bukkit.dispatchCommand(sender, "spreadplayers " + p.getLocation().getBlockX() + " " + p.getLocation().getBlockZ() + " " + (km.config.getSpreadMin() * km.games.size()) + " " + (km.config.getSpreadMax() * km.games.size()) + " false @a");
+			SpreadPlayer.spreadPlayers(p, (double) km.config.getSpreadMin(), (double) km.config.getSpreadMax(), false, Utils.getPlayerList(km.games));
+			
+			//Bukkit.dispatchCommand(sender, "spreadplayers " + p.getLocation().getBlockX() + " " + p.getLocation().getBlockZ() + " " + (km.config.getSpreadMin() * km.games.size()) + " " + (km.config.getSpreadMax() * km.games.size()) + " false @a");
 			
 			for (GameTask gt : km.games) {
 				gt.getPlayer().setBedSpawnLocation(gt.getPlayer().getLocation(), true);
 				gt.setSpawnLoc(gt.getPlayer().getLocation());
 				gt.getSpawnLoc().add(0, -1, 0).getBlock().setType(Material.BEDROCK);
 			}
+			
 			spread = 20;
 		} else {
 			Location spawn = km.games.get(0).getPlayer().getLocation().getWorld().getSpawnLocation();
