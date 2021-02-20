@@ -50,6 +50,8 @@ public class GameTask {
 	private long previousShuffle = -1;
 	private long interval = -1;
 	private long deathTime = 0;
+	private long minTime;
+	private long maxTime;
 	
 	private boolean enable = false;
 	private boolean exit = false;
@@ -269,6 +271,14 @@ public class GameTask {
 		return configLang;
 	}
 	
+	public long getMinTime() {
+		return minTime;
+	}
+	
+	public long getMaxTime() {
+		return maxTime;
+	}
+	
 	public void setExit(boolean _exit) {
 		exit = _exit;
 	}
@@ -278,8 +288,10 @@ public class GameTask {
 		deathTime = System.currentTimeMillis();
 	}
 	
-	public void setDeathTime(long time) {
+	public void setDeathTime(long time, long _minTime, long _maxTime) {
 		deathTime = time;
+		minTime = _minTime;
+		maxTime = _maxTime;
 	}
 	
 	public void setSpawnLoc(Location _spawnLoc) {
@@ -333,7 +345,7 @@ public class GameTask {
 	}
 	
 	public void restorePlayerInv() {
-		if (System.currentTimeMillis() - deathTime > (Utils.maxSecondsWithLevel(km.config.getLevel()) * 1000)) {
+		if (System.currentTimeMillis() - deathTime > (maxTime * 1000)) {
 			player.sendMessage("You waited too much to return to your death spot, your stuff is now unreachable.");
 			deathInv.clear();
 			deathInv = null;

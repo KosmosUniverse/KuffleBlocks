@@ -28,17 +28,15 @@ public class KuffleBack implements CommandExecutor {
 				for (GameTask gt : km.games) {
 					if (gt.getPlayer().getDisplayName().equals(player.getDisplayName())) {
 						if (gt.getDeathLoc() != null) {
-							long seconds = Utils.minSecondsWithLevel(km.config.getLevel());
-							
 							if (!compareLoc(player.getLocation().add(0, -1, 0), gt.getSpawnLoc())) {
 								player.sendMessage("You have to stand on your spawn point to make this command work.");
-							} else if (System.currentTimeMillis() - gt.getDeathTime() > (seconds * 1000)) {
+							} else if (System.currentTimeMillis() - gt.getDeathTime() > (gt.getMinTime() * 1000)) {
 								player.teleport(gt.getDeathLoc());
 								gt.restorePlayerInv();
 								gt.setDeathLoc(null);
 								player.sendMessage("Here you are ! You can only reuse this command once you have died again.");	
 							} else {
-								player.sendMessage("You have to wait " + seconds + " seconds after death to tp back");	
+								player.sendMessage("You have to wait " + gt.getMinTime() + " seconds after death to tp back");	
 							}
 							return true;
 						} else {

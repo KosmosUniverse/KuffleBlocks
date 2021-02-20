@@ -77,7 +77,7 @@ public class Utils {
 		} else if (level == Level.NORMAL) {
 			return 6;
 		} else if (level == Level.EXPERT) {
-			return (6 * (r.nextInt(9) + 1));
+			return (6 + (r.nextInt(9) + 1));
 		}
 		
 		return -1;

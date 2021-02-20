@@ -61,8 +61,6 @@ public class KuffleStart implements CommandExecutor {
 		if (km.config.getSpread()) {
 			SpreadPlayer.spreadPlayers(p, (double) km.config.getSpreadMin(), (double) km.config.getSpreadMax(), false, Utils.getPlayerList(km.games));
 			
-			//Bukkit.dispatchCommand(sender, "spreadplayers " + p.getLocation().getBlockX() + " " + p.getLocation().getBlockZ() + " " + (km.config.getSpreadMin() * km.games.size()) + " " + (km.config.getSpreadMax() * km.games.size()) + " false @a");
-			
 			for (GameTask gt : km.games) {
 				gt.getPlayer().setBedSpawnLocation(gt.getPlayer().getLocation(), true);
 				gt.setSpawnLoc(gt.getPlayer().getLocation());

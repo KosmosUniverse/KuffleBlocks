@@ -17,6 +17,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -108,6 +109,16 @@ public class PlayerEventListener implements Listener {
 					writer = new FileWriter(dataFolder.getPath() + "/" + player.getDisplayName());
 				}
 				
+				Inventory newInv = Bukkit.createInventory(null, 54, "§8Teleport");
+				
+				for (ItemStack item : km.playersHeads) {
+					if (!item.getItemMeta().getDisplayName().equals(gt.getPlayer().getDisplayName())) {
+						newInv.addItem(item);
+					}
+				}
+				
+				km.playersHeads = newInv;
+				
 				gt.disable();
 				writer.write(gt.saveGame());
 				writer.close();
@@ -150,7 +161,7 @@ public class PlayerEventListener implements Listener {
 		
 		for (GameTask gt : km.games) {
 			if (gt.getPlayer().getName().equals(player.getDisplayName())) {
-				event.setRespawnLocation(gt.getSpawnLoc());	
+				event.setRespawnLocation(gt.getSpawnLoc());
 				player.getInventory().clear();
 			}
 		}
@@ -162,8 +173,8 @@ public class PlayerEventListener implements Listener {
 					if (gt.getPlayer().getName().equals(player.getDisplayName())) {
 						if (km.config.getLevel() != Level.ULTRA) {
 							gt.reloadEffects();
-							gt.setDeathTime(System.currentTimeMillis());
-							player.sendMessage("You can tp back to your death spot in " + Utils.minSecondsWithLevel(km.config.getLevel()) + " seconds. In " + Utils.maxSecondsWithLevel(km.config.getLevel()) + " seconds your stuff will be destroyed");
+							gt.setDeathTime(System.currentTimeMillis(), Utils.minSecondsWithLevel(km.config.getLevel()), Utils.maxSecondsWithLevel(km.config.getLevel()));
+							player.sendMessage("You can tp back to your death spot in " + gt.getMinTime() + " seconds. In " + gt.getMaxTime() + " seconds your stuff will be destroyed");
 						}
 						return;
 					}
