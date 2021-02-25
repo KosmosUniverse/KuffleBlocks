@@ -7,8 +7,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import fr.kosmosuniverse.kuffle.KuffleMain;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
-import fr.kosmosuniverse.kuffle.utils.Utils;
-
 public class KuffleBack implements CommandExecutor {
 	private KuffleMain km;
 	

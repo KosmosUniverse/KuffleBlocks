@@ -37,6 +37,7 @@ public class ManageCrafts {
 		recipes.add(new RedNetherBrick(_km));
 		
 		recipes.add(new EndPortalFrame(_km));
+		recipes.add(new Bell(_km));
 	}
 	
 	public ArrayList<ACrafts> getRecipeList() {

@@ -82,6 +82,18 @@ public class PlayerEventListener implements Listener {
 					} else {
 						gt.disable();
 					}
+
+					Inventory newInv = Bukkit.createInventory(null, 54, "§8Teleport");
+					
+					for (ItemStack item : km.playersHeads) {
+						if (item != null) {
+							newInv.addItem(item);
+						}
+					}
+					
+					newInv.addItem(Utils.getHead(gt.getPlayer()));
+					
+					km.playersHeads = newInv;
 					
 					return;
 				}
@@ -111,9 +123,11 @@ public class PlayerEventListener implements Listener {
 				
 				Inventory newInv = Bukkit.createInventory(null, 54, "§8Teleport");
 				
-				for (ItemStack item : km.playersHeads) {
-					if (!item.getItemMeta().getDisplayName().equals(gt.getPlayer().getDisplayName())) {
-						newInv.addItem(item);
+				for (ItemStack item : km.playersHeads.getContents()) {
+					if (item != null) {
+						if (!item.getItemMeta().getDisplayName().equals(player.getDisplayName())) {
+							newInv.addItem(item);
+						}
 					}
 				}
 				
