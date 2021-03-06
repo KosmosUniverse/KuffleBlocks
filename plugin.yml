@@ -1,5 +1,5 @@
 name: Kuffle
-version: 3.9
+version: 4.0
 author: KosmosUniverse
 main: fr.kosmosuniverse.kuffle.KuffleMain
 api-version: 1.15
@@ -49,6 +49,34 @@ commands:
       usage: /<command>
       description: command to see or change game configuration
       permission: inferno.flagrate
+   kteam-create:
+      usage: /<command> <TeamName> [TeamColor]
+      description: command to create Team
+      permission: inferno.flagrate
+   kteam-delete:
+      usage: /<command> <TeamName>
+      description: command to delete Team
+      permission: inferno.flagrate
+   kteam-affect-player:
+      usage: /<command> <TeamName> <PlayerName>
+      description: command to affect a Player to a Team
+      permission: inferno.flagrate
+   kteam-remove-player:
+      usage: /<command> <TeamName> <PlayerName>
+      description: command to remove a Player from a Team
+      permission: inferno.flagrate
+   kteam-reset-players:
+      usage: /<command> <TeamName>
+      description: command to reset player list in a team
+      permission: inferno.flagrate
+   kteam-show:
+      usage: /<command> [TeamName]
+      description: command to show all or one team
+      permission: inferno.flagrate
+   kteam-color:
+      usage: /<command> <TeamName> <TeamColor>
+      description: command to change team color
+      permission: inferno.flagrate
    kback:
       usage: /<command>
       description: command to teleport back to death position
@@ -70,6 +98,10 @@ commands:
    klang:
       usage: /<command> [lang]
       description: command to see or change personnal lang
+   ktest:
+      usage: /<command>
+      description: command to see or change game configuration
+      permission: inferno.flagrate
 
 permissions:
    klist:
@@ -101,6 +133,30 @@ permissions:
       default: op
    kadminload:
       description: command to load and start the game of all registered players
+      default: op
+   ktest:
+      description: command to load and start the game of all registered players
+      default: op
+   kteam-create:
+      description: command to create Team
+      default: op
+   kteam-delete:
+      description: command to delete Team
+      default: op
+   kteam-affect-player:
+      description: command to affect a Player to a Team
+      default: op
+   kteam-remove-player:
+      description: command to remove a Player from a Team
+      default: op
+   kteam-reset-players:
+      description: command to reset player list in a team
+      default: op
+   kteam-show:
+      description: command to show all or one team
+      default: op
+   kteam-color:
+      description: command to change team color
       default: op
    kback:
       description: command to teleport back to death position

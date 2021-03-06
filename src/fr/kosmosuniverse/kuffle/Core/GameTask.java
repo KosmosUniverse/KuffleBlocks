@@ -25,6 +25,7 @@ import org.json.simple.JSONObject;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
 import fr.kosmosuniverse.kuffle.utils.Utils;
+import net.md_5.bungee.api.ChatColor;
 
 public class GameTask {
 	private ArrayList<String> alreadyGot;
@@ -41,6 +42,7 @@ public class GameTask {
 	private String currentBlock = null;
 	private String blockDisplay = null;
 	private String configLang;
+	private String teamName = null;
 	
 	private int age = 0;
 	private int time;
@@ -134,30 +136,38 @@ public class GameTask {
 					}
 					
 					if (blockCount >= (km.config.getBlockPerAge() + 1)) {
-						player.playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LARGE_BLAST, 1f, 1f);
-						blockCount = 1;
-						blockScore.setScore(blockCount);
-						alreadyGot.clear();
-						
-						if (km.config.getRewards()) {
-							if (age > 0) {
-								RewardManager.managePreviousEffects(km.allRewards.get(ageNames[age - 1] + "_Age"), km.effects, player, ageNames[age - 1]);
+						if (!km.config.getTeam() || checkTeamMates()) {
+							player.playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LARGE_BLAST, 1f, 1f);
+							blockCount = 1;
+							blockScore.setScore(blockCount);
+							alreadyGot.clear();
+							
+							if (km.config.getRewards()) {
+								if (age > 0) {
+									RewardManager.managePreviousEffects(km.allRewards.get(ageNames[age - 1] + "_Age"), km.effects, player, ageNames[age - 1]);
+								}
+								
+								RewardManager.givePlayerReward(km.allRewards.get(ageNames[age] + "_Age"), km.effects, player, ageNames[age]);
+							}
+	
+							age++;
+							
+							if (km.config.getTeam()) {
+								player.setPlayerListName("[" + km.teams.getTeam(teamName).color + teamName + ChatColor.RESET + "] - " + Utils.getColor(age) + player.getName());
+							} else {
+								player.setPlayerListName(Utils.getColor(age) + player.getName());	
 							}
 							
-							RewardManager.givePlayerReward(km.allRewards.get(ageNames[age] + "_Age"), km.effects, player, ageNames[age]);
-						}
-
-						age++;
-						player.setPlayerListName(Utils.getColor(age) + player.getName());
-						calc = 1 / km.config.getBlockPerAge();
-						ageDisplay.setProgress(calc);
-						
-						if (age == km.config.getMaxAges()) {
-							gameRank = getGameRank();
-							ageDisplay.setTitle("Game Done ! Rank : " + gameRank);
-						} else {
-							ageDisplay.setTitle(ageNames[age] + " Age: 1");
-							Bukkit.broadcastMessage("§1" + player.getName() + " has moved to the §6§l" + ageNames[age] + " Age§1.");
+							calc = 1 / km.config.getBlockPerAge();
+							ageDisplay.setProgress(calc);
+							
+							if (age == km.config.getMaxAges()) {
+								gameRank = getGameRank();
+								ageDisplay.setTitle("Game Done ! Rank : " + gameRank);
+							} else {
+								ageDisplay.setTitle(ageNames[age] + " Age: 1");
+								Bukkit.broadcastMessage("§1" + player.getName() + " has moved to the §6§l" + ageNames[age] + " Age§1.");
+							}
 						}
 					}
 					
@@ -227,6 +237,10 @@ public class GameTask {
 	
 	public String getAgeName() {
 		return ageNames[age] + "_Age";
+	}
+	
+	public String getTeamName() {
+		return teamName;
 	}
 	
 	public String[] getAgeNames() {
@@ -318,6 +332,10 @@ public class GameTask {
 		blockCount = _blockCount;
 	}
 	
+	public void setTeamName(String _teamName) {
+		teamName = _teamName;
+	}
+	
 	public void reloadEffects() {
 		if (km.config.getRewards()) {
 			if (km.config.getSaturation()) {
@@ -331,6 +349,20 @@ public class GameTask {
 
 			RewardManager.givePlayerRewardEffect(km.allRewards.get(ageNames[tmp] + "_Age"), km.effects, player, ageNames[tmp]);
 		}
+	}
+	
+	private boolean checkTeamMates() {
+		Team team = km.teams.getTeam(teamName);
+		
+		for (GameTask gt : km.games) {
+			if (team.hasPlayer(gt.getPlayer().getDisplayName())) {
+				if (gt.getBlockCount() < (km.config.getBlockPerAge() + 1) && gt.getAge() <= age) {
+					return false;
+				}
+			}
+		}
+		
+		return true;
 	}
 	
 	
@@ -454,6 +486,7 @@ public class GameTask {
 		global.put("blockCount", blockCount);
 		global.put("spawn", jsonSpawn);
 		global.put("death", jsonDeath);
+		global.put("teamName", teamName);
 		
 		JSONArray got = new JSONArray();
 		
@@ -466,12 +499,13 @@ public class GameTask {
 		return (global.toString());
 	}
 	
-	public void loadGame(int _age, int maxAge, String _current, long _interval, int _time, int _blockCount, JSONArray _alreadyGot, JSONObject spawn, JSONObject death) {
+	public void loadGame(int _age, int maxAge, String _current, long _interval, int _time, int _blockCount, String _teamName, JSONArray _alreadyGot, JSONObject spawn, JSONObject death) {
 		age = _age;
 		currentBlock = _current;
 		previousShuffle = System.currentTimeMillis() - _interval;
 		interval = -1;
 		time = km.config.getStartTime() + (km.config.getAddedTime() * age);
+		teamName = _teamName;
 		
 		if (km.config.getSeeBlockCnt()) {
 			km.scores.setupPlayerScores(DisplaySlot.PLAYER_LIST, player);

@@ -53,6 +53,8 @@ public class KuffleStop implements CommandExecutor {
 			gt.kill();
 		}
 		
+		km.teams.resetAll();
+		
 		km.games.clear();
 		return true;
 	}

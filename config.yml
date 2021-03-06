@@ -1,8 +1,8 @@
 game_settings:
    spreadplayers:
       enable: true # True: when start the game, spread players.
-      minimum_distance: 100 # for spreadplayer command, minimum distance between player = 100 * number of spreaded players, Default: 100
-      maximum_area: 500 # for spreadplayer command, maximum area where a player can be teleported = 500 * number of spreaded players, must be > minimum_distance parameter, Default: 500
+      minimum_distance: 500 # for spreadplayer command, minimum distance between player, Default: 500
+      minimum_radius: 1000 # for spreadplayer command, minimum radius must be > minimum_distance parameter, Default: 1000
    saturation: true # True: give infinite saturation effect to all players
    rewards: true # True: give reward after each age
    start_time: 4 # minutes, Default: 4
@@ -16,3 +16,6 @@ game_settings:
       age: 2 # First age that allow skipping block, Default: 2
    custom_crafts: true # allow players to use custom crafts, Default: true
    see_block_count: true # allow players to know others player progress, Default: true
+   team:
+      enable: false
+      size: 2

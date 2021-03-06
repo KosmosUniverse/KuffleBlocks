@@ -76,7 +76,7 @@ public class PlayerEventListener implements Listener {
 			for (GameTask gt : km.games) {
 				if (gt.getPlayer().getDisplayName().equals(player.getDisplayName())) {
 					gt.startRunnable();
-					gt.loadGame(Integer.parseInt(((Long) mainObject.get("age")).toString()), Integer.parseInt(mainObject.get("maxAge").toString()), (String) mainObject.get("current"), (Long) mainObject.get("interval"), Integer.parseInt(((Long) mainObject.get("time")).toString()), Integer.parseInt(((Long) mainObject.get("blockCount")).toString()), (JSONArray) mainObject.get("alreadyGot"), (JSONObject) mainObject.get("spawn"), (JSONObject) mainObject.get("death"));
+					gt.loadGame(Integer.parseInt(((Long) mainObject.get("age")).toString()), Integer.parseInt(mainObject.get("maxAge").toString()), (String) mainObject.get("current"), (Long) mainObject.get("interval"), Integer.parseInt(((Long) mainObject.get("time")).toString()), Integer.parseInt(((Long) mainObject.get("blockCount")).toString()), (String) mainObject.get("teamName"), (JSONArray) mainObject.get("alreadyGot"), (JSONObject) mainObject.get("spawn"), (JSONObject) mainObject.get("death"));
 					if (enable) {
 						gt.enable();
 					} else {

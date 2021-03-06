@@ -58,10 +58,23 @@ public class KuffleStart implements CommandExecutor {
 		
 		int spread = 0;
 		
+		if (km.config.getTeam() && !checkTeams()) {
+			sender.sendMessage("Team are enabled and not all players are in a Team.");
+			return true;
+		}
+		
 		if (km.config.getSpread()) {
-			SpreadPlayer.spreadPlayers(p, (double) km.config.getSpreadMin(), (double) km.config.getSpreadMax(), false, Utils.getPlayerList(km.games));
+			if (km.config.getTeam()) {
+				SpreadPlayer.spreadPlayers(p, (double) km.config.getSpreadDistance(), km.config.getSpreadRadius(), km.teams.getTeams(), Utils.getPlayerList(km.games));	
+			} else {
+				SpreadPlayer.spreadPlayers(p, (double) km.config.getSpreadDistance(), km.config.getSpreadRadius(), null, Utils.getPlayerList(km.games));
+			}
 			
 			for (GameTask gt : km.games) {
+				if (km.config.getTeam()) {
+					gt.setTeamName(km.teams.findTeamByPlayer(gt.getPlayer().getDisplayName()));
+				}
+				
 				gt.getPlayer().setBedSpawnLocation(gt.getPlayer().getLocation(), true);
 				gt.setSpawnLoc(gt.getPlayer().getLocation());
 				gt.getSpawnLoc().add(0, -1, 0).getBlock().setType(Material.BEDROCK);
@@ -74,6 +87,10 @@ public class KuffleStart implements CommandExecutor {
 			spawn.add(0, -1, 0).getBlock().setType(Material.BEDROCK);
 			
 			for (GameTask gt : km.games) {
+				if (km.config.getTeam()) {
+					gt.setTeamName(km.teams.findTeamByPlayer(gt.getPlayer().getDisplayName()));
+				}
+				
 				gt.setSpawnLoc(spawn);
 			}
 		}
@@ -159,4 +176,13 @@ public class KuffleStart implements CommandExecutor {
 		return true;
 	}
 
+	public boolean checkTeams() {
+		for (GameTask gt : km.games) {
+			if (km.teams.isInTeam(gt.getPlayer().getDisplayName())) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }

@@ -9,6 +9,7 @@ import java.util.Random;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -104,4 +105,35 @@ public class Utils {
 		
 		return players;
 	}
+	
+	public static ArrayList<String> getPlayerNames(ArrayList<GameTask> games) {
+		ArrayList<String> players = new ArrayList<String>();
+		
+		for (GameTask gt : games) {
+			players.add(gt.getPlayer().getDisplayName());
+		}
+		
+		return players;
+	}
+	
+	public static ArrayList<Location> getAllPlayerLocation(ArrayList<GameTask> games) {
+		ArrayList<Location> locs = new ArrayList<Location>();
+		
+		for (GameTask gt : games) {
+			locs.add(gt.getSpawnLoc());
+		}
+		
+		return locs;
+	}
+	
+	public static ChatColor findChatColor(String color) {
+		for (ChatColor item : ChatColor.values()) {
+			if (item.name().equals(color)) {
+				return item;
+			}
+		}
+		
+		return null;
+	}
 }
+ 

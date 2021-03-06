@@ -16,6 +16,7 @@ import fr.kosmosuniverse.kuffle.Core.ChooseBlockInList;
 import fr.kosmosuniverse.kuffle.Core.Config;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
 import fr.kosmosuniverse.kuffle.Core.LangManager;
+import fr.kosmosuniverse.kuffle.Core.ManageTeams;
 import fr.kosmosuniverse.kuffle.Core.RewardElem;
 import fr.kosmosuniverse.kuffle.Core.RewardManager;
 import fr.kosmosuniverse.kuffle.Core.Scores;
@@ -38,6 +39,7 @@ public class KuffleMain extends JavaPlugin {
 	public Config config;
 	public ManageCrafts crafts;
 	public ManageMultiBlock multiBlock;
+	public ManageTeams teams;
 	public Scores scores;
 	public Inventory playersHeads;
 	
@@ -80,6 +82,7 @@ public class KuffleMain extends JavaPlugin {
 		games = new ArrayList<GameTask>();
 		crafts = new ManageCrafts(this);
 		multiBlock = new ManageMultiBlock();
+		teams = new ManageTeams();
 		scores = new Scores(this);
 		
 		System.out.println("[Kuffle] Add Custom Crafts.");
@@ -111,6 +114,15 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kplayers").setExecutor(new KufflePlayers(this));
 		getCommand("klang").setExecutor(new KuffleLang(this));
 		getCommand("kconfig").setExecutor(new KuffleConfig(this));
+		getCommand("ktest").setExecutor(new KuffleTestSpread(this));
+		
+		getCommand("kteam-create").setExecutor(new KuffleTeamCreate(this));
+		getCommand("kteam-delete").setExecutor(new KuffleTeamDelete(this));
+		getCommand("kteam-color").setExecutor(new KuffleTeamColor(this));
+		getCommand("kteam-show").setExecutor(new KuffleTeamShow(this));
+		getCommand("kteam-affect-player").setExecutor(new KuffleTeamAffectPlayer(this));
+		getCommand("kteam-remove-player").setExecutor(new KuffleTeamRemovePlayer(this));
+		getCommand("kteam-reset-players").setExecutor(new KuffleTeamResetPlayers(this));
 		
 		System.out.println("[Kuffle] Add Plugin Tab Completer.");
 		getCommand("klist").setTabCompleter(new KuffleListTab(this));
@@ -120,6 +132,14 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kmultiblocks").setTabCompleter(new KuffleMultiBlocksTab(this));
 		getCommand("klang").setTabCompleter(new KuffleLangTab(this));
 		getCommand("kconfig").setTabCompleter(new KuffleConfigTab(this));
+		
+		getCommand("kteam-create").setTabCompleter(new KuffleTeamCreateTab(this));
+		getCommand("kteam-delete").setTabCompleter(new KuffleTeamDeleteTab(this));
+		getCommand("kteam-color").setTabCompleter(new KuffleTeamColorTab(this));
+		getCommand("kteam-show").setTabCompleter(new KuffleTeamShowTab(this));
+		getCommand("kteam-affect-player").setTabCompleter(new KuffleTeamAffectPlayerTab(this));
+		getCommand("kteam-remove-player").setTabCompleter(new KuffleTeamRemovePlayerTab(this));
+		getCommand("kteam-reset-players").setTabCompleter(new KuffleTeamResetPlayersTab(this));
 		
 		System.out.println("[Kuffle] Plugin turned ON.");
 	}

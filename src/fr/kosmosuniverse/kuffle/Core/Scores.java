@@ -50,7 +50,14 @@ public class Scores {
 			gt.setBlockScore(blocks.getScore(gt.getPlayer().getDisplayName()));
 			gt.getBlockScore().setScore(1);
 			gt.getPlayer().setScoreboard(scoreboard);
-			gt.getPlayer().setPlayerListName(ChatColor.RED + gt.getPlayer().getName());
+			
+			if (km.config.getTeam()) {
+				gt.getPlayer().setPlayerListName("[" + km.teams.getTeam(gt.getTeamName()).color + gt.getTeamName() + ChatColor.RESET + "] - " + ChatColor.RED + gt.getPlayer().getName());
+			} else {
+				gt.getPlayer().setPlayerListName(ChatColor.RED + gt.getPlayer().getName());	
+			}
+			
+			
 		}
 	}
 	
