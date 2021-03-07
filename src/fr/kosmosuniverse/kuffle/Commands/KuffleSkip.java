@@ -48,7 +48,12 @@ public class KuffleSkip implements CommandExecutor {
 				}
 				if (gt.getBlockCount() > 1) {
 					gt.setBlockCount(gt.getBlockCount() - 1);
+					
+					String tmp = gt.getCurrentBlock();
+					
 					gt.skip();
+					sender.sendMessage("Block [" + tmp + "] was skipped.");
+					
 					return true;
 				} else {
 					p.sendMessage("You can't skip the first block of the age.");

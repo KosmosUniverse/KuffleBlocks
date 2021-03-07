@@ -243,6 +243,10 @@ public class GameTask {
 		return teamName;
 	}
 	
+	public String getCurrentBlock() {
+		return currentBlock;
+	}
+	
 	public String[] getAgeNames() {
 		return ageNames;
 	}

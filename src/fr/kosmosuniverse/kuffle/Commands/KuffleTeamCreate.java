@@ -40,7 +40,7 @@ public class KuffleTeamCreate implements CommandExecutor {
 		}
 		
 		if (km.teams.hasTeam(args[0])) {
-			sender.sendMessage("The team :<" + args[0] + "> already exist, please choose another name.");
+			sender.sendMessage("Team <" + args[0] + "> already exists, please choose another name.");
 		} else {
 			if (args.length == 1) {
 				km.teams.createTeam(args[0]);	
@@ -48,14 +48,16 @@ public class KuffleTeamCreate implements CommandExecutor {
 				ChatColor tmp;
 				
 				if ((tmp = Utils.findChatColor(args[1])) == null) {
-					sender.sendMessage("The color :<" + args[1] + "> does not exist, please choose another name.");
+					sender.sendMessage("Color <" + args[1] + "> does not exist, please choose another name.");
 				} else {
 					ArrayList<String> colorUsed = km.teams.getTeamColors();
 					
 					if (!colorUsed.contains(tmp.name())) {
-						km.teams.createTeam(args[0], tmp);	
+						km.teams.createTeam(args[0], tmp);
+						
+						sender.sendMessage("Team <" + args[0] + "> was created.");
 					} else {
-						sender.sendMessage("The color :<" + tmp.name() + "> is already used, please choose another one.");
+						sender.sendMessage("Color <" + tmp.name() + "> is already used, please choose another one.");
 					}
 				}
 			}

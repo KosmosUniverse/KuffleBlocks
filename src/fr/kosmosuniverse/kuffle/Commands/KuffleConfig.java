@@ -48,6 +48,7 @@ public class KuffleConfig implements CommandExecutor {
 					if (km.config.stringElems.containsKey(before)) {
 						try {
 							Class.forName("fr.kosmosuniverse.kuffle.Core.Config").getMethod(km.config.stringElems.get(before), String.class).invoke(km.config, args[i]);
+							sender.sendMessage("Config : parameter [" + before + "] set to [" + args[i] + "].");
 						} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
 								| NoSuchMethodException | SecurityException | ClassNotFoundException e) {
 							e.printStackTrace();
@@ -63,6 +64,8 @@ public class KuffleConfig implements CommandExecutor {
 							boolean boolValue = Boolean.parseBoolean(tmp);
 							
 							Class.forName("fr.kosmosuniverse.kuffle.Core.Config").getMethod(km.config.booleanElems.get(before), boolean.class).invoke(km.config, boolValue);
+							
+							sender.sendMessage("Config : parameter [" + before + "] set to [" + boolValue + "].");
 						} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
 								| NoSuchMethodException | SecurityException | ClassNotFoundException e) {
 							e.printStackTrace();
@@ -72,6 +75,7 @@ public class KuffleConfig implements CommandExecutor {
 							int intValue = Integer.parseInt(args[i]);
 							
 							Class.forName("fr.kosmosuniverse.kuffle.Core.Config").getMethod(km.config.intElems.get(before), int.class).invoke(km.config, intValue);
+							sender.sendMessage("Config : parameter [" + before + "] set to [" + intValue + "].");
 						} catch (NumberFormatException e) {
 							player.sendMessage(km.config.intErrorMsg);
 						} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException

@@ -35,6 +35,7 @@ public class KuffleAdminSpawn implements CommandExecutor {
 		
 		if ((multi = km.multiBlock.findMultiBlockByName(args[0])) != null) {
 			multi.getMultiblock().spawnMultiBlock(p);
+			sender.sendMessage("MultiBlock [" + multi.getName() + "] was spawn.");
 		}
 		
 		return true;

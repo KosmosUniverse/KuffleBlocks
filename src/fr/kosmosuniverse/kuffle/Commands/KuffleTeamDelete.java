@@ -31,9 +31,11 @@ public class KuffleTeamDelete implements CommandExecutor {
 		}
 		
 		if (!km.teams.hasTeam(args[0])) {
-			sender.sendMessage("The team :<" + args[0] + "> does not exist, please choose another name.");
+			sender.sendMessage("Team <" + args[0] + "> does not exist, please choose another name.");
 		} else {
 			km.teams.deleteTeam(args[0]);
+			
+			sender.sendMessage("Team <" + args[0] + "> was deleted.");
 		}
 		
 		return true;

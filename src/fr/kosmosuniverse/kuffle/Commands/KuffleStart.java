@@ -63,6 +63,8 @@ public class KuffleStart implements CommandExecutor {
 			return true;
 		}
 		
+		sender.sendMessage("Game Started, please wait for the countdown.");
+		
 		if (km.config.getSpread()) {
 			if (km.config.getTeam()) {
 				SpreadPlayer.spreadPlayers(p, (double) km.config.getSpreadDistance(), km.config.getSpreadRadius(), km.teams.getTeams(), Utils.getPlayerList(km.games));	

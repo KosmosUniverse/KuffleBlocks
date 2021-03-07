@@ -31,9 +31,10 @@ public class KuffleTeamResetPlayers implements CommandExecutor {
 		}
 		
 		if (!km.teams.hasTeam(args[0])) {
-			sender.sendMessage("The team :<" + args[0] + "> does not exist, please choose another name.");
+			sender.sendMessage("Team <" + args[0] + "> does not exist, please choose another name.");
 		} else {
 			km.teams.getTeam(args[0]).players.clear();
+			sender.sendMessage("Team <" + args[0] + "> player list was reseted.");
 		}
 		
 		return true;

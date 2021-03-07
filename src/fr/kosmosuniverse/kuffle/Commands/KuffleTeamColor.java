@@ -35,7 +35,7 @@ public class KuffleTeamColor implements CommandExecutor {
 		}
 		
 		if (!km.teams.hasTeam(args[0])) {
-			sender.sendMessage("The team :<" + args[0] + "> does not exist, please choose another name.");
+			sender.sendMessage("Team <" + args[0] + "> does not exist, please choose another name.");
 		} else {
 			if (km.teams.getTeam(args[0]).hasPlayer(args[1])) {
 				sender.sendMessage("This player is already in this team.");
@@ -45,14 +45,18 @@ public class KuffleTeamColor implements CommandExecutor {
 			ChatColor tmp;
 			
 			if ((tmp = Utils.findChatColor(args[1])) == null) {
-				sender.sendMessage("The color :<" + args[1] + "> does not exist, please choose another name.");
+				sender.sendMessage("Color <" + args[1] + "> does not exist, please choose another name.");
 			} else {
 				ArrayList<String> colorUsed = km.teams.getTeamColors();
 				
 				if (!colorUsed.contains(tmp.name())) {
+					String tmpColor = km.teams.getTeam(args[0]).color.name();
+					
 					km.teams.changeTeamColor(args[0], tmp);	
+					
+					sender.sendMessage("Color [" + tmpColor + "] was changed to [" + tmp + "] for team <" + args[0] + ">.");
 				} else {
-					sender.sendMessage("The color :<" + tmp.name() + "> is already used, please choose another one.");
+					sender.sendMessage("Color [" + tmp.name() + "] is already used, please choose another one.");
 				}
 			}
 		}

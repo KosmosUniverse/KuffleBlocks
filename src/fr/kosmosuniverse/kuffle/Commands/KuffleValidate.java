@@ -42,7 +42,11 @@ public class KuffleValidate implements CommandExecutor {
 
 		for (GameTask gt : km.games) {
 			if (gt.getPlayer().getName().contains(args[0])) {
+				String tmp = gt.getCurrentBlock();
+				
 				gt.validate();
+				sender.sendMessage("Block [" + tmp + "] was validated for player <" + gt.getPlayer().getDisplayName() + ">.");
+				
 				return true;
 			}
 		}

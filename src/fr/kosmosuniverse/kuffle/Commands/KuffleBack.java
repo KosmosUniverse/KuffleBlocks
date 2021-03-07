@@ -49,7 +49,7 @@ public class KuffleBack implements CommandExecutor {
 			}
 		}
 		
-		player.sendMessage("The game has not launched yet.");
+		player.sendMessage("Game is not launched yet.");
 		return false;
 	}
 	

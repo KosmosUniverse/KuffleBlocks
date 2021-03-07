@@ -43,7 +43,8 @@ public class KuffleList implements CommandExecutor {
 						sb.append(", ").append(km.games.get(i).getPlayer().getName());	
 					}
 				}
-				player.sendMessage("The player list contain: " + sb.toString());
+				
+				player.sendMessage("Player list contain: " + sb.toString());
 			}
 			return true;
 		} else if (args.length == 1) {
@@ -52,7 +53,9 @@ public class KuffleList implements CommandExecutor {
 					player.sendMessage("No players in the list.");
 					return false;
 				}
+				
 				km.games.clear();
+				sender.sendMessage("Game list was reseted.");
 				
 				return true;
 			}
@@ -61,11 +64,17 @@ public class KuffleList implements CommandExecutor {
 
 			if (args[0].equals("add")) {
 				if (args[1].equals("@a")) {
+					int cnt = 0;
+					
 					for (Player p : players) {
 						if (playerIsInList(p.getName()) == -1) {
 							km.games.add(new GameTask(km, p));
+							cnt++;
 						}
 					}
+					
+					sender.sendMessage("Added " + cnt + " players to the game list.");
+					
 					return true;
 				} else {
 					Player retComp;
@@ -73,7 +82,7 @@ public class KuffleList implements CommandExecutor {
 					if ((retComp = searchPlayerByName(players, args[1])) != null) {
 						if (playerIsInList(args[1]) == -1) {
 							km.games.add(new GameTask(km, retComp));
-							
+							sender.sendMessage("Added 1 player to the game list.");
 							return true;
 						} else {
 							player.sendMessage("This player is already in game list.");
@@ -95,7 +104,7 @@ public class KuffleList implements CommandExecutor {
 				
 				if ((ret = playerIsInList(args[1])) != -1) {
 					km.games.remove(ret);
-					
+					sender.sendMessage("Removed 1 player from game list.");
 					return true;
 				}
 			}

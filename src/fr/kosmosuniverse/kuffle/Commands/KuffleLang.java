@@ -39,8 +39,10 @@ public class KuffleLang implements CommandExecutor {
 							
 							if (km.langs.contains(lang)) {
 								gt.setLang(lang);
+								
+								player.sendMessage("Lang set to [" + lang + "]");
 							} else {
-								player.sendMessage("The requested lang is not available.");
+								player.sendMessage("Requested lang is not available.");
 							}
 							
 							return true;
@@ -53,7 +55,7 @@ public class KuffleLang implements CommandExecutor {
 			}
 		}
 
-		player.sendMessage("The game has not launched yet.");
+		player.sendMessage("Game has not launched yet.");
 		return true;
 	}
 

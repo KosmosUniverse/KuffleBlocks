@@ -29,7 +29,7 @@ public class KufflePlayers implements CommandExecutor {
 		}
 		
 		if (km.games.size() == 0 || !km.games.get(0).getEnable()) {
-			player.sendMessage("The game has not launched yet.");
+			player.sendMessage("Game has not launched yet.");
 			
 			return false;
 		}

@@ -33,7 +33,7 @@ public class KuffleTeamAffectPlayer implements CommandExecutor {
 		}
 		
 		if (!km.teams.hasTeam(args[0])) {
-			sender.sendMessage("The team :<" + args[0] + "> does not exist, please choose another name.");
+			sender.sendMessage("Team :<" + args[0] + "> does not exist, please choose another name.");
 			return true;
 		}
 		
@@ -50,6 +50,10 @@ public class KuffleTeamAffectPlayer implements CommandExecutor {
 		for (GameTask gt : km.games) {
 			if (gt.getPlayer().getDisplayName().equals(args[1])) {
 				km.teams.affectPLayer(args[0], gt.getPlayer());
+				
+				sender.sendMessage("Player <" + args[1] + "> added to team <" + args[0] + ">.");
+				
+				return true;
 			}
 		}
 		

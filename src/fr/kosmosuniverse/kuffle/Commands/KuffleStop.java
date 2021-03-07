@@ -56,6 +56,9 @@ public class KuffleStop implements CommandExecutor {
 		km.teams.resetAll();
 		
 		km.games.clear();
+		
+		sender.sendMessage("Game Stopped.");
+		
 		return true;
 	}
 
