@@ -29,7 +29,6 @@ public class SpreadPlayer {
         	spreadSize = teams == null ? players.size() : teams.size();
         }
         
-        
         double angle = 360.0 / spreadSize;
         long radius = radiusCalc(angle, distance);
         
@@ -39,7 +38,7 @@ public class SpreadPlayer {
         
         if (teams != null && locations.size() != teams.size()) {
         	return null;
-        } else if (players != null && locations.size() != players.size()) {
+        } else if (teams == null && players != null && locations.size() != players.size()) {
         	return null;
         }
         
@@ -93,7 +92,10 @@ public class SpreadPlayer {
         }
     	
     	if (teams != null) {
+    		System.out.println("Top !");
     		for (int cnt = 0; cnt < teams.size(); cnt++) {
+        		System.out.println("Team: <" + teams.get(cnt) + ">.");
+        		
     			 for (Player player : teams.get(cnt).players) {
     				 Location location = locations.get(cnt);
     	        		

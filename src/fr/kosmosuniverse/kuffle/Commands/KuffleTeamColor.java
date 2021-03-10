@@ -30,6 +30,11 @@ public class KuffleTeamColor implements CommandExecutor {
 			return false;
 		}
 		
+		if (km.games.size() > 0 && km.games.get(0).getEnable()) {
+			player.sendMessage("Game is already launched, you cannot modify teams during the game.");
+			return true;
+		}
+		
 		if (args.length < 1 || args.length > 2) {
 			return false;
 		}

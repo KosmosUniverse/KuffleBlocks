@@ -63,7 +63,7 @@ public class KuffleStart implements CommandExecutor {
 			return true;
 		}
 		
-		sender.sendMessage("Game Started, please wait for the countdown.");
+		Bukkit.broadcastMessage("Game Started, please wait for the countdown.");
 		
 		if (km.config.getSpread()) {
 			if (km.config.getTeam()) {
@@ -180,11 +180,11 @@ public class KuffleStart implements CommandExecutor {
 
 	public boolean checkTeams() {
 		for (GameTask gt : km.games) {
-			if (km.teams.isInTeam(gt.getPlayer().getDisplayName())) {
-				return true;
+			if (!km.teams.isInTeam(gt.getPlayer().getDisplayName())) {
+				return false;
 			}
 		}
 		
-		return false;
+		return true;
 	}
 }

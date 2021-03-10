@@ -83,6 +83,16 @@ public class ManageTeams {
 		return teamColors;
 	}
 	
+	public int getMaxTeamSize() {
+		int max = 0;
+		
+		for (Team teamItem : teams) {
+			max = teamItem.players.size() < max ? max : teamItem.players.size();
+		}
+		
+		return max;
+	}
+	
 	public String findTeamByPlayer(String player) {
 		for (Team teamItem : teams) {
 			for (Player playerItem : teamItem.players) {

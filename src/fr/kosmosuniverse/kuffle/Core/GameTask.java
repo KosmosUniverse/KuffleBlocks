@@ -110,7 +110,7 @@ public class GameTask {
 					
 					blockScore.setScore(blockCount);
 					
-					if (currentBlock == null || age == km.config.getMaxAges()) {
+					if (currentBlock == null && blockCount < (km.config.getBlockPerAge() + 1)) {
 						previousShuffle = System.currentTimeMillis();
 						currentBlock = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));
 						blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
@@ -118,11 +118,11 @@ public class GameTask {
 						km.updatePlayersHead(player.getDisplayName(), blockDisplay);
 					}
 					
-					if (System.currentTimeMillis() - previousShuffle > (time * 60000)) {
+					if (currentBlock != null && System.currentTimeMillis() - previousShuffle > (time * 60000)) {
 						player.sendMessage("§4You didn't find your block. Let's give you another one.§r");
 						currentBlock = null;
-					} else {
-						if (found || player.getLocation().add(0, -1, 0).getBlock().getType() == Material.matchMaterial(currentBlock) || player.getLocation().getBlock().getType() == Material.matchMaterial(currentBlock)) {
+					} else if (blockCount < (km.config.getBlockPerAge() + 1)) {
+						if (currentBlock != null && (found || player.getLocation().add(0, -1, 0).getBlock().getType() == Material.matchMaterial(currentBlock) || player.getLocation().getBlock().getType() == Material.matchMaterial(currentBlock))) {
 							player.playSound(player.getLocation(), Sound.BLOCK_BELL_USE, 1f, 1f);
 							currentBlock = null;
 							blockCount++;
@@ -168,7 +168,9 @@ public class GameTask {
 								ageDisplay.setTitle(ageNames[age] + " Age: 1");
 								Bukkit.broadcastMessage("§1" + player.getName() + " has moved to the §6§l" + ageNames[age] + " Age§1.");
 							}
-						}
+						} else if (km.config.getTeam() && !checkTeamMates()) {
+							ageDisplay.setTitle(ageNames[age] + " Age: Done.");
+						} 
 					}
 					
 					if (age == km.config.getMaxAges()) {
@@ -180,6 +182,11 @@ public class GameTask {
 					}
 					
 					if (previousShuffle != -1) {
+						if (km.config.getTeam() && blockCount >= (km.config.getBlockPerAge() + 1)) {
+							ActionBar.sendMessage(ChatColor.LIGHT_PURPLE + "Waiting for other players of the team.", player);
+							return ;
+						}
+						
 						long count = time * 60000;
 						count -= (System.currentTimeMillis() - previousShuffle);
 						count /= 1000;
@@ -190,14 +197,14 @@ public class GameTask {
 						else
 							dispCurBlock = blockDisplay;
 						
-						String color = null;
+						ChatColor color = null;
 						
 						if (count < 30) {
-							color = "\u00a7c";
+							color = ChatColor.RED;
 						} else if (count < 60) {
-							color = "\u00a7e";
+							color = ChatColor.YELLOW;
 						} else {
-							color = "\u00a7a";
+							color = ChatColor.GREEN;
 						}
 						
 						ActionBar.sendMessage(color + "Time Left: " + count + " seconds to find: " + dispCurBlock + ".", player);

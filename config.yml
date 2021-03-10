@@ -17,5 +17,5 @@ game_settings:
    custom_crafts: true # allow players to use custom crafts, Default: true
    see_block_count: true # allow players to know others player progress, Default: true
    team:
-      enable: false
-      size: 2
+      enable: false # Define if team are allowed or not, Default: False
+      size: 2 # Size of a team, Default: 2
