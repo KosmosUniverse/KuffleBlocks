@@ -1,5 +1,5 @@
 name: Kuffle
-version: 4.1
+version: 4.2
 author: KosmosUniverse
 main: fr.kosmosuniverse.kuffle.KuffleMain
 api-version: 1.15
@@ -68,6 +68,10 @@ commands:
    kteam-reset-players:
       usage: /<command> <TeamName>
       description: command to reset player list in a team
+      permission: inferno.flagrate
+   kteam-random-player:
+      usage: /<command>
+      description: command to put random players in teams
       permission: inferno.flagrate
    kteam-show:
       usage: /<command> [TeamName]
@@ -151,6 +155,9 @@ permissions:
       default: op
    kteam-reset-players:
       description: command to reset player list in a team
+      default: op
+   kteam-random-player:
+      description: command to put random players in teams
       default: op
    kteam-show:
       description: command to show all or one team

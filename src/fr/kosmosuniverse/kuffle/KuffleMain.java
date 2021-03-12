@@ -123,6 +123,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kteam-affect-player").setExecutor(new KuffleTeamAffectPlayer(this));
 		getCommand("kteam-remove-player").setExecutor(new KuffleTeamRemovePlayer(this));
 		getCommand("kteam-reset-players").setExecutor(new KuffleTeamResetPlayers(this));
+		getCommand("kteam-random-player").setExecutor(new KuffleTeamRandomPlayer(this));
 		
 		System.out.println("[Kuffle] Add Plugin Tab Completer.");
 		getCommand("klist").setTabCompleter(new KuffleListTab(this));
