@@ -59,7 +59,7 @@ public class KuffleTeamColor implements CommandExecutor {
 					
 					km.teams.changeTeamColor(args[0], tmp);	
 					
-					sender.sendMessage("Color [" + tmpColor + "] was changed to [" + tmp + "] for team <" + args[0] + ">.");
+					sender.sendMessage("Color [" + tmpColor + "] was changed to [" + tmp.name() + "] for team <" + args[0] + ">.");
 				} else {
 					sender.sendMessage("Color [" + tmp.name() + "] is already used, please choose another one.");
 				}
