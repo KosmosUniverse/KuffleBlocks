@@ -68,6 +68,8 @@ public class KuffleTeamRandomPlayer implements CommandExecutor {
 			}
 		}
 		
+		sender.sendMessage("Randomly add " + Utils.getPlayerNames(km.games).size() + " in " + km.teams.getTeams().size() + " teams.");
+		
 		return true;
 	}
 	
