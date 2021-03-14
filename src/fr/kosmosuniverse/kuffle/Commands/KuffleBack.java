@@ -41,7 +41,6 @@ public class KuffleBack implements CommandExecutor {
 										for (double cntX = -2; cntX <= 2; cntX++) {
 											for (double cntZ = -2; cntZ <= 2; cntZ++) {
 												Location platform = loc.clone();
-												System.out.println(platform.toString());
 												
 												platform.add(cntX, 0, cntZ);
 												
