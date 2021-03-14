@@ -34,9 +34,7 @@ public class KuffleBack implements CommandExecutor {
 								Location loc = gt.getDeathLoc();
 								
 								if (loc.getWorld().getName().contains("the_end") && loc.getY() < 0) {
-									System.out.println("1.");
 									int tmp = loc.getWorld().getHighestBlockYAt(loc);
-									System.out.println("tmp: " + tmp);
 									if (tmp == -1) {
 										loc.setY(59);
 										
@@ -53,11 +51,9 @@ public class KuffleBack implements CommandExecutor {
 										
 										loc.setY(61);
 									} else {
-										System.out.println("2.");
 										loc.setY(loc.getWorld().getHighestBlockYAt(loc) + 1);
 									}
 								}
-								System.out.println("LOL.");
 								
 								player.teleport(loc);
 								gt.restorePlayerInv();
