@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import fr.kosmosuniverse.kuffle.utils.Utils;
 
 public class ManageTeams {
 	private ArrayList<Team> teams = new ArrayList<Team>();
@@ -45,7 +49,7 @@ public class ManageTeams {
 		}
 	}
 	
-	public void affectPLayer(String teamName, Player player) {
+	public void affectPlayer(String teamName, Player player) {
 		for (Team item : teams) {
 			if (item.name.equals(teamName)) {
 				item.players.add(player);
@@ -139,6 +143,46 @@ public class ManageTeams {
 		}
 		
 		return sb.toString();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public String saveTeams() {
+		JSONObject global = new JSONObject();
+		
+		for (Team item : teams) {
+			JSONObject tmp = new JSONObject();
+			JSONArray players = new JSONArray();
+			
+			tmp.put("color", item.color);
+			
+			for (Player p : item.players) {
+				players.add(p.getDisplayName());
+			}
+			
+			tmp.put("players", players);
+			
+			global.put(item.name, tmp);
+		}
+		
+		return global.toString();
+	}
+	
+	public void loadTeams(JSONObject global, ArrayList<GameTask> games) {
+		for (Object key : global.keySet()) {
+			String name = key.toString();
+			JSONObject tmp = (JSONObject) global.get(key);
+			ChatColor color = Utils.findChatColor((String) tmp.get("color"));
+			JSONArray players = (JSONArray) tmp.get("players");
+			
+			createTeam(name, color);
+			
+			if (players != null) {
+				for (Object obj : players) {
+					Player p = Utils.getPlayerInList(games, (String) obj);
+					affectPlayer(name, p);
+				}
+			}
+		}
 	}
 	
 	public ArrayList<Team> getTeams() {

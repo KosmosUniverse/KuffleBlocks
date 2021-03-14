@@ -56,14 +56,30 @@ public class KuffleAdminSave implements CommandExecutor {
 		for (GameTask gt : km.games) {
 			try {
 				if (dataFolder.getPath().contains("\\")) {
-					writer = new FileWriter(dataFolder.getPath() + "\\" + gt.getPlayer().getDisplayName());
+					writer = new FileWriter(dataFolder.getPath() + "\\" + gt.getPlayer().getDisplayName() + ".kuffle");
 				} else {
-					writer = new FileWriter(dataFolder.getPath() + "/" + gt.getPlayer().getDisplayName());
+					writer = new FileWriter(dataFolder.getPath() + "/" + gt.getPlayer().getDisplayName() + ".kuffle");
 				}
 				
 				writer.write(gt.saveGame());
 				writer.close();
 				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		if (km.config.getTeam()) {
+			try {
+				if (dataFolder.getPath().contains("\\")) {
+					writer = new FileWriter(dataFolder.getPath() + "\\" + "Teams.kuffle");
+				} else {
+					writer = new FileWriter(dataFolder.getPath() + "/" + "Teams.kuffle");
+				}
+				
+				writer.write(km.teams.saveTeams());
+				writer.close();
+							
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

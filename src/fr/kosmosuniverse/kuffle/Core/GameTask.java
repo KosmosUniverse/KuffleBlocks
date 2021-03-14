@@ -536,7 +536,12 @@ public class GameTask {
 		
 		blockCount = _blockCount;
 		blockScore.setScore(blockCount);
-		player.setPlayerListName(Utils.getColor(age) + player.getName());
+		
+		if (km.config.getTeam()) {
+			player.setPlayerListName("[" + km.teams.getTeam(teamName).color + teamName + ChatColor.RESET + "] - " + Utils.getColor(age) + player.getName());
+		} else {
+			player.setPlayerListName(Utils.getColor(age) + player.getName());	
+		}
 		
 		for (int i = 0; i < _alreadyGot.size(); i++) {
 			alreadyGot.add((String) _alreadyGot.get(i));			

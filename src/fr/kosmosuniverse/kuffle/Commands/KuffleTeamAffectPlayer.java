@@ -54,7 +54,7 @@ public class KuffleTeamAffectPlayer implements CommandExecutor {
 		
 		for (GameTask gt : km.games) {
 			if (gt.getPlayer().getDisplayName().equals(args[1])) {
-				km.teams.affectPLayer(args[0], gt.getPlayer());
+				km.teams.affectPlayer(args[0], gt.getPlayer());
 				
 				sender.sendMessage("Player <" + args[1] + "> added to team <" + args[0] + ">.");
 				

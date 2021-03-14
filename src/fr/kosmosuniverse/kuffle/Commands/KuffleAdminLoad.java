@@ -58,9 +58,9 @@ public class KuffleAdminLoad implements CommandExecutor {
 		
 		for (Player p : players) {
 			if (dataFolder.getPath().contains("\\")) {
-				tmp = new File(dataFolder.getPath() + "\\" + p.getDisplayName());
+				tmp = new File(dataFolder.getPath() + "\\" + p.getDisplayName() + ".kuffle");
 			} else {
-				tmp = new File(dataFolder.getPath() + "/" + p.getDisplayName());
+				tmp = new File(dataFolder.getPath() + "/" + p.getDisplayName() + ".kuffle");
 			}
 			
 			if (tmp.exists()) {
@@ -71,6 +71,28 @@ public class KuffleAdminLoad implements CommandExecutor {
 		FileReader reader = null;
 		JSONParser parser = new JSONParser();
 		JSONObject mainObject = new JSONObject();
+		
+		if (km.config.getTeam()) {
+			try {
+				if (dataFolder.getPath().contains("\\")) {
+					reader = new FileReader(dataFolder.getPath() + "\\" + "Teams.kuffle");
+				} else {
+					reader = new FileReader(dataFolder.getPath() + "/" + "Teams.kuffle");
+				}
+				
+				try {
+					mainObject = (JSONObject) parser.parse(reader);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+				
+				km.teams.loadTeams(mainObject, km.games);
+				
+				reader.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		
 		if (km.config.getSaturation()) {
 			for (GameTask gt : km.games) {
@@ -84,7 +106,7 @@ public class KuffleAdminLoad implements CommandExecutor {
 		
 		int invCnt = 0;
 		
-		km.playersHeads = Bukkit.createInventory(null, 54, "§8Teleport");
+		km.playersHeads = Bukkit.createInventory(null, 54, "§8Players");
 		
 		for (GameTask gt : km.games) {
 			km.playerRank.put(gt.getPlayer().getDisplayName(), false);
@@ -96,9 +118,9 @@ public class KuffleAdminLoad implements CommandExecutor {
 		for (GameTask gt : km.games) {
 			try {
 				if (dataFolder.getPath().contains("\\")) {
-					reader = new FileReader(dataFolder.getPath() + "\\" + gt.getPlayer().getDisplayName());
+					reader = new FileReader(dataFolder.getPath() + "\\" + gt.getPlayer().getDisplayName() + ".kuffle");
 				} else {
-					reader = new FileReader(dataFolder.getPath() + "/" + gt.getPlayer().getDisplayName());
+					reader = new FileReader(dataFolder.getPath() + "/" + gt.getPlayer().getDisplayName() + ".kuffle");
 				}
 				
 				try {

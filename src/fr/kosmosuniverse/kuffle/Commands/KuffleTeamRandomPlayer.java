@@ -57,7 +57,7 @@ public class KuffleTeamRandomPlayer implements CommandExecutor {
 		while (players.size() > 0) {
 			int idx = r.nextInt(players.size());
 			
-			km.teams.affectPLayer(km.teams.getTeams().get(cnt).name, players.get(idx));
+			km.teams.affectPlayer(km.teams.getTeams().get(cnt).name, players.get(idx));
 			
 			players.remove(idx);
 			

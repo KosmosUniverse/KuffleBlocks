@@ -99,7 +99,7 @@ public class KuffleStart implements CommandExecutor {
 		
 		int invCnt = 0;
 		
-		km.playersHeads = Bukkit.createInventory(null, 54, "§8Teleport");
+		km.playersHeads = Bukkit.createInventory(null, 54, "§8Players");
 		
 		for (GameTask gt : km.games) {
 			km.playerRank.put(gt.getPlayer().getDisplayName(), false);

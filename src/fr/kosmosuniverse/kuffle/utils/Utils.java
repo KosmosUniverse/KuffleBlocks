@@ -135,5 +135,15 @@ public class Utils {
 		
 		return null;
 	}
+	
+	public static Player getPlayerInList(ArrayList<GameTask> games, String name) {
+		for (GameTask gt : games) {
+			if (gt.getPlayer().getDisplayName().equals(name)) {
+				return gt.getPlayer();
+			}
+		}
+		
+		return null;
+	}
 }
  
