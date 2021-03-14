@@ -7,10 +7,10 @@ import org.bukkit.entity.Player;
 import fr.kosmosuniverse.kuffle.KuffleMain;
 import fr.kosmosuniverse.kuffle.Core.SpreadPlayer;
 
-public class KuffleTestSpread implements CommandExecutor {
+public class KuffleTest implements CommandExecutor {
 	private KuffleMain km;
 
-	public KuffleTestSpread(KuffleMain _km) {
+	public KuffleTest(KuffleMain _km) {
 		km = _km;
 	}
 	
@@ -21,7 +21,12 @@ public class KuffleTestSpread implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
-		SpreadPlayer.spreadPlayers(player, (double) km.config.getSpreadDistance(), km.config.getSpreadRadius(), null, null);
+		
+		if (args.length == 0) {
+			SpreadPlayer.spreadPlayers(player, (double) km.config.getSpreadDistance(), km.config.getSpreadRadius(), null, null);	
+		} else if (args.length == 1) {
+			player.sendMessage("Highest block is " + player.getWorld().getHighestBlockYAt(player.getLocation()));
+		}
 		
 		return true;
 	}

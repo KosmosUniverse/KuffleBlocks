@@ -64,7 +64,7 @@ public class InventoryRecipeListener implements Listener {
 			if ((inv = multiBlock.getInventory(current, item, km.multiBlock.getAllMultiBlocksInventory(), false)) != null) {
 				player.openInventory(inv);
 			}
-		} else if (event.getView().getTitle() == "§8Teleport") {
+		} else if (event.getView().getTitle() == "§8Players") {
 			event.setCancelled(true);
 			
 			if (item.getType() == Material.PLAYER_HEAD) {

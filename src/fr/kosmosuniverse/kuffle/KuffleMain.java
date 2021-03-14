@@ -114,7 +114,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kplayers").setExecutor(new KufflePlayers(this));
 		getCommand("klang").setExecutor(new KuffleLang(this));
 		getCommand("kconfig").setExecutor(new KuffleConfig(this));
-		getCommand("ktest").setExecutor(new KuffleTestSpread(this));
+		getCommand("ktest").setExecutor(new KuffleTest(this));
 		
 		getCommand("kteam-create").setExecutor(new KuffleTeamCreate(this));
 		getCommand("kteam-delete").setExecutor(new KuffleTeamDelete(this));
