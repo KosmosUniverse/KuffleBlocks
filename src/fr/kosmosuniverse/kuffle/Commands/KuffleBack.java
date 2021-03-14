@@ -2,7 +2,6 @@ package fr.kosmosuniverse.kuffle.Commands;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -35,12 +34,16 @@ public class KuffleBack implements CommandExecutor {
 								Location loc = gt.getDeathLoc();
 								
 								if (loc.getWorld().getName().contains("the_end") && loc.getY() < 0) {
-									if (loc.getWorld().getHighestBlockYAt(loc) == -1) {
+									System.out.println("1.");
+									int tmp = loc.getWorld().getHighestBlockYAt(loc);
+									System.out.println("tmp: " + tmp);
+									if (tmp == -1) {
 										loc.setY(59);
 										
-										for (double cntX = -2; cntX >= 2; cntX++) {
-											for (double cntZ = -2; cntZ >= 2; cntZ++) {
+										for (double cntX = -2; cntX <= 2; cntX++) {
+											for (double cntZ = -2; cntZ <= 2; cntZ++) {
 												Location platform = loc.clone();
+												System.out.println(platform.toString());
 												
 												platform.add(cntX, 0, cntZ);
 												
@@ -50,9 +53,11 @@ public class KuffleBack implements CommandExecutor {
 										
 										loc.setY(61);
 									} else {
+										System.out.println("2.");
 										loc.setY(loc.getWorld().getHighestBlockYAt(loc) + 1);
 									}
 								}
+								System.out.println("LOL.");
 								
 								player.teleport(loc);
 								gt.restorePlayerInv();
