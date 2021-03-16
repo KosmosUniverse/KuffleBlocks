@@ -1,0 +1,176 @@
+{
+	"Archaic_Age" : {
+		"iron_sword" : {
+			"Amount" : 1,
+			"Enchant" : "fire_aspect",
+			"Level" : 1,
+			"Effect" : ""
+		},
+		"shield" : {
+			"Amount" : 1,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		},
+		"potion" : {
+			"Amount" : 3,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : "speed"
+		},
+		"cooked_beef" : {
+			"Amount" : 16,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		}
+	},
+	"Classic_Age" : {
+		"diamond_pickaxe" : {
+			"Amount" : 1,
+			"Enchant" : "silk_touch,efficiency",
+			"Level" : 4,
+			"Effect" : ""
+		},
+		"iron_helmet" : {
+			"Amount" : 1,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		},
+		"iron_chestplate" : {
+			"Amount" : 1,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		},
+		"iron_leggings" : {
+			"Amount" : 1,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		},
+		"iron_boots" : {
+			"Amount" : 1,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		},
+		"cooked_porkchop" : {
+			"Amount" : 32,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		}
+	},
+	"Mineric_Age" : {
+		"cauldron" : {
+			"Amount" : 1,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		},
+		"water_bucket" : {
+			"Amount" : 1,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		},
+		"potion" : {
+			"Amount" : 3,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : "fire_resistance"
+		},
+		"cooked_chicken" : {
+			"Amount" : 32,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		},
+		"warped_fungus_on_a_stick" : {
+			"Amount" : 1,
+			"Enchant" : "unbreaking,mending",
+			"Level" : 3,
+			"Effect" : ""
+		},
+		"saddle" : {
+			"Amount" : 1,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		}
+	},
+	"Netheric_Age" : {
+		"elytra" : {
+			"Amount" : 1,
+			"Enchant" : "mending,unbreaking",
+			"Level" : 5,
+			"Effect" : ""
+		},
+		"firework_rocket" : {
+			"Amount" : 64,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		},
+		"diamond_sword" : {
+			"Amount" : 1,
+			"Enchant" : "sharpness,sweeping",
+			"Level" : 5,
+			"Effect" : ""
+		},
+		"cooked_mutton" : {
+			"Amount" : 32,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		},
+		"obsidian" : {
+			"Amount" : 1,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		}
+	},
+	"Heroic_Age" : {
+		"potion" : {
+			"Amount" : 3,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : "speed"
+		},
+		"diamond_helmet" : {
+			"Amount" : 1,
+			"Enchant" : "protection",
+			"Level" : 4,
+			"Effect" : ""
+		},
+		"diamond_chestplate" : {
+			"Amount" : 1,
+			"Enchant" : "protection",
+			"Level" : 4,
+			"Effect" : ""
+		},
+		"diamond_leggings" : {
+			"Amount" : 1,
+			"Enchant" : "protection",
+			"Level" : 4,
+			"Effect" : ""
+		},
+		"diamond_boots" : {
+			"Amount" : 1,
+			"Enchant" : "protection",
+			"Level" : 4,
+			"Effect" : ""
+		},
+		"cooked_porkchop" : {
+			"Amount" : 64,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
+		}
+	},
+	"Mythic_Age" : {
+	}
+}

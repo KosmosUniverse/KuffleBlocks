@@ -57,7 +57,7 @@ public class KuffleMain extends JavaPlugin {
 			
 			in.close();
 			
-			in = getResource("rewards.json");
+			in = getResource("rewards_" + Utils.getVersion() + ".json");
 			result = Utils.readFileContent(in);
 			allRewards = RewardManager.getAllRewards(result, this.getDataFolder());
 			
