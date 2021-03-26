@@ -19,3 +19,4 @@ game_settings:
    team:
       enable: false # Define if team are allowed or not, Default: False
       size: 2 # Size of a team, Default: 2
+   same_mode: false

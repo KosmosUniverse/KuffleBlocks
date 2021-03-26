@@ -24,6 +24,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import fr.kosmosuniverse.kuffle.KuffleMain;
+import fr.kosmosuniverse.kuffle.utils.Pair;
 import fr.kosmosuniverse.kuffle.utils.Utils;
 import net.md_5.bungee.api.ChatColor;
 
@@ -48,6 +49,7 @@ public class GameTask {
 	private int time;
 	private int blockCount = 1;
 	private int gameRank;
+	private int sameIdx = 0;
 	
 	private long previousShuffle = -1;
 	private long interval = -1;
@@ -112,7 +114,18 @@ public class GameTask {
 					
 					if (currentBlock == null && blockCount < (km.config.getBlockPerAge() + 1)) {
 						previousShuffle = System.currentTimeMillis();
-						currentBlock = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));
+						
+						if (km.config.getSame()) {
+							System.out.println("Player: " + player.getDisplayName() + ", Sameidx: " + sameIdx);
+							Pair tmp = ChooseBlockInList.nextBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"), sameIdx);
+
+							sameIdx = tmp.key;
+							currentBlock = tmp.value;
+							sameIdx++;
+						} else {
+							currentBlock = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));	
+						}
+						
 						blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
 						alreadyGot.add(currentBlock);
 						km.updatePlayersHead(player.getDisplayName(), blockDisplay);
@@ -149,7 +162,8 @@ public class GameTask {
 								
 								RewardManager.givePlayerReward(km.allRewards.get(ageNames[age] + "_Age"), km.effects, player, ageNames[age]);
 							}
-	
+							
+							sameIdx = 0;
 							age++;
 							
 							if (km.config.getTeam()) {
@@ -498,6 +512,7 @@ public class GameTask {
 		global.put("spawn", jsonSpawn);
 		global.put("death", jsonDeath);
 		global.put("teamName", teamName);
+		global.put("sameIdx", sameIdx);
 		
 		JSONArray got = new JSONArray();
 		
@@ -510,13 +525,14 @@ public class GameTask {
 		return (global.toString());
 	}
 	
-	public void loadGame(int _age, int maxAge, String _current, long _interval, int _time, int _blockCount, String _teamName, JSONArray _alreadyGot, JSONObject spawn, JSONObject death) {
+	public void loadGame(int _age, int maxAge, String _current, long _interval, int _time, int _blockCount, int _sameIdx, String _teamName, JSONArray _alreadyGot, JSONObject spawn, JSONObject death) {
 		age = _age;
 		currentBlock = _current;
 		previousShuffle = System.currentTimeMillis() - _interval;
 		interval = -1;
 		time = km.config.getStartTime() + (km.config.getAddedTime() * age);
 		teamName = _teamName;
+		sameIdx = _sameIdx;
 		
 		if (km.config.getSeeBlockCnt()) {
 			km.scores.setupPlayerScores(DisplaySlot.PLAYER_LIST, player);

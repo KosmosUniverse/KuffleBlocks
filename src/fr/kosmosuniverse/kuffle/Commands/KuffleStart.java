@@ -1,5 +1,7 @@
 package fr.kosmosuniverse.kuffle.Commands;
 
+import java.util.Collections;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -61,6 +63,12 @@ public class KuffleStart implements CommandExecutor {
 		if (km.config.getTeam() && !checkTeams()) {
 			sender.sendMessage("Team are enabled and not all players are in a Team.");
 			return true;
+		}
+		
+		if (km.config.getSame()) {
+			for (String key : km.allBlocks.keySet()) {
+				Collections.shuffle(km.allBlocks.get(key));
+			}
 		}
 		
 		Bukkit.broadcastMessage("Game Started, please wait for the countdown.");

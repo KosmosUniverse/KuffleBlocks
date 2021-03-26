@@ -17,6 +17,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import fr.kosmosuniverse.kuffle.utils.Pair;
+
 public class ChooseBlockInList {
 	public static HashMap<String, ArrayList<String>> getAllBlocks(String blocksContent, File dataFolder) {
 		HashMap<String, ArrayList<String>> finalMap = new HashMap<String, ArrayList<String>>();
@@ -83,6 +85,17 @@ public class ChooseBlockInList {
 		Random r = new Random();
 		
 		return finalList.get(r.nextInt(finalList.size()));
+	}
+	
+	public static synchronized Pair nextBlock(ArrayList<String> done, ArrayList<String> allAgeBlocks, int sameIdx) {	
+		String testBlock = allAgeBlocks.get(sameIdx);
+		
+		while (done.contains(testBlock)) {
+			sameIdx++;
+			testBlock = allAgeBlocks.get(sameIdx);
+		}
+		
+		return (new Pair(sameIdx, testBlock));
 	}
 	
 	public static HashMap<String, ArrayList<Inventory>> getBlocksInvs(HashMap<String, ArrayList<String>> allblocks) {

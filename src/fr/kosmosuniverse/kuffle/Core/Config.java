@@ -16,6 +16,7 @@ public class Config {
 	private boolean crafts;
 	private boolean seeBlockCnt;
 	private boolean team;
+	private boolean same;
 	private int teamSize;
 	private int spreadMin;
 	private int spreadMax;
@@ -54,6 +55,7 @@ public class Config {
 		booleanElems.put("CUSTOM_CRAFTS", "setCrafts");
 		booleanElems.put("SEE_BLOCK_CNT", "setBlockCnt");
 		booleanElems.put("TEAM", "setTeam");
+		booleanElems.put("SAME_MODE", "setSame");
 
 		booleanRet.put("SATURATION", ret);
 		booleanRet.put("SPREADPLAYERS", ret);
@@ -62,6 +64,7 @@ public class Config {
 		booleanRet.put("CUSTOM_CRAFTS", ret);
 		booleanRet.put("SEE_BLOCK_CNT", ret);
 		booleanRet.put("TEAM", ret);
+		booleanRet.put("SAME_MODE", ret);
 
 		intElems.put("SPREAD_MIN_DISTANCE", "setSpreadDistance");
 		intElems.put("SPREAD_MIN_RADIUS", "setSpreadRadius");
@@ -223,6 +226,11 @@ public class Config {
 			System.out.println("Config for max team size is not correct, use of default value.");
 			configFile.set("game_settings.team.size", 2);
 		}
+		
+		if (!configFile.contains("game_settings.same_mode")) {
+			System.out.println("Config for enabling same mode is not correct, use of default value.");
+			configFile.set("game_settings.same_mode", false);
+		}
 
 		saturation = configFile.getBoolean("game_settings.saturation");
 		spread = configFile.getBoolean("game_settings.spreadplayers.enable");
@@ -231,6 +239,7 @@ public class Config {
 		crafts = configFile.getBoolean("game_settings.custom_crafts");
 		seeBlockCnt = configFile.getBoolean("game_settings.see_block_count");
 		team = configFile.getBoolean("game_settings.team.enable");
+		same = configFile.getBoolean("game_settings.same_mode");
 
 		spreadMin = configFile.getInt("game_settings.spreadplayers.minimum_distance");
 		spreadMax = configFile.getInt("game_settings.spreadplayers.minimum_radius");
@@ -278,6 +287,7 @@ public class Config {
 		sb.append("Level: ").append(Level.values()[level]).append("\n");
 		sb.append("Team: ").append(team).append("\n");
 		sb.append("Team Size: ").append(teamSize).append("\n");
+		sb.append("Same mode: ").append(same).append("\n");
 
 		return sb.toString();
 	}
@@ -308,6 +318,10 @@ public class Config {
 
 	public boolean getTeam() {
 		return team;
+	}
+	
+	public boolean getSame() {
+		return same;
 	}
 
 	public int getTeamSize() {
@@ -386,6 +400,17 @@ public class Config {
 		}
 
 		team = _team;
+		
+		return true;
+	}
+	
+	public boolean setSame(boolean _same) {
+		if (km.games.size() > 0 && km.games.get(0).getEnable()) {
+			return false;
+		}
+		
+		same = _same;
+		
 		return true;
 	}
 
