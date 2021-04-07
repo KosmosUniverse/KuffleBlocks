@@ -17,6 +17,7 @@ public class Config {
 	private boolean seeBlockCnt;
 	private boolean team;
 	private boolean same;
+	private boolean duoMode;
 	private int teamSize;
 	private int spreadMin;
 	private int spreadMax;
@@ -56,6 +57,7 @@ public class Config {
 		booleanElems.put("SEE_BLOCK_CNT", "setBlockCnt");
 		booleanElems.put("TEAM", "setTeam");
 		booleanElems.put("SAME_MODE", "setSame");
+		booleanElems.put("DOUBLE_MODE", "setDoubleMode");
 
 		booleanRet.put("SATURATION", ret);
 		booleanRet.put("SPREADPLAYERS", ret);
@@ -65,6 +67,7 @@ public class Config {
 		booleanRet.put("SEE_BLOCK_CNT", ret);
 		booleanRet.put("TEAM", ret);
 		booleanRet.put("SAME_MODE", ret);
+		booleanRet.put("DOUBLE_MODE", ret);
 
 		intElems.put("SPREAD_MIN_DISTANCE", "setSpreadDistance");
 		intElems.put("SPREAD_MIN_RADIUS", "setSpreadRadius");
@@ -288,6 +291,7 @@ public class Config {
 		sb.append("Team: ").append(team).append("\n");
 		sb.append("Team Size: ").append(teamSize).append("\n");
 		sb.append("Same mode: ").append(same).append("\n");
+		sb.append("Double mode: ").append(duoMode).append("\n");
 
 		return sb.toString();
 	}
@@ -322,6 +326,10 @@ public class Config {
 	
 	public boolean getSame() {
 		return same;
+	}
+	
+	public boolean getDouble() {
+		return duoMode;
 	}
 
 	public int getTeamSize() {
@@ -413,8 +421,14 @@ public class Config {
 		
 		return true;
 	}
+	
+	public boolean setDoubleMode(boolean _duoMode) {
+		duoMode = _duoMode;
+		
+		return true;
+	}
 
-	public boolean setTeamSize(int _teamSize) {
+ 	public boolean setTeamSize(int _teamSize) {
 		if (km.teams.getTeams().size() > 0 && km.teams.getMaxTeamSize() > _teamSize) {
 			return false;
 		}

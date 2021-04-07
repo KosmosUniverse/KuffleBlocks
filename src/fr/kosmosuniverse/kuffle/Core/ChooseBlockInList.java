@@ -82,10 +82,18 @@ public class ChooseBlockInList {
 	public static synchronized String newBlock(ArrayList<String> done, ArrayList<String> allAgeBlocks) {	
 		ArrayList<String> finalList = new ArrayList<String>();
 		
+		if (done.size() == allAgeBlocks.size()) {
+			done.clear();
+		}
+		
 		for (String s : allAgeBlocks) {
 			if (!done.contains(s)) {
 				finalList.add(s);
 			}
+		}
+		
+		if (finalList.size() == 1) {
+			return finalList.get(0);
 		}
 		
 		Random r = new Random();

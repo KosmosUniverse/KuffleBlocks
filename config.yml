@@ -10,7 +10,7 @@ game_settings:
    max_age: 6 # number of Age to finish the game, Default : 6
    block_per_age: 5 # number of block to complete to move to the next age, min: 1, Default: 5
    lang: "en" # Lang for all players, Default: "en"
-   level: "NORMAL" # Number describes game difficulty can be [0, 1, 2, 3], Default: 1
+   level: 1 # Number describes game difficulty can be [0, 1, 2, 3], Default: 1
    skip:
       enable: true # allow player to skip block if they are after 2nd block of current age, Default: true
       age: 2 # First age that allow skipping block, Default: 2
@@ -19,4 +19,5 @@ game_settings:
    team:
       enable: false # Define if team are allowed or not, Default: False
       size: 2 # Size of a team, Default: 2
-   same_mode: false
+   same_mode: false # If true, players will have same blocks, Default: false
+   double_mode: false # If true, players will have two block instead of one, Default: false

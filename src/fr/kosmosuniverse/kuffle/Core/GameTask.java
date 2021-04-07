@@ -112,6 +112,26 @@ public class GameTask {
 					
 					blockScore.setScore(blockCount);
 					
+					if (currentBlock != null && km.config.getDouble() && !currentBlock.contains("/")) {
+						String currentTmp = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));
+						
+						alreadyGot.add(currentTmp);
+						currentBlock = currentBlock + "/" + currentTmp;
+						blockDisplay = blockDisplay + "/" + LangManager.findBlockDisplay(km.allLang, currentTmp, configLang);
+						km.updatePlayersHead(player.getDisplayName(), blockDisplay.split("/")[0] + " or " + blockDisplay.split("/")[1]);
+					}
+					
+					if (currentBlock != null && !km.config.getDouble() && currentBlock.contains("/")) {
+						Random r = new Random();
+						String[] array = currentBlock.split("/");
+						
+						currentBlock = array[r.nextInt(2)];
+						
+						alreadyGot.remove(currentBlock.equals(array[0]) ? array[1] : array[0]);
+						blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
+						km.updatePlayersHead(player.getDisplayName(), blockDisplay);
+					}
+					
 					if (currentBlock == null && blockCount < (km.config.getBlockPerAge() + 1)) {
 						previousShuffle = System.currentTimeMillis();
 						
@@ -122,20 +142,35 @@ public class GameTask {
 							sameIdx = tmp.key;
 							currentBlock = tmp.value;
 							sameIdx++;
+						} else if (km.config.getDouble()) {
+							currentBlock = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));
+							alreadyGot.add(currentBlock);
+							
+							String currentTmp = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));
+							
+							alreadyGot.add(currentTmp);
+							
+							currentBlock = currentBlock + "/" + currentTmp;
 						} else {
 							currentBlock = ChooseBlockInList.newBlock(alreadyGot, km.allBlocks.get(ageNames[age] + "_Age"));	
 						}
 						
-						blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
-						alreadyGot.add(currentBlock);
-						km.updatePlayersHead(player.getDisplayName(), blockDisplay);
+						if (km.config.getDouble()) {
+							blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock.split("/")[0], configLang);
+							blockDisplay = blockDisplay + "/" + LangManager.findBlockDisplay(km.allLang, currentBlock.split("/")[1], configLang);
+							km.updatePlayersHead(player.getDisplayName(), blockDisplay.split("/")[0] + " or " + blockDisplay.split("/")[1]);
+						} else {
+							blockDisplay = LangManager.findBlockDisplay(km.allLang, currentBlock, configLang);
+							alreadyGot.add(currentBlock);
+							km.updatePlayersHead(player.getDisplayName(), blockDisplay);
+						}
 					}
 					
 					if (currentBlock != null && System.currentTimeMillis() - previousShuffle > (time * 60000)) {
 						km.logs.writeMsg(player, "§4You didn't find your block. Let's give you another one.§r");
 						currentBlock = null;
 					} else if (blockCount < (km.config.getBlockPerAge() + 1)) {
-						if (currentBlock != null && (found || player.getLocation().add(0, -1, 0).getBlock().getType() == Material.matchMaterial(currentBlock) || player.getLocation().getBlock().getType() == Material.matchMaterial(currentBlock))) {
+						if (currentBlock != null && (found || checkValid())) {
 							player.playSound(player.getLocation(), Sound.BLOCK_BELL_USE, 1f, 1f);
 							currentBlock = null;
 							blockCount++;
@@ -222,7 +257,11 @@ public class GameTask {
 							color = ChatColor.GREEN;
 						}
 						
-						ActionBar.sendMessage(color + "Time Left: " + count + " seconds to find: " + dispCurBlock + ".", player);
+						if (km.config.getDouble() && dispCurBlock.contains("/")) {
+							ActionBar.sendMessage(color + "Time Left: " + count + " seconds to find: " + dispCurBlock.split("/")[0] + " or " + dispCurBlock.split("/")[1] + ".", player);
+						} else {
+							ActionBar.sendMessage(color + "Time Left: " + count + " seconds to find: " + dispCurBlock + ".", player);	
+						}
 					}
 				}
 			}
@@ -389,6 +428,18 @@ public class GameTask {
 		}
 		
 		return true;
+	}
+	
+	private boolean checkValid() {
+		if (km.config.getDouble()) {
+			return (player.getLocation().add(0, -1, 0).getBlock().getType() == Material.matchMaterial(currentBlock.split("/")[0]) ||
+					player.getLocation().getBlock().getType() == Material.matchMaterial(currentBlock.split("/")[0]) ||
+					player.getLocation().add(0, -1, 0).getBlock().getType() == Material.matchMaterial(currentBlock.split("/")[1]) ||
+					player.getLocation().getBlock().getType() == Material.matchMaterial(currentBlock.split("/")[1]));
+		} else {
+			return (player.getLocation().add(0, -1, 0).getBlock().getType() == Material.matchMaterial(currentBlock) ||
+					player.getLocation().getBlock().getType() == Material.matchMaterial(currentBlock));
+		}
 	}
 	
 	
