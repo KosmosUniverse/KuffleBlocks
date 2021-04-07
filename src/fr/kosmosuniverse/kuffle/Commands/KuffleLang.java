@@ -26,12 +26,14 @@ public class KuffleLang implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
+		km.logs.logMsg(player, "achieved command <klang>");
+		
 		if (km.games.size() != 0) {
 			if (km.games.get(0).getEnable()) {
 				for (GameTask gt : km.games) {
 					if (gt.getPlayer().equals(player)) {
 						if (args.length == 0) {
-							player.sendMessage(gt.getLang());
+							km.logs.writeMsg(player, gt.getLang());
 							
 							return true;
 						} else if (args.length == 1) {
@@ -40,9 +42,9 @@ public class KuffleLang implements CommandExecutor {
 							if (km.langs.contains(lang)) {
 								gt.setLang(lang);
 								
-								player.sendMessage("Lang set to [" + lang + "]");
+								km.logs.writeMsg(player, "Lang set to [" + lang + "]");
 							} else {
-								player.sendMessage("Requested lang is not available.");
+								km.logs.writeMsg(player, "Requested lang is not available.");
 							}
 							
 							return true;
@@ -50,12 +52,12 @@ public class KuffleLang implements CommandExecutor {
 					}
 				}
 			} else {
-				player.sendMessage("You are not playing in this game.");
+				km.logs.writeMsg(player, "You are not playing in this game.");
 				return false;
 			}
 		}
 
-		player.sendMessage("Game has not launched yet.");
+		km.logs.writeMsg(player, "Game has not launched yet.");
 		return true;
 	}
 

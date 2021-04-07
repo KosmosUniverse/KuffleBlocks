@@ -26,13 +26,15 @@ public class KuffleTeamRandomPlayer implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
+		km.logs.logMsg(player, "achieved command <kteam-random-player>");
+		
 		if (!player.hasPermission("kteam-random-player")) {
-			player.sendMessage("You are not allowed to do this command.");
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
 		if (km.games.size() > 0 && km.games.get(0).getEnable()) {
-			player.sendMessage("Game is already launched, you cannot modify teams during the game.");
+			km.logs.writeMsg(player, "Game is already launched, you cannot modify teams during the game.");
 			return true;
 		}
 		
@@ -41,12 +43,12 @@ public class KuffleTeamRandomPlayer implements CommandExecutor {
 		}
 		
 		if (calcMAxPlayers() < Utils.getPlayerList(km.games).size()) {
-			sender.sendMessage("There are too many players for that number of team, please create more teams or change team size with kconfig command.");
+			km.logs.writeMsg(player, "There are too many players for that number of team, please create more teams or change team size with kconfig command.");
 			return true;
 		}
 		
 		if (!checkEmptyTeams()) {
-			sender.sendMessage("There already are players in some teams, please reset all teams using '/kteam-reset-players <Team>' command.");
+			km.logs.writeMsg(player, "There already are players in some teams, please reset all teams using '/kteam-reset-players <Team>' command.");
 			return true;
 		}
 		
@@ -68,7 +70,7 @@ public class KuffleTeamRandomPlayer implements CommandExecutor {
 			}
 		}
 		
-		sender.sendMessage("Randomly add " + Utils.getPlayerNames(km.games).size() + " in " + km.teams.getTeams().size() + " teams.");
+		km.logs.writeMsg(player, "Randomly add " + Utils.getPlayerNames(km.games).size() + " in " + km.teams.getTeams().size() + " teams.");
 		
 		return true;
 	}

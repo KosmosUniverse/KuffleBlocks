@@ -23,13 +23,15 @@ public class KuffleBack implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
+		km.logs.logMsg(player, "achieved command <kback>");
+		
 		if (km.games.size() != 0) {
 			if (km.games.get(0).getEnable()) {
 				for (GameTask gt : km.games) {
 					if (gt.getPlayer().getDisplayName().equals(player.getDisplayName())) {
 						if (gt.getDeathLoc() != null) {
 							if (!compareLoc(player.getLocation().add(0, -1, 0), gt.getSpawnLoc())) {
-								player.sendMessage("You have to stand on your spawn point to make this command work.");
+								km.logs.writeMsg(player, "You have to stand on your spawn point to make this command work.");
 							} else if (System.currentTimeMillis() - gt.getDeathTime() > (gt.getMinTime() * 1000)) {
 								Location loc = gt.getDeathLoc();
 								
@@ -57,24 +59,24 @@ public class KuffleBack implements CommandExecutor {
 								player.teleport(loc);
 								gt.restorePlayerInv();
 								gt.setDeathLoc(null);
-								player.sendMessage("Here you are ! You can only reuse this command once you have died again.");	
+								km.logs.writeMsg(player, "Here you are ! You can only reuse this command once you have died again.");	
 							} else {
-								player.sendMessage("You have to wait " + gt.getMinTime() + " seconds after death to tp back");	
+								km.logs.writeMsg(player, "You have to wait " + gt.getMinTime() + " seconds after death to tp back");	
 							}
 							return true;
 						} else {
-							player.sendMessage("You need to die to use this command.");
+							km.logs.writeMsg(player, "You need to die to use this command.");
 							return false;
 						}
 					}
 				}
 				
-				player.sendMessage("You are not playing in this game.");
+				km.logs.writeMsg(player, "You are not playing in this game.");
 				return false;
 			}
 		}
 		
-		player.sendMessage("Game is not launched yet.");
+		km.logs.writeMsg(player, "Game is not launched yet.");
 		return false;
 	}
 	

@@ -20,23 +20,25 @@ public class KuffleValidate implements CommandExecutor {
 		if (!(sender instanceof Player))
 			return false;
 		
-		Player p = (Player) sender;
+		Player player = (Player) sender;
 		
-		if (!p.hasPermission("kvalidate")) {
-			p.sendMessage("You are not allowed to do this command.");
+		km.logs.logMsg(player, "achieved command <kvalidate>");
+		
+		if (!player.hasPermission("kvalidate")) {
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
 		if (km.games.size() == 0) {
-			p.sendMessage("No game launched, you can launch a game with kstart command.");
+			km.logs.writeMsg(player, "No game launched, you can launch a game with kstart command.");
 			return false;
 		} else if (!km.games.get(0).getEnable()) {
-			p.sendMessage("No game launched, you can launch a game with kstart command.");
+			km.logs.writeMsg(player, "No game launched, you can launch a game with kstart command.");
 			return false;
 		}
 		
 		if (args.length != 1) {
-			p.sendMessage("This command takes 1 argument: the name of the player to validate his block.");
+			km.logs.writeMsg(player, "This command takes 1 argument: the name of the player to validate his block.");
 			return false;
 		}
 
@@ -45,13 +47,13 @@ public class KuffleValidate implements CommandExecutor {
 				String tmp = gt.getCurrentBlock();
 				
 				gt.validate();
-				sender.sendMessage("Block [" + tmp + "] was validated for player <" + gt.getPlayer().getDisplayName() + ">.");
+				km.logs.writeMsg(player, "Block [" + tmp + "] was validated for player <" + gt.getPlayer().getDisplayName() + ">.");
 				
 				return true;
 			}
 		}
 		
-		p.sendMessage("Can't find player to validate his block.");
+		km.logs.writeMsg(player, "Can't find player to validate his block.");
 		
 		return false;
 	}

@@ -19,14 +19,16 @@ public class KuffleMultiBlocks implements CommandExecutor {
 		if (!(sender instanceof Player))
 			return false;
 		
-		Player p = (Player) sender;
+		Player player = (Player) sender;
 		
-		if (!p.hasPermission("kmultiblocks")) {
-			p.sendMessage("You are not allowed to do this command.");
+		km.logs.logMsg(player, "achieved command <kmultiblocks>");
+		
+		if (!player.hasPermission("kmultiblocks")) {
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
-		p.openInventory(km.multiBlock.getAllMultiBlocksInventory());
+		player.openInventory(km.multiBlock.getAllMultiBlocksInventory());
 		
 		return true;
 	}

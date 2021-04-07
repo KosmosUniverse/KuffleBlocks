@@ -20,10 +20,12 @@ public class KuffleAdminSpawn implements CommandExecutor {
 		if (!(sender instanceof Player))
 			return false;
 		
-		Player p = (Player) sender;
+		Player player= (Player) sender;
 		
-		if (!p.hasPermission("kadminspawn")) {
-			p.sendMessage("You are not allowed to do this command.");
+		km.logs.logMsg(player, "achieved command <kadminspawn>");
+		
+		if (!player.hasPermission("kadminspawn")) {
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
@@ -34,8 +36,8 @@ public class KuffleAdminSpawn implements CommandExecutor {
 		AMultiblock multi;
 		
 		if ((multi = km.multiBlock.findMultiBlockByName(args[0])) != null) {
-			multi.getMultiblock().spawnMultiBlock(p);
-			sender.sendMessage("MultiBlock [" + multi.getName() + "] was spawn.");
+			multi.getMultiblock().spawnMultiBlock(player);
+			km.logs.writeMsg(player, "MultiBlock [" + multi.getName() + "] was spawn.");
 		}
 		
 		return true;

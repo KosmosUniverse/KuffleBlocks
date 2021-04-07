@@ -16,6 +16,7 @@ import fr.kosmosuniverse.kuffle.Core.ChooseBlockInList;
 import fr.kosmosuniverse.kuffle.Core.Config;
 import fr.kosmosuniverse.kuffle.Core.GameTask;
 import fr.kosmosuniverse.kuffle.Core.LangManager;
+import fr.kosmosuniverse.kuffle.Core.Logs;
 import fr.kosmosuniverse.kuffle.Core.ManageTeams;
 import fr.kosmosuniverse.kuffle.Core.RewardElem;
 import fr.kosmosuniverse.kuffle.Core.RewardManager;
@@ -41,6 +42,7 @@ public class KuffleMain extends JavaPlugin {
 	public ManageMultiBlock multiBlock;
 	public ManageTeams teams;
 	public Scores scores;
+	public Logs logs;
 	public Inventory playersHeads;
 	
 	public boolean paused = false;
@@ -68,6 +70,8 @@ public class KuffleMain extends JavaPlugin {
 			allLang = LangManager.getAllBlocksLang(result, this.getDataFolder());
 			
 			in.close();
+			
+			logs = new Logs(this.getDataFolder());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -84,7 +88,7 @@ public class KuffleMain extends JavaPlugin {
 		multiBlock = new ManageMultiBlock();
 		teams = new ManageTeams();
 		scores = new Scores(this);
-		
+	
 		System.out.println("[Kuffle] Add Custom Crafts.");
 		for (ACrafts item : crafts.getRecipeList()) {
 			getServer().addRecipe(item.getRecipe());

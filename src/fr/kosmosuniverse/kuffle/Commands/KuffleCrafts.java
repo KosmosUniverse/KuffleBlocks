@@ -19,14 +19,16 @@ public class KuffleCrafts implements CommandExecutor {
 		if (!(sender instanceof Player))
 			return false;
 		
-		Player p = (Player) sender;
+		Player player = (Player) sender;
 		
-		if (!p.hasPermission("kcrafts")) {
-			p.sendMessage("You are not allowed to do this command.");
+		km.logs.logMsg(player, "achieved command <kcrafts>");
+		
+		if (!player.hasPermission("kcrafts")) {
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
-		p.openInventory(km.crafts.getAllCraftsInventory());
+		player.openInventory(km.crafts.getAllCraftsInventory());
 		
 		return true;
 	}

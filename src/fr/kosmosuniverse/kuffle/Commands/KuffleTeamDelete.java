@@ -21,13 +21,15 @@ public class KuffleTeamDelete implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
+		km.logs.logMsg(player, "achieved command <kteam-delete>");
+		
 		if (!player.hasPermission("kteam-delete")) {
-			player.sendMessage("You are not allowed to do this command.");
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
 		if (km.games.size() > 0 && km.games.get(0).getEnable()) {
-			player.sendMessage("Game is already launched, you cannot modify teams during the game.");
+			km.logs.writeMsg(player, "Game is already launched, you cannot modify teams during the game.");
 			return true;
 		}
 				
@@ -36,11 +38,11 @@ public class KuffleTeamDelete implements CommandExecutor {
 		}
 		
 		if (!km.teams.hasTeam(args[0])) {
-			sender.sendMessage("Team <" + args[0] + "> does not exist, please choose another name.");
+			km.logs.writeMsg(player, "Team <" + args[0] + "> does not exist, please choose another name.");
 		} else {
 			km.teams.deleteTeam(args[0]);
 			
-			sender.sendMessage("Team <" + args[0] + "> was deleted.");
+			km.logs.writeMsg(player, "Team <" + args[0] + "> was deleted.");
 		}
 		
 		return true;

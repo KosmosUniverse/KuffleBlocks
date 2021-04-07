@@ -25,8 +25,10 @@ public class KuffleAgeBlocks implements CommandExecutor  {
 		
 		Player player = (Player) sender;
 		
+		km.logs.logMsg(player, "achieved command <kageblocks>");
+		
 		if (!player.hasPermission("kageblocks")) {
-			player.sendMessage("You are not allowed to do this command.");
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
@@ -39,11 +41,11 @@ public class KuffleAgeBlocks implements CommandExecutor  {
 					
 					player.openInventory(ageBlocks.get(0));
 				} else {
-					player.sendMessage("You are not playing in this game.");
+					km.logs.writeMsg(player, "You are not playing in this game.");
 				}
 			}
 		} else {
-			player.sendMessage("The game has not launched yet.");			
+			km.logs.writeMsg(player, "The game has not launched yet.");			
 		}
 
 		return true;

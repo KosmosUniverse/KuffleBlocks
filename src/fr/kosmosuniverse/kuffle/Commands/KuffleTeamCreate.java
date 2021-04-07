@@ -25,18 +25,20 @@ public class KuffleTeamCreate implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
+		km.logs.logMsg(player, "achieved command <kteam-create>");
+		
 		if (!player.hasPermission("kteam-create")) {
-			player.sendMessage("You are not allowed to do this command.");
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
 		if (!km.config.getTeam()) {
-			sender.sendMessage("Please enable Teams with /kconfig command.");
+			km.logs.writeMsg(player, "Please enable Teams with /kconfig command.");
 			return true;
 		}
 		
 		if (km.games.size() > 0 && km.games.get(0).getEnable()) {
-			player.sendMessage("Game is already launched, you cannot modify teams during the game.");
+			km.logs.writeMsg(player, "Game is already launched, you cannot modify teams during the game.");
 			return true;
 		}
 		
@@ -45,7 +47,7 @@ public class KuffleTeamCreate implements CommandExecutor {
 		}
 		
 		if (km.teams.hasTeam(args[0])) {
-			sender.sendMessage("Team <" + args[0] + "> already exists, please choose another name.");
+			km.logs.writeMsg(player, "Team <" + args[0] + "> already exists, please choose another name.");
 		} else {
 			if (args.length == 1) {
 				km.teams.createTeam(args[0]);	
@@ -53,16 +55,16 @@ public class KuffleTeamCreate implements CommandExecutor {
 				ChatColor tmp;
 				
 				if ((tmp = Utils.findChatColor(args[1])) == null) {
-					sender.sendMessage("Color <" + args[1] + "> does not exist, please choose another name.");
+					km.logs.writeMsg(player, "Color <" + args[1] + "> does not exist, please choose another name.");
 				} else {
 					ArrayList<String> colorUsed = km.teams.getTeamColors();
 					
 					if (!colorUsed.contains(tmp.name())) {
 						km.teams.createTeam(args[0], tmp);
 						
-						sender.sendMessage("Team <" + args[0] + "> was created.");
+						km.logs.writeMsg(player, "Team <" + args[0] + "> was created.");
 					} else {
-						sender.sendMessage("Color <" + tmp.name() + "> is already used, please choose another one.");
+						km.logs.writeMsg(player, "Color <" + tmp.name() + "> is already used, please choose another one.");
 					}
 				}
 			}

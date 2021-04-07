@@ -31,20 +31,22 @@ public class KuffleStart implements CommandExecutor {
 		if (!(sender instanceof Player))
 			return false;
 		
-		Player p = (Player) sender;
+		Player player = (Player) sender;
 		
-		if (!p.hasPermission("kstart")) {
-			p.sendMessage("You are not allowed to do this command.");
+		km.logs.logMsg(player, "achieved command <kstart>");
+		
+		if (!player.hasPermission("kstart")) {
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
 		if (km.games.size() == 0) {
-			p.sendMessage("You need to first add people with klist command.");
+			km.logs.writeMsg(player, "You need to first add people with klist command.");
 			return false;
 		}
 		
 		if (km.games.get(0).getEnable()) {
-			p.sendMessage("The game is already running.");
+			km.logs.writeMsg(player, "The game is already running.");
 			return false;
 		}
 		
@@ -61,7 +63,7 @@ public class KuffleStart implements CommandExecutor {
 		int spread = 0;
 		
 		if (km.config.getTeam() && !checkTeams()) {
-			sender.sendMessage("Team are enabled and not all players are in a Team.");
+			km.logs.writeMsg(player, "Team are enabled and not all players are in a Team.");
 			return true;
 		}
 		
@@ -71,13 +73,13 @@ public class KuffleStart implements CommandExecutor {
 			}
 		}
 		
-		Bukkit.broadcastMessage("Game Started, please wait for the countdown.");
+		km.logs.logBroadcastMsg("Game Started, please wait for the countdown.");
 		
 		if (km.config.getSpread()) {
 			if (km.config.getTeam()) {
-				SpreadPlayer.spreadPlayers(p, (double) km.config.getSpreadDistance(), km.config.getSpreadRadius(), km.teams.getTeams(), Utils.getPlayerList(km.games));	
+				SpreadPlayer.spreadPlayers(player, (double) km.config.getSpreadDistance(), km.config.getSpreadRadius(), km.teams.getTeams(), Utils.getPlayerList(km.games));	
 			} else {
-				SpreadPlayer.spreadPlayers(p, (double) km.config.getSpreadDistance(), km.config.getSpreadRadius(), null, Utils.getPlayerList(km.games));
+				SpreadPlayer.spreadPlayers(player, (double) km.config.getSpreadDistance(), km.config.getSpreadRadius(), null, Utils.getPlayerList(km.games));
 			}
 			
 			for (GameTask gt : km.games) {

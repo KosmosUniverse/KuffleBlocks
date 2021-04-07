@@ -21,13 +21,15 @@ public class KuffleTeamRemovePlayer implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
+		km.logs.logMsg(player, "achieved command <kteam-remove-player>");
+		
 		if (!player.hasPermission("kteam-remove-player")) {
-			player.sendMessage("You are not allowed to do this command.");
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
 		if (km.games.size() > 0 && km.games.get(0).getEnable()) {
-			player.sendMessage("Game is already launched, you cannot modify teams during the game.");
+			km.logs.writeMsg(player, "Game is already launched, you cannot modify teams during the game.");
 			return true;
 		}
 				
@@ -36,19 +38,19 @@ public class KuffleTeamRemovePlayer implements CommandExecutor {
 		}
 		
 		if (!km.teams.hasTeam(args[0])) {
-			sender.sendMessage("Team <" + args[0] + "> does not exist, please choose another name.");
+			km.logs.writeMsg(player, "Team <" + args[0] + "> does not exist, please choose another name.");
 			return true;
 		}
 		
 		if (!km.teams.getTeam(args[0]).hasPlayer(args[1])) {
-			sender.sendMessage("This player is not in this Team.");
+			km.logs.writeMsg(player, "This player is not in this Team.");
 			return true;
 		}
 		
 		for (GameTask gt : km.games) {
 			if (gt.getPlayer().getDisplayName().equals(args[1])) {
 				km.teams.removePlayer(args[0], gt.getPlayer());
-				sender.sendMessage("Player <" + args[1] + "> was removed from team <" + args[0] + ">.");
+				km.logs.writeMsg(player, "Player <" + args[1] + "> was removed from team <" + args[0] + ">.");
 				
 				return true;
 			}

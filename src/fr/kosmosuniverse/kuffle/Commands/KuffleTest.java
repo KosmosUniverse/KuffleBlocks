@@ -21,11 +21,10 @@ public class KuffleTest implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
-		
 		if (args.length == 0) {
 			SpreadPlayer.spreadPlayers(player, (double) km.config.getSpreadDistance(), km.config.getSpreadRadius(), null, null);	
 		} else if (args.length == 1) {
-			player.sendMessage("Highest block is " + player.getWorld().getHighestBlockYAt(player.getLocation()));
+			km.logs.writeMsg(player, "Highest block is " + player.getWorld().getHighestBlockYAt(player.getLocation()));
 		}
 		
 		return true;

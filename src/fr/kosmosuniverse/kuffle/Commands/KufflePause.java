@@ -23,20 +23,22 @@ public class KufflePause implements CommandExecutor {
 		if (!(sender instanceof Player))
 			return false;
 		
-		Player p = (Player) sender;
+		Player player = (Player) sender;
 		
-		if (!p.hasPermission("kpause")) {
-			p.sendMessage("You are not allowed to do this command.");
+		km.logs.logMsg(player, "achieved command <kadminsave>");
+		
+		if (!player.hasPermission("kpause")) {
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
 		if (km.games.size() == 0) {
-			p.sendMessage("You need to first add people with klist command and launch a game with kstart command.");
+			km.logs.writeMsg(player, "You need to first add people with klist command and launch a game with kstart command.");
 			return false;
 		}
 		
 		if (!km.games.get(0).getEnable()) {
-			p.sendMessage("Your game is already paused, you can resume it with kresume command.");
+			km.logs.writeMsg(player, "Your game is already paused, you can resume it with kresume command.");
 			return false;
 		}
 		

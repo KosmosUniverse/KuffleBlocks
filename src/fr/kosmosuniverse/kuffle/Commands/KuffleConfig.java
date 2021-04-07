@@ -27,8 +27,10 @@ public class KuffleConfig implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
+		km.logs.logMsg(player, "achieved command <kconfig>");
+		
 		if (!player.hasPermission("kconfig")) {
-			player.sendMessage("You are not allowed to do this command.");
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
@@ -50,9 +52,9 @@ public class KuffleConfig implements CommandExecutor {
 							boolean ret = (boolean) Class.forName("fr.kosmosuniverse.kuffle.Core.Config").getMethod(km.config.stringElems.get(before), String.class).invoke(km.config, args[i]);
 							
 							if (ret) {
-								sender.sendMessage("Config : parameter [" + before + "] set to [" + args[i] + "].");	
+								km.logs.writeMsg(player, "Config : parameter [" + before + "] set to [" + args[i] + "].");	
 							} else {
-								sender.sendMessage("Config : parameter [" + before + "] cannot be set to [" + args[i] + "] due to current game state.");
+								km.logs.writeMsg(player, "Config : parameter [" + before + "] cannot be set to [" + args[i] + "] due to current game state.");
 							}
 						} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
 								| NoSuchMethodException | SecurityException | ClassNotFoundException e) {
@@ -71,9 +73,9 @@ public class KuffleConfig implements CommandExecutor {
 							boolean ret = (boolean) Class.forName("fr.kosmosuniverse.kuffle.Core.Config").getMethod(km.config.booleanElems.get(before), boolean.class).invoke(km.config, boolValue);
 							
 							if (ret) {
-								sender.sendMessage("Config : parameter [" + before + "] set to [" + args[i] + "].");	
+								km.logs.writeMsg(player, "Config : parameter [" + before + "] set to [" + args[i] + "].");	
 							} else {
-								sender.sendMessage("Config : parameter [" + before + "] cannot be set to [" + boolValue + "] due to current game state.");
+								km.logs.writeMsg(player, "Config : parameter [" + before + "] cannot be set to [" + boolValue + "] due to current game state.");
 							}
 						} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
 								| NoSuchMethodException | SecurityException | ClassNotFoundException e) {
@@ -86,9 +88,9 @@ public class KuffleConfig implements CommandExecutor {
 							boolean ret = (boolean) Class.forName("fr.kosmosuniverse.kuffle.Core.Config").getMethod(km.config.intElems.get(before), int.class).invoke(km.config, intValue);
 
 							if (ret) {
-								sender.sendMessage("Config : parameter [" + before + "] set to [" + args[i] + "].");	
+								km.logs.writeMsg(player, "Config : parameter [" + before + "] set to [" + args[i] + "].");	
 							} else {
-								sender.sendMessage("Config : parameter [" + before + "] cannot be set to [" + intValue + "] due to current game state.");
+								km.logs.writeMsg(player, "Config : parameter [" + before + "] cannot be set to [" + intValue + "] due to current game state.");
 							}
 						} catch (NumberFormatException e) {
 							player.sendMessage(km.config.intErrorMsg);
@@ -97,7 +99,7 @@ public class KuffleConfig implements CommandExecutor {
 							e.printStackTrace();
 						} 
 					} else {
-						player.sendMessage("Key " + before + " not recognized.");
+						km.logs.writeMsg(player, "Key " + before + " not recognized.");
 					}
 				}
 			}

@@ -40,16 +40,18 @@ public class KuffleAdminLoad implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
+		km.logs.logMsg(player, " achieved command <kadminload>");
+		
 		if (!player.hasPermission("kadminload")) {
-			player.sendMessage("You are not allowed to do this command.");
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
 		if (km.games.size() != 0) {
 			if (km.games.get(0).getEnable()) {
-				player.sendMessage("A game is already launched.");
+				km.logs.logMsg(player, "A game is already launched.");
 			} else {
-				player.sendMessage("There already areplayers in list.");
+				km.logs.logMsg(player, "There already areplayers in list.");
 			}
 			return false;
 		}

@@ -70,6 +70,12 @@ public class ChooseBlockInList {
 			}
 		}
 		
+		try {
+			writer.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		return finalList;
 	}
 

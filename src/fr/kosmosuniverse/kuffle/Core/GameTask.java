@@ -132,7 +132,7 @@ public class GameTask {
 					}
 					
 					if (currentBlock != null && System.currentTimeMillis() - previousShuffle > (time * 60000)) {
-						player.sendMessage("§4You didn't find your block. Let's give you another one.§r");
+						km.logs.writeMsg(player, "§4You didn't find your block. Let's give you another one.§r");
 						currentBlock = null;
 					} else if (blockCount < (km.config.getBlockPerAge() + 1)) {
 						if (currentBlock != null && (found || player.getLocation().add(0, -1, 0).getBlock().getType() == Material.matchMaterial(currentBlock) || player.getLocation().getBlock().getType() == Material.matchMaterial(currentBlock))) {
@@ -189,6 +189,7 @@ public class GameTask {
 					
 					if (age == km.config.getMaxAges()) {
 						player.playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_TWINKLE_FAR, 1f, 1f);
+						km.logs.logBroadcastMsg(player.getName() + " complete this game !");
 						Bukkit.broadcastMessage("§1" + player.getName() + " §6§lcomplete this game !§r");
 						exit = true;
 						previousShuffle = -1;

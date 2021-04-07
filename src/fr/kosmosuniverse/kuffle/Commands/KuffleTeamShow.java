@@ -21,8 +21,10 @@ public class KuffleTeamShow implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
+		km.logs.logMsg(player, "achieved command <kteam-show>");
+		
 		if (!player.hasPermission("kteam-show")) {
-			player.sendMessage("You are not allowed to do this command.");
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
 			return false;
 		}
 		
@@ -31,12 +33,12 @@ public class KuffleTeamShow implements CommandExecutor {
 		}
 		
 		if (args.length == 0) {
-			player.sendMessage(km.teams.toString());
+			km.logs.writeMsg(player, km.teams.toString());
 		} else if (args.length == 1) {
 			if (km.teams.hasTeam(args[0])) {
-				player.sendMessage(km.teams.printTeam(args[0]));
+				km.logs.writeMsg(player, km.teams.printTeam(args[0]));
 			} else {
-				player.sendMessage("This team does not exists, please choose another one.");
+				km.logs.writeMsg(player, "This team does not exists, please choose another one.");
 			}
 		}
 		

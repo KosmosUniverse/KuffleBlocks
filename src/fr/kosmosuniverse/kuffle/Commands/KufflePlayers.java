@@ -23,13 +23,16 @@ public class KufflePlayers implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
+		km.logs.logMsg(player, "achieved command <kplayers>");
+		
 		if (!player.hasPermission("kplayers")) {
-			player.sendMessage("You are not allowed to do this command.");
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
+			
 			return false;
 		}
 		
 		if (km.games.size() == 0 || !km.games.get(0).getEnable()) {
-			player.sendMessage("Game has not launched yet.");
+			km.logs.writeMsg(player, "Game has not launched yet.");
 			
 			return false;
 		}

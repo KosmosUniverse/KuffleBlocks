@@ -20,30 +20,37 @@ public class KuffleSkip implements CommandExecutor {
 		if (!(sender instanceof Player))
 			return false;
 		
-		Player p = (Player) sender;
+		Player player = (Player) sender;
 		
-		if (!p.hasPermission("kskip")) {
-			p.sendMessage("You are not allowed to do this command.");
+		km.logs.logMsg(player, "achieved command <kskip>");
+		
+		if (!player.hasPermission("kskip")) {
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
+			
 			return false;
 		}
 		
 		if (km.games.size() == 0) {
-			p.sendMessage("No game launched, you can launch a game with kstart command.");
+			km.logs.writeMsg(player, "No game launched, you can launch a game with kstart command.");
+			
 			return false;
 		} else if (!km.games.get(0).getEnable()) {
-			p.sendMessage("No game launched, you can launch a game with kstart command.");
+			km.logs.writeMsg(player, "No game launched, you can launch a game with kstart command.");
+			
 			return false;
 		}
 
 		if (!km.config.getSkip()) {
-			p.sendMessage("This command is disabled in config.");
+			km.logs.writeMsg(player, "This command is disabled in config.");
+			
 			return false;
 		}
 		
 		for (GameTask gt : km.games) {
-			if (gt.getPlayer().equals(p)) {
+			if (gt.getPlayer().equals(player)) {
 				if ((gt.getAge() + 1) < km.config.getSkipAge()) {
-					p.sendMessage("You can't skip block this age.");
+					km.logs.writeMsg(player, "You can't skip block this age.");
+					
 					return false;
 				}
 				if (gt.getBlockCount() > 1) {
@@ -52,17 +59,18 @@ public class KuffleSkip implements CommandExecutor {
 					String tmp = gt.getCurrentBlock();
 					
 					gt.skip();
-					sender.sendMessage("Block [" + tmp + "] was skipped.");
+					km.logs.writeMsg(player, "Block [" + tmp + "] was skipped.");
 					
 					return true;
 				} else {
-					p.sendMessage("You can't skip the first block of the age.");
+					km.logs.writeMsg(player, "You can't skip the first block of the age.");
+					
 					return false;
 				}
 			}
 		}
 		
-		p.sendMessage("You are not in the game.");
+		km.logs.writeMsg(player, "You are not in the game.");
 		
 		return false;
 	}

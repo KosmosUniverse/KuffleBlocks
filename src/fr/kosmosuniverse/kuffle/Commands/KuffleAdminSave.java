@@ -29,16 +29,19 @@ public class KuffleAdminSave implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
+		km.logs.logMsg(player, "achieved command <kadminsave>");
+		
 		if (!player.hasPermission("kadminsave")) {
-			player.sendMessage("You are not allowed to do this command.");
+			km.logs.writeMsg(player, "You are not allowed to do this command.");
+			
 			return false;
 		}
 		
 		if (km.games.size() == 0) {
-			player.sendMessage("No game launched, you can launch a game with kstart command.");
+			km.logs.writeMsg(player, "No game launched, you can launch a game with kstart command.");
 			return false;
 		} else if (!km.games.get(0).getEnable()) {
-			player.sendMessage("No game launched, you can launch a game with kstart command.");
+			km.logs.writeMsg(player, "No game launched, you can launch a game with kstart command.");
 			return false;
 		}
 		
