@@ -8,6 +8,10 @@ commands:
    kb-multiblocks:
       usage: /<command>
       description: command to see multiBlocks
+   kb-spawn-multiblock:
+      usage: /<command> <MultiblockName>
+      description: command to spawn multiBlock
+      permission: inferno.flagrate
    kb-config:
       usage: /<command> [<key> <value>]*
       description: command to see or change game configuration
@@ -107,6 +111,9 @@ permissions:
    kb-multiblocks:
       description: command to see multiBlocks
       default: true
+   kb-spawn-multiblock:
+      description: command to spawn multiBlock
+      default: op
    kb-config:
       default: op
       description: command to see or change game configuration

@@ -153,6 +153,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kb-validate-age").setExecutor(new KuffleValidate(this));
 		getCommand("kb-players").setExecutor(new KufflePlayers(this));
 		getCommand("kb-multiblocks").setExecutor(new KuffleMultiBlocks(this));
+		getCommand("kb-spawn-multiblock").setExecutor(new KuffleSpawnMuliblock(this));
 		
 		getCommand("kb-team-create").setExecutor(new KuffleTeamCreate(this));
 		getCommand("kb-team-delete").setExecutor(new KuffleTeamDelete(this));
@@ -162,7 +163,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kb-team-remove-player").setExecutor(new KuffleTeamRemovePlayer(this));
 		getCommand("kb-team-reset-players").setExecutor(new KuffleTeamResetPlayers(this));
 		getCommand("kb-team-random-player").setExecutor(new KuffleTeamRandomPlayer(this));
-		System.out.println("[KuffleBlocks] " + Utils.getLangString(this, null, "ADD_CMD").replace("%i", "25"));
+		System.out.println("[KuffleBlocks] " + Utils.getLangString(this, null, "ADD_CMD").replace("%i", "27"));
 
 		getCommand("kb-config").setTabCompleter(new KuffleConfigTab(this));
 		getCommand("kb-list").setTabCompleter(new KuffleListTab(this));
@@ -170,6 +171,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kb-ageblocks").setTabCompleter(new KuffleAgeBlocksTab(this));
 		getCommand("kb-validate").setTabCompleter(new KuffleValidateTab(this));
 		getCommand("kb-validate-age").setTabCompleter(new KuffleValidateTab(this));
+		getCommand("kb-spawn-multiblock").setTabCompleter(new KuffleSpawnMultiBlocksTab(this));
 		
 		getCommand("kb-team-create").setTabCompleter(new KuffleTeamCreateTab(this));
 		getCommand("kb-team-delete").setTabCompleter(new KuffleTeamDeleteTab(this));

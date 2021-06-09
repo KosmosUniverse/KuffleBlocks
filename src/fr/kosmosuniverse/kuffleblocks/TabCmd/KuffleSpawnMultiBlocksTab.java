@@ -10,11 +10,11 @@ import org.bukkit.entity.Player;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
 
-public class KuffleMultiBlocksTab implements TabCompleter {
+public class KuffleSpawnMultiBlocksTab implements TabCompleter {
 	private KuffleMain km;
 	private ArrayList<String> list = new ArrayList<String>();
 	
-	public KuffleMultiBlocksTab(KuffleMain _km) {
+	public KuffleSpawnMultiBlocksTab(KuffleMain _km) {
 		km = _km;
 		
 		for (String key : km.multiBlock.getMultiBlocks().keySet()) {
@@ -27,7 +27,7 @@ public class KuffleMultiBlocksTab implements TabCompleter {
 		if (!(sender instanceof Player))
 			return null;
 		
-		if (cmd.getName().equalsIgnoreCase("kb-multiblocks")) {
+		if (cmd.getName().equalsIgnoreCase("kb-spawn-multiblock")) {
 			if (args.length == 1) {
 				return list;	
 			}

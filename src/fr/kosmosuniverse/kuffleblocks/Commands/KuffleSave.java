@@ -105,6 +105,8 @@ public class KuffleSave implements CommandExecutor {
 		Utils.removeTemplates(km);
 		km.scores.clear();
 		km.games.clear();
+		km.loop.kill();
+		
 		km.paused = false;
 		km.gameStarted = false;
 		km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_SAVED"));

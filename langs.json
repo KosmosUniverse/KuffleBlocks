@@ -80,16 +80,16 @@
 		"fr" : "Il n'y a aucun joueur dans la liste de jeu."
 	},
 	"GAME_ALREADY_PAUSED" : {
-		"en" : "Your game is already paused, you can resume it with ki-resume command.",
-		"fr" : "Le jeu est déjà en pause, vous pouvez le relancer avec la commande ki-resume."
+		"en" : "Your game is already paused, you can resume it with kb-resume command.",
+		"fr" : "Le jeu est déjà en pause, vous pouvez le relancer avec la commande kb-resume."
 	},
 	"GAME_PAUSED" : {
 		"en" : "Game Paused",
 		"fr" : "Le jeu en pause"
 	},
 	"GAME_ALREADY_RUNNING" : {
-		"en" : "Your game is already running, you can pause it with ki-pause command.",
-		"fr" : "Le jeu est déjà en cours, vous pouvez le mettre en pause avec la commande ki-pause."
+		"en" : "Your game is already running, you can pause it with kb-pause command.",
+		"fr" : "Le jeu est déjà en cours, vous pouvez le mettre en pause avec la commande kb-pause."
 	},
 	"GAME_RESUMED" : {
 		"en" : "Game Resumed",
@@ -103,13 +103,13 @@
 		"en" : "This command is disabled in config.",
 		"fr" : "Cette commande est désactivée par la configuration."
 	},
-	"ITEM_SKIPPED" : {
-		"en" : "Item [#] was skipped for player <#>.",
-		"fr" : "L'objet [#] a été passé pour le joueur <#>."
+	"BLOCK_SKIPPED" : {
+		"en" : "Block [#] was skipped for player <#>.",
+		"fr" : "Le bloc [#] a été passé pour le joueur <#>."
 	},
 	"PLAYER_NOT_FOUND" : {
-		"en" : "Can't find player <#> to skip his item.",
-		"fr" : "Impossible de trouver le joueur <#> pour passer son objet."
+		"en" : "Can't find player <#> to skip his block.",
+		"fr" : "Impossible de trouver le joueur <#> pour passer son bloc."
 	},
 	"PLAYER_NOT_IN_TEAM" : {
 		"en" : "Team are enabled and not all players are in a Team.",
@@ -132,12 +132,12 @@
 		"fr" : "L'équipe <#> n'existe pas, choisissez un autre nom."
 	},
 	"TEAM_FULL" : {
-		"en" : "This team is already full, please add him in another team or change team size with ki-config command.",
-		"fr" : "Cette équipe est déjà complète, ajoutez ce joueur a une autre équipe ou changez la taille des équipes avec la commande ki-config."
+		"en" : "This team is already full, please add him in another team or change team size with kb-config command.",
+		"fr" : "Cette équipe est déjà complète, ajoutez ce joueur a une autre équipe ou changez la taille des équipes avec la commande kb-config."
 	},
 	"PLAYER_NOT_IN_GAME" : {
-		"en" : "This player is not in the game, please add him in the game list with ki-list command.",
-		"fr" : "Ce joueur n'est pas dans la liste de jeu, vous pouvez l'ajouter avec la commande ki-list."
+		"en" : "This player is not in the game, please add him in the game list with kb-list command.",
+		"fr" : "Ce joueur n'est pas dans la liste de jeu, vous pouvez l'ajouter avec la commande kb-list."
 	},
 	"TEAM_ADD_PLAYER" : {
 		"en" : "Player <#> added to team <##>.",
@@ -160,8 +160,8 @@
 		"fr" : "Ce joueur est déjà dans cette équipe."
 	},
 	"TEAM_ENABLE" : {
-		"en" : "Please enable Teams with ki-config command.",
-		"fr" : "Vous devez activer les équipes avec la commande ki-config."
+		"en" : "Please enable Teams with kb-config command.",
+		"fr" : "Vous devez activer les équipes avec la commande kb-config."
 	},
 	"TEAM_EXISTS" : {
 		"en" : "Team <#> already exists, please choose another name.",
@@ -176,12 +176,12 @@
 		"fr" : "L'équipe <#> a été supprimée."
 	},
 	"TEAM_TOO_MANY_PLAYERS" : {
-		"en" : "There are too many players for that number of team, please create more teams or change team size with ki-config command.",
-		"fr" : "Il y a trop de joueur pour ce nombre d'équipe, ajoutez des équipes ou changez la taille des équipes avec la commande ki-config."
+		"en" : "There are too many players for that number of team, please create more teams or change team size with kb-config command.",
+		"fr" : "Il y a trop de joueur pour ce nombre d'équipe, ajoutez des équipes ou changez la taille des équipes avec la commande kb-config."
 	},
 	"TEAM_ALREADY_PLAYERS" : {
-		"en" : "There already are players in some teams, please reset all teams using ki-team-reset-players command.",
-		"fr" : "Il y a déjà des joueur dans certaines équipes, videz toutes les équipes avec la commande ki-team-reset-players."
+		"en" : "There already are players in some teams, please reset all teams using kb-team-reset-players command.",
+		"fr" : "Il y a déjà des joueur dans certaines équipes, videz toutes les équipes avec la commande kb-team-reset-players."
 	},
 	"RANDOM" : {
 		"en" : "Randomly add %i players in %j teams.",
@@ -199,20 +199,20 @@
 		"en" : "Team <#> player list was reseted.",
 		"fr" : "La liste de joueur de l'équipe <#> a été vidée."
 	},
-	"ITEM_VALIDATED" : {
-		"en" : "Item [#] was validated for player <#>.",
-		"fr" : "L'objet [#] a été validé pour le joueur <#>."
+	"BLOCK_VALIDATED" : {
+		"en" : "Block [#] was validated for player <#>.",
+		"fr" : "Le bloc [#] a été validé pour le joueur <#>."
 	},
-	"VALIDATE_PLAYER_ITEM" : {
-		"en" : "Can't find player to validate his item.",
-		"fr" : "Impossible de trouver le joueur pour valider son objet."
+	"VALIDATE_PLAYER_BLOCK" : {
+		"en" : "Can't find player to validate his block.",
+		"fr" : "Impossible de trouver le joueur pour valider son bloc."
 	},
 	"GAME_ALREADY_FINISHED" : {
 		"en" : "Game is already finished for player <#>.",
 		"fr" : "Le joueur <#> a déjà fini sa partie."
 	},
 	"AGE_VALIDATED" : {
-		"en" : "Age [#] wa validated for player <#>.",
+		"en" : "Age [#] was validated for player <#>.",
 		"fr" : "L'age [#] a été validé pour le joueur <#>."
 	},
 	"VALIDATE_PLAYER_AGE" : {
@@ -273,7 +273,7 @@
 	},
 	"SKIP_COUNT" : {
 		"en" : " - Skip Count: %i",
-		"fr" : " - Compteur d'objet sautés: %i"
+		"fr" : " - Compteur de bloc sautés: %i"
 	},
 	"TEMPLATE_COUNT" : {
 		"en" : " - Template Count: %i",
@@ -292,34 +292,34 @@
 		"fr" : "    - Age %s: Abandoné"
 	},
 	"CANT_SKIP_AGE" : {
-		"en" : "You can't skip item this age.",
-		"fr" : "Vous ne pouvez pas passer d'objet à cet Age."
+		"en" : "You can't skip block this age.",
+		"fr" : "Vous ne pouvez pas passer de bloc à cet Age."
 	},
 	"CANT_SKIP_FIRST" : {
-		"en" : "You can't skip the first item of the age.",
-		"fr" : "Vous ne pouvez pas passer le premier objet de l'Age."
+		"en" : "You can't skip the first block of the age.",
+		"fr" : "Vous ne pouvez pas passer le premier block de l'Age."
 	},
-	"ITEM_SKIP" : {
-		"en" : "Item [#] was skipped.",
-		"fr" : "L'objet [#] a été passé."
+	"BLOCK_SKIP" : {
+		"en" : "Block [#] was skipped.",
+		"fr" : "Le bloc [#] a été passé."
 	},
-	"ITEMS_SKIP" : {
-		"en" : "Items [#] and [##] were skipped.",
-		"fr" : "Les objets [#]  et [##] ont été passé."
+	"BLOCKS_SKIP" : {
+		"en" : "Blocks [#] and [##] were skipped.",
+		"fr" : "Les blocs [#]  et [##] ont été passé."
 	},
 	"GAME_COMPLETE" : {
 		"en" : "<#>  complete this game !",
 		"fr" : "<#> a fini sa partie !"
 	},
-	"ITEM_NOT_FOUND" : {
-		"en" : "You didn't find your item. Let's give you another one.",
-		"fr" : "Vous n'avez pas trouvé votre objet. En voici un nouveau."
+	"BLOCK_NOT_FOUND" : {
+		"en" : "You didn't find your block. Let's give you another one.",
+		"fr" : "Vous n'avez pas trouvé votre bloc. En voici un nouveau."
 	},
 	"TEAM_WAIT" : {
 		"en" : "Waiting for other players of the team.",
 		"fr" : "En attente des autres joueurs de l'équipe."
 	},
-	"ITEM_DOUBLE" : {
+	"BLOCK_DOUBLE" : {
 		"en" : "[#] or [##]",
 		"fr" : "[#] ou [##]"
 	},

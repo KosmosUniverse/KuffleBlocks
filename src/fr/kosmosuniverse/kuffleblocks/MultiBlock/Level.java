@@ -3,6 +3,7 @@ package fr.kosmosuniverse.kuffleblocks.MultiBlock;
 import java.util.ArrayList;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 
 public class Level {
 	private double levelNb;
@@ -66,8 +67,11 @@ public class Level {
 			for (Pattern p : row) {
 				tmp = loc.clone();
 				tmp.add(p.getX() * direction, p.getY(), p.getZ() * direction);
-				if (tmp.getBlock().getType() != p.getMaterial())
+				if (tmp.getBlock().getType() != p.getMaterial() &&
+						(p.getMaterial() != Material.AIR ||
+						(tmp.getBlock().getType() != Material.CAVE_AIR && tmp.getBlock().getType() != Material.VOID_AIR))) {
 					return false;
+				}
 			}
 		}
 		
@@ -81,8 +85,11 @@ public class Level {
 			for (Pattern p : row) {
 				tmp = loc.clone();
 				tmp.add(p.getX() * direction, p.getY(), p.getZ() * direction);
-				if (tmp.getBlock().getType() != p.getMaterial())
+				if (tmp.getBlock().getType() != p.getMaterial() &&
+						(p.getMaterial() != Material.AIR ||
+						(tmp.getBlock().getType() != Material.CAVE_AIR && tmp.getBlock().getType() != Material.VOID_AIR))) {
 					return false;
+				}
 			}
 		}
 		
@@ -100,6 +107,14 @@ public class Level {
 			for (Pattern p : row) {
 				tmp = loc.clone();
 				tmp.add(p.getX(), p.getY(), p.getZ());
+				tmp.getBlock().setType(p.getMaterial());
+			}
+		}
+		
+		for (ArrayList<Pattern> row : levelNS) {
+			for (Pattern p : row) {
+				tmp = loc.clone();
+				tmp.add(p.getX(), p.getY() + 20, p.getZ());
 				tmp.getBlock().setType(p.getMaterial());
 			}
 		}

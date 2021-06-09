@@ -33,7 +33,7 @@ public class KuffleAgeBlocksTab implements TabCompleter  {
 			return null;
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("kb-ageitems")) {
+		if (cmd.getName().equalsIgnoreCase("kb-ageblocks")) {
 			if (args.length == 1) {
 				return ages;
 			}

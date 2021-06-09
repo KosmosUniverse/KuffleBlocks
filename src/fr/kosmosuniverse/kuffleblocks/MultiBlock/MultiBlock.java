@@ -52,7 +52,7 @@ public class MultiBlock {
 	}
 	
 	public void spawnMultiBlock(Player player) {
-		Location newLoc = new Location(player.getLocation().getWorld(), player.getLocation().getBlockX(), player.getLocation().getBlockY(), player.getLocation().getBlockZ());
+		Location newLoc = new Location(player.getLocation().getWorld(), player.getLocation().getBlockX(), player.getLocation().getBlockY() + 20, player.getLocation().getBlockZ());
 
 		newLoc.getBlock().setType(this.Core);
 
