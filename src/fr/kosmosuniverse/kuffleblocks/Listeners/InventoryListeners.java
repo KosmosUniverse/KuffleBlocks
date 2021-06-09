@@ -12,19 +12,23 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
-import fr.kosmosuniverse.kuffleblocks.Core.GameTask;
+import fr.kosmosuniverse.kuffleblocks.Core.Game;
 import fr.kosmosuniverse.kuffleblocks.Crafts.ACrafts;
 import fr.kosmosuniverse.kuffleblocks.MultiBlock.AMultiblock;
 
-public class InventoryRecipeListener implements Listener {
+public class InventoryListeners implements Listener {
 	private KuffleMain km;
 	
-	public InventoryRecipeListener(KuffleMain _km) {
-		this.km = _km;
+	public InventoryListeners(KuffleMain _km) {
+		km = _km;
 	}
 	
 	@EventHandler
 	public void onItemClick(InventoryClickEvent event) {
+		if (!km.gameStarted) {
+			return ;
+		}
+		
 		Player player = (Player) event.getWhoClicked();
 		ItemStack item = event.getCurrentItem();
 		Inventory current = event.getClickedInventory();
@@ -36,15 +40,15 @@ public class InventoryRecipeListener implements Listener {
 			return;
 		}
 		
-		if (event.getView().getTitle() == "§8AllCustomCrafts") {
+		if (event.getView().getTitle().equals("§8AllCustomCrafts")) {
 			event.setCancelled(true);
 			
-			if ((craft = km.crafts.findCraftInventoryByItem(item.getType())) != null) {
+			if ((craft = km.crafts.findCraftInventoryByItem(item)) != null) {
 				if ((inv = craft.getInventoryRecipe()) != null) {
 					player.openInventory(inv);
 				}
 			}
-		} else if (event.getView().getTitle() == "§8AllMultiBlocks") {
+		} else if (event.getView().getTitle().equals("§8AllMultiBlocks")) {
 			event.setCancelled(true);
 			
 			if ((multiBlock = km.multiBlock.findMultiBlockByItem(item.getType())) != null) {
@@ -69,13 +73,13 @@ public class InventoryRecipeListener implements Listener {
 			
 			if (item.getType() == Material.PLAYER_HEAD) {
 				if (!item.getItemMeta().getDisplayName().equals(player.getDisplayName())) {
-					Player p = findPlayer(item.getItemMeta().getDisplayName());
+					Game tmpGame = km.games.get(item.getItemMeta().getDisplayName());
 					
-					if (p != null) {
+					if (tmpGame != null) {
 						if (player.getGameMode() != GameMode.SPECTATOR) {
 							player.setGameMode(GameMode.SPECTATOR);
 						}
-						player.teleport(p);	
+						player.teleport(tmpGame.getPlayer());	
 					}
 				}
 			}
@@ -98,15 +102,5 @@ public class InventoryRecipeListener implements Listener {
 				}
 			}
 		}
-	}
-	
-	private Player findPlayer(String name) {
-		for (GameTask gt : km.games) {
-			if (gt.getPlayer().getDisplayName().equals(name)) {
-				return gt.getPlayer();
-			}
-		}
-		
-		return null;
 	}
 }

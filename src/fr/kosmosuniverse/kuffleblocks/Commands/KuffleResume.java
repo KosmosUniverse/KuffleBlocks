@@ -9,7 +9,7 @@ import org.bukkit.potion.PotionEffectType;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
 import fr.kosmosuniverse.kuffleblocks.Core.ActionBar;
-import fr.kosmosuniverse.kuffleblocks.Core.GameTask;
+import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 
 public class KuffleResume implements CommandExecutor {
 	private KuffleMain km;
@@ -25,36 +25,36 @@ public class KuffleResume implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
-		km.logs.logMsg(player, "achieved command <kresume>");
+		km.logs.logMsg(player, Utils.getLangString(km, player.getName(), "CMD_PERF").replace("<#>", "<kb-resume>"));
 		
-		if (!player.hasPermission("kresume")) {
-			km.logs.writeMsg(player, "You are not allowed to do this command.");
+		if (!player.hasPermission("kb-resume")) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_ALLOWED"));
 			return false;
 		}
 		
-		if (km.games.size() == 0) {
-			km.logs.writeMsg(player, "You need to first add people with klist command, launch a game with kstart command.");
+		if (!km.gameStarted) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_NOT_LAUNCHED"));
 			return false;
 		}
 		
-		if (km.games.get(0).getEnable()) {
-			km.logs.writeMsg(player, "Your game is already running, you can pause it with kpause command.");
+		if (!km.paused) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_ALREADY_RUNNING"));
 			return false;
 		}
 		
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				for (GameTask gt : km.games) {
-					ActionBar.sendRawTitle("{\"text\":\"3\",\"bold\":true,\"color\":\"red\"}", gt.getPlayer());
+				for (String playerName : km.games.keySet()) {
+					ActionBar.sendRawTitle("{\"text\":\"3\",\"bold\":true,\"color\":\"red\"}", km.games.get(playerName).getPlayer());
 				}
 			}
 		}, 20);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				for (GameTask gt : km.games) {
-					ActionBar.sendRawTitle("{\"text\":\"2\",\"bold\":true,\"color\":\"yellow\"}", gt.getPlayer());
+				for (String playerName : km.games.keySet()) {
+					ActionBar.sendRawTitle("{\"text\":\"2\",\"bold\":true,\"color\":\"yellow\"}", km.games.get(playerName).getPlayer());
 				}
 			}
 		}, 40);
@@ -62,8 +62,8 @@ public class KuffleResume implements CommandExecutor {
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				for (GameTask gt : km.games) {
-					ActionBar.sendRawTitle("{\"text\":\"1\",\"bold\":true,\"color\":\"green\"}", gt.getPlayer());
+				for (String playerName : km.games.keySet()) {
+					ActionBar.sendRawTitle("{\"text\":\"1\",\"bold\":true,\"color\":\"green\"}", km.games.get(playerName).getPlayer());
 				}
 			}
 		}, 60);
@@ -71,16 +71,12 @@ public class KuffleResume implements CommandExecutor {
 		Bukkit.getScheduler().scheduleSyncDelayedTask(km, new Runnable() {
 			@Override
 			public void run() {
-				for (GameTask gt : km.games) {
-					ActionBar.sendRawTitle("{\"text\":\"Game Resumed!\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
-				}
-
 				km.paused = false;
 				
-				for (GameTask gt : km.games) {
-					gt.enable();
-					ActionBar.sendRawTitle("{\"text\":\"Game Resumed!\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
-					gt.getPlayer().removePotionEffect(PotionEffectType.INVISIBILITY);
+				for (String playerName : km.games.keySet()) {
+					km.games.get(playerName).resume();
+					ActionBar.sendRawTitle("{\"text\":\"" + Utils.getLangString(km, player.getName(), "GAME_RESUMED") + "!\",\"bold\":true,\"color\":\"dark_purple\"}", km.games.get(playerName).getPlayer());
+					km.games.get(playerName).getPlayer().removePotionEffect(PotionEffectType.INVISIBILITY);
 				}
 			}
 		}, 80);

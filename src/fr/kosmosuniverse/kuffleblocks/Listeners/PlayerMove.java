@@ -20,9 +20,8 @@ public class PlayerMove implements Listener {
 	}
 	
 	@EventHandler
-	public void onPauseEvent(PlayerMoveEvent event) {
-		if (km.paused) {
-			event.setCancelled(true);
+	public void onActivateMultiBlockEvent(PlayerMoveEvent event) {
+		if (!km.gameStarted) {
 			return ;
 		}
 		
@@ -46,6 +45,10 @@ public class PlayerMove implements Listener {
 	
 	@EventHandler
 	public void onCorePlacedEvent(BlockPlaceEvent event) {
+		if (!km.gameStarted) {
+			return ;
+		}
+		
 		Player player = event.getPlayer();
 		Block block = event.getBlockPlaced();
 		AMultiblock multiBlock;

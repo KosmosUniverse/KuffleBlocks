@@ -8,10 +8,13 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 
+import fr.kosmosuniverse.kuffleblocks.KuffleMain;
+import fr.kosmosuniverse.kuffleblocks.utils.Utils;
+
 public class SpreadPlayer {
-    public static ArrayList<Location> spreadPlayers(Player sender, double distance, long min_radius, ArrayList<Team> teams, ArrayList<Player> players) {
+    public static ArrayList<Location> spreadPlayers(KuffleMain km, Player sender, double distance, long min_radius, ArrayList<Team> teams, ArrayList<Player> players) {
         if (distance < 0.0D) {
-            sender.sendMessage(ChatColor.RED + "Distance is too small.");
+            sender.sendMessage(ChatColor.RED + Utils.getLangString(km, null, "TOO_SHORT"));
             return null;
         }
 
@@ -92,10 +95,7 @@ public class SpreadPlayer {
         }
     	
     	if (teams != null) {
-    		System.out.println("Top !");
     		for (int cnt = 0; cnt < teams.size(); cnt++) {
-        		System.out.println("Team: <" + teams.get(cnt) + ">.");
-        		
     			 for (Player player : teams.get(cnt).players) {
     				 Location location = locations.get(cnt);
     	        		

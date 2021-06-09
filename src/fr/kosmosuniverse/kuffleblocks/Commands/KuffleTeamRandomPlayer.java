@@ -1,7 +1,7 @@
 package fr.kosmosuniverse.kuffleblocks.Commands;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.Random;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -26,15 +26,15 @@ public class KuffleTeamRandomPlayer implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
-		km.logs.logMsg(player, "achieved command <kteam-random-player>");
+		km.logs.logMsg(player, Utils.getLangString(km, player.getName(), "CMD_PERF").replace("<#>", "<kb-team-random-player>"));
 		
-		if (!player.hasPermission("kteam-random-player")) {
-			km.logs.writeMsg(player, "You are not allowed to do this command.");
+		if (!player.hasPermission("kb-team-random-player")) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_ALLOWED"));
 			return false;
 		}
 		
-		if (km.games.size() > 0 && km.games.get(0).getEnable()) {
-			km.logs.writeMsg(player, "Game is already launched, you cannot modify teams during the game.");
+		if (km.games.size() > 0 && km.gameStarted) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_ALREADY_LAUNCHED"));
 			return true;
 		}
 		
@@ -42,19 +42,24 @@ public class KuffleTeamRandomPlayer implements CommandExecutor {
 			return false;
 		}
 		
+		if (km.games.size() == 0) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "LIST_EMPTY"));
+			return true;
+		}
+		
 		if (calcMAxPlayers() < Utils.getPlayerList(km.games).size()) {
-			km.logs.writeMsg(player, "There are too many players for that number of team, please create more teams or change team size with kconfig command.");
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "TEAM_TOO_MANY_PLAYERS"));
 			return true;
 		}
 		
 		if (!checkEmptyTeams()) {
-			km.logs.writeMsg(player, "There already are players in some teams, please reset all teams using '/kteam-reset-players <Team>' command.");
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "TEAM_ALREADY_PLAYERS"));
 			return true;
 		}
 		
 		int cnt = 0;
 		ArrayList<Player> players = Utils.getPlayerList(km.games);
-		Random r = new Random();
+		SecureRandom r = new SecureRandom();
 		
 		while (players.size() > 0) {
 			int idx = r.nextInt(players.size());
@@ -70,8 +75,8 @@ public class KuffleTeamRandomPlayer implements CommandExecutor {
 			}
 		}
 		
-		km.logs.writeMsg(player, "Randomly add " + Utils.getPlayerNames(km.games).size() + " in " + km.teams.getTeams().size() + " teams.");
-		
+		km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "RANDOM").replace("%i", "" + Utils.getPlayerNames(km.games).size()).replace("%j", "" + km.teams.getTeams().size()));
+
 		return true;
 	}
 	

@@ -1,0 +1,350 @@
+{
+	"CMD_PERF" : {
+		"en" : "Performed command <#>.",
+		"fr" : "A effectué la commande <#>."
+	},
+	"NOT_ALLOWED" : {
+		"en" : "You are not allowed to do this command.",
+		"fr" : "Vous n'êtes pas autorisé a effectuer cette commande."
+	},
+	"NOT_PLAYING" : {
+		"en" : "You are not playing in this game.",
+		"fr" : "Vous ne jouez pas dans cette partie."
+	},
+	"GAME_NOT_LAUNCHED" : {
+		"en" : "The game has not been launched yet.",
+		"fr" : "Le jeu n'a pas encore commencé."
+	},
+	"AGE_NOT_EXISTS" : {
+		"en" : "This age does not exist.",
+		"fr" : "Cet Age n'existe pas."
+	},
+	"CONFIG_SET" : {
+		"en" : "Config: parameter [#] set to [##].",
+		"fr" : "Configuration : le paramètre [#] à été défini sur la valeur [##]."
+	},
+	"CONFIG_NOT_SET" : {
+		"en" : "Config: parameter [#] cannot be set to [##] due to current game state.",
+		"fr" : "Configuration : le paramètre [#] n'a pas pu être défini sur [##] à cause de l'état du jeu."
+	},
+	"KEY_NOT_REC" : {
+		"en" : "Key [#] not recognized.",
+		"fr" : "La clé [#] n'est pas reconnue."
+	},
+	"LANG_SET" : {
+		"en" : "Language set to [#].",
+		"fr" : "La langue a été définie sur [#]."
+	},
+	"REQ_LANG_NOT_AVAIL" : {
+		"en" : "Requested language is not available.",
+		"fr" : "Le langage demandé n'est pas disponible."
+	},
+	"NO_PLAYERS" : {
+		"en" : "No players in the list.",
+		"fr" : "Il n'y a aucun joueur dans la liste."
+	},
+	"PLAYER_LIST" : {
+		"en" : "Player list contains:",
+		"fr" : "La liste de joueur contient :"
+	},
+	"LIST_RESET" : {
+		"en" : "Game list was reseted.",
+		"fr" : "La liste de jeu a été remise à zéro."
+	},
+	"ADDED_LIST" : {
+		"en" : "Added %i players to the game list.",
+		"fr" : "Ajout de %i joueurs à la liste de jeu."
+	},
+	"ADDED_ONE_LIST" : {
+		"en" : "Added 1 player to the game list.",
+		"fr" : "Ajout d'un joueur dans la liste de jeu."
+	},
+	"PLAYER_ALREADY_LIST" : {
+		"en" : "This player is already in game list",
+		"fr" : "Ce joueur est déjà dans la liste de jeu"
+	},
+	"REMOVED_LIST" : {
+		"en" : "Removed 1 player from game list.",
+		"fr" : "Un joueur a été supprimmé de la liste de jeu."
+	},
+	"GAME_LAUNCHED" : {
+		"en" : "A game is already launched.",
+		"fr" : "Le jeu est déjà lancé"
+	},
+	"LIST_NOT_EMPTY" : {
+		"en" : "There already are players in list.",
+		"fr" : "Il y a déjà des joueurs dans la liste de jeu."
+	},
+	"LIST_EMPTY" : {
+		"en" : "There are no players in game list.",
+		"fr" : "Il n'y a aucun joueur dans la liste de jeu."
+	},
+	"GAME_ALREADY_PAUSED" : {
+		"en" : "Your game is already paused, you can resume it with ki-resume command.",
+		"fr" : "Le jeu est déjà en pause, vous pouvez le relancer avec la commande ki-resume."
+	},
+	"GAME_PAUSED" : {
+		"en" : "Game Paused",
+		"fr" : "Le jeu en pause"
+	},
+	"GAME_ALREADY_RUNNING" : {
+		"en" : "Your game is already running, you can pause it with ki-pause command.",
+		"fr" : "Le jeu est déjà en cours, vous pouvez le mettre en pause avec la commande ki-pause."
+	},
+	"GAME_RESUMED" : {
+		"en" : "Game Resumed",
+		"fr" : "Le jeu relancé"
+	},
+	"GAME_SAVED" : {
+		"en" : "Game Saved and Stopped.",
+		"fr" : "Jeu sauvegardé et arrêté."
+	},
+	"CONFIG_DISABLED" : {
+		"en" : "This command is disabled in config.",
+		"fr" : "Cette commande est désactivée par la configuration."
+	},
+	"ITEM_SKIPPED" : {
+		"en" : "Item [#] was skipped for player <#>.",
+		"fr" : "L'objet [#] a été passé pour le joueur <#>."
+	},
+	"PLAYER_NOT_FOUND" : {
+		"en" : "Can't find player <#> to skip his item.",
+		"fr" : "Impossible de trouver le joueur <#> pour passer son objet."
+	},
+	"PLAYER_NOT_IN_TEAM" : {
+		"en" : "Team are enabled and not all players are in a Team.",
+		"fr" : "Le mode equipe est activé et tous les joueurs ne sont pas dans une equipe."
+	},
+	"GAME_STARTED" : {
+		"en" : "Game Started, please wait for the countdown.",
+		"fr" : "Jeu démarré, attendez la fin du compte à rebour."
+	},
+	"GAME_STOPPED" : {
+		"en" : "Game Stopped.",
+		"fr" : "Jeu stoppé."
+	},
+	"TEAM_GAME_LAUNCHED" : {
+		"en" : "Game is already launched, you cannot modify teams during the game.",
+		"fr" : "Le jeu est déjà lancé, vous ne pouvez plus modifier les équipes."
+	},
+	"TEAM_NOT_EXISTS" : {
+		"en" : "Team <#> does not exist, please choose another name.",
+		"fr" : "L'équipe <#> n'existe pas, choisissez un autre nom."
+	},
+	"TEAM_FULL" : {
+		"en" : "This team is already full, please add him in another team or change team size with ki-config command.",
+		"fr" : "Cette équipe est déjà complète, ajoutez ce joueur a une autre équipe ou changez la taille des équipes avec la commande ki-config."
+	},
+	"PLAYER_NOT_IN_GAME" : {
+		"en" : "This player is not in the game, please add him in the game list with ki-list command.",
+		"fr" : "Ce joueur n'est pas dans la liste de jeu, vous pouvez l'ajouter avec la commande ki-list."
+	},
+	"TEAM_ADD_PLAYER" : {
+		"en" : "Player <#> added to team <##>.",
+		"fr" : "Le joueur <#> a été ajouté à l'équipe <##>."
+	},
+	"COLOR_CHANGED" : {
+		"en" : "Color [#] was changed to [##] for team <#>.",
+		"fr" : "La couleur [#] a été changé pour [##] pour l'équipe <#>."
+	},
+	"COLOR_NOT_EXISTS" : {
+		"en" : "Color [#] does not exists, please choose another one.",
+		"fr" : "La couleur [#] n'existe pas, choisissez-en une autre."
+	},
+	"COLOR_ALREADY_USED" : {
+		"en" : "Color [#] is already used, please choose another one.",
+		"fr" : "La couleur [#] est déjà utilisée, choisissez-en une autre."
+	},
+	"TEAM_PLAYER" : {
+		"en" : "This player is already in this team.",
+		"fr" : "Ce joueur est déjà dans cette équipe."
+	},
+	"TEAM_ENABLE" : {
+		"en" : "Please enable Teams with ki-config command.",
+		"fr" : "Vous devez activer les équipes avec la commande ki-config."
+	},
+	"TEAM_EXISTS" : {
+		"en" : "Team <#> already exists, please choose another name.",
+		"fr" : "L'équipe <#> existe déjà, choisissez un autre nom."
+	},
+	"TEAM_CREATED" : {
+		"en" : "Team <#> was created.",
+		"fr" : "L'équipe <#> a été créée."
+	},
+	"TEAM_DELETED" : {
+		"en" : "Team <#> was deleted.",
+		"fr" : "L'équipe <#> a été supprimée."
+	},
+	"TEAM_TOO_MANY_PLAYERS" : {
+		"en" : "There are too many players for that number of team, please create more teams or change team size with ki-config command.",
+		"fr" : "Il y a trop de joueur pour ce nombre d'équipe, ajoutez des équipes ou changez la taille des équipes avec la commande ki-config."
+	},
+	"TEAM_ALREADY_PLAYERS" : {
+		"en" : "There already are players in some teams, please reset all teams using ki-team-reset-players command.",
+		"fr" : "Il y a déjà des joueur dans certaines équipes, videz toutes les équipes avec la commande ki-team-reset-players."
+	},
+	"RANDOM" : {
+		"en" : "Randomly add %i players in %j teams.",
+		"fr" : "Ajout aléatoire de %i joueurs dans %j équipes."
+	},
+	"TEAM_NO_PLAYER" : {
+		"en" : "This player is not in this Team.",
+		"fr" : "Ce joueur n'est pas dans cette équipe."
+	},
+	"TEAM_REMOVED" : {
+		"en" : "Player <#> was removed from team <##>.",
+		"fr" : "Le joueur <#> a été supprimé de l'équipe <##>."
+	},
+	"TEAM_RESETED" : {
+		"en" : "Team <#> player list was reseted.",
+		"fr" : "La liste de joueur de l'équipe <#> a été vidée."
+	},
+	"ITEM_VALIDATED" : {
+		"en" : "Item [#] was validated for player <#>.",
+		"fr" : "L'objet [#] a été validé pour le joueur <#>."
+	},
+	"VALIDATE_PLAYER_ITEM" : {
+		"en" : "Can't find player to validate his item.",
+		"fr" : "Impossible de trouver le joueur pour valider son objet."
+	},
+	"GAME_ALREADY_FINISHED" : {
+		"en" : "Game is already finished for player <#>.",
+		"fr" : "Le joueur <#> a déjà fini sa partie."
+	},
+	"AGE_VALIDATED" : {
+		"en" : "Age [#] wa validated for player <#>.",
+		"fr" : "L'age [#] a été validé pour le joueur <#>."
+	},
+	"VALIDATE_PLAYER_AGE" : {
+		"en" : "Can't find player to validate his age.",
+		"fr" : "Impossible de trouver le joueur pour valider son age."
+	},
+	"ADD_CRAFTS" : {
+		"en" : "Add %i custom crafts.",
+		"fr" : "Ajout de %i crafts custom."
+	},
+	"ADD_LISTENERS" : {
+		"en" : "Add %i game listeners.",
+		"fr" : "Ajout de %i listeners de jeu."
+	},
+	"ADD_CMD" : {
+		"en" : "Add %i commands.",
+		"fr" : "Ajout de %i commandes."
+	},
+	"ADD_TAB" : {
+		"en" : "Add %i tab completers.",
+		"fr" : "Ajout de %i completeurs de commande."
+	},
+	"ON" : {
+		"en" : "Plugin turned ON.",
+		"fr" : "Plugin démarré."
+	},
+	"OFF" : {
+		"en" : "Plugin turned OFF.",
+		"fr" : "Plugin arrêté."
+	},
+	"CONFIG_DEFAULT" : {
+		"en" : "Config for <#> is not correct, use of default value.",
+		"fr" : "La configuration pour <#> n'est pas correcte, utilisation de la valeur par défaut."
+	},
+	"INVALID_BOOLEAN" : {
+		"en" : "Invalid value ! True or False awaited.",
+		"fr" : "Valeur Invalide ! True ou False attendu."
+	},
+	"INVALID_INT" : {
+		"en" : "Invalid value ! Number awaited.",
+		"fr" : "Valeur Invalide ! Nombre attendu."
+	},
+	"START" : {
+		"en" : "STARTING…",
+		"fr" : "DEMARRAGE…"
+	},
+	"GAME_DONE" : {
+		"en" : "Game Done ! Rank : %i",
+		"fr" : "Jeu Terminé ! Rang : %i"
+	},
+	"AGE_MOVED" : {
+		"en" : "<#> has moved to the <##> Age §1.",
+		"fr" : "<#> est passé à l'age <##>§1."
+	},
+	"DEATH_COUNT" : {
+		"en" : " - Death Count: %i",
+		"fr" : " - Compteur de mort: %i"
+	},
+	"SKIP_COUNT" : {
+		"en" : " - Skip Count: %i",
+		"fr" : " - Compteur d'objet sautés: %i"
+	},
+	"TEMPLATE_COUNT" : {
+		"en" : " - Template Count: %i",
+		"fr" : " - Compteur de Template: %i"
+	},
+	"TIME_TAB" : {
+		"en" : " - Times Tab:",
+		"fr" : " - Tableau des temps:"
+	},
+	"FINISH_TIME" : {
+		"en" : "    - %s Age: Finished in %t",
+		"fr" : "    - Age %s: Terminé en %t"
+	},
+	"FINISH_ABANDON" : {
+		"en" : "    - %s Age: Abandoned",
+		"fr" : "    - Age %s: Abandoné"
+	},
+	"CANT_SKIP_AGE" : {
+		"en" : "You can't skip item this age.",
+		"fr" : "Vous ne pouvez pas passer d'objet à cet Age."
+	},
+	"CANT_SKIP_FIRST" : {
+		"en" : "You can't skip the first item of the age.",
+		"fr" : "Vous ne pouvez pas passer le premier objet de l'Age."
+	},
+	"ITEM_SKIP" : {
+		"en" : "Item [#] was skipped.",
+		"fr" : "L'objet [#] a été passé."
+	},
+	"ITEMS_SKIP" : {
+		"en" : "Items [#] and [##] were skipped.",
+		"fr" : "Les objets [#]  et [##] ont été passé."
+	},
+	"GAME_COMPLETE" : {
+		"en" : "<#>  complete this game !",
+		"fr" : "<#> a fini sa partie !"
+	},
+	"ITEM_NOT_FOUND" : {
+		"en" : "You didn't find your item. Let's give you another one.",
+		"fr" : "Vous n'avez pas trouvé votre objet. En voici un nouveau."
+	},
+	"TEAM_WAIT" : {
+		"en" : "Waiting for other players of the team.",
+		"fr" : "En attente des autres joueurs de l'équipe."
+	},
+	"ITEM_DOUBLE" : {
+		"en" : "[#] or [##]",
+		"fr" : "[#] ou [##]"
+	},
+	"SOMETHING_NEW" : {
+		"en" : "Something New…",
+		"fr" : "Quelque chose de nouveau…"
+	},
+	"COUNTDOWN" : {
+		"en" : "Time left: %i seconds to find: %s.",
+		"fr" : "Temps restant: %i pour trouver %s."
+	},
+	"NO_TEAM" : {
+		"en" : "No Team.",
+		"fr" : "Aucune équipe."
+	},
+	"PLAYER_NOT_EXISTS" : {
+		"en" : "Player <#> does not exists.",
+		"fr" : "Le joueur <#> n'existe pas."
+	},
+	"TOO_SHORT" : {
+		"en" : "Distance is too short.",
+		"fr" : "La distance est trop courte."
+	},
+	"HERE_DIES" : {
+		"en" : "Here dies",
+		"fr" : "Ici est mort"
+	}
+}

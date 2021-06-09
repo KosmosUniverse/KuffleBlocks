@@ -60,7 +60,7 @@ public class LangManager {
 		return finalMap;
 	}
 	
-	public static String findBlockDisplay(HashMap<String, HashMap<String, String>> allLangs, String block, String lang) {
+	public static String findDisplay(HashMap<String, HashMap<String, String>> allLangs, String block, String lang) {
 		String res = null;
 		
 		if (allLangs.containsKey(block)) {
@@ -71,6 +71,8 @@ public class LangManager {
 			} else {
 				return block;
 			}
+		} else {
+			res = block;
 		}
 			
 		return res;

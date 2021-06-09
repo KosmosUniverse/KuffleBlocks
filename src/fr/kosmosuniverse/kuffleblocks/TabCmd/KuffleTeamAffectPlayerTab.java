@@ -25,7 +25,7 @@ public class KuffleTeamAffectPlayerTab implements TabCompleter {
 			return null;
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("kteam-affect-player")) {
+		if (cmd.getName().equalsIgnoreCase("kb-team-affect-player")) {
 			if (args.length == 1) {				
 				ArrayList<Team> teams = km.teams.getTeams();
 				ArrayList<String> ret = new ArrayList<String>();

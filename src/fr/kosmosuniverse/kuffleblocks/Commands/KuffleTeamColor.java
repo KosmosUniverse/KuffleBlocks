@@ -25,15 +25,15 @@ public class KuffleTeamColor implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
-		km.logs.logMsg(player, "achieved command <kteam-color>");
+		km.logs.logMsg(player, Utils.getLangString(km, player.getName(), "CMD_PERF").replace("<#>", "<kb-team-color>"));
 		
-		if (!player.hasPermission("kteam-color")) {
-			km.logs.writeMsg(player, "You are not allowed to do this command.");
+		if (!player.hasPermission("kb-team-color")) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_ALLOWED"));
 			return false;
 		}
 		
-		if (km.games.size() > 0 && km.games.get(0).getEnable()) {
-			km.logs.writeMsg(player, "Game is already launched, you cannot modify teams during the game.");
+		if (km.games.size() > 0 && km.gameStarted) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_ALREADY_LAUNCHED"));
 			return true;
 		}
 		
@@ -42,17 +42,17 @@ public class KuffleTeamColor implements CommandExecutor {
 		}
 		
 		if (!km.teams.hasTeam(args[0])) {
-			km.logs.writeMsg(player, "Team <" + args[0] + "> does not exist, please choose another name.");
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "TEAM_NOT_EXISTS").replace("<#>", "<" + args[0] + ">"));
 		} else {
 			if (km.teams.getTeam(args[0]).hasPlayer(args[1])) {
-				km.logs.writeMsg(player, "This player is already in this team.");
+				km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "TEAM_PLAYER"));
 				return true;
 			}
 			
 			ChatColor tmp;
 			
 			if ((tmp = Utils.findChatColor(args[1])) == null) {
-				km.logs.writeMsg(player, "Color <" + args[1] + "> does not exist, please choose another name.");
+				km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "COLOR_NOT_EXISTS").replace("[#]", "[" + args[1] + "]"));
 			} else {
 				ArrayList<String> colorUsed = km.teams.getTeamColors();
 				
@@ -61,9 +61,9 @@ public class KuffleTeamColor implements CommandExecutor {
 					
 					km.teams.changeTeamColor(args[0], tmp);	
 					
-					km.logs.writeMsg(player, "Color [" + tmpColor + "] was changed to [" + tmp.name() + "] for team <" + args[0] + ">.");
+					km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "COLOR_CHANGED").replace("[#]", "[" + tmpColor + "]").replace("[##]", "[" + tmp.name() + "]").replace("<#>",	"<" + args[0] + ">"));
 				} else {
-					km.logs.writeMsg(player, "Color [" + tmp.name() + "] is already used, please choose another one.");
+					km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "COLOR_ALREADY_USED").replace("[#]", "[" + tmp.name() + "]"));
 				}
 			}
 		}

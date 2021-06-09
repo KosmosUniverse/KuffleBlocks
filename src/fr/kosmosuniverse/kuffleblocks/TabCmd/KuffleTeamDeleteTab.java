@@ -24,7 +24,7 @@ public class KuffleTeamDeleteTab implements TabCompleter {
 			return null;
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("kteam-delete")) {
+		if (cmd.getName().equalsIgnoreCase("kb-team-delete")) {
 			if (args.length == 1) {				
 				ArrayList<Team> teams = km.teams.getTeams();
 				ArrayList<String> ret = new ArrayList<String>();

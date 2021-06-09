@@ -27,7 +27,7 @@ public class KuffleMultiBlocksTab implements TabCompleter {
 		if (!(sender instanceof Player))
 			return null;
 		
-		if (cmd.getName().equalsIgnoreCase("kmultiblocks")) {
+		if (cmd.getName().equalsIgnoreCase("kb-multiblocks")) {
 			if (args.length == 1) {
 				return list;	
 			}

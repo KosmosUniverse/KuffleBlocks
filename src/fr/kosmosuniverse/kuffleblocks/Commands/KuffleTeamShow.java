@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
+import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 
 public class KuffleTeamShow implements CommandExecutor {
 	private KuffleMain km;
@@ -21,10 +22,10 @@ public class KuffleTeamShow implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
-		km.logs.logMsg(player, "achieved command <kteam-show>");
+		km.logs.logMsg(player, Utils.getLangString(km, player.getName(), "CMD_PERF").replace("<#>", "<kb-team-show>"));
 		
-		if (!player.hasPermission("kteam-show")) {
-			km.logs.writeMsg(player, "You are not allowed to do this command.");
+		if (!player.hasPermission("kb-team-show")) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_ALLOWED"));
 			return false;
 		}
 		
@@ -33,16 +34,15 @@ public class KuffleTeamShow implements CommandExecutor {
 		}
 		
 		if (args.length == 0) {
-			km.logs.writeMsg(player, km.teams.toString());
+			km.logs.writeMsg(player, km.teams.toString(km));
 		} else if (args.length == 1) {
 			if (km.teams.hasTeam(args[0])) {
 				km.logs.writeMsg(player, km.teams.printTeam(args[0]));
 			} else {
-				km.logs.writeMsg(player, "This team does not exists, please choose another one.");
+				km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "TEAM_NOT_EXISTS").replace("<#>", "<" + args[0] + ">"));
 			}
 		}
 		
 		return true;
 	}
-
 }

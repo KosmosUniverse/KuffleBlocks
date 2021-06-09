@@ -1,0 +1,42 @@
+{
+	"Archaic_Age" : {
+		"Number" : 0,
+		"TextColor" : "RED",
+		"BoxColor" : "RED"
+	},
+	"Classic_Age" : {
+		"Number" : 1,
+		"TextColor" : "GOLD",
+		"BoxColor" : "ORANGE"
+	},
+	"Mineric_Age" : {
+		"Number" : 2,
+		"TextColor" : "YELLOW",
+		"BoxColor" : "YELLOW"
+	},
+	"Netheric_Age" : {
+		"Number" : 3,
+		"TextColor" : "GREEN",
+		"BoxColor" : "LIME"
+	},
+	"Heroic_Age" : {
+		"Number" : 4,
+		"TextColor" : "DARK_GREEN",
+		"BoxColor" : "GREEN"
+	},
+	"Mythic_Age" : {
+		"Number" : 5,
+		"TextColor" : "DARK_BLUE",
+		"BoxColor" : "BLUE"
+	},
+	"Oceanic_Age" : {
+		"Number" : 6,
+		"TextColor" : "BLUE",
+		"BoxColor" : "LIGHT_BLUE"
+	},
+	"Default" : {
+		"Number" : -1,
+		"TextColor" : "DARK_PURPLE",
+		"BoxColor" : "PURPLE"
+	}
+}

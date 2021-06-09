@@ -25,7 +25,7 @@ public class KuffleTeamColorTab implements TabCompleter {
 			return null;
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("kteam-color")) {
+		if (cmd.getName().equalsIgnoreCase("kb-team-color")) {
 			if (args.length == 1) {
 				ArrayList<Team> teams = km.teams.getTeams();
 				ArrayList<String> ret = new ArrayList<String>();

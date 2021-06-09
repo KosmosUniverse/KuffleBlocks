@@ -1,188 +1,184 @@
 name: KuffleBlocks
-version: 4.5.2
+version: 5.0
 author: KosmosUniverse
-main: fr.kosmosuniverse.kuffle.KuffleMain
+main: fr.kosmosuniverse.kuffleblocks.KuffleMain
 api-version: 1.15
 
 commands:
-   klist:
+   kb-multiblocks:
+      usage: /<command>
+      description: command to see multiBlocks
+   kb-config:
+      usage: /<command> [<key> <value>]*
+      description: command to see or change game configuration
+      permission: inferno.flagrate
+   kb-list:
       usage: /<command> [reset | remove <Player name> | add <@a | Player name>]
       description: command to add/remove players to the list and view/reset the list
       permission: inferno.flagrate
-   kstart:
+   kb-save:
+      usage: /<command>
+      description: command to save and end the game of all players
+      permission: inferno.flagrate
+   kb-load:
+      usage: /<command>
+      description: command to load and start the game of all registered players
+      permission: inferno.flagrate
+   kb-start:
       usage: /<command>
       description: command to start the game
       permission: inferno.flagrate
-   kstop:
+   kb-stop:
       usage: /<command>
       description: command to stop the game when it is running
       permission: inferno.flagrate
-   kpause:
+   kb-pause:
       usage: /<command>
       description: command to pause the game when it is running
       permission: inferno.flagrate
-   kresume:
+   kb-resume:
       usage: /<command>
       description: command to resume the game when it is paused
       permission: inferno.flagrate
-   kvalidate:
+   kb-adminskip:
+      usage: /<command>
+      description: command to skip a block for any player
+      permission: inferno.flagrate
+   kb-validate:
       usage: /<command> <Player name>
       description: command to validate a block
       permission: inferno.flagrate
-   kadminskip:
+   kb-validate-age:
       usage: /<command> <Player name>
-      description: command to skip a block for any player
+      description: command to validate an age
       permission: inferno.flagrate
-   kadminspawn:
-      usage: /<command> <Multiblock name>
-      description: command to spawn multiblock structure
-      permission: inferno.flagrate
-   kadminsave:
-      usage: /<command>
-      description: command to save and end the game of all players
-      permission: inferno.flagrate
-   kadminload:
-      usage: /<command>
-      description: command to load and start the game of all registered players
-      permission: inferno.flagrate
-   kconfig:
-      usage: /<command>
-      description: command to see or change game configuration
-      permission: inferno.flagrate
-   kteam-create:
+   kb-team-create:
       usage: /<command> <TeamName> [TeamColor]
       description: command to create Team
       permission: inferno.flagrate
-   kteam-delete:
+   kb-team-delete:
       usage: /<command> <TeamName>
       description: command to delete Team
       permission: inferno.flagrate
-   kteam-affect-player:
+   kb-team-affect-player:
       usage: /<command> <TeamName> <PlayerName>
       description: command to affect a Player to a Team
       permission: inferno.flagrate
-   kteam-remove-player:
+   kb-team-remove-player:
       usage: /<command> <TeamName> <PlayerName>
       description: command to remove a Player from a Team
       permission: inferno.flagrate
-   kteam-reset-players:
+   kb-team-reset-players:
       usage: /<command> <TeamName>
       description: command to reset player list in a team
       permission: inferno.flagrate
-   kteam-random-player:
+   kb-team-random-player:
       usage: /<command>
       description: command to put random players in teams
       permission: inferno.flagrate
-   kteam-show:
+   kb-team-show:
       usage: /<command> [TeamName]
       description: command to show all or one team
       permission: inferno.flagrate
-   kteam-color:
+   kb-team-color:
       usage: /<command> <TeamName> <TeamColor>
       description: command to change team color
       permission: inferno.flagrate
-   kback:
-      usage: /<command>
-      description: command to teleport back to death position
-   kskip:
+   kb-skip:
       usage: /<command>
       description: command to skip a block
-   kcrafts:
+   kb-abandon:
+      usage: /<command>
+      description: command to abandon a game
+   kb-crafts:
       usage: /<command>
       description: command to see custom crafts
-   kmultiblocks:
-      usage: /<command>
-      description: command to see multiBlocks
-   kageblocks:
-      usage: /<command>
+   kb-ageblocks:
+      usage: /<command> [age name]
       description: command to see current age blocks
-   kplayers:
-      usage: /<command>
-      description: command to tp to other players after game end
-   klang:
+   kb-lang:
       usage: /<command> [lang]
       description: command to see or change personnal lang
-   ktest:
+   kb-players:
       usage: /<command>
-      description: command to see or change game configuration
-      permission: inferno.flagrate
+      description: command to tp to other players after game end
 
 permissions:
-   klist:
-      description: command to add players to the list and view the list
-      default: op
-   kstart:
-      description: command to start the game
-      default: op
-   kstop:
-      description: command to stop the game when it is running
-      default: op
-   kpause:
-      description: command to pause the game when it is runnin
-      default: op
-   kresume:
-      description: command to resume the game when it is paused
-      default: op
-   kvalidate:
-      description: command to validate a block
-      default: op
-   kadminskip:
-      description: command to skip a block for any player
-      default: op
-   kadminspawn:
-      description: command to spawn multiblock structure
-      default: op
-   kadminsave:
-      description: command to save and end the game of all players
-      default: op
-   kadminload:
-      description: command to load and start the game of all registered players
-      default: op
-   ktest:
-      description: command to load and start the game of all registered players
-      default: op
-   kteam-create:
-      description: command to create Team
-      default: op
-   kteam-delete:
-      description: command to delete Team
-      default: op
-   kteam-affect-player:
-      description: command to affect a Player to a Team
-      default: op
-   kteam-remove-player:
-      description: command to remove a Player from a Team
-      default: op
-   kteam-reset-players:
-      description: command to reset player list in a team
-      default: op
-   kteam-random-player:
-      description: command to put random players in teams
-      default: op
-   kteam-show:
-      description: command to show all or one team
-      default: op
-   kteam-color:
-      description: command to change team color
-      default: op
-   kback:
-      description: command to teleport back to death position
-      default: true
-   kskip:
-      description: command to skip a block
-      default: true
-   kcrafts:
-      description: command to see custom crafts
-      default: true
-   kmultiblocks:
+   kb-multiblocks:
       description: command to see multiBlocks
       default: true
-   kageblocks:
+   kb-config:
+      default: op
+      description: command to see or change game configuration
+   kb-list:
+      description: command to add players to the list and view the list
+      default: op
+   kb-save:
+      description: command to save and end the game of all players
+      default: op
+   kb-load:
+      description: command to load and start the game of all registered players
+      default: op
+   kb-start:
+      description: command to start the game
+      default: op
+   kb-stop:
+      description: command to stop the game when it is running
+      default: op
+   kb-pause:
+      description: command to pause the game when it is runnin
+      default: op
+   kb-resume:
+      description: command to resume the game when it is paused
+      default: op
+   kb-validate:
+      description: command to validate a block
+      default: op
+   kb-validate-age:
+      description: command to validate a block
+      default: op
+   kb-adminskip:
+      description: command to skip a block for any player
+      default: op
+   kb-team-create:
+      description: command to create Team
+      default: op
+   kb-team-delete:
+      description: command to delete Team
+      default: op
+   kb-team-affect-player:
+      description: command to affect a Player to a Team
+      default: op
+   kb-team-remove-player:
+      description: command to remove a Player from a Team
+      default: op
+   kb-team-reset-players:
+      description: command to reset player list in a team
+      default: op
+   kb-team-random-player:
+      description: command to put random players in teams
+      default: op
+   kb-team-show:
+      description: command to show all or one team
+      default: op
+   kb-team-color:
+      description: command to change team color
+      default: op
+   kb-skip:
+      description: command to skip a block
+      default: true
+   kb-abandon:
+      description: command to abandon a game
+      default: true
+   kb-crafts:
+      description: command to see custom crafts
+      default: true
+   kb-ageblocks:
       description: command to see current age blocks
       default: true
-   kplayers:
+   kb-lang:
+      description: command to see or change personnal lang
+      default: true
+   kb-players:
       description: command to tp to other players after game end
       default: true
-   klang:
-      description: command to see or change personnal lang
-      default: true 

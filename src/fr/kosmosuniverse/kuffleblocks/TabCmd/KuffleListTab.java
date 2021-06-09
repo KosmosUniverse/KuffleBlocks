@@ -10,7 +10,6 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
-import fr.kosmosuniverse.kuffleblocks.Core.GameTask;
 
 public class KuffleListTab implements TabCompleter {
 	private KuffleMain km;
@@ -26,7 +25,7 @@ public class KuffleListTab implements TabCompleter {
 	
 	@Override
 	public List<String> onTabComplete(CommandSender sender,  Command cmd, String msg, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("klist")) {
+		if (cmd.getName().equalsIgnoreCase("kb-list")) {
 			if (!(sender instanceof Player))
 				return null;
 			if (args.length == 1) {
@@ -43,8 +42,8 @@ public class KuffleListTab implements TabCompleter {
 					
 					return nextList;
 				} else if (args[0].equals("remove")) {
-					for (GameTask gt : km.games) {
-						nextList.add(gt.getPlayer().getName());
+					for (String playerName : km.games.keySet()) {
+						nextList.add(playerName);
 					}
 					return nextList;
 				}

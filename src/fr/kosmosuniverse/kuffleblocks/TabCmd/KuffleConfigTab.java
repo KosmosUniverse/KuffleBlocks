@@ -28,7 +28,7 @@ public class KuffleConfigTab implements TabCompleter {
 			return null;
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("kconfig")) {
+		if (cmd.getName().equalsIgnoreCase("kb-config")) {
 			if (args.length == 0) {
 				return all;
 			} else if (args.length % 2 == 1) {
@@ -57,5 +57,4 @@ public class KuffleConfigTab implements TabCompleter {
 		
 		return null;
 	}
-
 }

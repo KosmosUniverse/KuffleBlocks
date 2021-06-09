@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
-import fr.kosmosuniverse.kuffleblocks.Core.GameTask;
+import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 
 public class KuffleStop implements CommandExecutor {
 	private KuffleMain km;
@@ -23,43 +23,37 @@ public class KuffleStop implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
-		km.logs.logMsg(player, "achieved command <kstop>");
+		km.logs.logMsg(player, Utils.getLangString(km, player.getName(), "CMD_PERF").replace("<#>", "<kb-stop>"));
 		
-		if (!player.hasPermission("kstop")) {
-			km.logs.writeMsg(player, "You are not allowed to do this command.");
+		if (!player.hasPermission("kb-stop")) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_ALLOWED"));
 			return false;
 		}
 		
-		if (km.games.size() == 0) {
-			km.logs.writeMsg(player, "No game launched, you can launch a game with kstart command.");
-			return false;
-		} else if (!km.games.get(0).getEnable()) {
-			km.logs.writeMsg(player, "No game launched, you can launch a game with kstart command.");
+		if (!km.gameStarted) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_NOT_LAUNCHED"));
 			return false;
 		}
 		
-		for (GameTask gt : km.games) {
-			gt.disable();
-			for (PotionEffect pe : gt.getPlayer().getActivePotionEffects()) {
-				gt.getPlayer().removePotionEffect(pe.getType());
+		for (String playerName : km.games.keySet()) {
+			for (PotionEffect pe : km.games.get(playerName).getPlayer().getActivePotionEffects()) {
+				km.games.get(playerName).getPlayer().removePotionEffect(pe.getType());
 			}
+			
+			km.games.get(playerName).resetBar();
 		}
-		
-		for (GameTask gt : km.games) {
-			gt.exit();
-		}
-		
+
+		Utils.removeTemplates(km);
 		km.scores.clear();
-		
-		for (GameTask gt : km.games) {
-			gt.kill();
-		}
 		
 		km.teams.resetAll();
 		
 		km.games.clear();
+		km.loop.kill();
 		
-		km.logs.writeMsg(player, "Game Stopped.");
+		km.gameStarted = false;
+		km.paused = false;
+		km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_STOPPED"));
 		
 		return true;
 	}

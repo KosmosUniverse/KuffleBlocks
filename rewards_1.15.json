@@ -13,7 +13,7 @@
 			"Effect" : ""
 		},
 		"potion" : {
-			"Amount" : 3,
+			"Amount" : 1,
 			"Enchant" : "",
 			"Level" : 0,
 			"Effect" : "speed"
@@ -28,8 +28,8 @@
 	"Classic_Age" : {
 		"diamond_pickaxe" : {
 			"Amount" : 1,
-			"Enchant" : "silk_touch,efficiency",
-			"Level" : 4,
+			"Enchant" : "silk_touch,efficiency,unbreaking",
+			"Level" : 5,
 			"Effect" : ""
 		},
 		"iron_helmet" : {
@@ -64,12 +64,6 @@
 		}
 	},
 	"Mineric_Age" : {
-		"cauldron" : {
-			"Amount" : 1,
-			"Enchant" : "",
-			"Level" : 0,
-			"Effect" : ""
-		},
 		"water_bucket" : {
 			"Amount" : 1,
 			"Enchant" : "",
@@ -77,7 +71,7 @@
 			"Effect" : ""
 		},
 		"potion" : {
-			"Amount" : 3,
+			"Amount" : 2,
 			"Enchant" : "",
 			"Level" : 0,
 			"Effect" : "fire_resistance"
@@ -123,7 +117,7 @@
 	},
 	"Heroic_Age" : {
 		"potion" : {
-			"Amount" : 3,
+			"Amount" : 2,
 			"Enchant" : "",
 			"Level" : 0,
 			"Effect" : "speed"
@@ -160,5 +154,19 @@
 		}
 	},
 	"Mythic_Age" : {
+		"diamond_boots" : {
+			"Amount" : 1,
+			"Enchant" : "protection,depth_strider",
+			"Level" : 4,
+			"Effect" : ""
+		},
+		"potion" : {
+			"Amount" : 2,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : "water_breathing"
+		}
+	},
+	"Oceanic_Age" : {
 	}
 }

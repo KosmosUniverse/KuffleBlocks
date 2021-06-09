@@ -23,7 +23,7 @@ public class KuffleLangTab implements TabCompleter {
 			return null;
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("klang")) {
+		if (cmd.getName().equalsIgnoreCase("kb-lang")) {
 			if (args.length == 1) {
 				return km.langs;	
 			}

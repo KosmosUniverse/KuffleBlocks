@@ -3,9 +3,9 @@ package fr.kosmosuniverse.kuffleblocks.Core;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Random;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -19,16 +19,15 @@ import org.json.simple.parser.ParseException;
 
 import fr.kosmosuniverse.kuffleblocks.utils.Pair;
 
-public class ChooseBlockInList {
-	public static HashMap<String, ArrayList<String>> getAllBlocks(String blocksContent, File dataFolder) {
+public class BlockManager {
+	public static HashMap<String, ArrayList<String>> getAllBlocks(ArrayList<Age> ages, String blocksContent, File dataFolder) {
 		HashMap<String, ArrayList<String>> finalMap = new HashMap<String, ArrayList<String>>();
 		
-		finalMap.put("Archaic_Age", getAgeBlocks("Archaic_Age", blocksContent, dataFolder));
-		finalMap.put("Classic_Age", getAgeBlocks("Classic_Age", blocksContent, dataFolder));
-		finalMap.put("Mineric_Age", getAgeBlocks("Mineric_Age", blocksContent, dataFolder));
-		finalMap.put("Netheric_Age", getAgeBlocks("Netheric_Age", blocksContent, dataFolder));
-		finalMap.put("Heroic_Age", getAgeBlocks("Heroic_Age", blocksContent, dataFolder));
-		finalMap.put("Mythic_Age", getAgeBlocks("Mythic_Age", blocksContent, dataFolder));
+		int max = AgeManager.getAgeMaxNumber(ages);
+		
+		for (int ageCnt = 0; ageCnt <= max; ageCnt++) {
+			finalMap.put(AgeManager.getAgeByNumber(ages, ageCnt).name, getAgeBlocks(AgeManager.getAgeByNumber(ages, ageCnt).name, blocksContent, dataFolder));
+		}
 		
 		return finalMap;
 	}
@@ -82,8 +81,8 @@ public class ChooseBlockInList {
 	public static synchronized String newBlock(ArrayList<String> done, ArrayList<String> allAgeBlocks) {	
 		ArrayList<String> finalList = new ArrayList<String>();
 		
-		if (done.size() == allAgeBlocks.size()) {
-			done.clear();
+		if (allAgeBlocks == null) {
+			return null;
 		}
 		
 		for (String s : allAgeBlocks) {
@@ -96,7 +95,7 @@ public class ChooseBlockInList {
 			return finalList.get(0);
 		}
 		
-		Random r = new Random();
+		SecureRandom r = new SecureRandom();
 		
 		return finalList.get(r.nextInt(finalList.size()));
 	}

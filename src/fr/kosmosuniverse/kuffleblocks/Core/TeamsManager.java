@@ -1,15 +1,17 @@
 package fr.kosmosuniverse.kuffleblocks.Core;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import fr.kosmosuniverse.kuffleblocks.KuffleMain;
 import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 
-public class ManageTeams {
+public class TeamsManager {
 	private ArrayList<Team> teams = new ArrayList<Team>();
 
 	public void createTeam(String name) {
@@ -127,7 +129,7 @@ public class ManageTeams {
 		return null;
 	}
 	
-	public String toString() {
+	public String toString(KuffleMain km) {
 		StringBuilder sb = new StringBuilder();
 		
 		if (teams.size() != 0) {
@@ -139,7 +141,7 @@ public class ManageTeams {
 				}
 			}
 		} else {
-			sb.append("No Team, please add teams with kteam-create command before print.");
+			sb.append(Utils.getLangString(km, null, "NO_TEAM"));
 		}
 		
 		return sb.toString();
@@ -153,10 +155,10 @@ public class ManageTeams {
 			JSONObject tmp = new JSONObject();
 			JSONArray players = new JSONArray();
 			
-			tmp.put("color", item.color);
+			tmp.put("color", item.color.toString());
 			
 			for (Player p : item.players) {
-				players.add(p.getDisplayName());
+				players.add(p.getName());
 			}
 			
 			tmp.put("players", players);
@@ -167,19 +169,26 @@ public class ManageTeams {
 		return global.toString();
 	}
 	
-	public void loadTeams(JSONObject global, ArrayList<GameTask> games) {
+	public void loadTeams(KuffleMain km, JSONObject global, HashMap<String, Game> games) {
 		for (Object key : global.keySet()) {
 			String name = key.toString();
 			JSONObject tmp = (JSONObject) global.get(key);
-			ChatColor color = Utils.findChatColor((String) tmp.get("color"));
+			ChatColor color = Utils.findChatColor(tmp.get("color").toString());
 			JSONArray players = (JSONArray) tmp.get("players");
 			
 			createTeam(name, color);
 			
 			if (players != null) {
 				for (Object obj : players) {
-					Player p = Utils.getPlayerInList(games, (String) obj);
-					affectPlayer(name, p);
+
+					Game tmpPlayer = games.get((String) obj);
+					
+					if (tmpPlayer == null) {
+						System.out.println(Utils.getLangString(km, null, "PLAYER_NOT_EXISTS").replace("<#>", "<" + (String) obj + ">"));
+					} else {
+						Player p = tmpPlayer.getPlayer();
+						affectPlayer(name, p);	
+					}
 				}
 			}
 		}

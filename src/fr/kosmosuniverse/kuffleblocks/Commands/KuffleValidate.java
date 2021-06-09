@@ -6,7 +6,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
-import fr.kosmosuniverse.kuffleblocks.Core.GameTask;
+import fr.kosmosuniverse.kuffleblocks.Core.AgeManager;
+import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 
 public class KuffleValidate implements CommandExecutor {
 	private KuffleMain km;
@@ -22,38 +23,73 @@ public class KuffleValidate implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
-		km.logs.logMsg(player, "achieved command <kvalidate>");
-		
-		if (!player.hasPermission("kvalidate")) {
-			km.logs.writeMsg(player, "You are not allowed to do this command.");
-			return false;
+		if (!km.gameStarted) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_NOT_LAUNCHED"));
+			return true;
 		}
 		
-		if (km.games.size() == 0) {
-			km.logs.writeMsg(player, "No game launched, you can launch a game with kstart command.");
-			return false;
-		} else if (!km.games.get(0).getEnable()) {
-			km.logs.writeMsg(player, "No game launched, you can launch a game with kstart command.");
-			return false;
-		}
-		
-		if (args.length != 1) {
-			km.logs.writeMsg(player, "This command takes 1 argument: the name of the player to validate his block.");
-			return false;
-		}
-
-		for (GameTask gt : km.games) {
-			if (gt.getPlayer().getName().contains(args[0])) {
-				String tmp = gt.getCurrentBlock();
-				
-				gt.validate();
-				km.logs.writeMsg(player, "Block [" + tmp + "] was validated for player <" + gt.getPlayer().getDisplayName() + ">.");
-				
-				return true;
+		if (msg.equalsIgnoreCase("kb-validate")) {
+			
+			if (args.length != 1) {
+				return false;
 			}
+			
+			km.logs.logMsg(player, Utils.getLangString(km, player.getName(), "CMD_PERF").replace("<#>", "<kb-validate>"));
+			
+			if (!player.hasPermission("kb-validate")) {
+				km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_ALLOWED"));
+				return false;
+			}
+			
+			for (String playerName : km.games.keySet()) {
+				if (playerName.equals(args[0])) {
+					String tmp = km.games.get(playerName).getCurrentBlock();
+					
+					km.games.get(playerName).found();
+					km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "BLOCK_VALIDATED").replace("[#]", " [" + tmp + "] ").replace("<#>", "<" + playerName + ">"));
+					
+					return true;
+				}
+			}
+			
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "VALIDATE_PLAYER_ITEM"));
+	
+			return false;
 		}
 		
-		km.logs.writeMsg(player, "Can't find player to validate his block.");
+		if (msg.equalsIgnoreCase("kb-validate-age")) {
+			
+			if (args.length != 1) {
+				return false;
+			}
+			
+			km.logs.logMsg(player, Utils.getLangString(km, player.getName(), "CMD_PERF").replace("<#>", "<kb-validate-age>"));
+			
+			if (!player.hasPermission("kb-validate-age")) {
+				km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_ALLOWED"));
+				return false;
+			}
+			
+			for (String playerName : km.games.keySet()) {
+				if (playerName.equals(args[0])) {
+					if (km.games.get(playerName).getAge() == -1) {
+						km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_ALREADY_FINISHED").replace("<#>", "<" + playerName + ">"));
+						
+						return true;
+					}
+					
+					String tmp = AgeManager.getAgeByNumber(km.ages, km.games.get(playerName).getAge()).name;
+					
+					km.games.get(playerName).setBlockCount(km.config.getBlockPerAge() + 1);
+					km.games.get(playerName).setCurrentBlock(null);
+					km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "AGE_VALIDATED").replace("[#]", "[" + tmp + "]").replace("<#>", "<" + playerName + ">"));
+					
+					return true;
+				}
+			}
+			
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "VALIDATE_PLAYER_AGE"));
+		}
 		
 		return false;
 	}

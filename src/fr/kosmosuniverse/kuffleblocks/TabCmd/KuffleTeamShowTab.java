@@ -24,7 +24,7 @@ public class KuffleTeamShowTab implements TabCompleter {
 			return null;
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("kteam-show")) {
+		if (cmd.getName().equalsIgnoreCase("kb-team-show")) {
 			if (args.length == 1) {				
 				ArrayList<Team> teams = km.teams.getTeams();
 				ArrayList<String> ret = new ArrayList<String>();

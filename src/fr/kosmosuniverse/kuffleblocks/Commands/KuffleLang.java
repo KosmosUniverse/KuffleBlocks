@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
-import fr.kosmosuniverse.kuffleblocks.Core.GameTask;
+import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 
 public class KuffleLang implements CommandExecutor {
 	private KuffleMain km;
@@ -26,38 +26,41 @@ public class KuffleLang implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
-		km.logs.logMsg(player, "achieved command <klang>");
+		km.logs.logMsg(player, Utils.getLangString(km, player.getName(), "CMD_PERF").replace("<#>", "<kb-lang>"));
 		
-		if (km.games.size() != 0) {
-			if (km.games.get(0).getEnable()) {
-				for (GameTask gt : km.games) {
-					if (gt.getPlayer().equals(player)) {
-						if (args.length == 0) {
-							km.logs.writeMsg(player, gt.getLang());
+		if (!player.hasPermission("kb-lang")) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_ALLOWED"));
+			return false;
+		}
+		
+		if (km.gameStarted) {
+			for (String playerName : km.games.keySet()) {
+				if (km.games.get(playerName).getPlayer().equals(player)) {
+					if (args.length == 0) {
+						km.logs.writeMsg(player, km.games.get(playerName).getLang());
+						
+						return true;
+					} else if (args.length == 1) {
+						String lang = args[0].toLowerCase();
+						
+						if (km.langs.contains(lang)) {
+							km.games.get(playerName).setLang(lang);
 							
-							return true;
-						} else if (args.length == 1) {
-							String lang = args[0].toLowerCase();
-							
-							if (km.langs.contains(lang)) {
-								gt.setLang(lang);
-								
-								km.logs.writeMsg(player, "Lang set to [" + lang + "]");
-							} else {
-								km.logs.writeMsg(player, "Requested lang is not available.");
-							}
-							
-							return true;
+							km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "LANG_SET").replace("[#]", " [" + lang + "]"));
+						} else {
+							km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "REQ_LANG_NOT_AVAIL"));
 						}
+						
+						return true;
 					}
 				}
-			} else {
-				km.logs.writeMsg(player, "You are not playing in this game.");
-				return false;
 			}
+		} else {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_PLAYING"));
+			return false;
 		}
 
-		km.logs.writeMsg(player, "Game has not launched yet.");
+		km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_NOT_LAUNCHED"));
 		return true;
 	}
 

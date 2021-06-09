@@ -9,7 +9,7 @@ import org.bukkit.potion.PotionEffectType;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
 import fr.kosmosuniverse.kuffleblocks.Core.ActionBar;
-import fr.kosmosuniverse.kuffleblocks.Core.GameTask;
+import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 
 public class KufflePause implements CommandExecutor {
 	private KuffleMain km;
@@ -25,30 +25,30 @@ public class KufflePause implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
-		km.logs.logMsg(player, "achieved command <kadminsave>");
+		km.logs.logMsg(player, Utils.getLangString(km, player.getName(), "CMD_PERF").replace("<#>", "<kb-pause>"));
 		
-		if (!player.hasPermission("kpause")) {
-			km.logs.writeMsg(player, "You are not allowed to do this command.");
+		if (!player.hasPermission("kb-pause")) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_ALLOWED"));
 			return false;
 		}
 		
-		if (km.games.size() == 0) {
-			km.logs.writeMsg(player, "You need to first add people with klist command and launch a game with kstart command.");
+		if (!km.gameStarted) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_NOT_LAUNCHED"));
 			return false;
 		}
 		
-		if (!km.games.get(0).getEnable()) {
-			km.logs.writeMsg(player, "Your game is already paused, you can resume it with kresume command.");
+		if (km.paused) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_ALREADY_PAUSED"));
 			return false;
-		}
-		
-		for (GameTask gt : km.games) {
-			gt.disable();
-			ActionBar.sendRawTitle("{\"text\":\"Game Paused..\",\"bold\":true,\"color\":\"dark_purple\"}", gt.getPlayer());
-			gt.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 999999, 10, false, false, false));
 		}
 		
 		km.paused = true;
+		
+		for (String playerName : km.games.keySet()) {
+			km.games.get(playerName).pause();
+			ActionBar.sendRawTitle("{\"text\":\"" + Utils.getLangString(km, player.getName(), "GAME_PAUSED") + "..\",\"bold\":true,\"color\":\"dark_purple\"}", km.games.get(playerName).getPlayer());
+			km.games.get(playerName).getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 999999, 10, false, false, false));
+		}
 		
 		return true;
 	}

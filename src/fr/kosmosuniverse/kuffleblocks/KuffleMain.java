@@ -1,150 +1,186 @@
 package fr.kosmosuniverse.kuffleblocks;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.potion.PotionEffectType;
 
 import fr.kosmosuniverse.kuffleblocks.Commands.*;
-import fr.kosmosuniverse.kuffleblocks.Core.ChooseBlockInList;
+import fr.kosmosuniverse.kuffleblocks.Core.Age;
+import fr.kosmosuniverse.kuffleblocks.Core.AgeManager;
+import fr.kosmosuniverse.kuffleblocks.Core.BlockManager;
 import fr.kosmosuniverse.kuffleblocks.Core.Config;
-import fr.kosmosuniverse.kuffleblocks.Core.GameTask;
 import fr.kosmosuniverse.kuffleblocks.Core.LangManager;
+import fr.kosmosuniverse.kuffleblocks.Core.Level;
+import fr.kosmosuniverse.kuffleblocks.Core.LevelManager;
 import fr.kosmosuniverse.kuffleblocks.Core.Logs;
-import fr.kosmosuniverse.kuffleblocks.Core.ManageTeams;
+import fr.kosmosuniverse.kuffleblocks.Core.CraftsManager;
+import fr.kosmosuniverse.kuffleblocks.Core.Game;
+import fr.kosmosuniverse.kuffleblocks.Core.GameLoop;
+import fr.kosmosuniverse.kuffleblocks.Core.TeamsManager;
 import fr.kosmosuniverse.kuffleblocks.Core.RewardElem;
 import fr.kosmosuniverse.kuffleblocks.Core.RewardManager;
 import fr.kosmosuniverse.kuffleblocks.Core.Scores;
 import fr.kosmosuniverse.kuffleblocks.Crafts.ACrafts;
-import fr.kosmosuniverse.kuffleblocks.Crafts.ManageCrafts;
 import fr.kosmosuniverse.kuffleblocks.Listeners.*;
 import fr.kosmosuniverse.kuffleblocks.MultiBlock.ManageMultiBlock;
 import fr.kosmosuniverse.kuffleblocks.TabCmd.*;
+import fr.kosmosuniverse.kuffleblocks.utils.FilesConformity;
 import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 
 public class KuffleMain extends JavaPlugin {
 	public HashMap<String, HashMap<String, RewardElem>> allRewards;
-	public HashMap<String, HashMap<String, String>> allLang;
+	public HashMap<String, HashMap<String, String>> allBlocksLangs;
+	public HashMap<String, HashMap<String, String>> allLangs;
 	public HashMap<String, ArrayList<Inventory>> blocksInvs;
 	public HashMap<String, ArrayList<String>> allBlocks;
-	public HashMap<String, Boolean> playerRank = new HashMap<String, Boolean>();
-	public HashMap<String, PotionEffectType> effects;
-	public ArrayList<GameTask> games;
+	public HashMap<String, ArrayList<String>> allSbtts = new HashMap<String, ArrayList<String>>();
+
+	public HashMap<String, Game> games = new HashMap<String, Game>();
+	public HashMap<String, Integer> playerRank = new HashMap<String, Integer>();
+	
 	public ArrayList<String> langs;
+	public ArrayList<Age> ages;
+	public ArrayList<Level> levels;
+	
+	public GameLoop loop;
 	public Config config;
-	public ManageCrafts crafts;
+	public CraftsManager crafts;
 	public ManageMultiBlock multiBlock;
-	public ManageTeams teams;
+	public TeamsManager teams;
 	public Scores scores;
 	public Logs logs;
 	public Inventory playersHeads;
+	public PlayerEvents playerEvents;
 	
 	public boolean paused = false;
+	public boolean loaded = false;
+	public boolean gameStarted = false;
 	
 	@Override
 	public void onEnable() {
 		saveDefaultConfig();
 		reloadConfig();
 		
-		try {
-			InputStream in = getResource("blocks_" + Utils.getVersion() + ".json");
-			String result = Utils.readFileContent(in);
-			allBlocks = ChooseBlockInList.getAllBlocks(result, this.getDataFolder());
-			
-			in.close();
-			
-			in = getResource("rewards_" + Utils.getVersion() + ".json");
-			result = Utils.readFileContent(in);
-			allRewards = RewardManager.getAllRewards(result, this.getDataFolder());
-			
-			in.close();
-			
-			in = getResource("blocks_lang.json");
-			result = Utils.readFileContent(in);
-			allLang = LangManager.getAllBlocksLang(result, this.getDataFolder());
-			
-			in.close();
-			
-			logs = new Logs(this.getDataFolder());
-		} catch (IOException e) {
-			e.printStackTrace();
+		if ((ages = AgeManager.getAges(FilesConformity.getContent(this, "ages.json"))) == null) {
+			this.getPluginLoader().disablePlugin(this);
+			return ;
 		}
 		
-		langs = LangManager.findAllLangs(allLang);
-		blocksInvs = ChooseBlockInList.getBlocksInvs(allBlocks);
-		effects = RewardManager.getAllEffects();
+		if ((allBlocks = BlockManager.getAllBlocks(ages, FilesConformity.getContent(this, "blocks_" + Utils.getVersion() + ".json"), this.getDataFolder())) == null) {
+			this.getPluginLoader().disablePlugin(this);
+			return ;
+		}
+		
+		if ((allSbtts = BlockManager.getAllBlocks(ages, FilesConformity.getContent(this, "sbtt_" + Utils.getVersion() + ".json"), this.getDataFolder())) == null) {
+			this.getPluginLoader().disablePlugin(this);
+			return ;
+		}
+		
+		if ((allRewards = RewardManager.getAllRewards(ages, FilesConformity.getContent(this, "rewards_" + Utils.getVersion() + ".json"), this.getDataFolder())) == null) {
+			this.getPluginLoader().disablePlugin(this);
+			return ;
+		}
+		
+		if ((allBlocksLangs = LangManager.getAllBlocksLang(FilesConformity.getContent(this, "blocks_lang.json"), this.getDataFolder())) == null) {
+			this.getPluginLoader().disablePlugin(this);
+			return ;
+		}
+		
+		if ((allLangs = LangManager.getAllBlocksLang(FilesConformity.getContent(this, "langs.json"), this.getDataFolder())) == null) {
+			this.getPluginLoader().disablePlugin(this);
+			return ;
+		}
+		
+		if ((levels = LevelManager.getLevels(FilesConformity.getContent(this, "levels.json"))) == null) {
+			this.getPluginLoader().disablePlugin(this);
+			return ;
+		}
+		
+		logs = new Logs(this.getDataFolder());
+		langs = LangManager.findAllLangs(allBlocksLangs);
 		
 		config = new Config(this);
 		config.setupConfig(this, getConfig());
 		
-		games = new ArrayList<GameTask>();
-		crafts = new ManageCrafts(this);
-		multiBlock = new ManageMultiBlock();
-		teams = new ManageTeams();
+		crafts = new CraftsManager(this);
+		blocksInvs = BlockManager.getBlocksInvs(allBlocks);
 		scores = new Scores(this);
-	
-		System.out.println("[KuffleBlocks] Add Custom Crafts.");
+		
+		config = new Config(this);
+		config.setupConfig(this, getConfig());
+		
+		games = new HashMap<String, Game>();
+		multiBlock = new ManageMultiBlock();
+		teams = new TeamsManager();
+		scores = new Scores(this);
+
+		int cnt = 0;
+		
 		for (ACrafts item : crafts.getRecipeList()) {
 			getServer().addRecipe(item.getRecipe());
+			cnt++;
 		}
+		System.out.println("[KuffleBlocks] " + Utils.getLangString(this, null, "ADD_CRAFTS").replace("%i", "" + cnt));
 		
-		System.out.println("[KuffleBlocks] Add Game Listeners.");
+		playerEvents = new PlayerEvents(this, this.getDataFolder());
+		
 		getServer().getPluginManager().registerEvents(new PlayerMove(this), this);
-		getServer().getPluginManager().registerEvents(new InventoryRecipeListener(this), this);
-		getServer().getPluginManager().registerEvents(new PlayerEventListener(this, this.getDataFolder()), this);
+		getServer().getPluginManager().registerEvents(new InventoryListeners(this), this);
+		getServer().getPluginManager().registerEvents(playerEvents, this);
+		System.out.println("[KuffleBlocks] " + Utils.getLangString(this, null, "ADD_LISTENERS").replace("%i", "3"));
 		
-		System.out.println("[KuffleBlocks] Add Plugin Commands.");
-		getCommand("klist").setExecutor(new KuffleList(this));
-		getCommand("kstart").setExecutor(new KuffleStart(this));
-		getCommand("kstop").setExecutor(new KuffleStop(this));
-		getCommand("kpause").setExecutor(new KufflePause(this));
-		getCommand("kresume").setExecutor(new KuffleResume(this));
-		getCommand("kvalidate").setExecutor(new KuffleValidate(this));
-		getCommand("kadminskip").setExecutor(new KuffleAdminSkip(this));
-		getCommand("kadminspawn").setExecutor(new KuffleAdminSpawn(this));
-		getCommand("kadminsave").setExecutor(new KuffleAdminSave(this, this.getDataFolder()));
-		getCommand("kadminload").setExecutor(new KuffleAdminLoad(this, this.getDataFolder()));
-		getCommand("kback").setExecutor(new KuffleBack(this));
-		getCommand("kskip").setExecutor(new KuffleSkip(this));
-		getCommand("kcrafts").setExecutor(new KuffleCrafts(this));
-		getCommand("kmultiBlocks").setExecutor(new KuffleMultiBlocks(this));
-		getCommand("kageblocks").setExecutor(new KuffleAgeBlocks(this));
-		getCommand("kplayers").setExecutor(new KufflePlayers(this));
-		getCommand("klang").setExecutor(new KuffleLang(this));
-		getCommand("kconfig").setExecutor(new KuffleConfig(this));
-		getCommand("ktest").setExecutor(new KuffleTest(this));
+		getCommand("kb-config").setExecutor(new KuffleConfig(this));
+		getCommand("kb-list").setExecutor(new KuffleList(this));
+		getCommand("kb-save").setExecutor(new KuffleSave(this, this.getDataFolder()));
+		getCommand("kb-load").setExecutor(new KuffleLoad(this, this.getDataFolder()));
+		getCommand("kb-start").setExecutor(new KuffleStart(this));
+		getCommand("kb-stop").setExecutor(new KuffleStop(this));
+		getCommand("kb-pause").setExecutor(new KufflePause(this));
+		getCommand("kb-resume").setExecutor(new KuffleResume(this));
+		getCommand("kb-ageblocks").setExecutor(new KuffleAgeBlocks(this));
+		getCommand("kb-crafts").setExecutor(new KuffleCrafts(this));
+		getCommand("kb-lang").setExecutor(new KuffleLang(this));
+		getCommand("kb-skip").setExecutor(new KuffleSkip(this));
+		getCommand("kb-abandon").setExecutor(new KuffleAbandon(this));
+		getCommand("kb-adminskip").setExecutor(new KuffleSkip(this));
+		getCommand("kb-validate").setExecutor(new KuffleValidate(this));
+		getCommand("kb-validate-age").setExecutor(new KuffleValidate(this));
+		getCommand("kb-players").setExecutor(new KufflePlayers(this));
+		getCommand("kb-multiblocks").setExecutor(new KuffleMultiBlocks(this));
 		
-		getCommand("kteam-create").setExecutor(new KuffleTeamCreate(this));
-		getCommand("kteam-delete").setExecutor(new KuffleTeamDelete(this));
-		getCommand("kteam-color").setExecutor(new KuffleTeamColor(this));
-		getCommand("kteam-show").setExecutor(new KuffleTeamShow(this));
-		getCommand("kteam-affect-player").setExecutor(new KuffleTeamAffectPlayer(this));
-		getCommand("kteam-remove-player").setExecutor(new KuffleTeamRemovePlayer(this));
-		getCommand("kteam-reset-players").setExecutor(new KuffleTeamResetPlayers(this));
-		getCommand("kteam-random-player").setExecutor(new KuffleTeamRandomPlayer(this));
+		getCommand("kb-team-create").setExecutor(new KuffleTeamCreate(this));
+		getCommand("kb-team-delete").setExecutor(new KuffleTeamDelete(this));
+		getCommand("kb-team-color").setExecutor(new KuffleTeamColor(this));
+		getCommand("kb-team-show").setExecutor(new KuffleTeamShow(this));
+		getCommand("kb-team-affect-player").setExecutor(new KuffleTeamAffectPlayer(this));
+		getCommand("kb-team-remove-player").setExecutor(new KuffleTeamRemovePlayer(this));
+		getCommand("kb-team-reset-players").setExecutor(new KuffleTeamResetPlayers(this));
+		getCommand("kb-team-random-player").setExecutor(new KuffleTeamRandomPlayer(this));
+		System.out.println("[KuffleBlocks] " + Utils.getLangString(this, null, "ADD_CMD").replace("%i", "25"));
+
+		getCommand("kb-config").setTabCompleter(new KuffleConfigTab(this));
+		getCommand("kb-list").setTabCompleter(new KuffleListTab(this));
+		getCommand("kb-lang").setTabCompleter(new KuffleLangTab(this));
+		getCommand("kb-ageblocks").setTabCompleter(new KuffleAgeBlocksTab(this));
+		getCommand("kb-validate").setTabCompleter(new KuffleValidateTab(this));
+		getCommand("kb-validate-age").setTabCompleter(new KuffleValidateTab(this));
 		
-		System.out.println("[KuffleBlocks] Add Plugin Tab Completer.");
-		getCommand("klist").setTabCompleter(new KuffleListTab(this));
-		getCommand("kadminskip").setTabCompleter(new KuffleAdminSkipTab(this));
-		getCommand("kvalidate").setTabCompleter(new KuffleValidateTab(this));
-		getCommand("kadminspawn").setTabCompleter(new KuffleAdminSpawnTab(this));
-		getCommand("kmultiblocks").setTabCompleter(new KuffleMultiBlocksTab(this));
-		getCommand("klang").setTabCompleter(new KuffleLangTab(this));
-		getCommand("kconfig").setTabCompleter(new KuffleConfigTab(this));
+		getCommand("kb-team-create").setTabCompleter(new KuffleTeamCreateTab(this));
+		getCommand("kb-team-delete").setTabCompleter(new KuffleTeamDeleteTab(this));
+		getCommand("kb-team-color").setTabCompleter(new KuffleTeamColorTab(this));
+		getCommand("kb-team-show").setTabCompleter(new KuffleTeamShowTab(this));
+		getCommand("kb-team-affect-player").setTabCompleter(new KuffleTeamAffectPlayerTab(this));
+		getCommand("kb-team-remove-player").setTabCompleter(new KuffleTeamRemovePlayerTab(this));
+		getCommand("kb-team-reset-players").setTabCompleter(new KuffleTeamResetPlayersTab(this));
+		System.out.println("[KuffleBlocks] " + Utils.getLangString(this, null, "ADD_TAB").replace("%i", "13"));
 		
-		getCommand("kteam-create").setTabCompleter(new KuffleTeamCreateTab(this));
-		getCommand("kteam-delete").setTabCompleter(new KuffleTeamDeleteTab(this));
-		getCommand("kteam-color").setTabCompleter(new KuffleTeamColorTab(this));
-		getCommand("kteam-show").setTabCompleter(new KuffleTeamShowTab(this));
-		getCommand("kteam-affect-player").setTabCompleter(new KuffleTeamAffectPlayerTab(this));
-		getCommand("kteam-remove-player").setTabCompleter(new KuffleTeamRemovePlayerTab(this));
-		getCommand("kteam-reset-players").setTabCompleter(new KuffleTeamResetPlayersTab(this));
+		loaded = true;
 		
 		System.out.println("[KuffleBlocks] Plugin turned ON.");
 	}
@@ -170,20 +206,87 @@ public class KuffleMain extends JavaPlugin {
 	
 	@Override
 	public void onDisable() {
-		if (games != null && games.size() != 0) {
-			for (GameTask gt : games) {
-				gt.exit();
-				gt.kill();
-			}
-			games.clear();
+		if (loaded) {
+			killAll();
 		}
-		
-		allBlocks.clear();
-		allRewards.clear();
-		allLang.clear();
 		
 		System.out.println("[KuffleBlocks] : Plugin turned OFF.");
 	}
 	
+	public void addRecipe(Recipe recipe) {
+		getServer().addRecipe(recipe);
+	}
 	
+	public void removeRecipe(String name) {
+		NamespacedKey n = new NamespacedKey(this, name);
+		
+		for (String playerName : games.keySet()) {
+			games.get(playerName).getPlayer().undiscoverRecipe(n);
+		}
+		
+		getServer().removeRecipe(n);
+	}
+	
+	private void killAll() {
+		if (allRewards != null) {
+			for (String key : allRewards.keySet()) {
+				allRewards.get(key).clear();
+			}
+			
+			allRewards.clear();
+		}
+		
+		if (allBlocks != null) {
+			for (String key : allBlocks.keySet()) {
+				allBlocks.get(key).clear();
+			}
+			
+			allBlocks.clear();
+		}
+
+		
+		if (allBlocksLangs != null) {
+			for (String key : allBlocksLangs.keySet()) {
+				allBlocksLangs.get(key).clear();
+			}
+			
+			allBlocksLangs.clear();
+		}
+		
+		if (blocksInvs != null) {
+			for (String key : blocksInvs.keySet()) {
+				blocksInvs.get(key).clear();
+			}
+			
+			blocksInvs.clear();
+		}
+		
+		if (playerRank != null) {
+			playerRank.clear();
+		}
+		
+		if (games != null) {
+			games.clear();	
+		}
+		
+		if (langs != null) { 
+			langs.clear();
+		}
+		
+		if (ages != null) {
+			ages.clear();	
+		}
+		
+		if (crafts != null) {
+			for (ACrafts craft : crafts.getRecipeList()) {
+				removeRecipe(craft.getName());
+			}
+			
+			crafts.clear();
+		}
+		
+		if (config != null) {
+			config.clear();
+		}
+	}
 }

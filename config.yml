@@ -1,23 +1,29 @@
 game_settings:
+   auto_detect_game_end:
+      enable: false # If True, checks at every game loop if game is ended
+      end_when_one: false # If True, End the game if only one player remains (do not toggle to true if the game contains only one player)
    spreadplayers:
-      enable: true # True: when start the game, spread players.
+      enable: false # True: when start the game, spread players.
       minimum_distance: 500 # for spreadplayer command, minimum distance between player, Default: 500
       minimum_radius: 1000 # for spreadplayer command, minimum radius must be > minimum_distance parameter, Default: 1000
-   saturation: true # True: give infinite saturation effect to all players
+   saturation: false # True: give infinite saturation effect to all players
    rewards: true # True: give reward after each age
+   passive: true # True: pvp not enabled and open other player box is disable, Default: True
    start_time: 4 # minutes, Default: 4
    time_added: 2 # minutes added to start_time after each age, Default: 2
    max_age: 6 # number of Age to finish the game, Default : 6
    block_per_age: 5 # number of block to complete to move to the next age, min: 1, Default: 5
    lang: "en" # Lang for all players, Default: "en"
-   level: 1 # Number describes game difficulty can be [0, 1, 2, 3], Default: 1
+   level: 1 # Number describes game difficulty can be [0, 1, 2, 3, 4], Default: 1
    skip:
       enable: true # allow player to skip block if they are after 2nd block of current age, Default: true
       age: 2 # First age that allow skipping block, Default: 2
    custom_crafts: true # allow players to use custom crafts, Default: true
-   see_block_count: true # allow players to know others player progress, Default: true
    team:
       enable: false # Define if team are allowed or not, Default: False
       size: 2 # Size of a team, Default: 2
    same_mode: false # If true, players will have same blocks, Default: false
    double_mode: false # If true, players will have two block instead of one, Default: false
+   sbtt_mode:
+      enable: false # If true, players will be able to craft an item that will allow them to validate one item, Default: false
+      amount: 4 # Amount of item randomly selected to craft Templates (must be between 1 and 9 included), Default 4

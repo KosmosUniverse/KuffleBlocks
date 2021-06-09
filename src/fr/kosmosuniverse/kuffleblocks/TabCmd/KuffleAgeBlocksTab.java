@@ -9,13 +9,22 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
-import fr.kosmosuniverse.kuffleblocks.Core.Team;
+import fr.kosmosuniverse.kuffleblocks.Core.AgeManager;
 
-public class KuffleTeamResetPlayersTab implements TabCompleter {
+public class KuffleAgeBlocksTab implements TabCompleter  {
 	private KuffleMain km;
-	
-	public KuffleTeamResetPlayersTab(KuffleMain _km) {
+	private ArrayList<String> ages = new ArrayList<String>();
+
+	public KuffleAgeBlocksTab(KuffleMain _km) {
 		km = _km;
+		
+		int max = AgeManager.getAgeMaxNumber(km.ages);
+		
+		for (int cnt = 0; cnt <= max; cnt++) {
+			String age = AgeManager.getAgeByNumber(km.ages, cnt).name;
+
+			ages.add(age);
+		}
 	}
 	
 	@Override
@@ -24,21 +33,12 @@ public class KuffleTeamResetPlayersTab implements TabCompleter {
 			return null;
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("kb-team-reset-players")) {
-			if (args.length == 1) {				
-				ArrayList<Team> teams = km.teams.getTeams();
-				ArrayList<String> ret = new ArrayList<String>();
-				
-				for (Team item : teams) {
-					if (item.players.size() != 0) {
-						ret.add(item.name);	
-					}
-				}
-				
-				return ret;
+		if (cmd.getName().equalsIgnoreCase("kb-ageitems")) {
+			if (args.length == 1) {
+				return ages;
 			}
 		}
-
+		
 		return new ArrayList<String>();
 	}
 }

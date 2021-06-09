@@ -25,20 +25,20 @@ public class KuffleTeamCreate implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
-		km.logs.logMsg(player, "achieved command <kteam-create>");
+		km.logs.logMsg(player, Utils.getLangString(km, player.getName(), "CMD_PERF").replace("<#>", "<kb-team-create>"));
 		
-		if (!player.hasPermission("kteam-create")) {
-			km.logs.writeMsg(player, "You are not allowed to do this command.");
+		if (!player.hasPermission("kb-team-create")) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_ALLOWED"));
 			return false;
 		}
 		
 		if (!km.config.getTeam()) {
-			km.logs.writeMsg(player, "Please enable Teams with /kconfig command.");
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "TEAM_ENABLE"));
 			return true;
 		}
 		
-		if (km.games.size() > 0 && km.games.get(0).getEnable()) {
-			km.logs.writeMsg(player, "Game is already launched, you cannot modify teams during the game.");
+		if (km.games.size() > 0 && km.gameStarted) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_ALREADY_LAUNCHED"));
 			return true;
 		}
 		
@@ -47,24 +47,25 @@ public class KuffleTeamCreate implements CommandExecutor {
 		}
 		
 		if (km.teams.hasTeam(args[0])) {
-			km.logs.writeMsg(player, "Team <" + args[0] + "> already exists, please choose another name.");
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "TEAM_EXISTS").replace("<#>", "<" + args[0] + ">"));
 		} else {
 			if (args.length == 1) {
-				km.teams.createTeam(args[0]);	
+				km.teams.createTeam(args[0]);
+				km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "TEAM_CREATED").replace("<#>", "<" + args[0] + ">"));
 			} else if (args.length == 2) {
 				ChatColor tmp;
 				
 				if ((tmp = Utils.findChatColor(args[1])) == null) {
-					km.logs.writeMsg(player, "Color <" + args[1] + "> does not exist, please choose another name.");
+					km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "COLOR_NOT_EXISTS").replace("[#]", "[" + args[1] + "]"));
 				} else {
 					ArrayList<String> colorUsed = km.teams.getTeamColors();
 					
 					if (!colorUsed.contains(tmp.name())) {
 						km.teams.createTeam(args[0], tmp);
 						
-						km.logs.writeMsg(player, "Team <" + args[0] + "> was created.");
+						km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "TEAM_CREATED").replace("<#>", "<" + args[0] + ">"));
 					} else {
-						km.logs.writeMsg(player, "Color <" + tmp.name() + "> is already used, please choose another one.");
+						km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "COLOR_ALREADY_USED").replace("[#]", "[" + tmp.name() + "]"));
 					}
 				}
 			}
@@ -72,5 +73,4 @@ public class KuffleTeamCreate implements CommandExecutor {
 		
 		return true;
 	}
-
 }

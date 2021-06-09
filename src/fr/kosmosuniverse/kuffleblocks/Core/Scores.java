@@ -3,91 +3,88 @@ package fr.kosmosuniverse.kuffleblocks.Core;
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
-import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 import net.md_5.bungee.api.ChatColor;
 
 public class Scores {
 	private KuffleMain km;
 	private Scoreboard scoreboard;
-	private Objective age;
-	private Objective blocks;
-	private String[] ageNames = {"Archaic", "Classic", "Mineric", "Netheric", "Heroic", "Mythic"};
+	private Objective age = null;
+	private Objective items;
 	private ArrayList<Score> S_ages = new ArrayList<Score>();
 	
 	public Scores(KuffleMain _km) {
 		km = _km;
 		scoreboard = Bukkit.getScoreboardManager().getNewScoreboard();
+		items = scoreboard.registerNewObjective("blocks", "dummy", "Blocks");
+	}
+	
+	public void setupPlayerScores() {
+		items.setDisplaySlot(DisplaySlot.PLAYER_LIST);
+		
+		if (age != null) {
+			age.unregister();
+		}
+		
 		age = scoreboard.registerNewObjective("ages", "dummy", ChatColor.LIGHT_PURPLE + "Ages");
-		blocks = scoreboard.registerNewObjective("blocks", "dummy", "Blocks");
 		
 		int ageCnt = 0;
 		
-		for (String ageStr : ageNames) {
-			S_ages.add(age.getScore(Utils.getColor(ageCnt) + ageStr + " Age"));
-			ageCnt++;
+		for (; ageCnt < km.config.getMaxAges(); ageCnt++) {
+			S_ages.add(age.getScore(AgeManager.getAgeByNumber(km.ages, ageCnt).color + AgeManager.getAgeByNumber(km.ages, ageCnt).name.replace("_", " ")));
 		}
-		
+				
 		ageCnt = 1;
 		
 		for (Score ageScore : S_ages) {
 			ageScore.setScore(ageCnt);
 			ageCnt++;
 		}
-	}
-	
-	public void setupPlayerScores(DisplaySlot slot) {
-		blocks.setDisplaySlot(slot);
+		
 		age.setDisplaySlot(DisplaySlot.SIDEBAR);
 		
-		for (GameTask gt : km.games) {
-			gt.setBlockScore(blocks.getScore(gt.getPlayer().getDisplayName()));
-			gt.getBlockScore().setScore(1);
-			gt.getPlayer().setScoreboard(scoreboard);
-			
-			if (km.config.getTeam()) {
-				gt.getPlayer().setPlayerListName("[" + km.teams.getTeam(gt.getTeamName()).color + gt.getTeamName() + ChatColor.RESET + "] - " + ChatColor.RED + gt.getPlayer().getName());
-			} else {
-				gt.getPlayer().setPlayerListName(ChatColor.RED + gt.getPlayer().getName());	
-			}
-			
-			
+		for (String playerName : km.games.keySet()) {
+			km.games.get(playerName).setBlockScore(items.getScore(playerName));
+			km.games.get(playerName).getBlockScore().setScore(1);
+			km.games.get(playerName).getPlayer().setScoreboard(scoreboard);
+			km.games.get(playerName).updatePlayerListName();
 		}
 	}
 	
-	public void setupPlayerScores(DisplaySlot slot, Player player) {
-		blocks.setDisplaySlot(slot);
+	public void setupPlayerScores(Game _game) {
+		items.setDisplaySlot(DisplaySlot.PLAYER_LIST);
 		age.setDisplaySlot(DisplaySlot.SIDEBAR);
-		
-		for (GameTask gt : km.games) {
-			if (gt.getPlayer().getName().equals(player.getName())) {
-				gt.setBlockScore(blocks.getScore(gt.getPlayer().getDisplayName()));
-				gt.getBlockScore().setScore(1);
-				gt.getPlayer().setScoreboard(scoreboard);
-				return ;
-			}
-		}
+
+		_game.setBlockScore(items.getScore(_game.getPlayer().getName()));
+		_game.getBlockScore().setScore(1);
+		_game.getPlayer().setScoreboard(scoreboard);
 	}
 	
 	public void clear() {
 		scoreboard.clearSlot(age.getDisplaySlot());
-		scoreboard.clearSlot(blocks.getDisplaySlot());
 		
-		for (GameTask gt : km.games) {
-			gt.getPlayer().setPlayerListName(ChatColor.WHITE + gt.getPlayer().getName());
+		if (items.getDisplaySlot() != null) {
+			scoreboard.clearSlot(items.getDisplaySlot());
+		}
+
+		age.unregister();
+		age = null;
+		S_ages.clear();
+		
+		for (String playerName : km.games.keySet()) {
+			km.games.get(playerName).getPlayer().setPlayerListName(ChatColor.WHITE + km.games.get(playerName).getPlayer().getName());
 		}
 	}
 	
 	public void reset() {
-		for (GameTask gt : km.games) {
-			gt.getBlockScore().setScore(1);;
-			gt.getPlayer().setPlayerListName(ChatColor.RED + gt.getPlayer().getName());
+		for (String playerName : km.games.keySet()) {
+			km.games.get(playerName).getBlockScore().setScore(1);
+			km.games.get(playerName).getPlayer().setPlayerListName(ChatColor.RED + km.games.get(playerName).getPlayer().getName());
 		}
 	}
 }

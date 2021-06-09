@@ -9,7 +9,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
-import fr.kosmosuniverse.kuffleblocks.Core.GameTask;
+import fr.kosmosuniverse.kuffleblocks.Core.AgeManager;
+import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 
 public class KuffleAgeBlocks implements CommandExecutor  {
 	private KuffleMain km;
@@ -25,39 +26,43 @@ public class KuffleAgeBlocks implements CommandExecutor  {
 		
 		Player player = (Player) sender;
 		
-		km.logs.logMsg(player, "achieved command <kageblocks>");
+		km.logs.logMsg(player, Utils.getLangString(km, player.getName(), "CMD_PERF").replace("<#>", "<ki-ageblocks>"));
 		
-		if (!player.hasPermission("kageblocks")) {
-			km.logs.writeMsg(player, "You are not allowed to do this command.");
+		if (!player.hasPermission("kb-ageblocks")) {
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_ALLOWED"));
 			return false;
 		}
 		
-		if (km.games.size() != 0) {
-			if (km.games.get(0).getEnable()) {
-				String age;
+		if (args.length > 1) {
+			return false;
+		}
+		
+		if (km.gameStarted) {
+			if (!km.games.containsKey(player.getName())) {
+				km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_PLAYING"));
+				return true;
+			}
+			
+			String age;
+			
+			if (args.length == 0) {
+				age = AgeManager.getAgeByNumber(km.ages, km.games.get(player.getName()).getAge()).name;	
+			} else {
+				age = args[0];
 				
-				if ((age = getPlayerAge(player.getName())) != null) {
-					ArrayList<Inventory> ageBlocks = km.blocksInvs.get(age);
-					
-					player.openInventory(ageBlocks.get(0));
-				} else {
-					km.logs.writeMsg(player, "You are not playing in this game.");
+				if (!AgeManager.ageExists(km.ages, age)) {
+					km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "AGE_NOT_EXISTS"));
+					return false;
 				}
 			}
+			
+			ArrayList<Inventory> ageBlocks = km.blocksInvs.get(age);
+			
+			player.openInventory(ageBlocks.get(0));
 		} else {
-			km.logs.writeMsg(player, "The game has not launched yet.");			
+			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "GAME_NOT_LAUNCHED"));			
 		}
 
 		return true;
-	}
-	
-	private String getPlayerAge(String player) {
-		for (GameTask gt : km.games) {
-			if (gt.getPlayer().getDisplayName().equals(player)) {
-				return (gt.getAgeName());
-			}
-		}
-		
-		return null;
 	}
 }
