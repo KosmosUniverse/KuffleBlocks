@@ -7,36 +7,20 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
-import fr.kosmosuniverse.kuffleblocks.Crafts.ACrafts;
-import fr.kosmosuniverse.kuffleblocks.Crafts.Bell;
-import fr.kosmosuniverse.kuffleblocks.Crafts.Coal;
-import fr.kosmosuniverse.kuffleblocks.Crafts.CoalOre;
-import fr.kosmosuniverse.kuffleblocks.Crafts.Diamond;
-import fr.kosmosuniverse.kuffleblocks.Crafts.DiamondOre;
-import fr.kosmosuniverse.kuffleblocks.Crafts.Emerald;
-import fr.kosmosuniverse.kuffleblocks.Crafts.EmeraldOre;
-import fr.kosmosuniverse.kuffleblocks.Crafts.EndPortalFrame;
-import fr.kosmosuniverse.kuffleblocks.Crafts.Lapis;
-import fr.kosmosuniverse.kuffleblocks.Crafts.LapisOre;
-import fr.kosmosuniverse.kuffleblocks.Crafts.MossyCobblestone;
-import fr.kosmosuniverse.kuffleblocks.Crafts.MossyStoneBrick;
-import fr.kosmosuniverse.kuffleblocks.Crafts.Quartz;
-import fr.kosmosuniverse.kuffleblocks.Crafts.QuartzOre;
-import fr.kosmosuniverse.kuffleblocks.Crafts.RedNetherBrick;
-import fr.kosmosuniverse.kuffleblocks.Crafts.RedSand;
-import fr.kosmosuniverse.kuffleblocks.Crafts.Redstone;
-import fr.kosmosuniverse.kuffleblocks.Crafts.RedstoneOre;
+import fr.kosmosuniverse.kuffleblocks.Crafts.*;
 import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 
 public class CraftsManager {
 	private ArrayList<ACrafts> recipes = new ArrayList<ACrafts>();
 	
 	public CraftsManager(KuffleMain _km) {
+		recipes.add(new EndPortalFrame(_km));
+		
 		if (!_km.config.getCrafts()) {
 			return;
 		}
-		
-		recipes.add(new RedSand(_km));
+
+		recipes.add(new Mycelium(_km));
 		recipes.add(new MossyCobblestone(_km));
 		recipes.add(new MossyStoneBrick(_km));
 		
@@ -55,9 +39,8 @@ public class CraftsManager {
 		recipes.add(new QuartzOre(_km));
 		
 		recipes.add(new RedNetherBrick(_km));
-		
-		recipes.add(new EndPortalFrame(_km));
 		recipes.add(new Bell(_km));
+		recipes.add(new Cobweb(_km));
 	}
 	
 	public void clear() {

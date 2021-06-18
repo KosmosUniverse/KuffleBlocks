@@ -3,44 +3,39 @@ package fr.kosmosuniverse.kuffleblocks.Crafts;
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapelessRecipe;
+import org.bukkit.inventory.RecipeChoice.MaterialChoice;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
 
-public class Template extends ACrafts {
-	ArrayList<Material> compose;
+public class Mycelium extends ACrafts {
+	MaterialChoice mc;
 	
-	public Template(KuffleMain _km, String age, ArrayList<Material> _compose) {
-		compose = _compose;
-		name = age + "Template";
-		item = new ItemStack(Material.EMERALD);
+	public Mycelium(KuffleMain _km) {
+		name = "Mycelium";
 		
-		ItemMeta itM = item.getItemMeta();
-		itM.setDisplayName(ChatColor.DARK_RED + name);
+		recipe = new ShapelessRecipe(new NamespacedKey(_km, name), new ItemStack(Material.MYCELIUM));
 		
-		ArrayList<String> lore = new ArrayList<String>();
+		ArrayList<Material> champs = new ArrayList<Material>();
 		
-		lore.add("Single Use " + age + " Template.");
-		lore.add("Right click to validate your item.");
+		champs.add(Material.BROWN_MUSHROOM);
+		champs.add(Material.RED_MUSHROOM);
+		champs.add(Material.CRIMSON_FUNGUS);
+		champs.add(Material.WARPED_FUNGUS);
 		
-		itM.setLore(lore);
+		mc = new MaterialChoice(champs);
 		
-		item.setItemMeta(itM);
+		((ShapelessRecipe) recipe).addIngredient(Material.DIRT);
+		((ShapelessRecipe) recipe).addIngredient(mc);
 		
-		recipe = new ShapelessRecipe(new NamespacedKey(_km, name), item);
-		
-		for (int cnt = 0; cnt < _km.config.getSBTTAmount(); cnt++) {
-			((ShapelessRecipe) recipe).addIngredient(compose.get(cnt));
-		}
+		item = new ItemStack(Material.MYCELIUM);
 	}
-
-	@Override
+	
 	public Inventory getInventoryRecipe() {
 		Inventory inv = Bukkit.createInventory(null,  27, "§8" + name);
 		ItemStack grayPane = new ItemStack(Material.LIGHT_GRAY_STAINED_GLASS_PANE);
@@ -57,22 +52,17 @@ public class Template extends ACrafts {
 		itM.setDisplayName("<- Back");
 		redPane.setItemMeta(itM);
 		
-		int cnt = 0;
-		
 		for (int i = 0; i < 27; i++) {
 			if (i == 0) {
 				inv.setItem(i, new ItemStack(redPane));
-			} else if (i == 3 || i == 4 || i == 5 ||
-					i == 12 || i == 13 || i == 14 ||
-					i == 21 || i == 22 || i == 23) {
-				if (cnt < compose.size()) {
-					inv.setItem(i, new ItemStack(compose.get(cnt)));
-					cnt++;
-				} else {
-					inv.setItem(i, new ItemStack(grayPane));
-				}
+			} else if (i == 3) {
+				inv.setItem(i, new ItemStack(Material.DIRT));
+			} else if (i == 4) {
+				inv.setItem(i, new ItemStack(Material.BROWN_MUSHROOM));
 			} else if (i == 16) {
-				inv.setItem(i, item);
+				inv.setItem(i, new ItemStack(Material.MYCELIUM));
+			} else if (i == 5 || i == 12 || i == 13 || i == 14 || i == 21 || i == 22 || i == 23) {
+				inv.setItem(i, new ItemStack(grayPane));
 			} else {
 				inv.setItem(i, new ItemStack(limePane));
 			}
@@ -80,5 +70,4 @@ public class Template extends ACrafts {
 		
 		return (inv);
 	}
-
 }

@@ -1,6 +1,5 @@
 package fr.kosmosuniverse.kuffleblocks.Listeners;
 
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,9 +13,11 @@ import fr.kosmosuniverse.kuffleblocks.MultiBlock.ActivationType;
 
 public class PlayerMove implements Listener {
 	private KuffleMain km;
+	private int xpAmount;
 	
 	public PlayerMove(KuffleMain _km) {
 		km = _km;
+		xpAmount = 10;
 	}
 	
 	@EventHandler
@@ -28,17 +29,21 @@ public class PlayerMove implements Listener {
 		Player player = event.getPlayer();
 		AMultiblock multiBlock;
 		
-		if (player.getLocation().add(0, -1, 0).getBlock().getType() == Material.OBSIDIAN) {
-			if ((multiBlock = km.multiBlock.findMultiBlockByCore(Material.OBSIDIAN)) != null) {
-				if (multiBlock.getMultiblock().checkMultiBlock(player.getLocation().add(0, -1, 0), player)) {
-					multiBlock.onActivate(km, player, ActivationType.ACTIVATE);
-				}
-			}
-		} else if (player.getLocation().add(0, -1, 0).getBlock().getType() == Material.END_PORTAL_FRAME) {
-			if ((multiBlock = km.multiBlock.findMultiBlockByCore(Material.END_PORTAL_FRAME)) != null) {
-				if (multiBlock.getMultiblock().checkMultiBlock(player.getLocation().add(0, -1, 0), player)) {
-					multiBlock.onActivate(km, player, ActivationType.ACTIVATE);
-				}
+		if (!km.multiBlock.cores.containsKey(player.getLocation().add(0, -1, 0).getBlock().getType())) {
+			return ;
+		}
+		
+		String name = km.multiBlock.cores.get(player.getLocation().add(0, -1, 0).getBlock().getType());
+		
+		multiBlock = km.multiBlock.findMultiBlockByName(name);
+		
+		if (multiBlock != null && multiBlock.getMultiblock().checkMultiBlock(player.getLocation().add(0, -1, 0), player)) {
+			if (multiBlock.getName().equals("OverWorldTeleporter") && player.getLevel() >= xpAmount) {
+				player.setLevel(player.getLevel() - xpAmount);
+				xpAmount = xpAmount < 2 ? 2 : xpAmount - 2;
+				multiBlock.onActivate(km, player, ActivationType.ACTIVATE);
+			} else if (!multiBlock.getName().equals("OverWorldTeleporter")) {
+				multiBlock.onActivate(km, player, ActivationType.ACTIVATE);
 			}
 		}
 	}
@@ -53,10 +58,12 @@ public class PlayerMove implements Listener {
 		Block block = event.getBlockPlaced();
 		AMultiblock multiBlock;
 		
-		if ((multiBlock = km.multiBlock.findMultiBlockByCore(block.getType())) != null) {
-			if (multiBlock.getMultiblock().checkMultiBlock(block.getLocation(), player)) {
-				multiBlock.onActivate(km, player, ActivationType.ASSEMBLE);
-			}
+		String name = km.multiBlock.cores.get(block.getType());
+		
+		multiBlock = km.multiBlock.findMultiBlockByName(name);
+		
+		if (multiBlock != null && multiBlock.getMultiblock().checkMultiBlock(block.getLocation(), player)) {
+			multiBlock.onActivate(km, player, ActivationType.ASSEMBLE);
 		}
 	}
 }

@@ -256,16 +256,16 @@
 		"fr" : "Valeur Invalide ! Nombre attendu."
 	},
 	"START" : {
-		"en" : "STARTING…",
-		"fr" : "DEMARRAGE…"
+		"en" : "STARTING...",
+		"fr" : "DEMARRAGE..."
 	},
 	"GAME_DONE" : {
 		"en" : "Game Done ! Rank : %i",
 		"fr" : "Jeu Terminé ! Rang : %i"
 	},
 	"AGE_MOVED" : {
-		"en" : "<#> has moved to the <##> Age §1.",
-		"fr" : "<#> est passé à l'age <##>§1."
+		"en" : "<#> has moved to the <##> Age.",
+		"fr" : "<#> est passé à l'age <##>."
 	},
 	"DEATH_COUNT" : {
 		"en" : " - Death Count: %i",
@@ -324,8 +324,8 @@
 		"fr" : "[#] ou [##]"
 	},
 	"SOMETHING_NEW" : {
-		"en" : "Something New…",
-		"fr" : "Quelque chose de nouveau…"
+		"en" : "Something New...",
+		"fr" : "Quelque chose de nouveau..."
 	},
 	"COUNTDOWN" : {
 		"en" : "Time left: %i seconds to find: %s.",

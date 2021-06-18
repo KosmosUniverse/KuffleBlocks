@@ -12,7 +12,7 @@ import fr.kosmosuniverse.kuffleblocks.KuffleMain;
 
 public class KuffleSpawnMultiBlocksTab implements TabCompleter {
 	private KuffleMain km;
-	private ArrayList<String> list = new ArrayList<String>();
+	public ArrayList<String> list = new ArrayList<String>();
 	
 	public KuffleSpawnMultiBlocksTab(KuffleMain _km) {
 		km = _km;

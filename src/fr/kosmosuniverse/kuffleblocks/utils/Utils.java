@@ -12,7 +12,6 @@ import java.util.HashMap;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -24,11 +23,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import fr.kosmosuniverse.kuffleblocks.Core.AgeManager;
-import fr.kosmosuniverse.kuffleblocks.Core.BlockManager;
 import fr.kosmosuniverse.kuffleblocks.Core.Game;
 import fr.kosmosuniverse.kuffleblocks.Core.LangManager;
-import fr.kosmosuniverse.kuffleblocks.Crafts.Template;
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
 
 public class Utils {
@@ -214,67 +210,6 @@ public class Utils {
 		}
 			
 		return false;
-	}
-	
-	public static void setupTemplates(KuffleMain km) {
-		ArrayList<Template> templates = new ArrayList<Template>();
-		
-		for (int i = 0; i < km.config.getMaxAges(); i++)  {
-			String name = AgeManager.getAgeByNumber(km.ages, i).name;
-			
-			name = name.replace("_Age", "");
-			templates.add(new Template(km, name, getMaterials(AgeManager.getAgeByNumber(km.ages, i).name, km)));
-		}
-		
-		for (Template t : templates) {
-			km.crafts.addCraft(t);
-			km.addRecipe(t.getRecipe());
-		}
-	}
-	
-	public static void removeTemplates(KuffleMain km) {
-		for (int i = 0; i < km.config.getMaxAges(); i++)  {
-			String name = AgeManager.getAgeByNumber(km.ages, i).name;
-			name = name.replace("_Age", "");
-			name = name + "Template";
-			
-			km.removeRecipe(name);
-			km.crafts.removeCraft(name);
-		}
-	}
-	
-	public static ArrayList<Material> getMaterials(String age, KuffleMain km) {
-		ArrayList<Material> compose = new ArrayList<Material>();
-		ArrayList<String> done = new ArrayList<String>();
-		
-		for (int cnt = 0; cnt < km.config.getSBTTAmount(); cnt++) {
-			done.add(BlockManager.newBlock(done, km.allSbtts.get(age)));
-		}
-		
-		for (String item : done) {
-			compose.add(Material.matchMaterial(item));
-		}
-		
-		done.clear();
-		return compose;
-	}
-	
-	public static void reloadTemplate(KuffleMain km, String name, String age) {
-		km.crafts.removeCraft(name);
-		km.removeRecipe(name);
-		
-		String tmp = age;
-		
-		tmp = tmp.replace("_Age", "");
-		
-		Template t = new Template(km, tmp, getMaterials(age, km));
-		
-		km.crafts.addCraft(t);
-		km.addRecipe(t.getRecipe());
-		
-		for (String playerName : km.games.keySet()) {
-			km.games.get(playerName).getPlayer().discoverRecipe(new NamespacedKey(km, t.getName()));
-		}
 	}
 	
 	public static String getTimeFromSec(long sec) {

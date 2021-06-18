@@ -96,7 +96,7 @@ public class GameLoop {
 							}
 						} else {
 							if (System.currentTimeMillis() - tmpGame.getTimeShuffle() > (tmpGame.getTime() * 60000)) {
-								tmpGame.getPlayer().sendMessage(ChatColor.RED + Utils.getLangString(km, tmpGame.getPlayer().getName(), "ITEM_NOT_FOUND"));
+								tmpGame.getPlayer().sendMessage(ChatColor.RED + Utils.getLangString(km, tmpGame.getPlayer().getName(), "BLOCK_NOT_FOUND"));
 								newBlock(tmpGame);
 							} else if (km.config.getDouble() && !tmpGame.getCurrentBlock().contains("/")) {
 								String currentTmp = BlockManager.newBlock(tmpGame.getAlreadyGot(), km.allBlocks.get(AgeManager.getAgeByNumber(km.ages, tmpGame.getAge()).name));
@@ -149,7 +149,7 @@ public class GameLoop {
 			dispCuritem = Utils.getLangString(km, tmpGame.getPlayer().getName(), "SOMETHING_NEW");
 		} else {
 			if (tmpGame.getBlockDisplay().contains("/")) {
-				dispCuritem = Utils.getLangString(km, tmpGame.getPlayer().getName(), "ITEM_DOUBLE").replace("[#]", tmpGame.getBlockDisplay().split("/")[0]).replace("[##]", tmpGame.getBlockDisplay().split("/")[1]);
+				dispCuritem = Utils.getLangString(km, tmpGame.getPlayer().getName(), "BLOCK_DOUBLE").replace("[#]", tmpGame.getBlockDisplay().split("/")[0]).replace("[##]", tmpGame.getBlockDisplay().split("/")[1]);
 			} else {
 				dispCuritem = tmpGame.getBlockDisplay();	
 			}

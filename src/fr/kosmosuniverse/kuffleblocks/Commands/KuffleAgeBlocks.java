@@ -26,7 +26,7 @@ public class KuffleAgeBlocks implements CommandExecutor  {
 		
 		Player player = (Player) sender;
 		
-		km.logs.logMsg(player, Utils.getLangString(km, player.getName(), "CMD_PERF").replace("<#>", "<ki-ageblocks>"));
+		km.logs.logMsg(player, Utils.getLangString(km, player.getName(), "CMD_PERF").replace("<#>", "<kb-ageblocks>"));
 		
 		if (!player.hasPermission("kb-ageblocks")) {
 			km.logs.writeMsg(player, Utils.getLangString(km, player.getName(), "NOT_ALLOWED"));

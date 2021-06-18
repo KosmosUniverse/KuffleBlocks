@@ -14,6 +14,14 @@ public class MultiBlock {
 		Core = _m;
 		pattern = new ArrayList<Level>();
 	}
+	
+	public void clear() {
+		for (Level l : pattern) {
+			l.clear();
+		}
+		
+		pattern.clear();
+	}
 		
 	public Material getCore() {
 		return Core;

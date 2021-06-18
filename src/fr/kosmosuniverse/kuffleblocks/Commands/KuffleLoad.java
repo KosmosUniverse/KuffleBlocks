@@ -86,15 +86,16 @@ public class KuffleLoad implements CommandExecutor {
 		
 		List<Player> players = new ArrayList<>(Bukkit.getOnlinePlayers());
 		
+		km.playersHeads = Bukkit.createInventory(null, 54, "§8Players");
+		
 		for (Player p : players) {
 			if (Utils.fileExists(dataFolder.getPath(), player.getName() + ".kb")) {
+				km.playersHeads.addItem(Utils.getHead(player));
 				Utils.loadGame(km, p);
 			}
 		}
 		
 		int invCnt = 0;
-		
-		km.playersHeads = Bukkit.createInventory(null, 54, "§8Players");
 		
 		for (String playerName : km.games.keySet()) {
 			km.playersHeads.setItem(invCnt, Utils.getHead(km.games.get(playerName).getPlayer()));
@@ -146,7 +147,7 @@ public class KuffleLoad implements CommandExecutor {
 				}
 				
 				if (km.config.getSBTT()) {
-					Utils.setupTemplates(km);
+					km.multiBlock.createTemplates(km);
 				}
 			}
 		}, 20);

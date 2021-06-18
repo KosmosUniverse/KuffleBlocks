@@ -28,7 +28,7 @@ import fr.kosmosuniverse.kuffleblocks.Core.RewardManager;
 import fr.kosmosuniverse.kuffleblocks.Core.Scores;
 import fr.kosmosuniverse.kuffleblocks.Crafts.ACrafts;
 import fr.kosmosuniverse.kuffleblocks.Listeners.*;
-import fr.kosmosuniverse.kuffleblocks.MultiBlock.ManageMultiBlock;
+import fr.kosmosuniverse.kuffleblocks.MultiBlock.MultiblockManager;
 import fr.kosmosuniverse.kuffleblocks.TabCmd.*;
 import fr.kosmosuniverse.kuffleblocks.utils.FilesConformity;
 import fr.kosmosuniverse.kuffleblocks.utils.Utils;
@@ -51,12 +51,13 @@ public class KuffleMain extends JavaPlugin {
 	public GameLoop loop;
 	public Config config;
 	public CraftsManager crafts;
-	public ManageMultiBlock multiBlock;
+	public MultiblockManager multiBlock;
 	public TeamsManager teams;
 	public Scores scores;
 	public Logs logs;
 	public Inventory playersHeads;
 	public PlayerEvents playerEvents;
+	public KuffleSpawnMultiBlocksTab ksmbt;
 	
 	public boolean paused = false;
 	public boolean loaded = false;
@@ -116,7 +117,7 @@ public class KuffleMain extends JavaPlugin {
 		config.setupConfig(this, getConfig());
 		
 		games = new HashMap<String, Game>();
-		multiBlock = new ManageMultiBlock();
+		multiBlock = new MultiblockManager(this);
 		teams = new TeamsManager();
 		scores = new Scores(this);
 
@@ -131,9 +132,11 @@ public class KuffleMain extends JavaPlugin {
 		playerEvents = new PlayerEvents(this, this.getDataFolder());
 		
 		getServer().getPluginManager().registerEvents(new PlayerMove(this), this);
+		getServer().getPluginManager().registerEvents(new PlayerInteract(this), this);
 		getServer().getPluginManager().registerEvents(new InventoryListeners(this), this);
+		getServer().getPluginManager().registerEvents(new ItemEvent(this), this);
 		getServer().getPluginManager().registerEvents(playerEvents, this);
-		System.out.println("[KuffleBlocks] " + Utils.getLangString(this, null, "ADD_LISTENERS").replace("%i", "3"));
+		System.out.println("[KuffleBlocks] " + Utils.getLangString(this, null, "ADD_LISTENERS").replace("%i", "5"));
 		
 		getCommand("kb-config").setExecutor(new KuffleConfig(this));
 		getCommand("kb-list").setExecutor(new KuffleList(this));
@@ -171,7 +174,8 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kb-ageblocks").setTabCompleter(new KuffleAgeBlocksTab(this));
 		getCommand("kb-validate").setTabCompleter(new KuffleValidateTab(this));
 		getCommand("kb-validate-age").setTabCompleter(new KuffleValidateTab(this));
-		getCommand("kb-spawn-multiblock").setTabCompleter(new KuffleSpawnMultiBlocksTab(this));
+		ksmbt = new KuffleSpawnMultiBlocksTab(this);
+		getCommand("kb-spawn-multiblock").setTabCompleter(ksmbt);
 		
 		getCommand("kb-team-create").setTabCompleter(new KuffleTeamCreateTab(this));
 		getCommand("kb-team-delete").setTabCompleter(new KuffleTeamDeleteTab(this));
@@ -180,7 +184,7 @@ public class KuffleMain extends JavaPlugin {
 		getCommand("kb-team-affect-player").setTabCompleter(new KuffleTeamAffectPlayerTab(this));
 		getCommand("kb-team-remove-player").setTabCompleter(new KuffleTeamRemovePlayerTab(this));
 		getCommand("kb-team-reset-players").setTabCompleter(new KuffleTeamResetPlayersTab(this));
-		System.out.println("[KuffleBlocks] " + Utils.getLangString(this, null, "ADD_TAB").replace("%i", "13"));
+		System.out.println("[KuffleBlocks] " + Utils.getLangString(this, null, "ADD_TAB").replace("%i", "15"));
 		
 		loaded = true;
 		

@@ -47,7 +47,7 @@ public class InventoryListeners implements Listener {
 		} else if (event.getView().getTitle().equals("§8AllMultiBlocks")) {
 			event.setCancelled(true);
 			
-			if ((multiBlock = km.multiBlock.findMultiBlockByItem(item.getType())) != null) {
+			if ((multiBlock = km.multiBlock.findMultiBlockByItem(item)) != null) {
 				if ((inv = multiBlock.getInventory(current, item, km.multiBlock.getAllMultiBlocksInventory(), true)) != null) {
 					player.openInventory(inv);
 				}

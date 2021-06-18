@@ -9,7 +9,7 @@ public class Level {
 	private double levelNb;
 	private int length;
 	private ArrayList<ArrayList<Pattern>> levelNS = new ArrayList<ArrayList<Pattern>>();
-	private ArrayList<ArrayList<Pattern>> levelEW = new ArrayList<ArrayList<Pattern>>();
+	private ArrayList<ArrayList<Pattern>> levelEW = null;
 	
 	public Level(double _lNb, int _length, Pattern ... patterns) {
 		levelNb = _lNb;
@@ -31,7 +31,10 @@ public class Level {
 		levelNS.add(new ArrayList<Pattern>(tmp));
 		tmp.clear();
 		
-		turnLevel();
+		if (length > 1) {
+			levelEW = new ArrayList<ArrayList<Pattern>>();
+			turnLevel();
+		}
 	}
 	
 	public void turnLevel() {
@@ -60,6 +63,22 @@ public class Level {
 		}
 	}
 	
+	public void clear() {
+		for (ArrayList<Pattern> key : levelNS) {
+			key.clear();
+		}
+		
+		levelNS.clear();
+		
+		if (levelEW != null) {
+			for (ArrayList<Pattern> key : levelEW) {
+				key.clear();
+			}
+			
+			levelEW.clear();
+		}
+	}
+	
 	public boolean checkRowsNS(Location loc, double direction) {
 		Location tmp;
 		
@@ -67,6 +86,7 @@ public class Level {
 			for (Pattern p : row) {
 				tmp = loc.clone();
 				tmp.add(p.getX() * direction, p.getY(), p.getZ() * direction);
+				
 				if (tmp.getBlock().getType() != p.getMaterial() &&
 						(p.getMaterial() != Material.AIR ||
 						(tmp.getBlock().getType() != Material.CAVE_AIR && tmp.getBlock().getType() != Material.VOID_AIR))) {
@@ -79,6 +99,10 @@ public class Level {
 	}
 	
 	public boolean checkRowsEW(Location loc, double direction) {
+		if (levelEW == null) {
+			return false;
+		}
+		
 		Location tmp;
 		
 		for (ArrayList<Pattern> row : levelEW) {
@@ -103,7 +127,7 @@ public class Level {
 	public void spawnLevel(Location loc) {
 		Location tmp;
 		
-		for (ArrayList<Pattern> row : levelEW) {
+		for (ArrayList<Pattern> row : levelNS) {
 			for (Pattern p : row) {
 				tmp = loc.clone();
 				tmp.add(p.getX(), p.getY(), p.getZ());
@@ -111,11 +135,13 @@ public class Level {
 			}
 		}
 		
-		for (ArrayList<Pattern> row : levelNS) {
-			for (Pattern p : row) {
-				tmp = loc.clone();
-				tmp.add(p.getX(), p.getY() + 20, p.getZ());
-				tmp.getBlock().setType(p.getMaterial());
+		if (levelEW != null) { 
+			for (ArrayList<Pattern> row : levelEW) {
+				for (Pattern p : row) {
+					tmp = loc.clone();
+					tmp.add(p.getX(), p.getY() + 20, p.getZ());
+					tmp.getBlock().setType(p.getMaterial());
+				}
 			}
 		}
 	}

@@ -101,8 +101,8 @@ public class KuffleSave implements CommandExecutor {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		Utils.removeTemplates(km);
+
+		km.multiBlock.removeTemplates(km);
 		km.scores.clear();
 		km.games.clear();
 		km.loop.kill();

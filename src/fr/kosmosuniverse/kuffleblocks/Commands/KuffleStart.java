@@ -137,7 +137,7 @@ public class KuffleStart implements CommandExecutor {
 				}
 				
 				if (km.config.getSBTT()) {
-					Utils.setupTemplates(km);
+					km.multiBlock.createTemplates(km);
 				}
 			}
 		}, 20 + spread);
