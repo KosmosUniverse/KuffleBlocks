@@ -346,5 +346,9 @@
 	"HERE_DIES" : {
 		"en" : "Here dies",
 		"fr" : "Ici est mort"
+	},
+	"XP_NEEDED" : {
+		"en" : "You need %i xp levels to teleport.",
+		"fr" : "Vous devez avoir %i niveaux d'xp pour vous téléporter."
 	}
 }
