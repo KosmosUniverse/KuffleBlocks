@@ -3,6 +3,7 @@ package fr.kosmosuniverse.kuffleblocks.Commands;
 import java.util.Collections;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -133,7 +134,7 @@ public class KuffleStart implements CommandExecutor {
 			@Override
 			public void run() {
 				for (String playerName : km.games.keySet()) {
-					ActionBar.sendRawTitle("{\"text\":\"5\",\"bold\":true,\"color\":\"red\"}", km.games.get(playerName).getPlayer());
+					ActionBar.sendRawTitle(ChatColor.BOLD + "" + ChatColor.RED + "5" + ChatColor.RESET, km.games.get(playerName).getPlayer());
 				}
 				
 				if (km.config.getSBTT()) {
@@ -145,7 +146,7 @@ public class KuffleStart implements CommandExecutor {
 			@Override
 			public void run() {
 				for (String playerName : km.games.keySet()) {
-					ActionBar.sendRawTitle("{\"text\":\"4\",\"bold\":true,\"color\":\"gold\"}", km.games.get(playerName).getPlayer());
+					ActionBar.sendRawTitle(ChatColor.BOLD + "" + ChatColor.GOLD + "4" + ChatColor.RESET, km.games.get(playerName).getPlayer());
 				}
 			}
 		}, 40 + spread);
@@ -153,7 +154,7 @@ public class KuffleStart implements CommandExecutor {
 			@Override
 			public void run() {
 				for (String playerName : km.games.keySet()) {
-					ActionBar.sendRawTitle("{\"text\":\"3\",\"bold\":true,\"color\":\"yellow\"}", km.games.get(playerName).getPlayer());
+					ActionBar.sendRawTitle(ChatColor.BOLD + "" + ChatColor.YELLOW + "3" + ChatColor.RESET, km.games.get(playerName).getPlayer());
 				}
 			}
 		}, 60 + spread);
@@ -161,7 +162,7 @@ public class KuffleStart implements CommandExecutor {
 			@Override
 			public void run() {
 				for (String playerName : km.games.keySet()) {
-					ActionBar.sendRawTitle("{\"text\":\"2\",\"bold\":true,\"color\":\"green\"}", km.games.get(playerName).getPlayer());
+					ActionBar.sendRawTitle(ChatColor.BOLD + "" + ChatColor.GREEN + "2" + ChatColor.RESET, km.games.get(playerName).getPlayer());
 				}
 			}
 		}, 80 + spread);
@@ -170,7 +171,7 @@ public class KuffleStart implements CommandExecutor {
 			@Override
 			public void run() {
 				for (String playerName : km.games.keySet()) {
-					ActionBar.sendRawTitle("{\"text\":\"1\",\"bold\":true,\"color\":\"blue\"}", km.games.get(playerName).getPlayer());
+					ActionBar.sendRawTitle(ChatColor.BOLD + "" + ChatColor.BLUE + "1" + ChatColor.RESET, km.games.get(playerName).getPlayer());
 					km.games.get(playerName).setup();
 				}
 				
@@ -184,7 +185,7 @@ public class KuffleStart implements CommandExecutor {
 				ItemStack box = getStartBox();
 				
 				for (String playerName : km.games.keySet()) {
-					ActionBar.sendRawTitle("{\"text\":\"GO!\",\"bold\":true,\"color\":\"dark_purple\"}", km.games.get(playerName).getPlayer());
+					ActionBar.sendRawTitle(ChatColor.BOLD + "" + ChatColor.DARK_PURPLE + "GO!" + ChatColor.RESET, km.games.get(playerName).getPlayer());
 					km.games.get(playerName).getPlayer().getInventory().addItem(box);
 				}
 

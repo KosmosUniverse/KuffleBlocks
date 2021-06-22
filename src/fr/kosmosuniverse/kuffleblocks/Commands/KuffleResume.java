@@ -1,6 +1,7 @@
 package fr.kosmosuniverse.kuffleblocks.Commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -46,7 +47,7 @@ public class KuffleResume implements CommandExecutor {
 			@Override
 			public void run() {
 				for (String playerName : km.games.keySet()) {
-					ActionBar.sendRawTitle("{\"text\":\"3\",\"bold\":true,\"color\":\"red\"}", km.games.get(playerName).getPlayer());
+					ActionBar.sendRawTitle(ChatColor.BOLD + "" + ChatColor.RED + "3" + ChatColor.RESET, km.games.get(playerName).getPlayer());
 				}
 			}
 		}, 20);
@@ -54,7 +55,7 @@ public class KuffleResume implements CommandExecutor {
 			@Override
 			public void run() {
 				for (String playerName : km.games.keySet()) {
-					ActionBar.sendRawTitle("{\"text\":\"2\",\"bold\":true,\"color\":\"yellow\"}", km.games.get(playerName).getPlayer());
+					ActionBar.sendRawTitle(ChatColor.BOLD + "" + ChatColor.YELLOW + "2" + ChatColor.RESET, km.games.get(playerName).getPlayer());
 				}
 			}
 		}, 40);
@@ -63,7 +64,7 @@ public class KuffleResume implements CommandExecutor {
 			@Override
 			public void run() {
 				for (String playerName : km.games.keySet()) {
-					ActionBar.sendRawTitle("{\"text\":\"1\",\"bold\":true,\"color\":\"green\"}", km.games.get(playerName).getPlayer());
+					ActionBar.sendRawTitle(ChatColor.BOLD + "" + ChatColor.GREEN + "1" + ChatColor.RESET, km.games.get(playerName).getPlayer());
 				}
 			}
 		}, 60);
@@ -75,7 +76,7 @@ public class KuffleResume implements CommandExecutor {
 				
 				for (String playerName : km.games.keySet()) {
 					km.games.get(playerName).resume();
-					ActionBar.sendRawTitle("{\"text\":\"" + Utils.getLangString(km, player.getName(), "GAME_RESUMED") + "!\",\"bold\":true,\"color\":\"dark_purple\"}", km.games.get(playerName).getPlayer());
+					ActionBar.sendRawTitle(ChatColor.BOLD + "" + ChatColor.DARK_PURPLE + Utils.getLangString(km, player.getName(), "GAME_RESUMED") + "!" + ChatColor.RESET, km.games.get(playerName).getPlayer());
 					km.games.get(playerName).getPlayer().removePotionEffect(PotionEffectType.INVISIBILITY);
 				}
 			}

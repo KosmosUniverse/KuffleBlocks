@@ -1,22 +1,35 @@
 package fr.kosmosuniverse.kuffleblocks.Crafts;
 
+import java.util.ArrayList;
+
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapelessRecipe;
+import org.bukkit.inventory.RecipeChoice.MaterialChoice;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
 
 public class Diamond extends ACrafts {
+	MaterialChoice mc;
+	
 	public Diamond(KuffleMain _km) {
 		name = "Diamond";
 		
 		recipe = new ShapelessRecipe(new NamespacedKey(_km, name), new ItemStack(Material.DIAMOND, 2));
 		
-		((ShapelessRecipe) recipe).addIngredient(Material.DIAMOND_ORE);
+		ArrayList<Material> ores = new ArrayList<Material>();
+		
+		ores.add(Material.DIAMOND_ORE);
+		ores.add(Material.DEEPSLATE_DIAMOND_ORE);
+		
+		mc = new MaterialChoice(ores);
+		
+		((ShapelessRecipe) recipe).addIngredient(mc);
 		
 		item = new ItemStack(Material.DIAMOND);
 	}
@@ -37,11 +50,16 @@ public class Diamond extends ACrafts {
 		itM.setDisplayName("<- Back");
 		redPane.setItemMeta(itM);
 		
+		ItemStack customOre = new ItemStack(Material.DEEPSLATE_DIAMOND_ORE);
+		itM = customOre.getItemMeta();
+		itM.setDisplayName(ChatColor.BLUE + "Any" + ChatColor.GREEN + " Diamond " + ChatColor.RED + "Ore");
+		customOre.setItemMeta(itM);
+		
 		for (int i = 0; i < 27; i++) {
 			if (i == 0) {
 				inv.setItem(i, new ItemStack(redPane));
 			} else if (i == 3) {
-				inv.setItem(i, new ItemStack(Material.DIAMOND_ORE));
+				inv.setItem(i, customOre);
 			} else if (i == 16) {
 				inv.setItem(i, new ItemStack(Material.DIAMOND, 2));
 			} else if (i == 4 || i == 5 || i == 12 || i == 13 || i == 14 || i == 21 || i == 22 || i == 23) {

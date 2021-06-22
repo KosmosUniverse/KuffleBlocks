@@ -66,8 +66,7 @@ public class EndTeleporter extends AMultiblock {
 	public void onActivate(KuffleMain _km, Player player, ActivationType type) {
 		if (type == ActivationType.ASSEMBLE) {
 			player.sendMessage("You just constructed " + name);
-		}
-		else if (type == ActivationType.ACTIVATE) {
+		} else if (type == ActivationType.ACTIVATE) {
 			if (world != null) {
 				player.sendMessage("You just activated " + name);
 				player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100, 50, false, false, false));
@@ -77,7 +76,9 @@ public class EndTeleporter extends AMultiblock {
 					tmp.add(10, 0, 10);
 				}
 				
-				player.teleport(tmp.add(0, 10, 0));
+				tmp.setY(tmp.getWorld().getHighestBlockAt(tmp).getY() + 2.0);
+				
+				player.teleport(tmp);
 				player.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);	
 			}
 		}

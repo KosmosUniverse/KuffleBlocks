@@ -1,5 +1,6 @@
 package fr.kosmosuniverse.kuffleblocks.Commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -46,7 +47,7 @@ public class KufflePause implements CommandExecutor {
 		
 		for (String playerName : km.games.keySet()) {
 			km.games.get(playerName).pause();
-			ActionBar.sendRawTitle("{\"text\":\"" + Utils.getLangString(km, player.getName(), "GAME_PAUSED") + "..\",\"bold\":true,\"color\":\"dark_purple\"}", km.games.get(playerName).getPlayer());
+			ActionBar.sendRawTitle(ChatColor.BOLD + "" + ChatColor.DARK_PURPLE + Utils.getLangString(km, player.getName(), "GAME_PAUSED") + "..." + ChatColor.RESET, km.games.get(playerName).getPlayer());
 			km.games.get(playerName).getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 999999, 10, false, false, false));
 		}
 		

@@ -57,7 +57,7 @@
 			"Effect" : ""
 		},
 		"cooked_porkchop" : {
-			"Amount" : 32,
+			"Amount" : 16,
 			"Enchant" : "",
 			"Level" : 0,
 			"Effect" : ""
@@ -77,7 +77,7 @@
 			"Effect" : "fire_resistance"
 		},
 		"cooked_chicken" : {
-			"Amount" : 32,
+			"Amount" : 16,
 			"Enchant" : "",
 			"Level" : 0,
 			"Effect" : ""
@@ -91,7 +91,7 @@
 			"Effect" : ""
 		},
 		"firework_rocket" : {
-			"Amount" : 64,
+			"Amount" : 16,
 			"Enchant" : "",
 			"Level" : 0,
 			"Effect" : ""
@@ -103,7 +103,7 @@
 			"Effect" : ""
 		},
 		"cooked_mutton" : {
-			"Amount" : 32,
+			"Amount" : 16,
 			"Enchant" : "",
 			"Level" : 0,
 			"Effect" : ""
@@ -147,7 +147,7 @@
 			"Effect" : ""
 		},
 		"cooked_porkchop" : {
-			"Amount" : 64,
+			"Amount" : 16,
 			"Enchant" : "",
 			"Level" : 0,
 			"Effect" : ""

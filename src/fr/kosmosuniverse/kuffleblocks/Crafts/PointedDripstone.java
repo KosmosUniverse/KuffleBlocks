@@ -1,37 +1,24 @@
 package fr.kosmosuniverse.kuffleblocks.Crafts;
 
-import java.util.ArrayList;
-
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapelessRecipe;
-import org.bukkit.inventory.RecipeChoice.MaterialChoice;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
 
-public class Emerald extends ACrafts {
-	MaterialChoice mc;
-	
-	public Emerald(KuffleMain _km) {
-		name = "Emerald";
+public class PointedDripstone extends ACrafts {
+	public PointedDripstone(KuffleMain _km) {
+		name = "PointedDripstone";
 		
-		recipe = new ShapelessRecipe(new NamespacedKey(_km, name), new ItemStack(Material.EMERALD, 2));
+		recipe = new ShapelessRecipe(new NamespacedKey(_km, name), new ItemStack(Material.POINTED_DRIPSTONE, 4));
 		
-		ArrayList<Material> ores = new ArrayList<Material>();
+		((ShapelessRecipe) recipe).addIngredient(Material.DRIPSTONE_BLOCK);
 		
-		ores.add(Material.EMERALD_ORE);
-		ores.add(Material.DEEPSLATE_EMERALD_ORE);
-		
-		mc = new MaterialChoice(ores);
-		
-		((ShapelessRecipe) recipe).addIngredient(mc);
-		
-		item = new ItemStack(Material.EMERALD);
+		item = new ItemStack(Material.POINTED_DRIPSTONE);
 	}
 	
 	public Inventory getInventoryRecipe() {
@@ -50,18 +37,13 @@ public class Emerald extends ACrafts {
 		itM.setDisplayName("<- Back");
 		redPane.setItemMeta(itM);
 		
-		ItemStack customOre = new ItemStack(Material.DEEPSLATE_EMERALD_ORE);
-		itM = customOre.getItemMeta();
-		itM.setDisplayName(ChatColor.BLUE + "Any" + ChatColor.GREEN + " Emerald " + ChatColor.RED + "Ore");
-		customOre.setItemMeta(itM);
-		
 		for (int i = 0; i < 27; i++) {
 			if (i == 0) {
 				inv.setItem(i, new ItemStack(redPane));
 			} else if (i == 3) {
-				inv.setItem(i, customOre);
+				inv.setItem(i, new ItemStack(Material.DRIPSTONE_BLOCK));
 			} else if (i == 16) {
-				inv.setItem(i, new ItemStack(Material.EMERALD, 2));
+				inv.setItem(i, new ItemStack(Material.POINTED_DRIPSTONE, 4));
 			} else if (i == 4 || i == 5 || i == 12 || i == 13 || i == 14 || i == 21 || i == 22 || i == 23) {
 				inv.setItem(i, new ItemStack(grayPane));
 			} else {

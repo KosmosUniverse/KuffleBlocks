@@ -86,6 +86,10 @@
 		]
 	},
 	"Classic_Age" : {
+		"amethyst" : [
+			"amethyst_block",
+			"budding_amethyst"
+		],
 		"birch" : [
 			"birch_leaves"
 		],
@@ -121,7 +125,9 @@
 		],
 		"diversity" : [
 			"bookshelf",
-			"dried_kelp_block"
+			"calcite",
+			"dried_kelp_block",
+			"smooth_basalt"
 		],
 		"job" : [
 			"cauldron",
@@ -131,8 +137,27 @@
 			"smoker",
 			"stonecutter"
 		],
+		"deepslate" : [
+			"chiseled_deepslate",
+			"cobbled_deepslate",
+			"deepslate",
+			"deepslate_bricks",
+			"deepslate_tiles"
+		],
 		"ore" : [
-			"coal_ore"
+			"coal_ore",
+			"copper_ore",
+			"deepslate_coal_ore",
+			"deepslate_copper_ore",
+			"deepslate_gold_ore",
+			"deepslate_iron_ore",
+			"deepslate_lapis_ore",
+			"deepslate_redstone_ore"
+		],
+		"copper" : [
+			"copper_block",
+			"cut_copper",
+			"lightning_rod"
 		],
 		"dark_oak" : [
 			"dark_oak_leaves",
@@ -155,6 +180,7 @@
 		],
 		"plant" : [
 			"hay_block",
+			"moss_block",
 			"pumpkin"
 		],
 		"redstone" : [
@@ -195,6 +221,10 @@
 			"orange_stained_glass_pane",
 			"orange_terracotta"
 		],
+		"cold" : [
+			"powder_snow",
+			"snow_block"
+		],
 		"purple" : [
 			"purple_concrete",
 			"purple_concrete_powder",
@@ -204,6 +234,11 @@
 			"purple_terracotta",
 			"purple_wool"
 		],
+		"raw" : [
+			"raw_copper_block",
+			"raw_gold_block",
+			"raw_iron_block"
+		],
 		"red" : [
 			"red_concrete",
 			"red_concrete_powder",
@@ -212,9 +247,6 @@
 			"red_stained_glass_pane",
 			"red_terracotta",
 			"red_wool"
-		],
-		"cold" : [
-			"snow_block"
 		],
 		"spruce" : [
 			"spruce_leaves",
@@ -250,6 +282,7 @@
 			"blast_furnace"
 		],
 		"diversity" : [
+			"chain",
 			"coal_block",
 			"lantern",
 			"lapis_block"
@@ -274,34 +307,74 @@
 		]
 	},
 	"Netheric_Age" : {
-		"diversity" : [
-			"bone_block"
-		],
-		"quartz" : [
-			"chiseled_quartz_block",
-			"quartz_block",
-			"quartz_pillar",
-			"quartz_stairs",
-			"smooth_quartz",
-			"smooth_quartz_stairs"
-		],
 		"nether" : [
+			"basalt",
+			"chiseled_nether_bricks",
+			"cracked_nether_bricks",
 			"glowstone",
 			"magma_block",
 			"nether_brick_stairs",
 			"nether_bricks",
 			"nether_wart_block",
 			"netherrack",
+			"polished_basalt",
 			"red_nether_brick_stairs",
 			"red_nether_bricks",
-			"soul_sand"
+			"shroomlight",
+			"soul_lantern",
+			"soul_sand",
+			"soul_soil"
+		],
+		"stone" : [
+			"blackstone",
+			"blackstone_stairs",
+			"chiseled_polished_blackstone",
+			"cracked_polished_blackstone_bricks",
+			"polished_blackstone",
+			"polished_blackstone_brick_stairs",
+			"polished_blackstone_bricks",
+			"polished_blackstone_stairs"
+		],
+		"diversity" : [
+			"bone_block"
+		],
+		"quartz" : [
+			"chiseled_quartz_block",
+			"quartz_block",
+			"quartz_bricks",
+			"quartz_pillar",
+			"quartz_stairs",
+			"smooth_quartz",
+			"smooth_quartz_stairs"
+		],
+		"crimson" : [
+			"crimson_hyphae",
+			"crimson_nylium",
+			"crimson_planks",
+			"crimson_stairs",
+			"crimson_stem",
+			"crimson_trapdoor",
+			"stripped_crimson_hyphae",
+			"stripped_crimson_stem"
 		],
 		"ore" : [
+			"nether_gold_ore",
 			"nether_quartz_ore"
 		],
 		"redstone" : [
 			"observer",
 			"redstone_lamp"
+		],
+		"warped" : [
+			"stripped_warped_hyphae",
+			"stripped_warped_stem",
+			"warped_hyphae",
+			"warped_nylium",
+			"warped_planks",
+			"warped_stairs",
+			"warped_stem",
+			"warped_trapdoor",
+			"warped_wart_block"
 		]
 	},
 	"Heroic_Age" : {

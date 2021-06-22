@@ -169,6 +169,12 @@
 			"Enchant" : "",
 			"Level" : 0,
 			"Effect" : ""
+		},
+		"honeycomb" : {
+			"Amount" : 16,
+			"Enchant" : "",
+			"Level" : 0,
+			"Effect" : ""
 		}
 	},
 	"Mythic_Age" : {

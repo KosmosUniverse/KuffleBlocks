@@ -1,37 +1,27 @@
 package fr.kosmosuniverse.kuffleblocks.Crafts;
 
-import java.util.ArrayList;
-
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.ShapelessRecipe;
-import org.bukkit.inventory.RecipeChoice.MaterialChoice;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
 
-public class Emerald extends ACrafts {
-	MaterialChoice mc;
-	
-	public Emerald(KuffleMain _km) {
-		name = "Emerald";
+public class CopperOreDeepslate extends ACrafts {
+	public CopperOreDeepslate(KuffleMain _km) {
+		name = "CopperOreDeepslate";
 		
-		recipe = new ShapelessRecipe(new NamespacedKey(_km, name), new ItemStack(Material.EMERALD, 2));
+		recipe = new ShapedRecipe(new NamespacedKey(_km, name), new ItemStack(Material.DEEPSLATE_COPPER_ORE));
 		
-		ArrayList<Material> ores = new ArrayList<Material>();
 		
-		ores.add(Material.EMERALD_ORE);
-		ores.add(Material.DEEPSLATE_EMERALD_ORE);
+		((ShapedRecipe) recipe).shape("CDC", "DSD", "CDC");
+		((ShapedRecipe) recipe).setIngredient('D', Material.DEEPSLATE);
+		((ShapedRecipe) recipe).setIngredient('C', Material.RAW_COPPER);
 		
-		mc = new MaterialChoice(ores);
-		
-		((ShapelessRecipe) recipe).addIngredient(mc);
-		
-		item = new ItemStack(Material.EMERALD);
+		item = new ItemStack(Material.DEEPSLATE_COPPER_ORE);
 	}
 	
 	public Inventory getInventoryRecipe() {
@@ -50,20 +40,17 @@ public class Emerald extends ACrafts {
 		itM.setDisplayName("<- Back");
 		redPane.setItemMeta(itM);
 		
-		ItemStack customOre = new ItemStack(Material.DEEPSLATE_EMERALD_ORE);
-		itM = customOre.getItemMeta();
-		itM.setDisplayName(ChatColor.BLUE + "Any" + ChatColor.GREEN + " Emerald " + ChatColor.RED + "Ore");
-		customOre.setItemMeta(itM);
-		
 		for (int i = 0; i < 27; i++) {
 			if (i == 0) {
 				inv.setItem(i, new ItemStack(redPane));
-			} else if (i == 3) {
-				inv.setItem(i, customOre);
-			} else if (i == 16) {
-				inv.setItem(i, new ItemStack(Material.EMERALD, 2));
-			} else if (i == 4 || i == 5 || i == 12 || i == 13 || i == 14 || i == 21 || i == 22 || i == 23) {
+			} else if (i == 4 || i == 12 || i == 14 || i == 22) {
+				inv.setItem(i, new ItemStack(Material.DEEPSLATE));
+			} else if (i == 3 || i == 5 || i == 21 || i == 23) {
+				inv.setItem(i, new ItemStack(Material.RAW_COPPER));
+			} else if(i == 13) {
 				inv.setItem(i, new ItemStack(grayPane));
+			} else if (i == 16) {
+				inv.setItem(i, new ItemStack(Material.DEEPSLATE_COPPER_ORE));
 			} else {
 				inv.setItem(i, new ItemStack(limePane));
 			}

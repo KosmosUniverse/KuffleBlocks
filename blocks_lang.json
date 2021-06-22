@@ -1,3182 +1,3610 @@
 {
 	"acacia_button" : {
 		"en" : "Acacia Button",
-		"fr" : "Bouton d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Bouton d'Acacia"
 	},
 	"acacia_door" : {
 		"en" : "Acacia Door",
-		"fr" : "Porte d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Porte d'Acacia"
 	},
 	"acacia_fence" : {
 		"en" : "Acacia Fence",
-		"fr" : "Barrière d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Barrière d'Acacia"
 	},
 	"acacia_fence_gate" : {
 		"en" : "Acacia Fence Gate",
-		"fr" : "Portillon d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Portillon d'Acacia"
 	},
 	"acacia_leaves" : {
 		"en" : "Acacia Leaves",
-		"fr" : "Feuilles d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Feuilles d'Acacia"
 	},
 	"acacia_log" : {
 		"en" : "Acacia Log",
-		"fr" : "Bûche d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Bûche d'Acacia"
 	},
 	"acacia_planks" : {
 		"en" : "Acacia Planks",
-		"fr" : "Planche d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Planche d'Acacia"
 	},
 	"acacia_pressure_plate" : {
 		"en" : "Acacia Pressure Plate",
-		"fr" : "Plaque de Pression d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Plaque de Pression d'Acacia"
 	},
 	"acacia_sapling" : {
 		"en" : "Acacia Sapling",
-		"fr" : "Pousse d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Pousse d'Acacia"
 	},
 	"acacia_sign" : {
 		"en" : "Acacia Sign",
-		"fr" : "Panneau d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Panneau d'Acacia"
 	},
 	"acacia_slab" : {
 		"en" : "Acacia Slab",
-		"fr" : "Dalle d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Dalle d'Acacia"
 	},
 	"acacia_stairs" : {
 		"en" : "Acacia Stairs",
-		"fr" : "Escaliers d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Escaliers d'Acacia"
 	},
 	"acacia_trapdoor" : {
 		"en" : "Acacia Trapdoor",
-		"fr" : "Trappe d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Trappe d'Acacia"
 	},
 	"acacia_wall_sign" : {
 		"en" : "Acacia Wall Sign",
-		"fr" : "Panneau Mural d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Panneau Mural d'Acacia"
 	},
 	"acacia_wood" : {
 		"en" : "Acacia Wood",
-		"fr" : "Bois d'Acacia"
+		"Ardoise des Abimes Carrelée" : "Bois d'Acacia"
 	},
 	"activator_rail" : {
 		"en" : "Activator Rail",
-		"fr" : "Rails déclencheurs"
+		"Ardoise des Abimes Carrelée" : "Rails déclencheurs"
 	},
 	"allium" : {
 		"en" : "Allium",
-		"fr" : "Allium"
+		"Ardoise des Abimes Carrelée" : "Allium"
+	},
+	"amethyst_block" : {
+		"en" : "Amethyst Block",
+		"Ardoise des Abimes Carrelée" : "Bloc d'Amethyste"
+	},
+	"amethyst_cluster" : {
+		"en" : "Amethyst Cluster",
+		"Ardoise des Abimes Carrelée" : "Amas d'Amethyste"
 	},
 	"ancient_debris" : {
 		"en" : "Ancient Debris",
-		"fr" : "Débris Antiques"
+		"Ardoise des Abimes Carrelée" : "Débris Antiques"
 	},
 	"andesite" : {
 		"en" : "Andesite",
-		"fr" : "Andésite"
+		"Ardoise des Abimes Carrelée" : "Andésite"
 	},
 	"andesite_slab" : {
 		"en" : "Andesite Slab",
-		"fr" : "Dalle d'Andésite"
+		"Ardoise des Abimes Carrelée" : "Dalle d'Andésite"
 	},
 	"andesite_stairs" : {
 		"en" : "Andesite Stairs",
-		"fr" : "Escaliers d'Andésite"
+		"Ardoise des Abimes Carrelée" : "Escaliers d'Andésite"
 	},
 	"andesite_wall" : {
 		"en" : "Andesite Wall",
-		"fr" : "Mur d'Andésite"
+		"Ardoise des Abimes Carrelée" : "Mur d'Andésite"
 	},
 	"anvil" : {
 		"en" : "Anvil",
-		"fr" : "Enclume"
+		"Ardoise des Abimes Carrelée" : "Enclume"
 	},
 	"attached_melon_stem" : {
 		"en" : "Attached Melon Stem",
-		"fr" : "Tige de Pastèque Attachée"
+		"Ardoise des Abimes Carrelée" : "Tige de Pastèque Attachée"
 	},
 	"attached_pumpkin_stem" : {
 		"en" : "Attached Pumpkin Stem",
-		"fr" : "Tige de Citrouille Attachée"
+		"Ardoise des Abimes Carrelée" : "Tige de Citrouille Attachée"
+	},
+	"azalea" : {
+		"en" : "Azalea",
+		"Ardoise des Abimes Carrelée" : "Azalée"
+	},
+	"azalea_leaves" : {
+		"en" : "Azalea Leaves",
+		"Ardoise des Abimes Carrelée" : "Feuilles d'Azalée"
 	},
 	"azure_bluet" : {
 		"en" : "Azure Bluet",
-		"fr" : "Houstonie Bleue"
+		"Ardoise des Abimes Carrelée" : "Houstonie Bleue"
 	},
 	"bamboo" : {
 		"en" : "Bamboo",
-		"fr" : "Bambou"
+		"Ardoise des Abimes Carrelée" : "Bambou"
 	},
 	"bamboo_sapling" : {
 		"en" : "Bamboo Sapling",
-		"fr" : "Pousse de Bambou"
+		"Ardoise des Abimes Carrelée" : "Pousse de Bambou"
 	},
 	"barrel" : {
 		"en" : "Barrel",
-		"fr" : "Tonneau"
+		"Ardoise des Abimes Carrelée" : "Tonneau"
 	},
 	"barrier" : {
 		"en" : "Barrier",
-		"fr" : "Barrière"
+		"Ardoise des Abimes Carrelée" : "Barrière"
 	},
 	"basalt" : {
 		"en" : "Basalt",
-		"fr" : "Basalte"
+		"Ardoise des Abimes Carrelée" : "Basalte"
 	},
 	"beacon" : {
 		"en" : "Beacon",
-		"fr" : "Balise"
+		"Ardoise des Abimes Carrelée" : "Balise"
 	},
 	"bedrock" : {
 		"en" : "Bedrock",
-		"fr" : "Bedrock"
+		"Ardoise des Abimes Carrelée" : "Bedrock"
 	},
 	"bee_nest" : {
 		"en" : "Bee Nest",
-		"fr" : "Nid d'abeilles"
+		"Ardoise des Abimes Carrelée" : "Nid d'abeilles"
 	},
 	"beehive" : {
 		"en" : "Beehive",
-		"fr" : "Ruche"
+		"Ardoise des Abimes Carrelée" : "Ruche"
 	},
 	"beetroots" : {
 		"en" : "Beetroots",
-		"fr" : "Betterave"
+		"Ardoise des Abimes Carrelée" : "Betterave"
 	},
 	"bell" : {
 		"en" : "Bell",
-		"fr" : "Cloche"
+		"Ardoise des Abimes Carrelée" : "Cloche"
+	},
+	"big_dripleaf" : {
+		"en" : "Big Dripleaf",
+		"Ardoise des Abimes Carrelée" : "Grande Foliogoutte"
+	},
+	"big_dripleaf_stem" : {
+		"en" : "Big Dripleaf Stem",
+		"Ardoise des Abimes Carrelée" : "Tige de Grande Foliogoutte"
 	},
 	"birch_button" : {
 		"en" : "Birch Button",
-		"fr" : "Bouton de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Bouton de Bouleau"
 	},
 	"birch_door" : {
 		"en" : "Birch Door",
-		"fr" : "Porte de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Porte de Bouleau"
 	},
 	"birch_fence" : {
 		"en" : "Birch Fence",
-		"fr" : "Barrière de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Barrière de Bouleau"
 	},
 	"birch_fence_gate" : {
 		"en" : "Birch Fence Gate",
-		"fr" : "Portillon de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Portillon de Bouleau"
 	},
 	"birch_leaves" : {
 		"en" : "Birch Leaves",
-		"fr" : "Feuilles de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Feuilles de Bouleau"
 	},
 	"birch_log" : {
 		"en" : "Birch Log",
-		"fr" : "Bûche de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Bûche de Bouleau"
 	},
 	"birch_planks" : {
 		"en" : "Birch Planks",
-		"fr" : "Planches de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Planches de Bouleau"
 	},
 	"birch_pressure_plate" : {
 		"en" : "Birch Pressure Plate",
-		"fr" : "Plaque de Pression de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Plaque de Pression de Bouleau"
 	},
 	"birch_sapling" : {
 		"en" : "Birch Sapling",
-		"fr" : "Pousse de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Pousse de Bouleau"
 	},
 	"birch_sign" : {
 		"en" : "Birch Sign",
-		"fr" : "Panneau de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Panneau de Bouleau"
 	},
 	"birch_slab" : {
 		"en" : "Birch Slab",
-		"fr" : "Dalle de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Dalle de Bouleau"
 	},
 	"birch_stairs" : {
 		"en" : "Birch Stairs",
-		"fr" : "Escaliers de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Bouleau"
 	},
 	"birch_trapdoor" : {
 		"en" : "Birch Trapdoor",
-		"fr" : "Trappe de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Trappe de Bouleau"
 	},
 	"birch_wall_sign" : {
 		"en" : "Birch Wall Sign",
-		"fr" : "Panneau Mural de Bouleau"
+		"Ardoise des Abimes Carrelée" : "Panneau Mural de Bouleau"
 	},
 	"birch_wood" : {
 		"en" : "Birch Wood",
-		"fr" : "Bois de bouleau"
+		"Ardoise des Abimes Carrelée" : "Bois de bouleau"
 	},
 	"black_banner" : {
 		"en" : "Black Banner",
-		"fr" : "Bannière Noire"
+		"Ardoise des Abimes Carrelée" : "Bannière Noire"
 	},
 	"black_bed" : {
 		"en" : "Black Bed",
-		"fr" : "Lit Noir"
+		"Ardoise des Abimes Carrelée" : "Lit Noir"
 	},
 	"black_carpet" : {
 		"en" : "Black Carpet",
-		"fr" : "Tapis Noir"
+		"Ardoise des Abimes Carrelée" : "Tapis Noir"
 	},
 	"black_concrete" : {
 		"en" : "Black Concrete",
-		"fr" : "Béton Noir"
+		"Ardoise des Abimes Carrelée" : "Béton Noir"
 	},
 	"black_concrete_powder" : {
 		"en" : "Black Concrete Powder",
-		"fr" : "Béton Noir en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Noir en Poudre"
 	},
 	"black_glazed_terracotta" : {
 		"en" : "Black Glazed Terracotta",
-		"fr" : "Terre Cuite Emaillée Noire"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Noire"
 	},
 	"black_shulker_box" : {
 		"en" : "Black Shulker Box",
-		"fr" : "Boite de Shulker Noire"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Noire"
 	},
 	"black_stained_glass" : {
 		"en" : "Black Stained Glass",
-		"fr" : "Verre Noir"
+		"Ardoise des Abimes Carrelée" : "Verre Noir"
 	},
 	"black_stained_glass_pane" : {
 		"en" : "Black Stained Glass Pane",
-		"fr" : "Vitre Noire"
+		"Ardoise des Abimes Carrelée" : "Vitre Noire"
 	},
 	"black_terracotta" : {
 		"en" : "Black Terracotta",
-		"fr" : "Terre Cuite Noire"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Noire"
 	},
 	"black_wall_banner" : {
 		"en" : "Black Wall Banner",
-		"fr" : "Bannière Murale Noire"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Noire"
 	},
 	"black_wool" : {
 		"en" : "Black Wool",
-		"fr" : "Laine Noire"
+		"Ardoise des Abimes Carrelée" : "Laine Noire"
 	},
 	"blackstone" : {
 		"en" : "Blackstone",
-		"fr" : "Roche Noire"
+		"Ardoise des Abimes Carrelée" : "Roche Noire"
 	},
 	"blackstone_slab" : {
 		"en" : "Blackstone Slab",
-		"fr" : "Dalle de Roche Noire"
+		"Ardoise des Abimes Carrelée" : "Dalle de Roche Noire"
 	},
 	"blackstone_stairs" : {
 		"en" : "Blackstone Stairs",
-		"fr" : "Escaliers de Roche Noire"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Roche Noire"
 	},
 	"blackstone_wall" : {
 		"en" : "Blackstone Wall",
-		"fr" : "Mur de Roche noire"
+		"Ardoise des Abimes Carrelée" : "Mur de Roche noire"
 	},
 	"blast_furnace" : {
 		"en" : "Blast Furnace",
-		"fr" : "Haut Fourneau"
+		"Ardoise des Abimes Carrelée" : "Haut Fourneau"
 	},
 	"blaze_rod" : {
 		"en" : "Blaze Rod",
-		"fr" : "Bâton de Blaze"
+		"Ardoise des Abimes Carrelée" : "Bâton de Blaze"
 	},
 	"blue_banner" : {
 		"en" : "Blue Banner",
-		"fr" : "Bannière Bleue"
+		"Ardoise des Abimes Carrelée" : "Bannière Bleue"
 	},
 	"blue_bed" : {
 		"en" : "Blue Bed",
-		"fr" : "Lit Bleu"
+		"Ardoise des Abimes Carrelée" : "Lit Bleu"
+	},
+	"blue_candle" : {
+		"en" : "Blue Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Bleue"
 	},
 	"blue_carpet" : {
 		"en" : "Blue Carpet",
-		"fr" : "Tapis Bleu"
+		"Ardoise des Abimes Carrelée" : "Tapis Bleu"
 	},
 	"blue_concrete" : {
 		"en" : "Blue Concrete",
-		"fr" : "Béton Bleu"
+		"Ardoise des Abimes Carrelée" : "Béton Bleu"
 	},
 	"blue_concrete_powder" : {
 		"en" : "Blue Concrete Powder",
-		"fr" : "Béton Bleu en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Bleu en Poudre"
 	},
 	"blue_glazed_terracotta" : {
 		"en" : "Blue Glazed Terracotta",
-		"fr" : "Terre Cuite Emaillée Bleue"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Bleue"
 	},
 	"blue_ice" : {
 		"en" : "Blue Ice",
-		"fr" : "Glace Bleue"
+		"Ardoise des Abimes Carrelée" : "Glace Bleue"
 	},
 	"blue_orchid" : {
 		"en" : "Blue Orchid",
-		"fr" : "Orchidée bleue"
+		"Ardoise des Abimes Carrelée" : "Orchidée bleue"
 	},
 	"blue_shulker_box" : {
 		"en" : "Blue Shulker Box",
-		"fr" : "Boite de Shulker Bleue"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Bleue"
 	},
 	"blue_stained_glass" : {
 		"en" : "Blue Stained Glass",
-		"fr" : "Verre Bleu"
+		"Ardoise des Abimes Carrelée" : "Verre Bleu"
 	},
 	"blue_stained_glass_pane" : {
 		"en" : "Blue Stained Glass Pane",
-		"fr" : "Vitre Bleue"
+		"Ardoise des Abimes Carrelée" : "Vitre Bleue"
 	},
 	"blue_terracotta" : {
 		"en" : "Blue Terracotta",
-		"fr" : "Terre Cuite Bleue"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Bleue"
 	},
 	"blue_wall_banner" : {
 		"en" : "Blue Wall Banner",
-		"fr" : "Bannière Murale Bleue"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Bleue"
 	},
 	"blue_wool" : {
 		"en" : "Blue Wool",
-		"fr" : "Laine Bleue"
+		"Ardoise des Abimes Carrelée" : "Laine Bleue"
 	},
 	"bone" : {
 		"en" : "Bone",
-		"fr" : "Os"
+		"Ardoise des Abimes Carrelée" : "Os"
 	},
 	"bone_block" : {
 		"en" : "Bone Block",
-		"fr" : "Bloc d'Os"
+		"Ardoise des Abimes Carrelée" : "Bloc d'Os"
 	},
 	"books" : {
 		"en" : "Books",
-		"fr" : "Livres"
+		"Ardoise des Abimes Carrelée" : "Livres"
 	},
 	"bookshelf" : {
 		"en" : "Bookshelf",
-		"fr" : "Bibliothèque"
+		"Ardoise des Abimes Carrelée" : "Bibliothèque"
 	},
 	"bow" : {
 		"en" : "Bow",
-		"fr" : "Arc"
+		"Ardoise des Abimes Carrelée" : "Arc"
 	},
 	"brain_coral" : {
 		"en" : "Brain Coral",
-		"fr" : "Corail Cerveau"
+		"Ardoise des Abimes Carrelée" : "Corail Cerveau"
 	},
 	"brain_coral_block" : {
 		"en" : "Brain Coral Block",
-		"fr" : "Bloc de Corail Cerveau"
+		"Ardoise des Abimes Carrelée" : "Bloc de Corail Cerveau"
 	},
 	"brain_coral_fan" : {
 		"en" : "Brain Coral Fan",
-		"fr" : "Gorgone de Corail Cerveau"
+		"Ardoise des Abimes Carrelée" : "Gorgone de Corail Cerveau"
 	},
 	"brain_coral_wall_fan" : {
 		"en" : "Brain Coral Wall Fan",
-		"fr" : "Gorgone Murale de Corail Cerveau"
+		"Ardoise des Abimes Carrelée" : "Gorgone Murale de Corail Cerveau"
 	},
 	"brewing_stand" : {
 		"en" : "Brewing Stand",
-		"fr" : "Alambic"
+		"Ardoise des Abimes Carrelée" : "Alambic"
 	},
 	"brick" : {
 		"en" : "Brick",
-		"fr" : "Brique"
+		"Ardoise des Abimes Carrelée" : "Brique"
 	},
 	"brick_slab" : {
 		"en" : "Brick Slab",
-		"fr" : "Dalle de Briques"
+		"Ardoise des Abimes Carrelée" : "Dalle de Briques"
 	},
 	"brick_stairs" : {
 		"en" : "Brick Stairs",
-		"fr" : "Escaliers de Briques"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Briques"
 	},
 	"brick_wall" : {
 		"en" : "Brick Wall",
-		"fr" : "Mur de Briques"
+		"Ardoise des Abimes Carrelée" : "Mur de Briques"
 	},
 	"bricks" : {
 		"en" : "Bricks",
-		"fr" : "Briques"
+		"Ardoise des Abimes Carrelée" : "Briques"
 	},
 	"brown_banner" : {
 		"en" : "Brown Banner",
-		"fr" : "Bannière Marron"
+		"Ardoise des Abimes Carrelée" : "Bannière Marron"
 	},
 	"brown_bed" : {
 		"en" : "Brown Bed",
-		"fr" : "Lit Marron"
+		"Ardoise des Abimes Carrelée" : "Lit Marron"
+	},
+	"brown_candle" : {
+		"en" : "Brown Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Marron"
 	},
 	"brown_carpet" : {
 		"en" : "Brown Carpet",
-		"fr" : "Tapis Marron"
+		"Ardoise des Abimes Carrelée" : "Tapis Marron"
 	},
 	"brown_concrete" : {
 		"en" : "Brown Concrete",
-		"fr" : "Béton Marron"
+		"Ardoise des Abimes Carrelée" : "Béton Marron"
 	},
 	"brown_concrete_powder" : {
 		"en" : "Brown Concrete Powder",
-		"fr" : "Béton Marron en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Marron en Poudre"
 	},
 	"brown_glazed_terracotta" : {
 		"en" : "Brown Glazed Terracotta",
-		"fr" : "Terre Cuite Emaillée Marron"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Marron"
 	},
 	"brown_mushroom" : {
 		"en" : "Brown Mushroom",
-		"fr" : "Champigon Marron"
+		"Ardoise des Abimes Carrelée" : "Champigon Marron"
 	},
 	"brown_mushroom_block" : {
 		"en" : "Brown Mushroom Block",
-		"fr" : "Bloc de Champignon Marron"
+		"Ardoise des Abimes Carrelée" : "Bloc de Champignon Marron"
 	},
 	"brown_shulker_box" : {
 		"en" : "Brown Shulker Box",
-		"fr" : "Boite de Shulker Marron"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Marron"
 	},
 	"brown_stained_glass" : {
 		"en" : "Brown Stained Glass",
-		"fr" : "Verre Marron"
+		"Ardoise des Abimes Carrelée" : "Verre Marron"
 	},
 	"brown_stained_glass_pane" : {
 		"en" : "Brown Stained Glass Pane",
-		"fr" : "Vitre Marron"
+		"Ardoise des Abimes Carrelée" : "Vitre Marron"
 	},
 	"brown_terracotta" : {
 		"en" : "Brown Terracotta",
-		"fr" : "Terre Cuite Marron"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Marron"
 	},
 	"brown_wall_banner" : {
 		"en" : "Brown Wall Banner",
-		"fr" : "Bannière Murale Marron"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Marron"
 	},
 	"brown_wool" : {
 		"en" : "Brown Wool",
-		"fr" : "Laine Marron"
+		"Ardoise des Abimes Carrelée" : "Laine Marron"
 	},
 	"bubble_column" : {
 		"en" : "Bubble Column",
-		"fr" : "Colonne de Bulle"
+		"Ardoise des Abimes Carrelée" : "Colonne de Bulle"
 	},
 	"bubble_coral" : {
 		"en" : "Bubble Coral",
-		"fr" : "Corail Bulle"
+		"Ardoise des Abimes Carrelée" : "Corail Bulle"
 	},
 	"bubble_coral_block" : {
 		"en" : "Bubble Coral Block",
-		"fr" : "Bloc de Corail Bulle"
+		"Ardoise des Abimes Carrelée" : "Bloc de Corail Bulle"
 	},
 	"bubble_coral_fan" : {
 		"en" : "Bubble Coral Fan",
-		"fr" : "Gorgone de Corail bulle"
+		"Ardoise des Abimes Carrelée" : "Gorgone de Corail bulle"
 	},
 	"bubble_coral_wall_fan" : {
 		"en" : "Bubble Coral Wall Fan",
-		"fr" : "Gorgone Murale de Corail Bulle"
+		"Ardoise des Abimes Carrelée" : "Gorgone Murale de Corail Bulle"
+	},
+	"budding_amethyst" : {
+		"en" : "Budding Amethyst",
+		"Ardoise des Abimes Carrelée" : "Druse d'Amethyste"
 	},
 	"cactus" : {
 		"en" : "Cactus",
-		"fr" : "Cactus"
+		"Ardoise des Abimes Carrelée" : "Cactus"
 	},
 	"cake" : {
 		"en" : "Cake",
-		"fr" : "Gateau"
+		"Ardoise des Abimes Carrelée" : "Gateau"
+	},
+	"calcite" : {
+		"en" : "Calcite",
+		"Ardoise des Abimes Carrelée" : "Calcite"
 	},
 	"campfire" : {
 		"en" : "Campfire",
-		"fr" : "Feu de Camp"
+		"Ardoise des Abimes Carrelée" : "Feu de Camp"
+	},
+	"candle" : {
+		"en" : "Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie"
 	},
 	"carrots" : {
 		"en" : "Carrots",
-		"fr" : "Carrotes"
+		"Ardoise des Abimes Carrelée" : "Carrotes"
 	},
 	"cartography_table" : {
 		"en" : "Cartography Table",
-		"fr" : "Table de Cartographie"
+		"Ardoise des Abimes Carrelée" : "Table de Cartographie"
 	},
 	"carved_pumpkin" : {
 		"en" : "Carved Pumpkin",
-		"fr" : "Citrouille Sculptée"
+		"Ardoise des Abimes Carrelée" : "Citrouille Sculptée"
 	},
 	"cauldron" : {
 		"en" : "Cauldron",
-		"fr" : "Chaudron"
+		"Ardoise des Abimes Carrelée" : "Chaudron"
 	},
 	"chain" : {
 		"en" : "Chain",
-		"fr" : "Chaîne"
+		"Ardoise des Abimes Carrelée" : "Chaîne"
 	},
 	"chain_command_block" : {
 		"en" : "Chain Command Block",
-		"fr" : "Bloc de Commande Chainé"
+		"Ardoise des Abimes Carrelée" : "Bloc de Commande Chainé"
 	},
 	"chest" : {
 		"en" : "Chest",
-		"fr" : "Coffre"
+		"Ardoise des Abimes Carrelée" : "Coffre"
 	},
 	"chipped_anvil" : {
 		"en" : "Chipped Anvil",
-		"fr" : "Enclume Ebréchée"
+		"Ardoise des Abimes Carrelée" : "Enclume Ebréchée"
+	},
+	"chiseled_deepslate" : {
+		"en" : "Chiseled Deepslate",
+		"Ardoise des Abimes Carrelée" : "Ardoise des Abimes Sculptée"
 	},
 	"chiseled_nether_bricks" : {
 		"en" : "Chiseled Nether Bricks",
-		"fr" : "Briques du Nether Sculptées"
+		"Ardoise des Abimes Carrelée" : "Briques du Nether Sculptées"
 	},
 	"chiseled_polished_blackstone" : {
 		"en" : "Chiseled Polished Blackstone",
-		"fr" : "Pierre Noire Sculptée"
+		"Ardoise des Abimes Carrelée" : "Pierre Noire Sculptée"
 	},
 	"chiseled_quartz_block" : {
 		"en" : "Chiseled Quartz Block",
-		"fr" : "Bloc de Quartz Sculpté"
+		"Ardoise des Abimes Carrelée" : "Bloc de Quartz Sculpté"
 	},
 	"chiseled_red_sandstone" : {
 		"en" : "Chiseled Red Sandstone",
-		"fr" : "Grès Rouge Sculpté"
+		"Ardoise des Abimes Carrelée" : "Grès Rouge Sculpté"
 	},
 	"chiseled_sandstone" : {
 		"en" : "Chiseled Sandstone",
-		"fr" : "Grès Sculpté"
+		"Ardoise des Abimes Carrelée" : "Grès Sculpté"
 	},
 	"chiseled_stone_bricks" : {
 		"en" : "Chiseled Stone Bricks",
-		"fr" : "Pierre Sculptée"
+		"Ardoise des Abimes Carrelée" : "Pierre Sculptée"
 	},
 	"chorus_flower" : {
 		"en" : "Chorus Flower",
-		"fr" : "Fleur de Chorus"
+		"Ardoise des Abimes Carrelée" : "Fleur de Chorus"
 	},
 	"chorus_plant" : {
 		"en" : "Chorus Plant",
-		"fr" : "Plante de Chorus"
+		"Ardoise des Abimes Carrelée" : "Plante de Chorus"
 	},
 	"clay" : {
 		"en" : "Clay",
-		"fr" : "Bloc d'Argile"
+		"Ardoise des Abimes Carrelée" : "Bloc d'Argile"
 	},
 	"clay_ball" : {
 		"en" : "Clay Ball",
-		"fr" : "Boule d'Argile"
+		"Ardoise des Abimes Carrelée" : "Boule d'Argile"
 	},
 	"coal" : {
 		"en" : "Coal",
-		"fr" : "Charbon"
+		"Ardoise des Abimes Carrelée" : "Charbon"
 	},
 	"coal_block" : {
 		"en" : "Coal Block",
-		"fr" : "Bloc de Charbon"
+		"Ardoise des Abimes Carrelée" : "Bloc de Charbon"
 	},
 	"coal_ore" : {
 		"en" : "Coal Ore",
-		"fr" : "Minerais de Charbon"
+		"Ardoise des Abimes Carrelée" : "Minerais de Charbon"
 	},
 	"coarse_dirt" : {
 		"en" : "Coarse Dirt",
-		"fr" : "Terre Stérile"
+		"Ardoise des Abimes Carrelée" : "Terre Stérile"
+	},
+	"cobbled_deepslate" : {
+		"en" : "Cobbled Deepslate",
+		"Ardoise des Abimes Carrelée" : "Pierre des Abimes"
+	},
+	"cobbled_deepslate_slab" : {
+		"en" : "Cobbled Deepslate Slab",
+		"Ardoise des Abimes Carrelée" : "Dalle de Pierre des Abimes"
+	},
+	"cobbled_deepslate_stairs" : {
+		"en" : "Cobbled Deepslate Stairs",
+		"Ardoise des Abimes Carrelée" : "Escaliers de Pierre des Abimes"
+	},
+	"cobbled_deepslate_wall" : {
+		"en" : "Cobbled Deepslate Wall",
+		"Ardoise des Abimes Carrelée" : "Mur de Pierre des Abimes"
 	},
 	"cobblestone" : {
 		"en" : "Cobblestone",
-		"fr" : "Pierres"
+		"Ardoise des Abimes Carrelée" : "Pierres"
 	},
 	"cobblestone_slab" : {
 		"en" : "Cobblestone Slab",
-		"fr" : "Dalle de Pierres"
+		"Ardoise des Abimes Carrelée" : "Dalle de Pierres"
 	},
 	"cobblestone_stairs" : {
 		"en" : "Cobblestone Stairs",
-		"fr" : "Escaliers de Pierres"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Pierres"
 	},
 	"cobblestone_wall" : {
 		"en" : "Cobblestone Wall",
-		"fr" : "Mur de Pierres"
+		"Ardoise des Abimes Carrelée" : "Mur de Pierres"
 	},
 	"cobweb" : {
 		"en" : "Cobweb",
-		"fr" : "Toile d'Araignée"
+		"Ardoise des Abimes Carrelée" : "Toile d'Araignée"
 	},
 	"cocoa" : {
 		"en" : "Cocoa",
-		"fr" : "Cacao"
+		"Ardoise des Abimes Carrelée" : "Cacao"
 	},
 	"command_block" : {
 		"en" : "Commande Block",
-		"fr" : "Bloc de Commande"
+		"Ardoise des Abimes Carrelée" : "Bloc de Commande"
 	},
 	"comparator" : {
 		"en" : "Comparator",
-		"fr" : "Comparateur"
+		"Ardoise des Abimes Carrelée" : "Comparateur"
 	},
 	"composter" : {
 		"en" : "Composter",
-		"fr" : "Composteur"
+		"Ardoise des Abimes Carrelée" : "Composteur"
 	},
 	"conduit" : {
 		"en" : "Conduit",
-		"fr" : "Conduit"
+		"Ardoise des Abimes Carrelée" : "Conduit"
+	},
+	"copper_block" : {
+		"en" : "Copper Block",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre"
+	},
+	"copper_ore" : {
+		"en" : "Copper Ore",
+		"Ardoise des Abimes Carrelée" : "Minerai de Cuivre"
 	},
 	"cornflower" : {
 		"en" : "Cornflower",
-		"fr" : "Bleuet"
+		"Ardoise des Abimes Carrelée" : "Bleuet"
+	},
+	"cracked_deepslate_bricks" : {
+		"en" : "Cracked Deepslate Bricks",
+		"Ardoise des Abimes Carrelée" : "Ardoise des Abimes Taillée Craquelée"
+	},
+	"cracked_deepslate_tiles" : {
+		"en" : "Cracked Deepslate Tiles",
+		"Ardoise des Abimes Carrelée" : "Ardoise des Abimes Carrelée Craquelée"
 	},
 	"cracked_nether_bricks" : {
 		"en" : "Cracked Nether Bricks",
-		"fr" : "Briques du Nether Craquelées"
+		"Ardoise des Abimes Carrelée" : "Briques du Nether Craquelées"
 	},
 	"cracked_polished_blackstone_bricks" : {
 		"en" : "Cracked Polished Blackstone Bricks",
-		"fr" : "Pierre Noire Taillée Craquelée"
+		"Ardoise des Abimes Carrelée" : "Pierre Noire Taillée Craquelée"
 	},
 	"cracked_stone_bricks" : {
 		"en" : "Cracked Stone Bricks",
-		"fr" : "Pierre Taillée Craquelée"
+		"Ardoise des Abimes Carrelée" : "Pierre Taillée Craquelée"
 	},
 	"crafting_table" : {
 		"en" : "Crafting Table",
-		"fr" : "Etabli"
+		"Ardoise des Abimes Carrelée" : "Etabli"
 	},
 	"creeper_head" : {
 		"en" : "Creeper Head",
-		"fr" : "Tête de Creeper"
+		"Ardoise des Abimes Carrelée" : "Tête de Creeper"
 	},
 	"creeper_wall_head" : {
 		"en" : "Creeper Wall Head",
-		"fr" : "Tête Murale de Creeper"
+		"Ardoise des Abimes Carrelée" : "Tête Murale de Creeper"
 	},
 	"crimson_button" : {
 		"en" : "Crimson Button",
-		"fr" : "Bouton Carmin"
+		"Ardoise des Abimes Carrelée" : "Bouton Carmin"
 	},
 	"crimson_door" : {
 		"en" : "Crimson Door",
-		"fr" : "Porte Carmin"
+		"Ardoise des Abimes Carrelée" : "Porte Carmin"
 	},
 	"crimson_fence" : {
 		"en" : "Crimson Fence",
-		"fr" : "Barrière Carmin"
+		"Ardoise des Abimes Carrelée" : "Barrière Carmin"
 	},
 	"crimson_fence_gate" : {
 		"en" : "Crimson Fence Gate",
-		"fr" : "Portillon Carmin"
+		"Ardoise des Abimes Carrelée" : "Portillon Carmin"
 	},
 	"crimson_fungus" : {
 		"en" : "Crimson Fungus",
-		"fr" : "Champignon Carmin"
+		"Ardoise des Abimes Carrelée" : "Champignon Carmin"
 	},
 	"crimson_hyphae" : {
 		"en" : "Crimson Hyphae",
-		"fr" : "Hyphe Carmin"
+		"Ardoise des Abimes Carrelée" : "Hyphe Carmin"
 	},
 	"crimson_nylium" : {
 		"en" : "Crimson Nylium",
-		"fr" : "Nylium Carmin"
+		"Ardoise des Abimes Carrelée" : "Nylium Carmin"
 	},
 	"crimson_planks" : {
 		"en" : "Crimson Planks",
-		"fr" : "Planches Carmin"
+		"Ardoise des Abimes Carrelée" : "Planches Carmin"
 	},
 	"crimson_pressure_plate" : {
 		"en" : "Crimson Pressure Plate",
-		"fr" : "Plaque de Pression Carmin"
+		"Ardoise des Abimes Carrelée" : "Plaque de Pression Carmin"
 	},
 	"crimson_roots" : {
 		"en" : "Crimson Roots",
-		"fr" : "Racines Carmin"
+		"Ardoise des Abimes Carrelée" : "Racines Carmin"
 	},
 	"crimson_sign" : {
 		"en" : "Crimson Sign",
-		"fr" : "Panneau Carmin"
+		"Ardoise des Abimes Carrelée" : "Panneau Carmin"
 	},
 	"crimson_slab" : {
 		"en" : "Crimson Slab",
-		"fr" : "Dalle Carmin"
+		"Ardoise des Abimes Carrelée" : "Dalle Carmin"
 	},
 	"crimson_stairs" : {
 		"en" : "Crimson Stairs",
-		"fr" : "Escaliers Carmin"
+		"Ardoise des Abimes Carrelée" : "Escaliers Carmin"
 	},
 	"crimson_stem" : {
 		"en" : "Crimson Stem",
-		"fr" : "Hyphes Carmin"
+		"Ardoise des Abimes Carrelée" : "Hyphes Carmin"
 	},
 	"crimson_trapdoor" : {
 		"en" : "Crimson Trapdoor",
-		"fr" : "Trappe Carmin"
+		"Ardoise des Abimes Carrelée" : "Trappe Carmin"
 	},
 	"crimson_wall_sign" : {
 		"en" : "Crimson Wall Sign",
-		"fr" : "Panneau Mural Carmin"
+		"Ardoise des Abimes Carrelée" : "Panneau Mural Carmin"
 	},
 	"crying_obsidian" : {
 		"en" : "Crying Obsidian",
-		"fr" : "Obsidienne Pleureuse"
+		"Ardoise des Abimes Carrelée" : "Obsidienne Pleureuse"
+	},
+	"cut_copper" : {
+		"en" : "Cut Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Taillé"
+	},
+	"cut_copper_slab" : {
+		"en" : "Cut Copper Slab",
+		"Ardoise des Abimes Carrelée" : "Dalle de Cuivre Taillée"
+	},
+	"cut_copper_stairs" : {
+		"en" : "Cut Copper Stairs",
+		"Ardoise des Abimes Carrelée" : "Escaliers de Cuivre Taillés"
 	},
 	"cut_red_sandstone" : {
 		"en" : "Cut Red Sandstone",
-		"fr" : "Grès Rouge Taillé"
+		"Ardoise des Abimes Carrelée" : "Grès Rouge Taillé"
 	},
 	"cut_red_sandstone_slab" : {
 		"en" : "Cut Red Sandstone Slab",
-		"fr" : "Dalle de Grès Rouge Taillé"
+		"Ardoise des Abimes Carrelée" : "Dalle de Grès Rouge Taillé"
 	},
 	"cut_sandstone" : {
 		"en" : "Cut Sandstone",
-		"fr" : "Grès Taillé"
+		"Ardoise des Abimes Carrelée" : "Grès Taillé"
 	},
 	"cut_sandstone_slab" : {
 		"en" : "Cut Sandstone Slab",
-		"fr" : "Dalle de Grès Taillé"
+		"Ardoise des Abimes Carrelée" : "Dalle de Grès Taillé"
 	},
 	"cyan_banner" : {
 		"en" : "Cyan Banner",
-		"fr" : "Bannière Cyan"
+		"Ardoise des Abimes Carrelée" : "Bannière Cyan"
 	},
 	"cyan_bed" : {
 		"en" : "Cyan Bed",
-		"fr" : "Lit Cyan"
+		"Ardoise des Abimes Carrelée" : "Lit Cyan"
+	},
+	"cyan_candle" : {
+		"en" : "Cyan Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Cyan"
 	},
 	"cyan_carpet" : {
 		"en" : "Cyan Carpet",
-		"fr" : "Tapis Cyan"
+		"Ardoise des Abimes Carrelée" : "Tapis Cyan"
 	},
 	"cyan_concrete" : {
 		"en" : "Cyan Concrete",
-		"fr" : "Béton Cyan"
+		"Ardoise des Abimes Carrelée" : "Béton Cyan"
 	},
 	"cyan_concrete_powder" : {
 		"en" : "Cyan Concrete Powder",
-		"fr" : "Béton Cyan en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Cyan en Poudre"
 	},
 	"cyan_glazed_terracotta" : {
 		"en" : "Cyan Glazed Terracotta",
-		"fr" : "Terre Cuite Emaillée Cyan"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Cyan"
 	},
 	"cyan_shulker_box" : {
 		"en" : "Cyan Shulker Box",
-		"fr" : "Boite de Shulker Cyan"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Cyan"
 	},
 	"cyan_stained_glass" : {
 		"en" : "Cyan Stained Glass",
-		"fr" : "Verre Cyan"
+		"Ardoise des Abimes Carrelée" : "Verre Cyan"
 	},
 	"cyan_stained_glass_pane" : {
 		"en" : "Cyan Stained Glass Pane",
-		"fr" : "Vitre Cyan"
+		"Ardoise des Abimes Carrelée" : "Vitre Cyan"
 	},
 	"cyan_terracotta" : {
 		"en" : "Cyan Terracotta",
-		"fr" : "Terre Cuite Cyan"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Cyan"
 	},
 	"cyan_wall_banner" : {
 		"en" : "Cyan Wall Banner",
-		"fr" : "Bannière Murale Cyan"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Cyan"
 	},
 	"cyan_wool" : {
 		"en" : "Cyan Wool",
-		"fr" : "Laine Cyan"
+		"Ardoise des Abimes Carrelée" : "Laine Cyan"
 	},
 	"damaged_anvil" : {
 		"en" : "Damaged Anvil",
-		"fr" : "Enclume Endommagée"
+		"Ardoise des Abimes Carrelée" : "Enclume Endommagée"
 	},
 	"dandelion" : {
 		"en" : "Dandelion",
-		"fr" : "Pissenlit"
+		"Ardoise des Abimes Carrelée" : "Pissenlit"
 	},
 	"dark_oak_button" : {
 		"en" : "Dark Oak Button",
-		"fr" : "Bouton de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Bouton de Chêne Noir"
 	},
 	"dark_oak_door" : {
 		"en" : "Dark Oak Door",
-		"fr" : "Porte de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Porte de Chêne Noir"
 	},
 	"dark_oak_fence" : {
 		"en" : "Dark Oak Fence",
-		"fr" : "Barrière de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Barrière de Chêne Noir"
 	},
 	"dark_oak_fence_gate" : {
 		"en" : "Dark Oak Fence Gate",
-		"fr" : "Portillon de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Portillon de Chêne Noir"
 	},
 	"dark_oak_leaves" : {
 		"en" : "Dark Oak Leaves",
-		"fr" : "Feuilles de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Feuilles de Chêne Noir"
 	},
 	"dark_oak_log" : {
 		"en" : "Dark Oak Log",
-		"fr" : "Bûche de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Bûche de Chêne Noir"
 	},
 	"dark_oak_planks" : {
 		"en" : "Dark Oak Planks",
-		"fr" : "Planche de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Planche de Chêne Noir"
 	},
 	"dark_oak_pressure_plate" : {
 		"en" : "Dark Oak Pressure Plate",
-		"fr" : "Plaque de Pression de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Plaque de Pression de Chêne Noir"
 	},
 	"dark_oak_sapling" : {
 		"en" : "Dark Oak Sapling",
-		"fr" : "Pousse de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Pousse de Chêne Noir"
 	},
 	"dark_oak_sign" : {
 		"en" : "Dark Oak Sign",
-		"fr" : "Panneau de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Panneau de Chêne Noir"
 	},
 	"dark_oak_slab" : {
 		"en" : "Dark Oak Slab",
-		"fr" : "Dalle de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Dalle de Chêne Noir"
 	},
 	"dark_oak_stairs" : {
 		"en" : "Dark Oak Stairs",
-		"fr" : "Escaliers de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Chêne Noir"
 	},
 	"dark_oak_trapdoor" : {
 		"en" : "Dark Oak Trapdoor",
-		"fr" : "Trappe de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Trappe de Chêne Noir"
 	},
 	"dark_oak_wall_sign" : {
 		"en" : "Dark Oak Wall Sign",
-		"fr" : "Panneau Mural de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Panneau Mural de Chêne Noir"
 	},
 	"dark_oak_wood" : {
 		"en" : "Dark Oak Wood",
-		"fr" : "Bois de Chêne Noir"
+		"Ardoise des Abimes Carrelée" : "Bois de Chêne Noir"
 	},
 	"dark_prismarine" : {
 		"en" : "Dark Prismarine",
-		"fr" : "Prismarine Sombre"
+		"Ardoise des Abimes Carrelée" : "Prismarine Sombre"
 	},
 	"dark_prismarine_slab" : {
 		"en" : "Dark Prismarine Slab",
-		"fr" : "Dalle de Prismarine Sombre"
+		"Ardoise des Abimes Carrelée" : "Dalle de Prismarine Sombre"
 	},
 	"dark_prismarine_stairs" : {
 		"en" : "Dark Prismarine Stairs",
-		"fr" : "Escaliers de Prismarine Sombre"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Prismarine Sombre"
 	},
 	"daylight_detector" : {
 		"en" : "Daylight Detector",
-		"fr" : "Capteur de Lumière"
+		"Ardoise des Abimes Carrelée" : "Capteur de Lumière"
 	},
 	"dead_brain_coral" : {
 		"en" : "Dead Brain Coral",
-		"fr" : "Corail Cerveau Mort"
+		"Ardoise des Abimes Carrelée" : "Corail Cerveau Mort"
 	},
 	"dead_brain_coral_block" : {
 		"en" : "Dead Brain Coral Block",
-		"fr" : "Bloc de Corail Cerveau Mort"
+		"Ardoise des Abimes Carrelée" : "Bloc de Corail Cerveau Mort"
 	},
 	"dead_brain_coral_fan" : {
 		"en" : "Dead Brain Coral Fan",
-		"fr" : "Gorgone de Corail Cerveau Morte"
+		"Ardoise des Abimes Carrelée" : "Gorgone de Corail Cerveau Morte"
 	},
 	"dead_brain_coral_wall_fan" : {
 		"en" : "Dead Brain Coral Wall Fan",
-		"fr" : "Gorgone Murale de Corail Cerveau Morte"
+		"Ardoise des Abimes Carrelée" : "Gorgone Murale de Corail Cerveau Morte"
 	},
 	"dead_bubble_coral" : {
 		"en" : "Dead Bubble Coral",
-		"fr" : "Corail Bulle Mort"
+		"Ardoise des Abimes Carrelée" : "Corail Bulle Mort"
 	},
 	"dead_bubble_coral_block" : {
 		"en" : "Dead Bubble Coral Block",
-		"fr" : "Bloc de Corail Bulle Mort"
+		"Ardoise des Abimes Carrelée" : "Bloc de Corail Bulle Mort"
 	},
 	"dead_bubble_coral_fan" : {
 		"en" : "Dead Bubble Coral Fan",
-		"fr" : "Gorgone de Corail Bulle Morte"
+		"Ardoise des Abimes Carrelée" : "Gorgone de Corail Bulle Morte"
 	},
 	"dead_bubble_coral_wall_fan" : {
 		"en" : "Dead Bubble Coral Wall Fan",
-		"fr" : "Gorgone Murale de Corail Bulle Morte"
+		"Ardoise des Abimes Carrelée" : "Gorgone Murale de Corail Bulle Morte"
 	},
 	"dead_bush" : {
 		"en" : "Dead Bush",
-		"fr" : "Arbuste Mort"
+		"Ardoise des Abimes Carrelée" : "Arbuste Mort"
 	},
 	"dead_fire_coral" : {
 		"en" : "Dead Fire Coral",
-		"fr" : "Corail de Feu Mort"
+		"Ardoise des Abimes Carrelée" : "Corail de Feu Mort"
 	},
 	"dead_fire_coral_block" : {
 		"en" : "Dead Fire Coral Block",
-		"fr" : "Bloc de Corail de Feu Mort"
+		"Ardoise des Abimes Carrelée" : "Bloc de Corail de Feu Mort"
 	},
 	"dead_fire_coral_fan" : {
 		"en" : "Dead Fire Coral Fan",
-		"fr" : "Gorgone de Corail de Feu Morte"
+		"Ardoise des Abimes Carrelée" : "Gorgone de Corail de Feu Morte"
 	},
 	"dead_fire_coral_wall_fan" : {
 		"en" : "Dead Fire Coral Wall Fan",
-		"fr" : "Gorgone Murale de Corail de Feu Morte"
+		"Ardoise des Abimes Carrelée" : "Gorgone Murale de Corail de Feu Morte"
 	},
 	"dead_horn_coral" : {
 		"en" : "Dead Horn Coral",
-		"fr" : "Corail Corné Mort"
+		"Ardoise des Abimes Carrelée" : "Corail Corné Mort"
 	},
 	"dead_horn_coral_block" : {
 		"en" : "Dead Horn Coral Block",
-		"fr" : "Bloc de Corail Corné Mort"
+		"Ardoise des Abimes Carrelée" : "Bloc de Corail Corné Mort"
 	},
 	"dead_horn_coral_fan" : {
 		"en" : "Dead Horn Coral Fan",
-		"fr" : "Gorgone de Corail Corné Morte"
+		"Ardoise des Abimes Carrelée" : "Gorgone de Corail Corné Morte"
 	},
 	"dead_horn_coral_wall_fan" : {
 		"en" : "Dead Horn Coral Wall Fan",
-		"fr" : "Gorgone Murale de Corail Corné Morte"
+		"Ardoise des Abimes Carrelée" : "Gorgone Murale de Corail Corné Morte"
 	},
 	"dead_tube_coral" : {
 		"en" : "Dead Tube Coral",
-		"fr" : "Corail Tubulaire Mort"
+		"Ardoise des Abimes Carrelée" : "Corail Tubulaire Mort"
 	},
 	"dead_tube_coral_block" : {
 		"en" : "Dead Tube Coral Block",
-		"fr" : "Bloc de Corail Tubulaire Mort"
+		"Ardoise des Abimes Carrelée" : "Bloc de Corail Tubulaire Mort"
 	},
 	"dead_tube_coral_fan" : {
 		"en" : "Dead Tube Coral Fan",
-		"fr" : "Gorgone de Corail Tubulaire Morte"
+		"Ardoise des Abimes Carrelée" : "Gorgone de Corail Tubulaire Morte"
 	},
 	"dead_tube_coral_wall_fan" : {
 		"en" : "Dead Tube Coral Wall Fan",
-		"fr" : "Gorgone Murale de Corail Tubulaire Morte"
+		"Ardoise des Abimes Carrelée" : "Gorgone Murale de Corail Tubulaire Morte"
+	},
+	"deepslate" : {
+		"en" : "Deepslate",
+		"Ardoise des Abimes Carrelée" : "Ardoise des Abimes"
+	},
+	"deepslate_brick_slab" : {
+		"en" : "Deepslate Brick Slab",
+		"Ardoise des Abimes Carrelée" : "Dalle en Ardoise des Abimes Taillée"
+	},
+	"deepslate_brick_stairs" : {
+		"en" : "Deepslate Brick Stairs",
+		"Ardoise des Abimes Carrelée" : "Escaliers en Ardoise des Abimes Taillée"
+	},
+	"deepslate_brick_wall" : {
+		"en" : "Deepslate Brick Wall",
+		"Ardoise des Abimes Carrelée" : "Mur en Ardoise des Abimes Taillée"
+	},
+	"deepslate_bricks" : {
+		"en" : "Deepslate Bricks",
+		"Ardoise des Abimes Carrelée" : "Ardoise des Abimes Taillée"
+	},
+	"deepslate_coal_ore" : {
+		"en" : "Deepslate Coal Ore",
+		"Ardoise des Abimes Carrelée" : "Minerai de Charbon des Abimes"
+	},
+	"deepslate_copper_ore" : {
+		"en" : "Deepslate Copper Ore",
+		"Ardoise des Abimes Carrelée" : "Minerai de Cuivre des Abimes"
+	},
+	"deepslate_diamond_ore" : {
+		"en" : "Deepslate Diamond Ore",
+		"Ardoise des Abimes Carrelée" : "Minerai de Diamant des Abimes"
+	},
+	"deepslate_emerald_ore" : {
+		"en" : "Deepslate Emerald Ore",
+		"Ardoise des Abimes Carrelée" : "Minerai d'Emeraude des Abimes"
+	},
+	"deepslate_gold_ore" : {
+		"en" : "Deepslate Gold Ore",
+		"Ardoise des Abimes Carrelée" : "Minerai d'Or des Abimes"
+	},
+	"deepslate_iron_ore" : {
+		"en" : "Deepslate Iron Ore",
+		"Ardoise des Abimes Carrelée" : "Minerai de Fer des Abimes"
+	},
+	"deepslate_lapis_ore" : {
+		"en" : "Deepslate Lapis Ore",
+		"Ardoise des Abimes Carrelée" : "Minerai de Lapis des Abimes"
+	},
+	"deepslate_redstone_ore" : {
+		"en" : "Deepslate Redstone Ore",
+		"Ardoise des Abimes Carrelée" : "Minerai de Redstone des Abimes"
+	},
+	"deepslate_tile_slab" : {
+		"en" : "Deepslate Tile Slab",
+		"Ardoise des Abimes Carrelée" : "Dalle en Ardoise des Abimes Carrelée"
+	},
+	"deepslate_tile_stairs" : {
+		"en" : "Deepslate Tile Stairs",
+		"Ardoise des Abimes Carrelée" : "Escaliers en Ardoise des Abimes Carrelée"
+	},
+	"deepslate_tile_wall" : {
+		"en" : "Deepslate Tile Wall",
+		"Ardoise des Abimes Carrelée" : "Mur en Ardoise des Abimes Carrelée"
+	},
+	"deepslate_tiles" : {
+		"en" : "Deepslate Tiles",
+		"Ardoise des Abimes Carrelée" : "Ardoise des Abimes Carrelée"
 	},
 	"detector_rail" : {
 		"en" : "Detector Rail",
-		"fr" : "Rails Détecteurs"
+		"Ardoise des Abimes Carrelée" : "Rails Détecteurs"
 	},
 	"diamond" : {
 		"en" : "Diamond",
-		"fr" : "Diamant"
+		"Ardoise des Abimes Carrelée" : "Diamant"
 	},
 	"diamond_block" : {
 		"en" : "Diamond Block",
-		"fr" : "Bloc de Diamant"
+		"Ardoise des Abimes Carrelée" : "Bloc de Diamant"
 	},
 	"diamond_ore" : {
 		"en" : "Diamond Ore",
-		"fr" : "Minerais de Diamant"
+		"Ardoise des Abimes Carrelée" : "Minerais de Diamant"
 	},
 	"diorite" : {
 		"en" : "Diorite",
-		"fr" : "Diorite"
+		"Ardoise des Abimes Carrelée" : "Diorite"
 	},
 	"diorite_slab" : {
 		"en" : "Diorite Slab",
-		"fr" : "Dalle de Diorite"
+		"Ardoise des Abimes Carrelée" : "Dalle de Diorite"
 	},
 	"diorite_stairs" : {
 		"en" : "Diorite Stairs",
-		"fr" : "Escaliers de Diorite"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Diorite"
 	},
 	"diorite_wall" : {
 		"en" : "Diorite Wall",
-		"fr" : "Mur de Diorite"
+		"Ardoise des Abimes Carrelée" : "Mur de Diorite"
 	},
 	"dirt" : {
 		"en" : "Dirt",
-		"fr" : "Terre"
+		"Ardoise des Abimes Carrelée" : "Terre"
 	},
 	"dispenser" : {
 		"en" : "Dispenser",
-		"fr" : "Distributeur"
+		"Ardoise des Abimes Carrelée" : "Distributeur"
 	},
 	"dragon_egg" : {
 		"en" : "Dragon Egg",
-		"fr" : "Œuf de Dragon"
+		"Ardoise des Abimes Carrelée" : "Œuf de Dragon"
 	},
 	"dragon_head" : {
 		"en" : "Dragon Head",
-		"fr" : "Tête de Dragon"
+		"Ardoise des Abimes Carrelée" : "Tête de Dragon"
 	},
 	"dragon_wall_head" : {
 		"en" : "Dragon Wall Head",
-		"fr" : "Tête Murale de Dragon"
+		"Ardoise des Abimes Carrelée" : "Tête Murale de Dragon"
 	},
 	"dried_kelp" : {
 		"en" : "Dried Kelp",
-		"fr" : "Algues Séchées"
+		"Ardoise des Abimes Carrelée" : "Algues Séchées"
 	},
 	"dried_kelp_block" : {
 		"en" : "Dried Kelp Block",
-		"fr" : "Bloc d'Algues Séchées"
+		"Ardoise des Abimes Carrelée" : "Bloc d'Algues Séchées"
+	},
+	"dripstone_block" : {
+		"en" : "Dripstone Block",
+		"Ardoise des Abimes Carrelée" : "Bloc de Spéléothème"
 	},
 	"dropper" : {
 		"en" : "Dropper",
-		"fr" : "Dropper"
+		"Ardoise des Abimes Carrelée" : "Dropper"
 	},
 	"dyes" : {
 		"en" : "Dyes",
-		"fr" : "Colorants"
+		"Ardoise des Abimes Carrelée" : "Colorants"
 	},
 	"emerald" : {
 		"en" : "Emerald",
-		"fr" : "Emeraude"
+		"Ardoise des Abimes Carrelée" : "Emeraude"
 	},
 	"emerald_block" : {
 		"en" : "Emerald Block",
-		"fr" : "Bloc d'Emeraudes"
+		"Ardoise des Abimes Carrelée" : "Bloc d'Emeraudes"
 	},
 	"emerald_ore" : {
 		"en" : "Emerald Ore",
-		"fr" : "Minerais d'Emeraude"
+		"Ardoise des Abimes Carrelée" : "Minerais d'Emeraude"
 	},
 	"enchanting_table" : {
 		"en" : "Enchanting Table",
-		"fr" : "Table d'Enchantement"
+		"Ardoise des Abimes Carrelée" : "Table d'Enchantement"
 	},
 	"end_gateway" : {
 		"en" : "End Gateway",
-		"fr" : "Passerelle de l'End"
+		"Ardoise des Abimes Carrelée" : "Passerelle de l'End"
 	},
 	"end_portal" : {
 		"en" : "End Portal",
-		"fr" : "Portail de l'End"
+		"Ardoise des Abimes Carrelée" : "Portail de l'End"
 	},
 	"end_portal_frame" : {
 		"en" : "End Portal Frame",
-		"fr" : "Cadre du Portail de l'End"
+		"Ardoise des Abimes Carrelée" : "Cadre du Portail de l'End"
 	},
 	"end_rod" : {
 		"en" : "End Rod",
-		"fr" : "Barre de l'End"
+		"Ardoise des Abimes Carrelée" : "Barre de l'End"
 	},
 	"end_stone" : {
 		"en" : "End Stone",
-		"fr" : "Pierre de l'End"
+		"Ardoise des Abimes Carrelée" : "Pierre de l'End"
 	},
 	"end_stone_brick_slab" : {
 		"en" : "End Stone Brick Slab",
-		"fr" : "Dalle de Pierre Taillée de l'End"
+		"Ardoise des Abimes Carrelée" : "Dalle de Pierre Taillée de l'End"
 	},
 	"end_stone_brick_stairs" : {
 		"en" : "End Stone Brick Stairs",
-		"fr" : "Escalier de Pierre Taillée de l'End"
+		"Ardoise des Abimes Carrelée" : "Escalier de Pierre Taillée de l'End"
 	},
 	"end_stone_brick_wall" : {
 		"en" : "End Stone Brick Wall",
-		"fr" : "Mur de Pierre Taillée de l'End"
+		"Ardoise des Abimes Carrelée" : "Mur de Pierre Taillée de l'End"
 	},
 	"end_stone_bricks" : {
 		"en" : "End Stone Bricks",
-		"fr" : "Pierre Taillée de l'End"
+		"Ardoise des Abimes Carrelée" : "Pierre Taillée de l'End"
 	},
 	"ender_chest" : {
 		"en" : "Ender Chest",
-		"fr" : "Coffre de l'Ender"
+		"Ardoise des Abimes Carrelée" : "Coffre de l'Ender"
 	},
 	"ender_eye" : {
 		"en" : "Ender Eye",
-		"fr" : "Œil de l'Ender"
+		"Ardoise des Abimes Carrelée" : "Œil de l'Ender"
 	},
 	"ender_pearl" : {
 		"en" : "Ender Pearl",
-		"fr" : "Perle de l'Ender"
+		"Ardoise des Abimes Carrelée" : "Perle de l'Ender"
+	},
+	"exposed_copper" : {
+		"en" : "Exposed Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Exposé"
+	},
+	"exposed_cut_copper" : {
+		"en" : "Exposed Cut Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Taillé Exposé"
+	},
+	"exposed_cut_copper_slab" : {
+		"en" : "Exposed Cut Copper Slab",
+		"Ardoise des Abimes Carrelée" : "Dalle de Cuivre Taillé Exposée"
+	},
+	"exposed_cut_copper_stairs" : {
+		"en" : "Exposed Cut Copper Stairs",
+		"Ardoise des Abimes Carrelée" : "Escaliers de Cuivre Taillés Exposés"
 	},
 	"farmland" : {
 		"en" : "Farmland",
-		"fr" : "Terre Labourée"
+		"Ardoise des Abimes Carrelée" : "Terre Labourée"
 	},
 	"fern" : {
 		"en" : "Fern",
-		"fr" : "Fougère"
+		"Ardoise des Abimes Carrelée" : "Fougère"
 	},
 	"fire" : {
 		"en" : "Fire",
-		"fr" : "Feu"
+		"Ardoise des Abimes Carrelée" : "Feu"
 	},
 	"fire_coral" : {
 		"en" : "Fire Coral",
-		"fr" : "Corail de Feu"
+		"Ardoise des Abimes Carrelée" : "Corail de Feu"
 	},
 	"fire_coral_block" : {
 		"en" : "Fire Coral Block",
-		"fr" : "Bloc de Corail de Feu"
+		"Ardoise des Abimes Carrelée" : "Bloc de Corail de Feu"
 	},
 	"fire_coral_fan" : {
 		"en" : "Fire Coral Fan",
-		"fr" : "Gorgone de Corail de Feu"
+		"Ardoise des Abimes Carrelée" : "Gorgone de Corail de Feu"
 	},
 	"fire_coral_wall_fan" : {
 		"en" : "Fire Coral Wall Fan",
-		"fr" : "Gorgone Murale de Corail de Feu"
+		"Ardoise des Abimes Carrelée" : "Gorgone Murale de Corail de Feu"
 	},
 	"fletching_table" : {
 		"en" : "Fletching Table",
-		"fr" : "Table d'Archerie"
+		"Ardoise des Abimes Carrelée" : "Table d'Archerie"
 	},
 	"flint" : {
 		"en" : "Flint",
-		"fr" : "Silex"
+		"Ardoise des Abimes Carrelée" : "Silex"
 	},
 	"flower" : {
 		"en" : "Flower",
-		"fr" : "Fleur"
+		"Ardoise des Abimes Carrelée" : "Fleur"
 	},
 	"flower_pot" : {
 		"en" : "Flower Pot",
-		"fr" : "Pot de Fleur"
+		"Ardoise des Abimes Carrelée" : "Pot de Fleur"
+	},
+	"flowering_azalea" : {
+		"en" : "Flowering Azalea",
+		"Ardoise des Abimes Carrelée" : "Azalée Fleurie"
+	},
+	"flowering_azalea_leaves" : {
+		"en" : "Flowering Azalea Leaves",
+		"Ardoise des Abimes Carrelée" : "Feuilles d'Azalée Fleurie"
 	},
 	"frosted_ice" : {
 		"en" : "Frosted Ice",
-		"fr" : "Glace Givrée"
+		"Ardoise des Abimes Carrelée" : "Glace Givrée"
 	},
 	"furnace" : {
 		"en" : "Furnace",
-		"fr" : "Fourneau"
+		"Ardoise des Abimes Carrelée" : "Fourneau"
 	},
 	"gilded_blackstone" : {
 		"en" : "Gilded Blackstone",
-		"fr" : "Roche Noire dorée"
+		"Ardoise des Abimes Carrelée" : "Roche Noire dorée"
 	},
 	"glass" : {
 		"en" : "Glass",
-		"fr" : "Verre"
+		"Ardoise des Abimes Carrelée" : "Verre"
 	},
 	"glass_pane" : {
 		"en" : "Glass Pane",
-		"fr" : "Vitre"
+		"Ardoise des Abimes Carrelée" : "Vitre"
+	},
+	"glow_lichen" : {
+		"en" : "Glow Lichen",
+		"Ardoise des Abimes Carrelée" : "Lichen Lumineux"
 	},
 	"glowstone" : {
 		"en" : "Glowstone",
-		"fr" : "Pierre Lumineuse"
+		"Ardoise des Abimes Carrelée" : "Pierre Lumineuse"
 	},
 	"gold" : {
 		"en" : "Gold",
-		"fr" : "Or"
+		"Ardoise des Abimes Carrelée" : "Or"
 	},
 	"gold_block" : {
 		"en" : "Gold Block",
-		"fr" : "Bloc d'Or"
+		"Ardoise des Abimes Carrelée" : "Bloc d'Or"
 	},
 	"gold_ore" : {
 		"en" : "Gold Ore",
-		"fr" : "Minerais d'Or"
+		"Ardoise des Abimes Carrelée" : "Minerais d'Or"
 	},
 	"granite" : {
 		"en" : "Granite",
-		"fr" : "Granite"
+		"Ardoise des Abimes Carrelée" : "Granite"
 	},
 	"granite_slab" : {
 		"en" : "Granite Slab",
-		"fr" : "Dalle de Granite"
+		"Ardoise des Abimes Carrelée" : "Dalle de Granite"
 	},
 	"granite_stairs" : {
 		"en" : "Granite Stairs",
-		"fr" : "Escaliers de Granite"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Granite"
 	},
 	"granite_wall" : {
 		"en" : "Granite Wall",
-		"fr" : "Mur de Granite"
+		"Ardoise des Abimes Carrelée" : "Mur de Granite"
 	},
 	"grass" : {
 		"en" : "Grass",
-		"fr" : "Herbe"
+		"Ardoise des Abimes Carrelée" : "Herbe"
 	},
 	"grass_block" : {
 		"en" : "Grass Block",
-		"fr" : "Bloc d'Herbe"
+		"Ardoise des Abimes Carrelée" : "Bloc d'Herbe"
 	},
 	"grass_path" : {
 		"en" : "Grass Path",
-		"fr" : "Chemin d'Herbe"
+		"Ardoise des Abimes Carrelée" : "Chemin d'Herbe"
 	},
 	"gravel" : {
 		"en" : "Gravel",
-		"fr" : "Gravier"
+		"Ardoise des Abimes Carrelée" : "Gravier"
 	},
 	"gray_banner" : {
 		"en" : "Gray Banner",
-		"fr" : "Bannière Grise"
+		"Ardoise des Abimes Carrelée" : "Bannière Grise"
 	},
 	"gray_bed" : {
 		"en" : "Gray Bed",
-		"fr" : "Lit Gris"
+		"Ardoise des Abimes Carrelée" : "Lit Gris"
+	},
+	"gray_candle" : {
+		"en" : "Gray Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Grise"
 	},
 	"gray_carpet" : {
 		"en" : "Gray Carpet",
-		"fr" : "Tapis Gris"
+		"Ardoise des Abimes Carrelée" : "Tapis Gris"
 	},
 	"gray_concrete" : {
 		"en" : "Gray Concrete",
-		"fr" : "Béton Gris"
+		"Ardoise des Abimes Carrelée" : "Béton Gris"
 	},
 	"gray_concrete_powder" : {
 		"en" : "Gray Concrete Powder",
-		"fr" : "Béton Gris en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Gris en Poudre"
 	},
 	"gray_glazed_terracotta" : {
 		"en" : "Gray Glazed Terracotta",
-		"fr" : "Terre Cuite Grise"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Grise"
 	},
 	"gray_shulker_box" : {
 		"en" : "Gray Shulker Box",
-		"fr" : "Boite de Shulker Grise"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Grise"
 	},
 	"gray_stained_glass" : {
 		"en" : "Gray Stained Glass",
-		"fr" : "Verre Gris"
+		"Ardoise des Abimes Carrelée" : "Verre Gris"
 	},
 	"gray_stained_glass_pane" : {
 		"en" : "Gray Stained Glass Pane",
-		"fr" : "Vitre Grise"
+		"Ardoise des Abimes Carrelée" : "Vitre Grise"
 	},
 	"gray_terracotta" : {
 		"en" : "Gray Terracotta",
-		"fr" : "Terre Cuite Grise"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Grise"
 	},
 	"gray_wall_banner" : {
 		"en" : "Gray Wall Banner",
-		"fr" : "Bannière Murale Grise"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Grise"
 	},
 	"gray_wool" : {
 		"en" : "Gray Wool",
-		"fr" : "Laine Grise"
+		"Ardoise des Abimes Carrelée" : "Laine Grise"
 	},
 	"green_banner" : {
 		"en" : "Green Banner",
-		"fr" : "Bannière Verte"
+		"Ardoise des Abimes Carrelée" : "Bannière Verte"
 	},
 	"green_bed" : {
 		"en" : "Green Bed",
-		"fr" : "Lit Vert"
+		"Ardoise des Abimes Carrelée" : "Lit Vert"
+	},
+	"green_candle" : {
+		"en" : "Green Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Verte"
 	},
 	"green_carpet" : {
 		"en" : "Green Carpet",
-		"fr" : "Tapis Vert"
+		"Ardoise des Abimes Carrelée" : "Tapis Vert"
 	},
 	"green_concrete" : {
 		"en" : "Green Concrete",
-		"fr" : "Béton Vert"
+		"Ardoise des Abimes Carrelée" : "Béton Vert"
 	},
 	"green_concrete_powder" : {
 		"en" : "Green Concrete Powder",
-		"fr" : "Béton Vert en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Vert en Poudre"
 	},
 	"green_glazed_terracotta" : {
 		"en" : "Green Glazed Terracotta",
-		"fr" : "Terre Cuite Verte"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Verte"
 	},
 	"green_shulker_box" : {
 		"en" : "Green Shulker Box",
-		"fr" : "Boite de Shulker Verte"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Verte"
 	},
 	"green_stained_glass" : {
 		"en" : "Green Stained Glass",
-		"fr" : "Verre Vert"
+		"Ardoise des Abimes Carrelée" : "Verre Vert"
 	},
 	"green_stained_glass_pane" : {
 		"en" : "Green Stained Glass Pane",
-		"fr" : "Vitre Verte"
+		"Ardoise des Abimes Carrelée" : "Vitre Verte"
 	},
 	"green_terracotta" : {
 		"en" : "Green Terracotta",
-		"fr" : "Terre Cuite Verte"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Verte"
 	},
 	"green_wall_banner" : {
 		"en" : "Green Wall Banner",
-		"fr" : "Bannière Murale Verte"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Verte"
 	},
 	"green_wool" : {
 		"en" : "Green Wool",
-		"fr" : "Laine Verte"
+		"Ardoise des Abimes Carrelée" : "Laine Verte"
 	},
 	"grindstone" : {
 		"en" : "Grindstone",
-		"fr" : "Meule"
+		"Ardoise des Abimes Carrelée" : "Meule"
 	},
 	"gunpowder" : {
 		"en" : "Gunpowder",
-		"fr" : "Poudre à Canon"
+		"Ardoise des Abimes Carrelée" : "Poudre à Canon"
+	},
+	"hanging_roots" : {
+		"en" : "Hanging Roots",
+		"Ardoise des Abimes Carrelée" : "Racines Suspendues"
 	},
 	"hay_block" : {
 		"en" : "Hay Block",
-		"fr" : "Bloc de Paille"
+		"Ardoise des Abimes Carrelée" : "Bloc de Paille"
 	},
 	"heavy_weighted_pressure_plate" : {
 		"en" : "Heavy Weighted Pressure Plate",
-		"fr" : "Plaquer de Pression Pondérée Lourde"
+		"Ardoise des Abimes Carrelée" : "Plaquer de Pression Pondérée Lourde"
 	},
 	"honey_block" : {
 		"en" : "Honey Block",
-		"fr" : "Bloc de Miel"
+		"Ardoise des Abimes Carrelée" : "Bloc de Miel"
 	},
 	"honeycomb_block" : {
 		"en" : "Honeycomb Block",
-		"fr" : "Bloc de Rayon de Miel"
+		"Ardoise des Abimes Carrelée" : "Bloc de Rayon de Miel"
 	},
 	"hopper" : {
 		"en" : "Hopper",
-		"fr" : "Entonnoir"
+		"Ardoise des Abimes Carrelée" : "Entonnoir"
 	},
 	"horn_coral" : {
 		"en" : "Horn Coral",
-		"fr" : "Corail Corné"
+		"Ardoise des Abimes Carrelée" : "Corail Corné"
 	},
 	"horn_coral_block" : {
 		"en" : "Horn Coral Block",
-		"fr" : "Bloc de Corail Corné"
+		"Ardoise des Abimes Carrelée" : "Bloc de Corail Corné"
 	},
 	"horn_coral_fan" : {
 		"en" : "Horn Coral Fan",
-		"fr" : "Gorgone de Corail Corné"
+		"Ardoise des Abimes Carrelée" : "Gorgone de Corail Corné"
 	},
 	"horn_coral_wall_fan" : {
 		"en" : "Horn Coral Wall Fan",
-		"fr" : "Gorgone Murale de Corail Corné"
+		"Ardoise des Abimes Carrelée" : "Gorgone Murale de Corail Corné"
 	},
 	"ice" : {
 		"en" : "Ice",
-		"fr" : "Glace"
+		"Ardoise des Abimes Carrelée" : "Glace"
 	},
 	"infested_chiseled_stone_bricks" : {
 		"en" : "Infested Chiseled Stone Bricks",
-		"fr" : "Pierre Sculptée Infestée"
+		"Ardoise des Abimes Carrelée" : "Pierre Sculptée Infestée"
 	},
 	"infested_cobblestone" : {
 		"en" : "Infested Cobblestone",
-		"fr" : "Roche Infestée"
+		"Ardoise des Abimes Carrelée" : "Roche Infestée"
 	},
 	"infested_cracked_stone_bricks" : {
 		"en" : "Infested Cracked Stone Bricks",
-		"fr" : "Pierre Taillée Craquelée Infestée"
+		"Ardoise des Abimes Carrelée" : "Pierre Taillée Craquelée Infestée"
+	},
+	"infested_deepslate" : {
+		"en" : "Infested Deepslate",
+		"Ardoise des Abimes Carrelée" : "Ardoise des Abimes Infestée"
 	},
 	"infested_mossy_stone_bricks" : {
 		"en" : "Infested Mossy Stone Bricks",
-		"fr" : "Pierre Taillée Moussue Infestée"
+		"Ardoise des Abimes Carrelée" : "Pierre Taillée Moussue Infestée"
 	},
 	"infested_stone" : {
 		"en" : "Infested Stone",
-		"fr" : "Pierre Infestée"
+		"Ardoise des Abimes Carrelée" : "Pierre Infestée"
 	},
 	"infested_stone_bricks" : {
 		"en" : "Infested Stone Bricks",
-		"fr" : "Pierre Taillée Infestée"
+		"Ardoise des Abimes Carrelée" : "Pierre Taillée Infestée"
 	},
 	"iron_bars" : {
 		"en" : "Iron Bars",
-		"fr" : "Barreaux de Fer"
+		"Ardoise des Abimes Carrelée" : "Barreaux de Fer"
 	},
 	"iron_block" : {
 		"en" : "Iron Block",
-		"fr" : "Bloc de Fer"
+		"Ardoise des Abimes Carrelée" : "Bloc de Fer"
 	},
 	"iron_door" : {
 		"en" : "Iron Door",
-		"fr" : "Porte de Fer"
+		"Ardoise des Abimes Carrelée" : "Porte de Fer"
 	},
 	"iron_ingot" : {
 		"en" : "Iron Ingot",
-		"fr" : "Lingot de Fer"
+		"Ardoise des Abimes Carrelée" : "Lingot de Fer"
 	},
 	"iron_nugget" : {
 		"en" : "Iron Nugget",
-		"fr" : "Pépite de Fer"
+		"Ardoise des Abimes Carrelée" : "Pépite de Fer"
 	},
 	"iron_ore" : {
 		"en" : "Iron Ore",
-		"fr" : "Minerais de Fer"
+		"Ardoise des Abimes Carrelée" : "Minerais de Fer"
 	},
 	"iron_trapdoor" : {
 		"en" : "Iron Trapdoor",
-		"fr" : "Trappe de Fer"
+		"Ardoise des Abimes Carrelée" : "Trappe de Fer"
 	},
 	"item_frame" : {
 		"en" : "Item Frame",
-		"fr" : "Cadre"
+		"Ardoise des Abimes Carrelée" : "Cadre"
 	},
 	"jack_o_lantern" : {
 		"en" : "Jack O Lantern",
-		"fr" : "Citrouille-Lanterne"
+		"Ardoise des Abimes Carrelée" : "Citrouille-Lanterne"
 	},
 	"jigsaw" : {
 		"en" : "Jigsaw",
-		"fr" : "Block de Puzzle"
+		"Ardoise des Abimes Carrelée" : "Block de Puzzle"
 	},
 	"jukebox" : {
 		"en" : "Jukebox",
-		"fr" : "Jukebox"
+		"Ardoise des Abimes Carrelée" : "Jukebox"
 	},
 	"jungle_button" : {
 		"en" : "Jungle Button",
-		"fr" : "Bouton d'Acajou"
+		"Ardoise des Abimes Carrelée" : "Bouton d'Acajou"
 	},
 	"jungle_door" : {
 		"en" : "Jungle Door",
-		"fr" : "Porte d'Acajou"
+		"Ardoise des Abimes Carrelée" : "Porte d'Acajou"
 	},
 	"jungle_fence" : {
 		"en" : "Jungle Fence",
-		"fr" : "Barrière d'Acajou"
+		"Ardoise des Abimes Carrelée" : "Barrière d'Acajou"
 	},
 	"jungle_fence_gate" : {
 		"en" : "Jungle Fence Gate",
-		"fr" : "Portillon d'Acajou"
+		"Ardoise des Abimes Carrelée" : "Portillon d'Acajou"
 	},
 	"jungle_leaves" : {
 		"en" : "Jungle Leaves",
-		"fr" : "Feuilles d'acajou"
+		"Ardoise des Abimes Carrelée" : "Feuilles d'acajou"
 	},
 	"jungle_log" : {
 		"en" : "Jungle Log",
-		"fr" : "Bûche d'acajou"
+		"Ardoise des Abimes Carrelée" : "Bûche d'acajou"
 	},
 	"jungle_planks" : {
 		"en" : "Jungle Planks",
-		"fr" : "Planches d'Acajou"
+		"Ardoise des Abimes Carrelée" : "Planches d'Acajou"
 	},
 	"jungle_pressure_plate" : {
 		"en" : "Jungle Pressure Plate",
-		"fr" : "Plaque de Pression d'Acajou"
+		"Ardoise des Abimes Carrelée" : "Plaque de Pression d'Acajou"
 	},
 	"jungle_sapling" : {
 		"en" : "Jungle Sapling",
-		"fr" : "Pousse d'acajou"
+		"Ardoise des Abimes Carrelée" : "Pousse d'acajou"
 	},
 	"jungle_sign" : {
 		"en" : "Jungle Sign",
-		"fr" : "Panneau d'Acajou"
+		"Ardoise des Abimes Carrelée" : "Panneau d'Acajou"
 	},
 	"jungle_slab" : {
 		"en" : "Jungle Slab",
-		"fr" : "Dalle d'Acajou"
+		"Ardoise des Abimes Carrelée" : "Dalle d'Acajou"
 	},
 	"jungle_stairs" : {
 		"en" : "Jungle Stairs",
-		"fr" : "Escaliers d'Acajou"
+		"Ardoise des Abimes Carrelée" : "Escaliers d'Acajou"
 	},
 	"jungle_trapdoor" : {
 		"en" : "Jungle Trapdoor",
-		"fr" : "Trappe d'Acajou"
+		"Ardoise des Abimes Carrelée" : "Trappe d'Acajou"
 	},
 	"jungle_wall_sign" : {
 		"en" : "Jungle Wall Sign",
-		"fr" : "Panneau Mural d'Acajou"
+		"Ardoise des Abimes Carrelée" : "Panneau Mural d'Acajou"
 	},
 	"jungle_wood" : {
 		"en" : "Jungle Wood",
-		"fr" : "Bois d'Acajou"
+		"Ardoise des Abimes Carrelée" : "Bois d'Acajou"
 	},
 	"kelp" : {
 		"en" : "Kelp",
-		"fr" : "Algue"
+		"Ardoise des Abimes Carrelée" : "Algue"
 	},
 	"kelp_plant" : {
 		"en" : "Kelp Plant",
-		"fr" : "Algue Haute"
+		"Ardoise des Abimes Carrelée" : "Algue Haute"
 	},
 	"ladder" : {
 		"en" : "Ladder",
-		"fr" : "Echelle"
+		"Ardoise des Abimes Carrelée" : "Echelle"
 	},
 	"lantern" : {
 		"en" : "Lantern",
-		"fr" : "Lanterne"
+		"Ardoise des Abimes Carrelée" : "Lanterne"
 	},
 	"lapis_block" : {
 		"en" : "Lapis Block",
-		"fr" : "Bloc de Lapis"
+		"Ardoise des Abimes Carrelée" : "Bloc de Lapis"
 	},
 	"lapis_lazuli" : {
 		"en" : "Lapis Lazuli",
-		"fr" : "Lapis-Lazuli"
+		"Ardoise des Abimes Carrelée" : "Lapis-Lazuli"
 	},
 	"lapis_ore" : {
 		"en" : "Lapis Ore",
-		"fr" : "Minerais de Lapis"
+		"Ardoise des Abimes Carrelée" : "Minerais de Lapis"
+	},
+	"large_amethyst_bud" : {
+		"en" : "Large Amethyst Bud",
+		"Ardoise des Abimes Carrelée" : "Grand Crystal d'Amethyste"
 	},
 	"large_fern" : {
 		"en" : "Large Fern",
-		"fr" : "Haute Fougère"
+		"Ardoise des Abimes Carrelée" : "Haute Fougère"
 	},
 	"lava" : {
 		"en" : "Lava",
-		"fr" : "Lave"
+		"Ardoise des Abimes Carrelée" : "Lave"
 	},
 	"leather" : {
 		"en" : "Leather",
-		"fr" : "Cuir"
+		"Ardoise des Abimes Carrelée" : "Cuir"
 	},
 	"lectern" : {
 		"en" : "Lectern",
-		"fr" : "Pupitre"
+		"Ardoise des Abimes Carrelée" : "Pupitre"
 	},
 	"lever" : {
 		"en" : "Lever",
-		"fr" : "Levier"
+		"Ardoise des Abimes Carrelée" : "Levier"
 	},
 	"light_blue_banner" : {
 		"en" : "Light Blue Banner",
-		"fr" : "Bannière Bleu Clair"
+		"Ardoise des Abimes Carrelée" : "Bannière Bleu Clair"
 	},
 	"light_blue_bed" : {
 		"en" : "Light Blue Bed",
-		"fr" : "Lit Bleu Clair"
+		"Ardoise des Abimes Carrelée" : "Lit Bleu Clair"
+	},
+	"light_blue_candle" : {
+		"en" : "Light Blue Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Bleue Clair"
 	},
 	"light_blue_carpet" : {
 		"en" : "Light Blue Carpet",
-		"fr" : "Tapis Bleu Clair"
+		"Ardoise des Abimes Carrelée" : "Tapis Bleu Clair"
 	},
 	"light_blue_concrete" : {
 		"en" : "Light Blue Concrete",
-		"fr" : "Béton Bleu Clair"
+		"Ardoise des Abimes Carrelée" : "Béton Bleu Clair"
 	},
 	"light_blue_concrete_powder" : {
 		"en" : "Light Blue Concrete Powder",
-		"fr" : "Béton Bleu Clair en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Bleu Clair en Poudre"
 	},
 	"light_blue_glazed_terracotta" : {
 		"en" : "Light Blue Glazed Terracotta",
-		"fr" : "Terre Cuite Emaillée Bleu Clair"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Bleu Clair"
 	},
 	"light_blue_shulker_box" : {
 		"en" : "Light Blue Shulker Box",
-		"fr" : "Boite de Shulker Bleue Clair"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Bleue Clair"
 	},
 	"light_blue_stained_glass" : {
 		"en" : "Light Blue Stained Glass",
-		"fr" : "Verre Bleu Clair"
+		"Ardoise des Abimes Carrelée" : "Verre Bleu Clair"
 	},
 	"light_blue_stained_glass_pane" : {
 		"en" : "Light Blue Stained Glass Pane",
-		"fr" : "Vitre Bleu Clair"
+		"Ardoise des Abimes Carrelée" : "Vitre Bleu Clair"
 	},
 	"light_blue_terracotta" : {
 		"en" : "Light Blue Terracotta",
-		"fr" : "Terre Cuite Bleu Clair"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Bleu Clair"
 	},
 	"light_blue_wall_banner" : {
 		"en" : "Light Blue Wall Banner",
-		"fr" : "Bannière Murale Bleue Clair"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Bleue Clair"
 	},
 	"light_blue_wool" : {
 		"en" : "Light Blue Wool",
-		"fr" : "Laine Bleu Clair"
+		"Ardoise des Abimes Carrelée" : "Laine Bleu Clair"
 	},
 	"light_gray_banner" : {
 		"en" : "Light Gray Banner",
-		"fr" : "Bannière Gris Clair"
+		"Ardoise des Abimes Carrelée" : "Bannière Gris Clair"
 	},
 	"light_gray_bed" : {
 		"en" : "Light Gray Bed",
-		"fr" : "Lit Gris Clair"
+		"Ardoise des Abimes Carrelée" : "Lit Gris Clair"
+	},
+	"light_gray_candle" : {
+		"en" : "Light Gray Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Grise Clair"
 	},
 	"light_gray_carpet" : {
 		"en" : "Light Gray Carpet",
-		"fr" : "Tapis Gris Clair"
+		"Ardoise des Abimes Carrelée" : "Tapis Gris Clair"
 	},
 	"light_gray_concrete" : {
 		"en" : "Light Gray Concrete",
-		"fr" : "Béton Gris Clair"
+		"Ardoise des Abimes Carrelée" : "Béton Gris Clair"
 	},
 	"light_gray_concrete_powder" : {
 		"en" : "Light Gray Concrete Powder",
-		"fr" : "Béton Gris Clair en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Gris Clair en Poudre"
 	},
 	"light_gray_glazed_terracotta" : {
 		"en" : "Light Gray Glazed Terracotta",
-		"fr" : "Terre Cuite Emaillée Gris Clair"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Gris Clair"
 	},
 	"light_gray_shulker_box" : {
 		"en" : "Light Gray Shulker Box",
-		"fr" : "Boite de Shulker Grise Clair"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Grise Clair"
 	},
 	"light_gray_stained_glass" : {
 		"en" : "Light Gray Stained Glass",
-		"fr" : "Verre Gris Clair"
+		"Ardoise des Abimes Carrelée" : "Verre Gris Clair"
 	},
 	"light_gray_stained_glass_pane" : {
 		"en" : "Light Gray Stained Glass Pane",
-		"fr" : "Vitre Gris Clair"
+		"Ardoise des Abimes Carrelée" : "Vitre Gris Clair"
 	},
 	"light_gray_terracotta" : {
 		"en" : "Light Gray Terracotta",
-		"fr" : "Terre Cuite Gris Clair"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Gris Clair"
 	},
 	"light_gray_wall_banner" : {
 		"en" : "Light Gray Wall Banner",
-		"fr" : "Bannière Murale Grise Clair"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Grise Clair"
 	},
 	"light_gray_wool" : {
 		"en" : "Light Gray Wool",
-		"fr" : "Laine Gris Clair"
+		"Ardoise des Abimes Carrelée" : "Laine Gris Clair"
 	},
 	"light_weighted_pressure_plate" : {
 		"en" : "Light Weighted Pressure Plate",
-		"fr" : "Plaquer de Pression Pondérée Légère"
+		"Ardoise des Abimes Carrelée" : "Plaquer de Pression Pondérée Légère"
+	},
+	"lightning_rod" : {
+		"en" : "Lightning Rod",
+		"Ardoise des Abimes Carrelée" : "Paratonnerre"
 	},
 	"lilac" : {
 		"en" : "Lilac",
-		"fr" : "Lilas"
+		"Ardoise des Abimes Carrelée" : "Lilas"
 	},
 	"lily_of_the_valley" : {
 		"en" : "Lily Of The Valley",
-		"fr" : "Muguet"
+		"Ardoise des Abimes Carrelée" : "Muguet"
 	},
 	"lily_pad" : {
 		"en" : "Lily Pad",
-		"fr" : "Nénuphar"
+		"Ardoise des Abimes Carrelée" : "Nénuphar"
 	},
 	"lime_banner" : {
 		"en" : "Lime Banner",
-		"fr" : "Bannière Vert Clair"
+		"Ardoise des Abimes Carrelée" : "Bannière Vert Clair"
 	},
 	"lime_bed" : {
 		"en" : "Lime Bed",
-		"fr" : "Lit Vert Clair"
+		"Ardoise des Abimes Carrelée" : "Lit Vert Clair"
+	},
+	"lime_candle" : {
+		"en" : "Lime Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Verte Clair"
 	},
 	"lime_carpet" : {
 		"en" : "Lime Carpet",
-		"fr" : "Tapis Vert Clair"
+		"Ardoise des Abimes Carrelée" : "Tapis Vert Clair"
 	},
 	"lime_concrete" : {
 		"en" : "Lime Concrete",
-		"fr" : "Béton Vert Clair"
+		"Ardoise des Abimes Carrelée" : "Béton Vert Clair"
 	},
 	"lime_concrete_powder" : {
 		"en" : "Lime Concrete Powder",
-		"fr" : "Béton Vert Clair en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Vert Clair en Poudre"
 	},
 	"lime_glazed_terracotta" : {
 		"en" : "Lime Glazed Terracotta",
-		"fr" : "Terre Cuite Emaillée Vert Clair"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Vert Clair"
 	},
 	"lime_shulker_box" : {
 		"en" : "Lime Shulker Box",
-		"fr" : "Boite de Shulker Verte Clair"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Verte Clair"
 	},
 	"lime_stained_glass" : {
 		"en" : "Lime Stained Glass",
-		"fr" : "Verre Vert Clair"
+		"Ardoise des Abimes Carrelée" : "Verre Vert Clair"
 	},
 	"lime_stained_glass_pane" : {
 		"en" : "Lime Stained Glass Pane",
-		"fr" : "Vitre Vert Clair"
+		"Ardoise des Abimes Carrelée" : "Vitre Vert Clair"
 	},
 	"lime_terracotta" : {
 		"en" : "Lime Terracotta",
-		"fr" : "Terre Cuite Vert Clair"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Vert Clair"
 	},
 	"lime_wall_banner" : {
 		"en" : "Lime Wall Banner",
-		"fr" : "Bannière Murale Verte Clair"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Verte Clair"
 	},
 	"lime_wool" : {
 		"en" : "Lime Wool",
-		"fr" : "Laine Vert Clair"
+		"Ardoise des Abimes Carrelée" : "Laine Vert Clair"
 	},
 	"lodestone" : {
 		"en" : "Lodestone",
-		"fr" : "Magnétite"
+		"Ardoise des Abimes Carrelée" : "Magnétite"
 	},
 	"loom" : {
 		"en" : "Loom",
-		"fr" : "Métier à Tisser"
+		"Ardoise des Abimes Carrelée" : "Métier à Tisser"
 	},
 	"magenta_banner" : {
 		"en" : "Magenta Banner",
-		"fr" : "Bannière Magenta"
+		"Ardoise des Abimes Carrelée" : "Bannière Magenta"
 	},
 	"magenta_bed" : {
 		"en" : "Magenta Bed",
-		"fr" : "Lit Magenta"
+		"Ardoise des Abimes Carrelée" : "Lit Magenta"
+	},
+	"magenta_candle" : {
+		"en" : "Magenta Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Magenta"
 	},
 	"magenta_carpet" : {
 		"en" : "Magenta Carpet",
-		"fr" : "Tapis Magenta"
+		"Ardoise des Abimes Carrelée" : "Tapis Magenta"
 	},
 	"magenta_concrete" : {
 		"en" : "Magenta Concrete",
-		"fr" : "Béton Magenta"
+		"Ardoise des Abimes Carrelée" : "Béton Magenta"
 	},
 	"magenta_concrete_powder" : {
 		"en" : "Magenta Concrete Powder",
-		"fr" : "Béton Magenta en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Magenta en Poudre"
 	},
 	"magenta_glazed_terracotta" : {
 		"en" : "Magenta Glazed Terracotta",
-		"fr" : "Terre Cuite Emaillée Magenta"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Magenta"
 	},
 	"magenta_shulker_box" : {
 		"en" : "Magenta Shulker Box",
-		"fr" : "Boite de Shulker Magenta"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Magenta"
 	},
 	"magenta_stained_glass" : {
 		"en" : "Magenta Stained Glass",
-		"fr" : "Verre Magenta"
+		"Ardoise des Abimes Carrelée" : "Verre Magenta"
 	},
 	"magenta_stained_glass_pane" : {
 		"en" : "Magenta Stained Glass Pane",
-		"fr" : "Vitre Magenta"
+		"Ardoise des Abimes Carrelée" : "Vitre Magenta"
 	},
 	"magenta_terracotta" : {
 		"en" : "Magenta Terracotta",
-		"fr" : "Terre Cuite Magenta"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Magenta"
 	},
 	"magenta_wall_banner" : {
 		"en" : "Magenta Wall Banner",
-		"fr" : "Bannière Murale Magenta"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Magenta"
 	},
 	"magenta_wool" : {
 		"en" : "Magenta Wool",
-		"fr" : "Laine Magenta"
+		"Ardoise des Abimes Carrelée" : "Laine Magenta"
 	},
 	"magma_block" : {
 		"en" : "Magma Block",
-		"fr" : "Bloc de Magma"
+		"Ardoise des Abimes Carrelée" : "Bloc de Magma"
+	},
+	"medium_amethyst_bud" : {
+		"en" : "Medium Amethyst Bud",
+		"Ardoise des Abimes Carrelée" : "Crystal Moyen d'Amethyste"
 	},
 	"melon" : {
 		"en" : "Melon",
-		"fr" : "Pastèque"
+		"Ardoise des Abimes Carrelée" : "Pastèque"
 	},
 	"melon_stem" : {
 		"en" : "Melon Stem",
-		"fr" : "Tige de Pastèque"
+		"Ardoise des Abimes Carrelée" : "Tige de Pastèque"
+	},
+	"moss_block" : {
+		"en" : "Moss Block",
+		"Ardoise des Abimes Carrelée" : "Bloc de Mousse"
+	},
+	"moss_carpet" : {
+		"en" : "Moss Carpet",
+		"Ardoise des Abimes Carrelée" : "Tapis de Mousse"
 	},
 	"mossy_cobblestone" : {
 		"en" : "Mossy Cobblestone",
-		"fr" : "Pierres Moussues"
+		"Ardoise des Abimes Carrelée" : "Pierres Moussues"
 	},
 	"mossy_cobblestone_slab" : {
 		"en" : "Mossy Cobblestone Slab",
-		"fr" : "Dalle de Pierres Moussues"
+		"Ardoise des Abimes Carrelée" : "Dalle de Pierres Moussues"
 	},
 	"mossy_cobblestone_stairs" : {
 		"en" : "Mossy Cobblestone Stairs",
-		"fr" : "Escaliers de Pierres Moussues"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Pierres Moussues"
 	},
 	"mossy_cobblestone_wall" : {
 		"en" : "Mossy Cobblestone Wall",
-		"fr" : "Mur de Pierres Moussues"
+		"Ardoise des Abimes Carrelée" : "Mur de Pierres Moussues"
 	},
 	"mossy_stone_brick_slab" : {
 		"en" : "Mossy Stone Brick Slab",
-		"fr" : "Dalle de Pierres Taillées Moussues"
+		"Ardoise des Abimes Carrelée" : "Dalle de Pierres Taillées Moussues"
 	},
 	"mossy_stone_brick_stairs" : {
 		"en" : "Mossy Stone Brick Stairs",
-		"fr" : "Escaliers de Pierres Taillées Moussues"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Pierres Taillées Moussues"
 	},
 	"mossy_stone_brick_wall" : {
 		"en" : "Mossy Stone Brick Wall",
-		"fr" : "Mur de Pierres Taillées Moussues"
+		"Ardoise des Abimes Carrelée" : "Mur de Pierres Taillées Moussues"
 	},
 	"mossy_stone_bricks" : {
 		"en" : "Mossy Stone Bricks",
-		"fr" : "Pierre Taillée Moussue"
+		"Ardoise des Abimes Carrelée" : "Pierre Taillée Moussue"
 	},
 	"moving_piston" : {
 		"en" : "Moving Piston",
-		"fr" : "Piston en Mouvement"
+		"Ardoise des Abimes Carrelée" : "Piston en Mouvement"
 	},
 	"mushroom_stem" : {
 		"en" : "Mushroom Stem",
-		"fr" : "Tige de Champignon"
+		"Ardoise des Abimes Carrelée" : "Tige de Champignon"
 	},
 	"mycelium" : {
 		"en" : "Mycelium",
-		"fr" : "Mycélium"
+		"Ardoise des Abimes Carrelée" : "Mycélium"
 	},
 	"nether_brick" : {
 		"en" : "Nether Brick",
-		"fr" : "Briques du Nether"
+		"Ardoise des Abimes Carrelée" : "Brique du Nether"
 	},
 	"nether_brick_fence" : {
 		"en" : "Nether Brick Fence",
-		"fr" : "Barrière en Briques du Nether"
+		"Ardoise des Abimes Carrelée" : "Barrière en Briques du Nether"
 	},
 	"nether_brick_slab" : {
 		"en" : "Nether Brick Slab",
-		"fr" : "Dalle en Briques du Nether"
+		"Ardoise des Abimes Carrelée" : "Dalle en Briques du Nether"
 	},
 	"nether_brick_stairs" : {
 		"en" : "Nether Brick Stairs",
-		"fr" : "Escaliers en Briques du Nether"
+		"Ardoise des Abimes Carrelée" : "Escaliers en Briques du Nether"
 	},
 	"nether_brick_wall" : {
 		"en" : "Nether Brick Wall",
-		"fr" : "Mur en Briques du Nether"
+		"Ardoise des Abimes Carrelée" : "Mur en Briques du Nether"
 	},
 	"nether_bricks" : {
 		"en" : "Nether Bricks",
-		"fr" : "Briques du Nether"
+		"Ardoise des Abimes Carrelée" : "Briques du Nether"
 	},
 	"nether_gold_ore" : {
 		"en" : "Nether Gold Ore",
-		"fr" : "Minerais d'Or du Nether"
+		"Ardoise des Abimes Carrelée" : "Minerais d'Or du Nether"
 	},
 	"nether_portal" : {
 		"en" : "Nether Portal",
-		"fr" : "Portail du Nether"
+		"Ardoise des Abimes Carrelée" : "Portail du Nether"
 	},
 	"nether_quartz_ore" : {
 		"en" : "Nether Quartz Ore",
-		"fr" : "Minerais de Quartz du Nether"
+		"Ardoise des Abimes Carrelée" : "Minerais de Quartz du Nether"
 	},
 	"nether_sprouts" : {
 		"en" : "Nether Sprouts",
-		"fr" : "Germes du Nether"
+		"Ardoise des Abimes Carrelée" : "Germes du Nether"
 	},
 	"nether_star" : {
 		"en" : "Nether Star",
-		"fr" : "Etoile du Nether"
+		"Ardoise des Abimes Carrelée" : "Etoile du Nether"
 	},
 	"nether_wart" : {
 		"en" : "Nether Wart",
-		"fr" : "Verrue du Nether"
+		"Ardoise des Abimes Carrelée" : "Verrue du Nether"
 	},
 	"nether_wart_block" : {
 		"en" : "Nether Wart Block",
-		"fr" : "Bloc de Verrues du Nether"
+		"Ardoise des Abimes Carrelée" : "Bloc de Verrues du Nether"
 	},
 	"netherite_block" : {
 		"en" : "Netherite Block",
-		"fr" : "Bloc de Netherite"
+		"Ardoise des Abimes Carrelée" : "Bloc de Netherite"
 	},
 	"netherite_ingot" : {
 		"en" : "Netherite Ingot",
-		"fr" : "Lingot de Netherite"
+		"Ardoise des Abimes Carrelée" : "Lingot de Netherite"
 	},
 	"netherite_scrap" : {
 		"en" : "Netherite Scrap",
-		"fr" : "Fragments de Netherite"
+		"Ardoise des Abimes Carrelée" : "Fragments de Netherite"
 	},
 	"netherrack" : {
 		"en" : "Netherrack",
-		"fr" : "Netherrack"
+		"Ardoise des Abimes Carrelée" : "Netherrack"
 	},
 	"note_block" : {
 		"en" : "Note Block",
-		"fr" : "Bloc Musical"
+		"Ardoise des Abimes Carrelée" : "Bloc Musical"
 	},
 	"oak_button" : {
 		"en" : "Oak Button",
-		"fr" : "Bouton de Chêne"
+		"Ardoise des Abimes Carrelée" : "Bouton de Chêne"
 	},
 	"oak_door" : {
 		"en" : "Oak Door",
-		"fr" : "Porte de Chêne"
+		"Ardoise des Abimes Carrelée" : "Porte de Chêne"
 	},
 	"oak_fence" : {
 		"en" : "Oak Fence",
-		"fr" : "Barrière de Chêne"
+		"Ardoise des Abimes Carrelée" : "Barrière de Chêne"
 	},
 	"oak_fence_gate" : {
 		"en" : "Oak Fence Gate",
-		"fr" : "Portillon de Chêne"
+		"Ardoise des Abimes Carrelée" : "Portillon de Chêne"
 	},
 	"oak_leaves" : {
 		"en" : "Oak Leaves",
-		"fr" : "Feuilles de chêne"
+		"Ardoise des Abimes Carrelée" : "Feuilles de chêne"
 	},
 	"oak_log" : {
 		"en" : "Oak Log",
-		"fr" : "Bûche de chêne"
+		"Ardoise des Abimes Carrelée" : "Bûche de chêne"
 	},
 	"oak_planks" : {
 		"en" : "Oak Planks",
-		"fr" : "Planches de Chêne"
+		"Ardoise des Abimes Carrelée" : "Planches de Chêne"
 	},
 	"oak_pressure_plate" : {
 		"en" : "Oak Pressure Plate",
-		"fr" : "Plaque de Pression de Chêne"
+		"Ardoise des Abimes Carrelée" : "Plaque de Pression de Chêne"
 	},
 	"oak_sapling" : {
 		"en" : "Oak Sapling",
-		"fr" : "Pousse de chêne"
+		"Ardoise des Abimes Carrelée" : "Pousse de chêne"
 	},
 	"oak_sign" : {
 		"en" : "Oak Sign",
-		"fr" : "Panneau de Chêne"
+		"Ardoise des Abimes Carrelée" : "Panneau de Chêne"
 	},
 	"oak_slab" : {
 		"en" : "Oak Slab",
-		"fr" : "Dalle de Chêne"
+		"Ardoise des Abimes Carrelée" : "Dalle de Chêne"
 	},
 	"oak_stairs" : {
 		"en" : "Oak Stairs",
-		"fr" : "Escaliers de Chêne"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Chêne"
 	},
 	"oak_trapdoor" : {
 		"en" : "Oak Trapdoor",
-		"fr" : "Trappe de Chêne"
+		"Ardoise des Abimes Carrelée" : "Trappe de Chêne"
 	},
 	"oak_wall_sign" : {
 		"en" : "Oak Wall Sign",
-		"fr" : "Panneau Mural en Chêne"
+		"Ardoise des Abimes Carrelée" : "Panneau Mural en Chêne"
 	},
 	"oak_wood" : {
 		"en" : "Oak Wood",
-		"fr" : "Bois de Chêne"
+		"Ardoise des Abimes Carrelée" : "Bois de Chêne"
 	},
 	"observer" : {
 		"en" : "Observer",
-		"fr" : "Observateur"
+		"Ardoise des Abimes Carrelée" : "Observateur"
 	},
 	"obsidian" : {
 		"en" : "Obsidian",
-		"fr" : "Obsidienne"
+		"Ardoise des Abimes Carrelée" : "Obsidienne"
 	},
 	"orange_banner" : {
 		"en" : "Orange Banner",
-		"fr" : "Bannière Orange"
+		"Ardoise des Abimes Carrelée" : "Bannière Orange"
 	},
 	"orange_bed" : {
 		"en" : "Orange Bed",
-		"fr" : "Lit Orange"
+		"Ardoise des Abimes Carrelée" : "Lit Orange"
+	},
+	"orange_candle" : {
+		"en" : "Orange Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Orange"
 	},
 	"orange_carpet" : {
 		"en" : "Orange Carpet",
-		"fr" : "Tapis orange"
+		"Ardoise des Abimes Carrelée" : "Tapis orange"
 	},
 	"orange_concrete" : {
 		"en" : "Orange Concrete",
-		"fr" : "Béton Orange"
+		"Ardoise des Abimes Carrelée" : "Béton Orange"
 	},
 	"orange_concrete_powder" : {
 		"en" : "Orange Concrete Powder",
-		"fr" : "Béton Orange en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Orange en Poudre"
 	},
 	"orange_glazed_terracotta" : {
 		"en" : "Orange Glazed Terracotta",
-		"fr" : "Terre Cuite Emaillée Orange"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Orange"
 	},
 	"orange_shulker_box" : {
 		"en" : "Orange Shulker Box",
-		"fr" : "Boite de Shulker Orange"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Orange"
 	},
 	"orange_stained_glass" : {
 		"en" : "Orange Stained Glass",
-		"fr" : "Verre Orange"
+		"Ardoise des Abimes Carrelée" : "Verre Orange"
 	},
 	"orange_stained_glass_pane" : {
 		"en" : "Orange Stained Glass Pane",
-		"fr" : "Vitre Orange"
+		"Ardoise des Abimes Carrelée" : "Vitre Orange"
 	},
 	"orange_terracotta" : {
 		"en" : "Orange Terracotta",
-		"fr" : "Terre Cuite Orange"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Orange"
 	},
 	"orange_tulip" : {
 		"en" : "Orange Tulip",
-		"fr" : "Tulipe Orange"
+		"Ardoise des Abimes Carrelée" : "Tulipe Orange"
 	},
 	"orange_wall_banner" : {
 		"en" : "Orange Wall Banner",
-		"fr" : "Bannière Murale Orange"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Orange"
 	},
 	"orange_wool" : {
 		"en" : "Orange Wool",
-		"fr" : "Laine Orange"
+		"Ardoise des Abimes Carrelée" : "Laine Orange"
 	},
 	"oxeye_daisy" : {
 		"en" : "Oxeye Daisy",
-		"fr" : "Marguerite"
+		"Ardoise des Abimes Carrelée" : "Marguerite"
+	},
+	"oxidized_copper" : {
+		"en" : "Oxidized Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Oxidé"
+	},
+	"oxidized_cut_copper" : {
+		"en" : "Oxidized Cut Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Taillé Oxidé"
+	},
+	"oxidized_cut_copper_slab" : {
+		"en" : "Oxidized Cut Copper Slab",
+		"Ardoise des Abimes Carrelée" : "Dalle de Cuivre Taillée Oxidée"
+	},
+	"oxidized_cut_copper_stairs" : {
+		"en" : "Oxidized Cut Copper Stairs",
+		"Ardoise des Abimes Carrelée" : "Escaliers de Cuivre Taillés Oxidés"
 	},
 	"packed_ice" : {
 		"en" : "Packed Ice",
-		"fr" : "Glace Compactée"
+		"Ardoise des Abimes Carrelée" : "Glace Compactée"
 	},
 	"paper" : {
 		"en" : "Paper",
-		"fr" : "Papier"
+		"Ardoise des Abimes Carrelée" : "Papier"
 	},
 	"peony" : {
 		"en" : "Peony",
-		"fr" : "Pivoine"
+		"Ardoise des Abimes Carrelée" : "Pivoine"
 	},
 	"petrified_oak_slab" : {
 		"en" : "Petrified Oak Slab",
-		"fr" : "Dalle de Chêne Petrifiée"
+		"Ardoise des Abimes Carrelée" : "Dalle de Chêne Petrifiée"
 	},
 	"pink_banner" : {
 		"en" : "Pink Banner",
-		"fr" : "Bannière Rose"
+		"Ardoise des Abimes Carrelée" : "Bannière Rose"
 	},
 	"pink_bed" : {
 		"en" : "Pink Bed",
-		"fr" : "Lit Rose"
+		"Ardoise des Abimes Carrelée" : "Lit Rose"
+	},
+	"pink_candle" : {
+		"en" : "Pink Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Rose"
 	},
 	"pink_carpet" : {
 		"en" : "Pink Carpet",
-		"fr" : "Tapis Rose"
+		"Ardoise des Abimes Carrelée" : "Tapis Rose"
 	},
 	"pink_concrete" : {
 		"en" : "Pink Concrete",
-		"fr" : "Béton Rose"
+		"Ardoise des Abimes Carrelée" : "Béton Rose"
 	},
 	"pink_concrete_powder" : {
 		"en" : "Pink Concrete Powder",
-		"fr" : "Béton Rose en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Rose en Poudre"
 	},
 	"pink_glazed_terracotta" : {
 		"en" : "Pink Glazed Terracotta",
-		"fr" : "Terre Cuite Emaillée Rose"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Rose"
 	},
 	"pink_shulker_box" : {
 		"en" : "Pink Shulker Box",
-		"fr" : "Boite de Shulker Rose"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Rose"
 	},
 	"pink_stained_glass" : {
 		"en" : "Pink Stained Glass",
-		"fr" : "Verre Rose"
+		"Ardoise des Abimes Carrelée" : "Verre Rose"
 	},
 	"pink_stained_glass_pane" : {
 		"en" : "Pink Stained Glass Pane",
-		"fr" : "Vitre Rose"
+		"Ardoise des Abimes Carrelée" : "Vitre Rose"
 	},
 	"pink_terracotta" : {
 		"en" : "Pink Terracotta",
-		"fr" : "Terre Cuite Rose"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Rose"
 	},
 	"pink_tulip" : {
 		"en" : "Pink Tulip",
-		"fr" : "Tulipe Rose"
+		"Ardoise des Abimes Carrelée" : "Tulipe Rose"
 	},
 	"pink_wall_banner" : {
 		"en" : "Pink Wall Banner",
-		"fr" : "Bannière Murale Rose"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Rose"
 	},
 	"pink_wool" : {
 		"en" : "Pink Wool",
-		"fr" : "Laine Rose"
+		"Ardoise des Abimes Carrelée" : "Laine Rose"
 	},
 	"piston" : {
 		"en" : "Piston",
-		"fr" : "Piston"
+		"Ardoise des Abimes Carrelée" : "Piston"
 	},
 	"piston_head" : {
 		"en" : "Piston Head",
-		"fr" : "Tête de Piston"
+		"Ardoise des Abimes Carrelée" : "Tête de Piston"
 	},
 	"player_head" : {
 		"en" : "Player Head",
-		"fr" : "Tête de Joueur"
+		"Ardoise des Abimes Carrelée" : "Tête de Joueur"
 	},
 	"player_wall_head" : {
 		"en" : "Player Wall Head",
-		"fr" : "Tête Murale de Joueur"
+		"Ardoise des Abimes Carrelée" : "Tête Murale de Joueur"
 	},
 	"podzol" : {
 		"en" : "Podzol",
-		"fr" : "Podzol"
+		"Ardoise des Abimes Carrelée" : "Podzol"
+	},
+	"pointed_dripstone" : {
+		"en" : "Pointed Dripstone",
+		"Ardoise des Abimes Carrelée" : "Spéléothème Pointu"
 	},
 	"polished_andesite" : {
 		"en" : "Polished Andesite",
-		"fr" : "Andésite Polie"
+		"Ardoise des Abimes Carrelée" : "Andésite Polie"
 	},
 	"polished_andesite_slab" : {
 		"en" : "Polished Andesite Slab",
-		"fr" : "Dalle d'Andésite Polie"
+		"Ardoise des Abimes Carrelée" : "Dalle d'Andésite Polie"
 	},
 	"polished_andesite_stairs" : {
 		"en" : "Polished Andesite Stairs",
-		"fr" : "Escaliers d'Andésite Polie"
+		"Ardoise des Abimes Carrelée" : "Escaliers d'Andésite Polie"
 	},
 	"polished_basalt" : {
 		"en" : "Polished Basalt",
-		"fr" : "Basalte Poli"
+		"Ardoise des Abimes Carrelée" : "Basalte Poli"
 	},
 	"polished_blackstone" : {
 		"en" : "Polished Blackstone",
-		"fr" : "Pierre Noire"
+		"Ardoise des Abimes Carrelée" : "Pierre Noire"
 	},
 	"polished_blackstone_brick_slab" : {
 		"en" : "Polished Blackstone Brick Slab",
-		"fr" : "Dalle de Pierre Noire Taillée"
+		"Ardoise des Abimes Carrelée" : "Dalle de Pierre Noire Taillée"
 	},
 	"polished_blackstone_brick_stairs" : {
 		"en" : "Polished Blackstone Brick Stairs",
-		"fr" : "Escaliers de Pierre Noire Taillée"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Pierre Noire Taillée"
 	},
 	"polished_blackstone_brick_wall" : {
 		"en" : "Polished Blackstone Brick Wall",
-		"fr" : "Mur de Pierre Noire Taillée"
+		"Ardoise des Abimes Carrelée" : "Mur de Pierre Noire Taillée"
 	},
 	"polished_blackstone_bricks" : {
 		"en" : "Polished Blackstone Bricks",
-		"fr" : "Pierre Noire Taillée"
+		"Ardoise des Abimes Carrelée" : "Pierre Noire Taillée"
 	},
 	"polished_blackstone_button" : {
 		"en" : "Polished Blackstone Button",
-		"fr" : "Bouton en Pierre Noire"
+		"Ardoise des Abimes Carrelée" : "Bouton en Pierre Noire"
 	},
 	"polished_blackstone_pressure_plate" : {
 		"en" : "Polished Blackstone Pressure Plate",
-		"fr" : "Plaque de Pression en Pierre Noire"
+		"Ardoise des Abimes Carrelée" : "Plaque de Pression en Pierre Noire"
 	},
 	"polished_blackstone_slab" : {
 		"en" : "Polished Blackstone Slab",
-		"fr" : "Dalle en Pierre Noire"
+		"Ardoise des Abimes Carrelée" : "Dalle en Pierre Noire"
 	},
 	"polished_blackstone_stairs" : {
 		"en" : "Polished Blackstone Stairs",
-		"fr" : "Escaliers en Pierre Noire"
+		"Ardoise des Abimes Carrelée" : "Escaliers en Pierre Noire"
 	},
 	"polished_blackstone_wall" : {
 		"en" : "Polished Blackstone Wall",
-		"fr" : "Mur en Pierre Noire"
+		"Ardoise des Abimes Carrelée" : "Mur en Pierre Noire"
+	},
+	"polished_deepslate" : {
+		"en" : "Polished Deepslate",
+		"Ardoise des Abimes Carrelée" : "Ardoise des Abimes Polie"
+	},
+	"polished_deepslate_slab" : {
+		"en" : "Polished Deepslate Slab",
+		"Ardoise des Abimes Carrelée" : "Dalle en Ardoise des Abimes Polie"
+	},
+	"polished_deepslate_stairs" : {
+		"en" : "Polished Deepslate Stairs",
+		"Ardoise des Abimes Carrelée" : "Escaliers en Ardoise des Abimes Polie"
+	},
+	"polished_deepslate_wall" : {
+		"en" : "Polished Deepslate Wall",
+		"Ardoise des Abimes Carrelée" : "Mur en Ardoise des Abimes Polie"
 	},
 	"polished_diorite" : {
 		"en" : "Polished Diorite",
-		"fr" : "Diorite Polie"
+		"Ardoise des Abimes Carrelée" : "Diorite Polie"
 	},
 	"polished_diorite_slab" : {
 		"en" : "Polished Diorite Slab",
-		"fr" : "Dalle de Diorite Polie"
+		"Ardoise des Abimes Carrelée" : "Dalle de Diorite Polie"
 	},
 	"polished_diorite_stairs" : {
 		"en" : "Polished Diorite Stairs",
-		"fr" : "Escaliers de Diorite polie"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Diorite polie"
 	},
 	"polished_granite" : {
 		"en" : "Polished Granite",
-		"fr" : "Granite Poli"
+		"Ardoise des Abimes Carrelée" : "Granite Poli"
 	},
 	"polished_granite_slab" : {
 		"en" : "Polished Granite Slab",
-		"fr" : "Dalle de Granite Poli"
+		"Ardoise des Abimes Carrelée" : "Dalle de Granite Poli"
 	},
 	"polished_granite_stairs" : {
 		"en" : "Polished Granite Stairs",
-		"fr" : "Escaliers de Granite Poli"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Granite Poli"
 	},
 	"poppy" : {
 		"en" : "Poppy",
-		"fr" : "Coquelicot"
+		"Ardoise des Abimes Carrelée" : "Coquelicot"
 	},
 	"potatoes" : {
 		"en" : "Potatoes",
-		"fr" : "Pomme de Terre"
+		"Ardoise des Abimes Carrelée" : "Pomme de Terre"
 	},
 	"potted_acacia_sapling" : {
 		"en" : "Potted Acacia Sapling",
-		"fr" : "Pousse d'Acacia en Pot"
+		"Ardoise des Abimes Carrelée" : "Pousse d'Acacia en Pot"
 	},
 	"potted_allium" : {
 		"en" : "Potted Allium",
-		"fr" : "Allium en Pot"
+		"Ardoise des Abimes Carrelée" : "Allium en Pot"
 	},
 	"potted_azure_bluet" : {
 		"en" : "Potted Azure Bluet",
-		"fr" : "Houstonie Bleue en Pot"
+		"Ardoise des Abimes Carrelée" : "Houstonie Bleue en Pot"
 	},
 	"potted_bamboo" : {
 		"en" : "Potted Bamboo",
-		"fr" : "Bambou en Pot"
+		"Ardoise des Abimes Carrelée" : "Bambou en Pot"
 	},
 	"potted_birch_sapling" : {
 		"en" : "Potted Birch Sapling",
-		"fr" : "Pousse de Bouleau en Pot"
+		"Ardoise des Abimes Carrelée" : "Pousse de Bouleau en Pot"
 	},
 	"potted_blue_orchid" : {
 		"en" : "Potted Blue Orchid",
-		"fr" : "Orchidée bleue en Pot"
+		"Ardoise des Abimes Carrelée" : "Orchidée bleue en Pot"
 	},
 	"potted_brown_mushroom" : {
 		"en" : "Potted Brown Mushroom",
-		"fr" : "Champignon Marron en Pot"
+		"Ardoise des Abimes Carrelée" : "Champignon Marron en Pot"
 	},
 	"potted_cactus" : {
 		"en" : "Potted Cactus",
-		"fr" : "Cactus en Pot"
+		"Ardoise des Abimes Carrelée" : "Cactus en Pot"
 	},
 	"potted_cornflower" : {
 		"en" : "Potted Cornflower",
-		"fr" : "Bleuet en Pot"
+		"Ardoise des Abimes Carrelée" : "Bleuet en Pot"
 	},
 	"potted_crimson_fungus" : {
 		"en" : "Potted Crimson Fungus",
-		"fr" : "Champignon Carmin en Pot"
+		"Ardoise des Abimes Carrelée" : "Champignon Carmin en Pot"
 	},
 	"potted_crimson_roots" : {
 		"en" : "Potted Crimson Roots",
-		"fr" : "Racines Carmin en Pot"
+		"Ardoise des Abimes Carrelée" : "Racines Carmin en Pot"
 	},
 	"potted_dandelion" : {
 		"en" : "Potted Dandelion",
-		"fr" : "Pissenlit en Pot"
+		"Ardoise des Abimes Carrelée" : "Pissenlit en Pot"
 	},
 	"potted_dark_oak_sapling" : {
 		"en" : "Potted Dark Oak Sapling",
-		"fr" : "Pousse de Chêne Noir en Pot"
+		"Ardoise des Abimes Carrelée" : "Pousse de Chêne Noir en Pot"
 	},
 	"potted_dead_bush" : {
 		"en" : "Potted Dead Bush",
-		"fr" : "Arbuste Mort en Pot"
+		"Ardoise des Abimes Carrelée" : "Arbuste Mort en Pot"
 	},
 	"potted_fern" : {
 		"en" : "Potted Fern",
-		"fr" : "Fougère en Pot"
+		"Ardoise des Abimes Carrelée" : "Fougère en Pot"
 	},
 	"potted_jungle_sapling" : {
 		"en" : "Potted Jungle Sapling",
-		"fr" : "Pousse d'Acajou en Pot"
+		"Ardoise des Abimes Carrelée" : "Pousse d'Acajou en Pot"
 	},
 	"potted_lily_of_the_valley" : {
 		"en" : "Potted Lily Of The Valley",
-		"fr" : "Muguet en Pot"
+		"Ardoise des Abimes Carrelée" : "Muguet en Pot"
 	},
 	"potted_oak_sapling" : {
 		"en" : "Potted Oak Sapling",
-		"fr" : "Pousse de Chêne en Pot"
+		"Ardoise des Abimes Carrelée" : "Pousse de Chêne en Pot"
 	},
 	"potted_orange_tulip" : {
 		"en" : "Potted Orange Tulip",
-		"fr" : "Tulipe Orange  en Pot"
+		"Ardoise des Abimes Carrelée" : "Tulipe Orange  en Pot"
 	},
 	"potted_oxeye_daisy" : {
 		"en" : "Potted Oxeye Daisy",
-		"fr" : "Marguerite en Pot"
+		"Ardoise des Abimes Carrelée" : "Marguerite en Pot"
 	},
 	"potted_pink_tulip" : {
 		"en" : "Potted Pink Tulip",
-		"fr" : "Tulipe Rose en Pot"
+		"Ardoise des Abimes Carrelée" : "Tulipe Rose en Pot"
 	},
 	"potted_poppy" : {
 		"en" : "Potted Poppy",
-		"fr" : "Coquelicot en Pot"
+		"Ardoise des Abimes Carrelée" : "Coquelicot en Pot"
 	},
 	"potted_red_mushroom" : {
 		"en" : "Potted Red Mushroom",
-		"fr" : "Champignon Rouge en Pot"
+		"Ardoise des Abimes Carrelée" : "Champignon Rouge en Pot"
 	},
 	"potted_red_tulip" : {
 		"en" : "Potted Red Tulip",
-		"fr" : "Tulipe Rouge en Pot"
+		"Ardoise des Abimes Carrelée" : "Tulipe Rouge en Pot"
 	},
 	"potted_spruce_sapling" : {
 		"en" : "Potted Spruce Sapling",
-		"fr" : "Pousse de Sapin en Pot"
+		"Ardoise des Abimes Carrelée" : "Pousse de Sapin en Pot"
 	},
 	"potted_warped_fungus" : {
 		"en" : "Potted Warped Fungus",
-		"fr" : "Champignon Biscornu en Pot"
+		"Ardoise des Abimes Carrelée" : "Champignon Biscornu en Pot"
 	},
 	"potted_warped_roots" : {
 		"en" : "Potted Warped Roots",
-		"fr" : "Racines Biscornues en Pot"
+		"Ardoise des Abimes Carrelée" : "Racines Biscornues en Pot"
 	},
 	"potted_white_tulip" : {
 		"en" : "Potted White Tulip",
-		"fr" : "Tulipe Blanche en Pot"
+		"Ardoise des Abimes Carrelée" : "Tulipe Blanche en Pot"
 	},
 	"potted_wither_rose" : {
 		"en" : "Potted Wither Rose",
-		"fr" : "Rose de Wither en Pot"
+		"Ardoise des Abimes Carrelée" : "Rose de Wither en Pot"
+	},
+	"powder_snow" : {
+		"en" : "Powder Snow",
+		"Ardoise des Abimes Carrelée" : "Bloc de Neige Poudreuse"
 	},
 	"powered_rail" : {
 		"en" : "Powered Rail",
-		"fr" : "Rails de Propulsion"
+		"Ardoise des Abimes Carrelée" : "Rails de Propulsion"
 	},
 	"prismarine" : {
 		"en" : "Prismarine",
-		"fr" : "Prismarine"
+		"Ardoise des Abimes Carrelée" : "Prismarine"
 	},
 	"prismarine_brick_slab" : {
 		"en" : "Prismarine Brick Slab",
-		"fr" : "Briques de Prismarine"
+		"Ardoise des Abimes Carrelée" : "Briques de Prismarine"
 	},
 	"prismarine_brick_stairs" : {
 		"en" : "Prismarine Brick Stairs",
-		"fr" : "Escaliers de Prismarine"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Briques de Prismarine "
 	},
 	"prismarine_bricks" : {
 		"en" : "Prismarine Bricks",
-		"fr" : "Prismarine Taillée"
+		"Ardoise des Abimes Carrelée" : "Prismarine Taillée"
 	},
 	"prismarine_slab" : {
 		"en" : "Prismarine Slab",
-		"fr" : "Dalle de Prismarine"
+		"Ardoise des Abimes Carrelée" : "Dalle de Prismarine"
 	},
 	"prismarine_stairs" : {
 		"en" : "Prismarine Stairs",
-		"fr" : "Escaliers de Prismarine"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Prismarine"
 	},
 	"prismarine_wall" : {
 		"en" : "Prismarine Wall",
-		"fr" : "Mur de Prismarine"
+		"Ardoise des Abimes Carrelée" : "Mur de Prismarine"
 	},
 	"pumpkin" : {
 		"en" : "Pumpkin",
-		"fr" : "Cirtouille"
+		"Ardoise des Abimes Carrelée" : "Cirtouille"
 	},
 	"pumpkin_stem" : {
 		"en" : "Pumpkin Stem",
-		"fr" : "Tige de Citrouille"
+		"Ardoise des Abimes Carrelée" : "Tige de Citrouille"
 	},
 	"purple_banner" : {
 		"en" : "Purple Banner",
-		"fr" : "Bannière Violette"
+		"Ardoise des Abimes Carrelée" : "Bannière Violette"
 	},
 	"purple_bed" : {
 		"en" : "Purple Bed",
-		"fr" : "Lit Violet"
+		"Ardoise des Abimes Carrelée" : "Lit Violet"
+	},
+	"purple_candle" : {
+		"en" : "Purple Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Violette"
 	},
 	"purple_carpet" : {
 		"en" : "Purple Carpet",
-		"fr" : "Tapis Violet"
+		"Ardoise des Abimes Carrelée" : "Tapis Violet"
 	},
 	"purple_concrete" : {
 		"en" : "Purple Concrete",
-		"fr" : "Béton Violet"
+		"Ardoise des Abimes Carrelée" : "Béton Violet"
 	},
 	"purple_concrete_powder" : {
 		"en" : "Purple Concrete Powder",
-		"fr" : "Béton Violet en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Violet en Poudre"
 	},
 	"purple_glazed_terracotta" : {
 		"en" : "Purple Glazed Terracotta",
-		"fr" : "Terre Cuite Emaillée Violette"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Violette"
 	},
 	"purple_shulker_box" : {
 		"en" : "Purple Shulker Box",
-		"fr" : "Boite de Shulker Violette"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Violette"
 	},
 	"purple_stained_glass" : {
 		"en" : "Purple Stained Glass",
-		"fr" : "Verre Violet"
+		"Ardoise des Abimes Carrelée" : "Verre Violet"
 	},
 	"purple_stained_glass_pane" : {
 		"en" : "Purple Stained Glass Pane",
-		"fr" : "Vitre Violette"
+		"Ardoise des Abimes Carrelée" : "Vitre Violette"
 	},
 	"purple_terracotta" : {
 		"en" : "Purple Terracotta",
-		"fr" : "Terre Cuite Violette"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Violette"
 	},
 	"purple_wall_banner" : {
 		"en" : "Purple Wall Banner",
-		"fr" : "Bannière Murale Violette"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Violette"
 	},
 	"purple_wool" : {
 		"en" : "Purple Wool",
-		"fr" : "Laine Violette"
+		"Ardoise des Abimes Carrelée" : "Laine Violette"
 	},
 	"purpur_block" : {
 		"en" : "Purpur Block",
-		"fr" : "Bloc de Purpur"
+		"Ardoise des Abimes Carrelée" : "Bloc de Purpur"
 	},
 	"purpur_pillar" : {
 		"en" : "Purpur Pillar",
-		"fr" : "Pilier de Purpur"
+		"Ardoise des Abimes Carrelée" : "Pilier de Purpur"
 	},
 	"purpur_slab" : {
 		"en" : "Purpur Slab",
-		"fr" : "Dalle de Purpur"
+		"Ardoise des Abimes Carrelée" : "Dalle de Purpur"
 	},
 	"purpur_stairs" : {
 		"en" : "Purpur Stairs",
-		"fr" : "Escaliers de Purpur"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Purpur"
 	},
 	"quartz" : {
 		"en" : "Quartz",
-		"fr" : "Quartz du Nether"
+		"Ardoise des Abimes Carrelée" : "Quartz du Nether"
 	},
 	"quartz_block" : {
 		"en" : "Quartz Block",
-		"fr" : "Bloc de Quartz"
+		"Ardoise des Abimes Carrelée" : "Bloc de Quartz"
 	},
 	"quartz_bricks" : {
 		"en" : "Quartz Bricks",
-		"fr" : "Briques de Quartz"
+		"Ardoise des Abimes Carrelée" : "Briques de Quartz"
 	},
 	"quartz_pillar" : {
 		"en" : "Quartz Pillar",
-		"fr" : "Pilier de Quartz"
+		"Ardoise des Abimes Carrelée" : "Pilier de Quartz"
 	},
 	"quartz_slab" : {
 		"en" : "Quartz Slab",
-		"fr" : "Dalle de Quartz"
+		"Ardoise des Abimes Carrelée" : "Dalle de Quartz"
 	},
 	"quartz_stairs" : {
 		"en" : "Quartz Stairs",
-		"fr" : "Escaliers de Quartz"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Quartz"
 	},
 	"rail" : {
 		"en" : "Rail",
-		"fr" : "Rails"
+		"Ardoise des Abimes Carrelée" : "Rails"
+	},
+	"raw_copper_block" : {
+		"en" : "Raw Copper Block",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Brut"
+	},
+	"raw_gold_block" : {
+		"en" : "Raw Gold Block",
+		"Ardoise des Abimes Carrelée" : "Bloc d'Or Brut"
+	},
+	"raw_iron_block" : {
+		"en" : "Raw Iron Block",
+		"Ardoise des Abimes Carrelée" : "Bloc de Fer brut"
 	},
 	"red_banner" : {
 		"en" : "Red Banner",
-		"fr" : "Bannière Rouge"
+		"Ardoise des Abimes Carrelée" : "Bannière Rouge"
 	},
 	"red_bed" : {
 		"en" : "Red Bed",
-		"fr" : "Lit Rouge"
+		"Ardoise des Abimes Carrelée" : "Lit Rouge"
+	},
+	"red_candle" : {
+		"en" : "Red Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Rouge"
 	},
 	"red_carpet" : {
 		"en" : "Red Carpet",
-		"fr" : "Tapis Rouge"
+		"Ardoise des Abimes Carrelée" : "Tapis Rouge"
 	},
 	"red_concrete" : {
 		"en" : "Red Concrete",
-		"fr" : "Béton Rouge"
+		"Ardoise des Abimes Carrelée" : "Béton Rouge"
 	},
 	"red_concrete_powder" : {
 		"en" : "Red Concrete Powder",
-		"fr" : "Béton Rouge en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Rouge en Poudre"
 	},
 	"red_glazed_terracotta" : {
 		"en" : "Red Glazed Terracotta",
-		"fr" : "Terre Cuite Emaillée Rouge"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Rouge"
 	},
 	"red_mushroom" : {
 		"en" : "Red Mushroom",
-		"fr" : "Champignon Rouge"
+		"Ardoise des Abimes Carrelée" : "Champignon Rouge"
 	},
 	"red_mushroom_block" : {
 		"en" : "Red Mushroom Block",
-		"fr" : "Bloc de Champignon Rouge"
+		"Ardoise des Abimes Carrelée" : "Bloc de Champignon Rouge"
 	},
 	"red_nether_brick_slab" : {
 		"en" : "Red Nether Brick Slab",
-		"fr" : "Dalle de Briques Rouge du Nether"
+		"Ardoise des Abimes Carrelée" : "Dalle de Briques Rouge du Nether"
 	},
 	"red_nether_brick_stairs" : {
 		"en" : "Red Nether Brick Stairs",
-		"fr" : "Escaliers de Briques Rouge du Nether"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Briques Rouge du Nether"
 	},
 	"red_nether_brick_wall" : {
 		"en" : "Red Nether Brick Wall",
-		"fr" : "Mur de Briques Rouge du Nether"
+		"Ardoise des Abimes Carrelée" : "Mur de Briques Rouge du Nether"
 	},
 	"red_nether_bricks" : {
 		"en" : "Red Nether Bricks",
-		"fr" : "Briques rouges du Nether"
+		"Ardoise des Abimes Carrelée" : "Briques rouges du Nether"
 	},
 	"red_sand" : {
 		"en" : "Red Sand",
-		"fr" : "Sable Rouge"
+		"Ardoise des Abimes Carrelée" : "Sable Rouge"
 	},
 	"red_sandstone" : {
 		"en" : "Red Sandstone",
-		"fr" : "Grès Rouge"
+		"Ardoise des Abimes Carrelée" : "Grès Rouge"
 	},
 	"red_sandstone_slab" : {
 		"en" : "Red Sandstone Slab",
-		"fr" : "Dalle de Grès Rouge"
+		"Ardoise des Abimes Carrelée" : "Dalle de Grès Rouge"
 	},
 	"red_sandstone_stairs" : {
 		"en" : "Red Sandstone Stairs",
-		"fr" : "Escaliers de Grès Rouge"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Grès Rouge"
 	},
 	"red_sandstone_wall" : {
 		"en" : "Red Sandstone Wall",
-		"fr" : "Mur de Grès Rouge"
+		"Ardoise des Abimes Carrelée" : "Mur de Grès Rouge"
 	},
 	"red_shulker_box" : {
 		"en" : "Red Shulker Box",
-		"fr" : "Boite de Shulker Rouge"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Rouge"
 	},
 	"red_stained_glass" : {
 		"en" : "Red Stained Glass",
-		"fr" : "Verre Rouge"
+		"Ardoise des Abimes Carrelée" : "Verre Rouge"
 	},
 	"red_stained_glass_pane" : {
 		"en" : "Red Stained Glass Pane",
-		"fr" : "Vitre Rouge"
+		"Ardoise des Abimes Carrelée" : "Vitre Rouge"
 	},
 	"red_terracotta" : {
 		"en" : "Red Terracotta",
-		"fr" : "Terre Cuite Rouge"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Rouge"
 	},
 	"red_tulip" : {
 		"en" : "Red Tulip",
-		"fr" : "Tulipe Rouge"
+		"Ardoise des Abimes Carrelée" : "Tulipe Rouge"
 	},
 	"red_wall_banner" : {
 		"en" : "Red Wall Banner",
-		"fr" : "Bannière Murale Rouge"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Rouge"
 	},
 	"red_wool" : {
 		"en" : "Red Wool",
-		"fr" : "Laine Rouge"
+		"Ardoise des Abimes Carrelée" : "Laine Rouge"
 	},
 	"redstone" : {
 		"en" : "Redstone",
-		"fr" : "Redstone"
+		"Ardoise des Abimes Carrelée" : "Redstone"
 	},
 	"redstone_block" : {
 		"en" : "Redstone Block",
-		"fr" : "Bloc de Redstone"
+		"Ardoise des Abimes Carrelée" : "Bloc de Redstone"
 	},
 	"redstone_lamp" : {
 		"en" : "Redstone Lamp",
-		"fr" : "Lampe à Redstone"
+		"Ardoise des Abimes Carrelée" : "Lampe à Redstone"
 	},
 	"redstone_ore" : {
 		"en" : "Redstone Ore",
-		"fr" : "Minerais de Redstone"
+		"Ardoise des Abimes Carrelée" : "Minerais de Redstone"
 	},
 	"redstone_torch" : {
 		"en" : "Redstone Torch",
-		"fr" : "Torche de Redstone"
+		"Ardoise des Abimes Carrelée" : "Torche de Redstone"
 	},
 	"redstone_wall_torch" : {
 		"en" : "Redstone Wall Torch",
-		"fr" : "Torche Murale de Redstone"
+		"Ardoise des Abimes Carrelée" : "Torche Murale de Redstone"
 	},
 	"redstone_wire" : {
 		"en" : "Redstone Wire",
-		"fr" : "Fil de Redstone"
+		"Ardoise des Abimes Carrelée" : "Fil de Redstone"
 	},
 	"repeater" : {
 		"en" : "Repeater",
-		"fr" : "Répéteur"
+		"Ardoise des Abimes Carrelée" : "Répéteur"
 	},
 	"repeating_command_block" : {
 		"en" : "Repeating Command Block",
-		"fr" : "Bloc de Commande à Répétition"
+		"Ardoise des Abimes Carrelée" : "Bloc de Commande à Répétition"
 	},
 	"respawn_anchor" : {
 		"en" : "Respawn Anchor",
-		"fr" : "Ancre de Réapparition"
+		"Ardoise des Abimes Carrelée" : "Ancre de Réapparition"
+	},
+	"rooted_dirt" : {
+		"en" : "Rooted Dirt",
+		"Ardoise des Abimes Carrelée" : "Terre Racineuse"
 	},
 	"rose_bush" : {
 		"en" : "Rose Bush",
-		"fr" : "Rosier"
+		"Ardoise des Abimes Carrelée" : "Rosier"
 	},
 	"sand" : {
 		"en" : "Sand",
-		"fr" : "Sable"
+		"Ardoise des Abimes Carrelée" : "Sable"
 	},
 	"sandstone" : {
 		"en" : "Sandstone",
-		"fr" : "Grès"
+		"Ardoise des Abimes Carrelée" : "Grès"
 	},
 	"sandstone_slab" : {
 		"en" : "Sandstone Slab",
-		"fr" : "Dalle de Grès"
+		"Ardoise des Abimes Carrelée" : "Dalle de Grès"
 	},
 	"sandstone_stairs" : {
 		"en" : "Sandstone Stairs",
-		"fr" : "Escaliers de Grès"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Grès"
 	},
 	"sandstone_wall" : {
 		"en" : "Sandstone Wall",
-		"fr" : "Mur de Grès"
+		"Ardoise des Abimes Carrelée" : "Mur de Grès"
 	},
 	"scaffolding" : {
 		"en" : "Scaffolding",
-		"fr" : "Echaffaudage"
+		"Ardoise des Abimes Carrelée" : "Echaffaudage"
 	},
 	"sea_lantern" : {
 		"en" : "Sea Lantern",
-		"fr" : "Lanterne Aquatique"
+		"Ardoise des Abimes Carrelée" : "Lanterne Aquatique"
 	},
 	"sea_pickle" : {
 		"en" : "Sea Pickle",
-		"fr" : "Cornichon de Mer"
+		"Ardoise des Abimes Carrelée" : "Cornichon de Mer"
 	},
 	"seagrass" : {
 		"en" : "Seagrass",
-		"fr" : "Herbe Aquatique"
+		"Ardoise des Abimes Carrelée" : "Herbe Aquatique"
 	},
 	"shroomlight" : {
 		"en" : "Shroomlight",
-		"fr" : "Champilampe"
+		"Ardoise des Abimes Carrelée" : "Champilampe"
 	},
 	"shulker_box" : {
 		"en" : "Shulker Box",
-		"fr" : "Boite de Shulker"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker"
 	},
 	"skeleton_skull" : {
 		"en" : "Skeleton Skull",
-		"fr" : "Crâne de Squelette"
+		"Ardoise des Abimes Carrelée" : "Crâne de Squelette"
 	},
 	"skeleton_wall_skull" : {
 		"en" : "Skeleton Wall Skull",
-		"fr" : "Crâne Mural de Squelette"
+		"Ardoise des Abimes Carrelée" : "Crâne Mural de Squelette"
 	},
 	"slime_ball" : {
 		"en" : "Slime Ball",
-		"fr" : "Boule de Slime"
+		"Ardoise des Abimes Carrelée" : "Boule de Slime"
 	},
 	"slime_block" : {
 		"en" : "Slime Block",
-		"fr" : "Bloc de Slime"
+		"Ardoise des Abimes Carrelée" : "Bloc de Slime"
+	},
+	"small_amethyst_bud" : {
+		"en" : "Small Amethyst Bud",
+		"Ardoise des Abimes Carrelée" : "Petit Crystal d'Amethyste"
+	},
+	"small_dripleaf" : {
+		"en" : "Small Dripleaf",
+		"Ardoise des Abimes Carrelée" : "Petite Foliogoutte"
 	},
 	"smithing_table" : {
 		"en" : "Smithing Table",
-		"fr" : "Table de Forgeron"
+		"Ardoise des Abimes Carrelée" : "Table de Forgeron"
 	},
 	"smoker" : {
 		"en" : "Smoker",
-		"fr" : "Fumoir"
+		"Ardoise des Abimes Carrelée" : "Fumoir"
+	},
+	"smooth_basalt" : {
+		"en" : "Smooth Basalt",
+		"Ardoise des Abimes Carrelée" : "Basalte Lisse"
 	},
 	"smooth_quartz" : {
 		"en" : "Smooth Quartz",
-		"fr" : "Bloc de Quartz Lisse"
+		"Ardoise des Abimes Carrelée" : "Bloc de Quartz Lisse"
 	},
 	"smooth_quartz_slab" : {
 		"en" : "Smooth Quartz Slab",
-		"fr" : "Dalle de Quartz Lisse"
+		"Ardoise des Abimes Carrelée" : "Dalle de Quartz Lisse"
 	},
 	"smooth_quartz_stairs" : {
 		"en" : "Smooth Quartz Stairs",
-		"fr" : "Escaliers de Quartz Lisse"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Quartz Lisse"
 	},
 	"smooth_red_sandstone" : {
 		"en" : "Smooth Red Sandstone",
-		"fr" : "Grès Rouge Lisse"
+		"Ardoise des Abimes Carrelée" : "Grès Rouge Lisse"
 	},
 	"smooth_red_sandstone_slab" : {
 		"en" : "Smooth Red Sandstone Slab",
-		"fr" : "Dalle de Grès Rouge Lisse"
+		"Ardoise des Abimes Carrelée" : "Dalle de Grès Rouge Lisse"
 	},
 	"smooth_red_sandstone_stairs" : {
 		"en" : "Smooth Red Sandstone Stairs",
-		"fr" : "Escaliers de Grès Rouge Lisse"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Grès Rouge Lisse"
 	},
 	"smooth_sandstone" : {
 		"en" : "Smooth Sandstone",
-		"fr" : "Grès Lisse"
+		"Ardoise des Abimes Carrelée" : "Grès Lisse"
 	},
 	"smooth_sandstone_slab" : {
 		"en" : "Smooth Sandstone Slab",
-		"fr" : "Dalle de Grès Lisse"
+		"Ardoise des Abimes Carrelée" : "Dalle de Grès Lisse"
 	},
 	"smooth_sandstone_stairs" : {
 		"en" : "Smooth Sandstone Stairs",
-		"fr" : "Escaliers de Grès Lisse"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Grès Lisse"
 	},
 	"smooth_stone" : {
 		"en" : "Smooth Stone",
-		"fr" : "Roche Lisse"
+		"Ardoise des Abimes Carrelée" : "Roche Lisse"
 	},
 	"smooth_stone_slab" : {
 		"en" : "Smooth Stone Slab",
-		"fr" : "Dalle de Roche Lisse"
+		"Ardoise des Abimes Carrelée" : "Dalle de Roche Lisse"
 	},
 	"snow" : {
 		"en" : "Snow",
-		"fr" : "Neige"
+		"Ardoise des Abimes Carrelée" : "Neige"
 	},
 	"snow_block" : {
 		"en" : "Snow Block",
-		"fr" : "Bloc de Neige"
+		"Ardoise des Abimes Carrelée" : "Bloc de Neige"
 	},
 	"soul_campfire" : {
 		"en" : "Soul Campfire",
-		"fr" : "Feu de Camp des Âmes"
+		"Ardoise des Abimes Carrelée" : "Feu de Camp des Âmes"
 	},
 	"soul_fire" : {
 		"en" : "Soul Fire",
-		"fr" : "Feu des Âmes"
+		"Ardoise des Abimes Carrelée" : "Feu des Âmes"
 	},
 	"soul_lantern" : {
 		"en" : "Soul Lantern",
-		"fr" : "Lanterne des Âmes"
+		"Ardoise des Abimes Carrelée" : "Lanterne des Âmes"
 	},
 	"soul_sand" : {
 		"en" : "Soul Sand",
-		"fr" : "Sable des Âmes"
+		"Ardoise des Abimes Carrelée" : "Sable des Âmes"
 	},
 	"soul_soil" : {
 		"en" : "Soul Soil",
-		"fr" : "Terre des Âmes"
+		"Ardoise des Abimes Carrelée" : "Terre des Âmes"
 	},
 	"soul_torch" : {
 		"en" : "Soul Torch",
-		"fr" : "Torche des Âmes"
+		"Ardoise des Abimes Carrelée" : "Torche des Âmes"
 	},
 	"soul_wall_torch" : {
 		"en" : "Soul Wall Torch",
-		"fr" : "Torche Murale des Âmes"
+		"Ardoise des Abimes Carrelée" : "Torche Murale des Âmes"
 	},
 	"spawner" : {
 		"en" : "Spawner",
-		"fr" : "Spawner"
+		"Ardoise des Abimes Carrelée" : "Spawner"
 	},
 	"sponge" : {
 		"en" : "Sponge",
-		"fr" : "Eponge"
+		"Ardoise des Abimes Carrelée" : "Eponge"
 	},
 	"spruce_button" : {
 		"en" : "Spruce Button",
-		"fr" : "Bouton de Sapin"
+		"Ardoise des Abimes Carrelée" : "Bouton de Sapin"
 	},
 	"spruce_door" : {
 		"en" : "Spruce Door",
-		"fr" : "Porte de Sapin"
+		"Ardoise des Abimes Carrelée" : "Porte de Sapin"
 	},
 	"spruce_fence" : {
 		"en" : "Spruce Fence",
-		"fr" : "Barrière de Sapin"
+		"Ardoise des Abimes Carrelée" : "Barrière de Sapin"
 	},
 	"spruce_fence_gate" : {
 		"en" : "Spruce Fence Gate",
-		"fr" : "Portillon de Sapin"
+		"Ardoise des Abimes Carrelée" : "Portillon de Sapin"
 	},
 	"spruce_leaves" : {
 		"en" : "Spruce Leaves",
-		"fr" : "Feuilles de sapin"
+		"Ardoise des Abimes Carrelée" : "Feuilles de sapin"
 	},
 	"spruce_log" : {
 		"en" : "Spruce Log",
-		"fr" : "Bûche de sapin"
+		"Ardoise des Abimes Carrelée" : "Bûche de sapin"
 	},
 	"spruce_planks" : {
 		"en" : "Spruce Planks",
-		"fr" : "Planches de Sapin"
+		"Ardoise des Abimes Carrelée" : "Planches de Sapin"
 	},
 	"spruce_pressure_plate" : {
 		"en" : "Spruce Pressure Plate",
-		"fr" : "Plaque de Pression de Sapin"
+		"Ardoise des Abimes Carrelée" : "Plaque de Pression de Sapin"
 	},
 	"spruce_sapling" : {
 		"en" : "Spruce Sapling",
-		"fr" : "Pousse de sapin"
+		"Ardoise des Abimes Carrelée" : "Pousse de sapin"
 	},
 	"spruce_sign" : {
 		"en" : "Spruce Sign",
-		"fr" : "Panneau de Sapin"
+		"Ardoise des Abimes Carrelée" : "Panneau de Sapin"
 	},
 	"spruce_slab" : {
 		"en" : "Spruce Slab",
-		"fr" : "Dalle de Sapin"
+		"Ardoise des Abimes Carrelée" : "Dalle de Sapin"
 	},
 	"spruce_stairs" : {
 		"en" : "Spruce Stairs",
-		"fr" : "Escaliers de Sapin"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Sapin"
 	},
 	"spruce_trapdoor" : {
 		"en" : "Spruce Trapdoor",
-		"fr" : "Trappe de Sapin"
+		"Ardoise des Abimes Carrelée" : "Trappe de Sapin"
 	},
 	"spruce_wall_sign" : {
 		"en" : "Spruce Wall Sign",
-		"fr" : "Panneau Mural de Sapin"
+		"Ardoise des Abimes Carrelée" : "Panneau Mural de Sapin"
 	},
 	"spruce_wood" : {
 		"en" : "Spruce Wood",
-		"fr" : "Bois de Sapin"
+		"Ardoise des Abimes Carrelée" : "Bois de Sapin"
 	},
 	"stick" : {
 		"en" : "Stick",
-		"fr" : "Bâton"
+		"Ardoise des Abimes Carrelée" : "Bâton"
 	},
 	"sticky_piston" : {
 		"en" : "Sticky Piston",
-		"fr" : "Piston Collant"
+		"Ardoise des Abimes Carrelée" : "Piston Collant"
 	},
 	"stone" : {
 		"en" : "Stone",
-		"fr" : "Roche"
+		"Ardoise des Abimes Carrelée" : "Roche"
 	},
 	"stone_brick_slab" : {
 		"en" : "Stone Brick Slab",
-		"fr" : "Dalle de Pierre Taillée"
+		"Ardoise des Abimes Carrelée" : "Dalle de Pierre Taillée"
 	},
 	"stone_brick_stairs" : {
 		"en" : "Stone Brick Stairs",
-		"fr" : "Escaliers de Pierre Taillée"
+		"Ardoise des Abimes Carrelée" : "Escaliers de Pierre Taillée"
 	},
 	"stone_brick_wall" : {
 		"en" : "Stone Brick Wall",
-		"fr" : "Mur de Pierre Taillée"
+		"Ardoise des Abimes Carrelée" : "Mur de Pierre Taillée"
 	},
 	"stone_bricks" : {
 		"en" : "Stone Bricks",
-		"fr" : "Pierre Taillée"
+		"Ardoise des Abimes Carrelée" : "Pierre Taillée"
 	},
 	"stone_button" : {
 		"en" : "Stone Button",
-		"fr" : "Bouton en pierre"
+		"Ardoise des Abimes Carrelée" : "Bouton en pierre"
 	},
 	"stone_pressure_plate" : {
 		"en" : "Stone Pressure Plate",
-		"fr" : "Plaque de Pression en Pierre"
+		"Ardoise des Abimes Carrelée" : "Plaque de Pression en Pierre"
 	},
 	"stone_slab" : {
 		"en" : "Stone Slab",
-		"fr" : "Dalle en Pierre"
+		"Ardoise des Abimes Carrelée" : "Dalle en Pierre"
 	},
 	"stone_stairs" : {
 		"en" : "Stone Stairs",
-		"fr" : "Escaliers en Pierre"
+		"Ardoise des Abimes Carrelée" : "Escaliers en Pierre"
 	},
 	"stonecutter" : {
 		"en" : "Stonecutter",
-		"fr" : "Tailleur de Pierre"
+		"Ardoise des Abimes Carrelée" : "Tailleur de Pierre"
 	},
 	"string" : {
 		"en" : "String",
-		"fr" : "Ficelle"
+		"Ardoise des Abimes Carrelée" : "Ficelle"
 	},
 	"stripped_acacia_log" : {
 		"en" : "Stripped Acacia Log",
-		"fr" : "Bûche d'acacia écorcée"
+		"Ardoise des Abimes Carrelée" : "Bûche d'acacia écorcée"
 	},
 	"stripped_acacia_wood" : {
 		"en" : "Stripped Acacia Wood",
-		"fr" : "Bois d'acacia écorcée"
+		"Ardoise des Abimes Carrelée" : "Bois d'acacia écorcée"
 	},
 	"stripped_birch_log" : {
 		"en" : "Stripped Birch Log",
-		"fr" : "Bûche de bouleau écorcée"
+		"Ardoise des Abimes Carrelée" : "Bûche de bouleau écorcée"
 	},
 	"stripped_birch_wood" : {
 		"en" : "Stripped Birch Wood",
-		"fr" : "Bois de bouleau écorcée"
+		"Ardoise des Abimes Carrelée" : "Bois de bouleau écorcée"
 	},
 	"stripped_crimson_hyphae" : {
 		"en" : "Stripped Crimson Hyphae",
-		"fr" : "Hyphe Carmin écorcée"
+		"Ardoise des Abimes Carrelée" : "Hyphe Carmin écorcée"
 	},
 	"stripped_crimson_stem" : {
 		"en" : "Stripped Crimson Stem",
-		"fr" : "Tige Carmin Dénudée"
+		"Ardoise des Abimes Carrelée" : "Tige Carmin Dénudée"
 	},
 	"stripped_dark_oak_log" : {
 		"en" : "Stripped Dark Oak Log",
-		"fr" : "Bûche de chêne noir écorcée"
+		"Ardoise des Abimes Carrelée" : "Bûche de chêne noir écorcée"
 	},
 	"stripped_dark_oak_wood" : {
 		"en" : "Stripped Dark Oak Wood",
-		"fr" : "Bois de chêne noir écorcée"
+		"Ardoise des Abimes Carrelée" : "Bois de chêne noir écorcée"
 	},
 	"stripped_jungle_log" : {
 		"en" : "Stripped Jungle Log",
-		"fr" : "Bûche d'acajou écorcée"
+		"Ardoise des Abimes Carrelée" : "Bûche d'acajou écorcée"
 	},
 	"stripped_jungle_wood" : {
 		"en" : "Stripped Jungle Wood",
-		"fr" : "Bois d'acajou écorcée"
+		"Ardoise des Abimes Carrelée" : "Bois d'acajou écorcée"
 	},
 	"stripped_oak_log" : {
 		"en" : "Stripped Oak Log",
-		"fr" : "Bûche de chêne écorcée"
+		"Ardoise des Abimes Carrelée" : "Bûche de chêne écorcée"
 	},
 	"stripped_oak_wood" : {
 		"en" : "Stripped Oak Wood",
-		"fr" : "Bois de chêne écorcée"
+		"Ardoise des Abimes Carrelée" : "Bois de chêne écorcée"
 	},
 	"stripped_spruce_log" : {
 		"en" : "Stripped Spruce Log",
-		"fr" : "Bûche de sapin écorcée"
+		"Ardoise des Abimes Carrelée" : "Bûche de sapin écorcée"
 	},
 	"stripped_spruce_wood" : {
 		"en" : "Stripped Spruce Wood",
-		"fr" : "Bois de sapin écorcée"
+		"Ardoise des Abimes Carrelée" : "Bois de sapin écorcée"
 	},
 	"stripped_warped_hyphae" : {
 		"en" : "Stripped Warped Hyphae",
-		"fr" : "Hyphe Biscornue écorcée"
+		"Ardoise des Abimes Carrelée" : "Hyphe Biscornue écorcée"
 	},
 	"stripped_warped_stem" : {
 		"en" : "Stripped Warped Stem",
-		"fr" : "Tige Biscornue Dénudée"
+		"Ardoise des Abimes Carrelée" : "Tige Biscornue Dénudée"
 	},
 	"structure_block" : {
 		"en" : "Structure Block",
-		"fr" : "Structure Block"
+		"Ardoise des Abimes Carrelée" : "Structure Block"
 	},
 	"structure_void" : {
 		"en" : "Structure Void",
-		"fr" : "Structure Void"
+		"Ardoise des Abimes Carrelée" : "Structure Void"
 	},
 	"sugar_cane" : {
 		"en" : "Sugar Cane",
-		"fr" : "Canne à Sucre"
+		"Ardoise des Abimes Carrelée" : "Canne à Sucre"
 	},
 	"sunflower" : {
 		"en" : "Sunflower",
-		"fr" : "Tournesol"
+		"Ardoise des Abimes Carrelée" : "Tournesol"
 	},
 	"sweet_berry_bush" : {
 		"en" : "Sweet Berry Bush",
-		"fr" : "Buisson à Baies Sucrées"
+		"Ardoise des Abimes Carrelée" : "Buisson à Baies Sucrées"
 	},
 	"tall_grass" : {
 		"en" : "Tall Grass",
-		"fr" : "Haute Herbes"
+		"Ardoise des Abimes Carrelée" : "Haute Herbes"
 	},
 	"tall_seagrass" : {
 		"en" : "Tall Seagrass",
-		"fr" : "Haute Herbes Aquatiques"
+		"Ardoise des Abimes Carrelée" : "Haute Herbes Aquatiques"
 	},
 	"target" : {
 		"en" : "Target",
-		"fr" : "Cible"
+		"Ardoise des Abimes Carrelée" : "Cible"
 	},
 	"terracotta" : {
 		"en" : "Terracotta",
-		"fr" : "Terre Cuite"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite"
+	},
+	"tinted_glass" : {
+		"en" : "Tinted Glass",
+		"Ardoise des Abimes Carrelée" : "Verre Teinté"
 	},
 	"tnt" : {
 		"en" : "TNT",
-		"fr" : "TNT"
+		"Ardoise des Abimes Carrelée" : "TNT"
 	},
 	"torch" : {
 		"en" : "Torch",
-		"fr" : "Torche"
+		"Ardoise des Abimes Carrelée" : "Torche"
 	},
 	"trapped_chest" : {
 		"en" : "Trapped Chest",
-		"fr" : "Coffre Piégé"
+		"Ardoise des Abimes Carrelée" : "Coffre Piégé"
 	},
 	"tripwire" : {
 		"en" : "Tripwire",
-		"fr" : "Ficelle"
+		"Ardoise des Abimes Carrelée" : "Ficelle"
 	},
 	"tripwire_hook" : {
 		"en" : "Tripwire Hook",
-		"fr" : "Crochet"
+		"Ardoise des Abimes Carrelée" : "Crochet"
 	},
 	"tube_coral" : {
 		"en" : "Tube Coral",
-		"fr" : "Corail Tubulaire"
+		"Ardoise des Abimes Carrelée" : "Corail Tubulaire"
 	},
 	"tube_coral_block" : {
 		"en" : "Tube Coral Block",
-		"fr" : "Bloc de Corail Tubulaire"
+		"Ardoise des Abimes Carrelée" : "Bloc de Corail Tubulaire"
 	},
 	"tube_coral_fan" : {
 		"en" : "Tube Coral Fan",
-		"fr" : "Gorgone de Corail Tubulaire"
+		"Ardoise des Abimes Carrelée" : "Gorgone de Corail Tubulaire"
 	},
 	"tube_coral_wall_fan" : {
 		"en" : "Tube Coral Wall Fan",
-		"fr" : "Gorgone Murale de Corail Tubulaire"
+		"Ardoise des Abimes Carrelée" : "Gorgone Murale de Corail Tubulaire"
+	},
+	"tuff" : {
+		"en" : "Tuff",
+		"Ardoise des Abimes Carrelée" : "Tuf"
 	},
 	"turtle_egg" : {
 		"en" : "Turtle Egg",
-		"fr" : "Œuf de Tortue"
+		"Ardoise des Abimes Carrelée" : "Œuf de Tortue"
 	},
 	"twisting_vines" : {
 		"en" : "Twisting Vines",
-		"fr" : "Lianes Tortueuses"
+		"Ardoise des Abimes Carrelée" : "Lianes Tortueuses"
 	},
 	"twisting_vines_plant" : {
 		"en" : "Twisting Vines Plant",
-		"fr" : "Plant de Lianes Tortueuses"
+		"Ardoise des Abimes Carrelée" : "Plant de Lianes Tortueuses"
 	},
 	"vine" : {
 		"en" : "Vine",
-		"fr" : "Lianes"
+		"Ardoise des Abimes Carrelée" : "Lianes"
 	},
 	"wall_torch" : {
 		"en" : "Wall Torch",
-		"fr" : "Torche Murale"
+		"Ardoise des Abimes Carrelée" : "Torche Murale"
 	},
 	"warped_button" : {
 		"en" : "Warped Button",
-		"fr" : "Bouton Biscornu"
+		"Ardoise des Abimes Carrelée" : "Bouton Biscornu"
 	},
 	"warped_door" : {
 		"en" : "Warped Door",
-		"fr" : "Porte Biscornue"
+		"Ardoise des Abimes Carrelée" : "Porte Biscornue"
 	},
 	"warped_fence" : {
 		"en" : "Warped Fence",
-		"fr" : "Barrière Biscornue"
+		"Ardoise des Abimes Carrelée" : "Barrière Biscornue"
 	},
 	"warped_fence_gate" : {
 		"en" : "Warped Fence Gate",
-		"fr" : "Portillon Biscornu"
+		"Ardoise des Abimes Carrelée" : "Portillon Biscornu"
 	},
 	"warped_fungus" : {
 		"en" : "Warped Fungus",
-		"fr" : "Champignon Biscornu"
+		"Ardoise des Abimes Carrelée" : "Champignon Biscornu"
 	},
 	"warped_hyphae" : {
 		"en" : "Warped Hyphae",
-		"fr" : "Hyphe Biscornue"
+		"Ardoise des Abimes Carrelée" : "Hyphe Biscornue"
 	},
 	"warped_nylium" : {
 		"en" : "Warped Nylium",
-		"fr" : "Nylium Biscornu"
+		"Ardoise des Abimes Carrelée" : "Nylium Biscornu"
 	},
 	"warped_planks" : {
 		"en" : "Warped Planks",
-		"fr" : "Planches Biscornues"
+		"Ardoise des Abimes Carrelée" : "Planches Biscornues"
 	},
 	"warped_pressure_plate" : {
 		"en" : "Warped Pressure Plate",
-		"fr" : "Plaque de Pression Biscornue"
+		"Ardoise des Abimes Carrelée" : "Plaque de Pression Biscornue"
 	},
 	"warped_roots" : {
 		"en" : "Warped Roots",
-		"fr" : "Racines Biscornues"
+		"Ardoise des Abimes Carrelée" : "Racines Biscornues"
 	},
 	"warped_sign" : {
 		"en" : "Warped Sign",
-		"fr" : "Panneau Biscornu"
+		"Ardoise des Abimes Carrelée" : "Panneau Biscornu"
 	},
 	"warped_slab" : {
 		"en" : "Warped Slab",
-		"fr" : "Dalle Biscornue"
+		"Ardoise des Abimes Carrelée" : "Dalle Biscornue"
 	},
 	"warped_stairs" : {
 		"en" : "Warped Stairs",
-		"fr" : "Escaliers Biscornus"
+		"Ardoise des Abimes Carrelée" : "Escaliers Biscornus"
 	},
 	"warped_stem" : {
 		"en" : "Warped Stem",
-		"fr" : "Tige Biscornue"
+		"Ardoise des Abimes Carrelée" : "Tige Biscornue"
 	},
 	"warped_trapdoor" : {
 		"en" : "Warped Trapdoor",
-		"fr" : "Trappe Biscornue"
+		"Ardoise des Abimes Carrelée" : "Trappe Biscornue"
 	},
 	"warped_wall_sign" : {
 		"en" : "Warped Wall Sign",
-		"fr" : "Panneau Mural Biscornu"
+		"Ardoise des Abimes Carrelée" : "Panneau Mural Biscornu"
 	},
 	"warped_wart_block" : {
 		"en" : "Warped Wart Block",
-		"fr" : "Bloc de Verrues Biscornues"
+		"Ardoise des Abimes Carrelée" : "Bloc de Verrues Biscornues"
 	},
 	"water" : {
 		"en" : "Water",
-		"fr" : "Eau"
+		"Ardoise des Abimes Carrelée" : "Eau"
+	},
+	"waxed_copper_block" : {
+		"en" : "Waxed Copper Block",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Ciré"
+	},
+	"waxed_cut_copper" : {
+		"en" : "Waxed Cut Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Ciré Taillé"
+	},
+	"waxed_cut_copper_slab" : {
+		"en" : "Waxed Cut Copper Slab",
+		"Ardoise des Abimes Carrelée" : "Dalle de Cuivre Cirée Taillée"
+	},
+	"waxed_cut_copper_stairs" : {
+		"en" : "Waxed Cut Copper Stairs",
+		"Ardoise des Abimes Carrelée" : "Escaliers de Cuivre Cirés Taillés"
+	},
+	"waxed_exposed_copper" : {
+		"en" : "Waxed Exposed Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Ciré Exposé"
+	},
+	"waxed_exposed_cut_copper" : {
+		"en" : "Waxed Exposed Cut Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Ciré Taillé Exposé"
+	},
+	"waxed_exposed_cut_copper_slab" : {
+		"en" : "Waxed Exposed Cut Copper Slab",
+		"Ardoise des Abimes Carrelée" : "Dalle de Cuivre Ciré Taillée  Exposée"
+	},
+	"waxed_exposed_cut_copper_stairs" : {
+		"en" : "Waxed Exposed Cut Copper Stairs",
+		"Ardoise des Abimes Carrelée" : "Escaliers de Cuivre Ciré Taillés  Exposés"
+	},
+	"waxed_oxidized_copper" : {
+		"en" : "Waxed Oxidized Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Ciré Oxidé"
+	},
+	"waxed_oxidized_cut_copper" : {
+		"en" : "Waxed Oxidized Cut Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Ciré Taillé Oxidé"
+	},
+	"waxed_oxidized_cut_copper_slab" : {
+		"en" : "Waxed Oxidized Cut Copper Slab",
+		"Ardoise des Abimes Carrelée" : "Dalle de Cuivre Cirée Taillée Oxidée"
+	},
+	"waxed_oxidized_cut_copper_stairs" : {
+		"en" : "Waxed Oxidized Cut Copper Stairs",
+		"Ardoise des Abimes Carrelée" : "Escaliers de Cuivre Cirés Taillés Oxidés"
+	},
+	"waxed_weathered_copper" : {
+		"en" : "Waxed Weathered Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Ciré Erodé"
+	},
+	"waxed_weathered_cut_copper" : {
+		"en" : "Waxed Weathered Cut Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Ciré Taillé Erodé"
+	},
+	"waxed_weathered_cut_copper_slab" : {
+		"en" : "Waxed Weathered Cut Copper Slab",
+		"Ardoise des Abimes Carrelée" : "Dalle de Cuivre Cirée Taillée Erodée"
+	},
+	"waxed_weathered_cut_copper_stairs" : {
+		"en" : "Waxed Weathered Cut Copper Stairs",
+		"Ardoise des Abimes Carrelée" : "Escaliers de Cuivre Cirés Taillés Erodés"
+	},
+	"weathered_copper" : {
+		"en" : "Weathered Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Erodé"
+	},
+	"weathered_cut_copper" : {
+		"en" : "Weathered Cut Copper",
+		"Ardoise des Abimes Carrelée" : "Bloc de Cuivre Taillé Erodé"
+	},
+	"weathered_cut_copper_slab" : {
+		"en" : "Weathered Cut Copper Slab",
+		"Ardoise des Abimes Carrelée" : "Dalle de Cuivre Taillée Erodée"
+	},
+	"weathered_cut_copper_stairs" : {
+		"en" : "Weathered Cut Copper Stairs",
+		"Ardoise des Abimes Carrelée" : "Escaliers de Cuivre Taillés Erodés"
 	},
 	"weeping_vines" : {
 		"en" : "Weeping Vines",
-		"fr" : "Lianes Pleureuses"
+		"Ardoise des Abimes Carrelée" : "Lianes Pleureuses"
 	},
 	"weeping_vines_plant" : {
 		"en" : "Weeping Vines Plant",
-		"fr" : "Plant de Lianes Pleureuses"
+		"Ardoise des Abimes Carrelée" : "Plant de Lianes Pleureuses"
 	},
 	"wet_sponge" : {
 		"en" : "Wet Sponge",
-		"fr" : "Eponge Mouillée"
+		"Ardoise des Abimes Carrelée" : "Eponge Mouillée"
 	},
 	"wheat" : {
 		"en" : "Wheat",
-		"fr" : "Blé"
+		"Ardoise des Abimes Carrelée" : "Blé"
 	},
 	"white_banner" : {
 		"en" : "White Banner",
-		"fr" : "Bannière Blanche"
+		"Ardoise des Abimes Carrelée" : "Bannière Blanche"
 	},
 	"white_bed" : {
 		"en" : "White Bed",
-		"fr" : "Lit Blanc"
+		"Ardoise des Abimes Carrelée" : "Lit Blanc"
+	},
+	"white_candle" : {
+		"en" : "White Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Blanche"
 	},
 	"white_carpet" : {
 		"en" : "White Carpet",
-		"fr" : "Tapis Blanc"
+		"Ardoise des Abimes Carrelée" : "Tapis Blanc"
 	},
 	"white_concrete" : {
 		"en" : "White Concrete",
-		"fr" : "Béton Blanc"
+		"Ardoise des Abimes Carrelée" : "Béton Blanc"
 	},
 	"white_concrete_powder" : {
 		"en" : "White Concrete Powder",
-		"fr" : "Béton Blanc en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Blanc en Poudre"
 	},
 	"white_glazed_terracotta" : {
 		"en" : "White Glazed Terracotta",
-		"fr" : "Terre Cuite Emaillée Blanche"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Blanche"
 	},
 	"white_shulker_box" : {
 		"en" : "White Shulker Box",
-		"fr" : "Boite de Shulker Blanche"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Blanche"
 	},
 	"white_stained_glass" : {
 		"en" : "White Stained Glass",
-		"fr" : "Verre Blanc"
+		"Ardoise des Abimes Carrelée" : "Verre Blanc"
 	},
 	"white_stained_glass_pane" : {
 		"en" : "White Stained Glass Pane",
-		"fr" : "Vitre Blanche"
+		"Ardoise des Abimes Carrelée" : "Vitre Blanche"
 	},
 	"white_terracotta" : {
 		"en" : "White Terracotta",
-		"fr" : "Terre Cuite Blanche"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Blanche"
 	},
 	"white_tulip" : {
 		"en" : "White Tulip",
-		"fr" : "Tulipe Blanche"
+		"Ardoise des Abimes Carrelée" : "Tulipe Blanche"
 	},
 	"white_wall_banner" : {
 		"en" : "White Wall Banner",
-		"fr" : "Bannière Murale Blanche"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Blanche"
 	},
 	"white_wool" : {
 		"en" : "White Wool",
-		"fr" : "Laine Blanche"
+		"Ardoise des Abimes Carrelée" : "Laine Blanche"
 	},
 	"wither_rose" : {
 		"en" : "Wither Rose",
-		"fr" : "Rose du Nether"
+		"Ardoise des Abimes Carrelée" : "Rose du Nether"
 	},
 	"wither_skeleton_skull" : {
 		"en" : "Wither Skeleton Skull",
-		"fr" : "Crâne de Wither Squelette"
+		"Ardoise des Abimes Carrelée" : "Crâne de Wither Squelette"
 	},
 	"wither_skeleton_wall_skull" : {
 		"en" : "Wither Skeleton Wall Skull",
-		"fr" : "Crâne Mural de Wither Squelette"
+		"Ardoise des Abimes Carrelée" : "Crâne Mural de Wither Squelette"
 	},
 	"wood_log" : {
 		"en" : "Wood Log",
-		"fr" : "Bois"
+		"Ardoise des Abimes Carrelée" : "Bois"
 	},
 	"wood_planks" : {
 		"en" : "Wood Planks",
-		"fr" : "Planches"
+		"Ardoise des Abimes Carrelée" : "Planches"
 	},
 	"wood_slabs" : {
 		"en" : "Wood Slabs",
-		"fr" : "Dalles de Bois"
+		"Ardoise des Abimes Carrelée" : "Dalles de Bois"
 	},
 	"yellow_banner" : {
 		"en" : "Yellow Banner",
-		"fr" : "Bannière Jaune"
+		"Ardoise des Abimes Carrelée" : "Bannière Jaune"
 	},
 	"yellow_bed" : {
 		"en" : "Yellow Bed",
-		"fr" : "Lit Jaune"
+		"Ardoise des Abimes Carrelée" : "Lit Jaune"
+	},
+	"yellow_candle" : {
+		"en" : "Yellow Candle",
+		"Ardoise des Abimes Carrelée" : "Bougie Jaune"
 	},
 	"yellow_carpet" : {
 		"en" : "Yellow Carpet",
-		"fr" : "Tapis Jaune"
+		"Ardoise des Abimes Carrelée" : "Tapis Jaune"
 	},
 	"yellow_concrete" : {
 		"en" : "Yellow Concrete",
-		"fr" : "Béton Jaune"
+		"Ardoise des Abimes Carrelée" : "Béton Jaune"
 	},
 	"yellow_concrete_powder" : {
 		"en" : "Yellow Concrete Powder",
-		"fr" : "Béton Jaune en Poudre"
+		"Ardoise des Abimes Carrelée" : "Béton Jaune en Poudre"
 	},
 	"yellow_glazed_terracotta" : {
 		"en" : "Yellow Glazed Terracotta",
-		"fr" : "Terre Cuite Jaune"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Emaillée Jaune"
 	},
 	"yellow_shulker_box" : {
 		"en" : "Yellow Shulker Box",
-		"fr" : "Boite de Shulker Jaune"
+		"Ardoise des Abimes Carrelée" : "Boite de Shulker Jaune"
 	},
 	"yellow_stained_glass" : {
 		"en" : "Yellow Stained Glass",
-		"fr" : "Verre Jaune"
+		"Ardoise des Abimes Carrelée" : "Verre Jaune"
 	},
 	"yellow_stained_glass_pane" : {
 		"en" : "Yellow Stained Glass Pane",
-		"fr" : "Vitre Jaune"
+		"Ardoise des Abimes Carrelée" : "Vitre Jaune"
 	},
 	"yellow_terracotta" : {
 		"en" : "Yellow Terracotta",
-		"fr" : "Terre Cuite Jaune"
+		"Ardoise des Abimes Carrelée" : "Terre Cuite Jaune"
 	},
 	"yellow_wall_banner" : {
 		"en" : "Yellow Wall Banner",
-		"fr" : "Bannière Murale Jaune"
+		"Ardoise des Abimes Carrelée" : "Bannière Murale Jaune"
 	},
 	"yellow_wool" : {
 		"en" : "Yellow Wool",
-		"fr" : "Laine Jaune"
+		"Ardoise des Abimes Carrelée" : "Laine Jaune"
 	},
 	"zombie_head" : {
 		"en" : "Zombie Head",
-		"fr" : "Tête de Zombie"
+		"Ardoise des Abimes Carrelée" : "Tête de Zombie"
 	},
 	"zombie_wall_head" : {
 		"en" : "Zombie Wall Head",
-		"fr" : "Tête Murale de Zombie"
+		"Ardoise des Abimes Carrelée" : "Tête Murale de Zombie"
 	}
 }

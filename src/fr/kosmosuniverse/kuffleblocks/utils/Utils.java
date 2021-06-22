@@ -72,6 +72,62 @@ public class Utils {
 		return tmp.delete();
 	}
 	
+	public static HashMap<Integer, String> loadVersions(KuffleMain km, String file) {
+		HashMap<Integer, String> versions = null;
+		
+		try {
+			InputStream in = km.getResource(file);
+			String content = Utils.readFileContent(in);
+			
+			JSONParser parser = new JSONParser();
+			JSONObject result = ((JSONObject) parser.parse(content));
+			
+			in.close();
+			
+			versions = new HashMap<Integer, String>();
+			
+			for (Object key : result.keySet()) {
+				versions.put(Integer.parseInt(result.get(key).toString()), (String) key);
+			}
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		}
+		
+		return versions;
+	}
+	
+	public static String findFileExistVersion(KuffleMain km, String fileName) {
+		String version = getVersion();
+		String file = fileName.replace("%v", version);
+		int versionNb = findVersionNumber(km, version);
+		
+		if (versionNb == -1) {
+			return null;
+		}
+		
+		while (km.getResource(file)  == null && versionNb > 0) {
+			versionNb -= 1;
+			version = km.versions.get(versionNb);
+			file = fileName.replace("%v", version);
+		}
+		
+		if (km.getResource(file)  == null) {
+			return null;
+		}
+		
+		return file;
+	}
+	
+	public static int findVersionNumber(KuffleMain km, String version) {
+		for (int key : km.versions.keySet()) {
+			if (km.versions.get(key).equals(version)) {
+				return key;
+			}
+		}
+		
+		return -1;
+	}
+	
 	public static int playerLasts(KuffleMain km) {
 		int notEnded = 0;
 		

@@ -27,6 +27,10 @@ public class RewardManager {
 		
 		int max = AgeManager.getAgeMaxNumber(ages);
 		
+		if (rewardsContent == null) {
+			return null;
+		}
+		
 		for (int ageCnt = 0; ageCnt <= max; ageCnt++) {
 			finalMap.put(AgeManager.getAgeByNumber(ages, ageCnt).name, getAgeRewards(AgeManager.getAgeByNumber(ages, ageCnt).name, rewardsContent, dataFolder));
 		}

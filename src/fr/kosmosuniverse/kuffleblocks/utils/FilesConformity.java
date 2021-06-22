@@ -22,6 +22,14 @@ public class FilesConformity {
 	public static String getContent(KuffleMain km, String file) {
 		String content;
 		
+		if (file.contains("%v")) {
+			file = Utils.findFileExistVersion(km, file);
+			
+			if (file == null) {
+				return null;
+			}
+		}
+		
 		content = getFromFile(km, file);
 		
 		if (content == null || !checkContent(km, file, content)) {

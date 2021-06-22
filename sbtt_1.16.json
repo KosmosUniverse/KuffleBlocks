@@ -89,9 +89,6 @@
 		"birch" : [
 			"birch_leaves"
 		],
-		"black" : [
-			"black_bed"
-		],
 		"concrete" : [
 			"black_concrete",
 			"blue_concrete"
@@ -122,9 +119,6 @@
 			"blue_wool",
 			"orange_wool"
 		],
-		"blue" : [
-			"blue_bed"
-		],
 		"diversity" : [
 			"bookshelf",
 			"dried_kelp_block"
@@ -151,7 +145,6 @@
 			"stripped_dark_oak_wood"
 		],
 		"gray" : [
-			"gray_bed",
 			"gray_concrete",
 			"gray_concrete_powder",
 			"gray_glazed_terracotta",
@@ -174,7 +167,6 @@
 			"iron_trapdoor"
 		],
 		"light_gray" : [
-			"light_gray_bed",
 			"light_gray_concrete",
 			"light_gray_concrete_powder",
 			"light_gray_glazed_terracotta",
@@ -196,7 +188,6 @@
 			"oak_leaves"
 		],
 		"orange" : [
-			"orange_bed",
 			"orange_concrete",
 			"orange_concrete_powder",
 			"orange_glazed_terracotta",
@@ -205,7 +196,6 @@
 			"orange_terracotta"
 		],
 		"purple" : [
-			"purple_bed",
 			"purple_concrete",
 			"purple_concrete_powder",
 			"purple_glazed_terracotta",
@@ -215,7 +205,6 @@
 			"purple_wool"
 		],
 		"red" : [
-			"red_bed",
 			"red_concrete",
 			"red_concrete_powder",
 			"red_glazed_terracotta",
@@ -243,7 +232,6 @@
 			"white_stained_glass"
 		],
 		"yellow" : [
-			"yellow_bed",
 			"yellow_concrete",
 			"yellow_concrete_powder",
 			"yellow_glazed_terracotta",
@@ -415,12 +403,9 @@
 			"stripped_acacia_wood"
 		],
 		"diversity" : [
-			"bee_nest",
-			"beehive",
-			"scaffolding"
+			"bee_nest"
 		],
 		"cyan" : [
-			"cyan_bed",
 			"cyan_concrete",
 			"cyan_concrete_powder",
 			"cyan_glazed_terracotta",
@@ -434,7 +419,6 @@
 			"emerald_ore"
 		],
 		"green" : [
-			"green_bed",
 			"green_concrete",
 			"green_concrete_powder",
 			"green_glazed_terracotta",
@@ -449,7 +433,6 @@
 			"packed_ice"
 		],
 		"light_blue" : [
-			"light_blue_bed",
 			"light_blue_concrete",
 			"light_blue_concrete_powder",
 			"light_blue_glazed_terracotta",
@@ -459,7 +442,6 @@
 			"light_blue_wool"
 		],
 		"magenta" : [
-			"magenta_bed",
 			"magenta_concrete",
 			"magenta_concrete_powder",
 			"magenta_glazed_terracotta",
@@ -470,7 +452,6 @@
 			"magenta_wool"
 		],
 		"pink" : [
-			"pink_bed",
 			"pink_concrete",
 			"pink_concrete_powder",
 			"pink_glazed_terracotta",
@@ -481,7 +462,6 @@
 			"pink_wool"
 		],
 		"white" : [
-			"white_bed",
 			"white_concrete",
 			"white_concrete_powder",
 			"white_glazed_terracotta",

@@ -43,6 +43,7 @@ public class KuffleMain extends JavaPlugin {
 
 	public HashMap<String, Game> games = new HashMap<String, Game>();
 	public HashMap<String, Integer> playerRank = new HashMap<String, Integer>();
+	public HashMap<Integer, String> versions;
 	
 	public ArrayList<String> langs;
 	public ArrayList<Age> ages;
@@ -68,22 +69,27 @@ public class KuffleMain extends JavaPlugin {
 		saveDefaultConfig();
 		reloadConfig();
 		
+		if ((versions = Utils.loadVersions(this, "versions.json")) == null) {
+			this.getPluginLoader().disablePlugin(this);
+			return ;
+		}
+		
 		if ((ages = AgeManager.getAges(FilesConformity.getContent(this, "ages.json"))) == null) {
 			this.getPluginLoader().disablePlugin(this);
 			return ;
 		}
 		
-		if ((allBlocks = BlockManager.getAllBlocks(ages, FilesConformity.getContent(this, "blocks_" + Utils.getVersion() + ".json"), this.getDataFolder())) == null) {
+		if ((allBlocks = BlockManager.getAllBlocks(ages, FilesConformity.getContent(this, "blocks_%v.json"), this.getDataFolder())) == null) {
 			this.getPluginLoader().disablePlugin(this);
 			return ;
 		}
 		
-		if ((allSbtts = BlockManager.getAllBlocks(ages, FilesConformity.getContent(this, "sbtt_" + Utils.getVersion() + ".json"), this.getDataFolder())) == null) {
+		if ((allSbtts = BlockManager.getAllBlocks(ages, FilesConformity.getContent(this, "sbtt_%v.json"), this.getDataFolder())) == null) {
 			this.getPluginLoader().disablePlugin(this);
 			return ;
 		}
 		
-		if ((allRewards = RewardManager.getAllRewards(ages, FilesConformity.getContent(this, "rewards_" + Utils.getVersion() + ".json"), this.getDataFolder())) == null) {
+		if ((allRewards = RewardManager.getAllRewards(ages, FilesConformity.getContent(this, "rewards_%v.json"), this.getDataFolder())) == null) {
 			this.getPluginLoader().disablePlugin(this);
 			return ;
 		}

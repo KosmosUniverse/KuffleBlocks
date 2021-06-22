@@ -41,6 +41,28 @@ public class CraftsManager {
 		recipes.add(new RedNetherBrick(_km));
 		recipes.add(new Bell(_km));
 		recipes.add(new Cobweb(_km));
+		
+		if (Utils.findVersionNumber(_km, Utils.getVersion()) >= Utils.findVersionNumber(_km, "1.17")) {
+			recipes.add(new BuddingAmethyst(_km));
+			recipes.add(new CoalOreDeepslate(_km));
+			recipes.add(new CopperOreDeepslate(_km));
+			recipes.add(new DiamondOreDeepslate(_km));
+			recipes.add(new EmeraldOreDeepslate(_km));
+			recipes.add(new GoldOreDeepslate(_km));
+			recipes.add(new IronOreDeepslate(_km));
+			recipes.add(new LapisOreDeepslate(_km));
+			recipes.add(new RedstoneOreDeepslate(_km));
+			recipes.add(new CopperOre(_km));
+			recipes.add(new GoldOre(_km));
+			recipes.add(new IronOre(_km));
+			recipes.add(new RawCopper(_km));
+			recipes.add(new RawGold(_km));
+			recipes.add(new RawIron(_km));
+			recipes.add(new MossBlock(_km));
+			recipes.add(new SmallDripleaf(_km));
+			recipes.add(new PowderSnowBucket(_km));
+			recipes.add(new PointedDripstone(_km));
+		}
 	}
 	
 	public void clear() {

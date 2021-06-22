@@ -25,6 +25,10 @@ public class BlockManager {
 		
 		int max = AgeManager.getAgeMaxNumber(ages);
 		
+		if (blocksContent == null) {
+			return null;
+		}
+		
 		for (int ageCnt = 0; ageCnt <= max; ageCnt++) {
 			finalMap.put(AgeManager.getAgeByNumber(ages, ageCnt).name, getAgeBlocks(AgeManager.getAgeByNumber(ages, ageCnt).name, blocksContent, dataFolder));
 		}

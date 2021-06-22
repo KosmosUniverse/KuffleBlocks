@@ -66,12 +66,14 @@ public class OverWorldTeleporter extends AMultiblock {
 	public void onActivate(KuffleMain _km, Player player, ActivationType type) {
 		if (type == ActivationType.ASSEMBLE) {
 			player.sendMessage("You just constructed " + name);
-		}
-		else if (type == ActivationType.ACTIVATE) {
+		} else if (type == ActivationType.ACTIVATE) {
 			if (world != null) {
 				player.sendMessage("You just activated " + name);
 				player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100, 50, false, false, false));
+				
 				Location tmp = new Location(Bukkit.getWorld(world.getName()), player.getLocation().getX() - 1000, 80.0, player.getLocation().getZ() - 1000);
+				
+				tmp.setY(tmp.getWorld().getHighestBlockAt(tmp).getY() + 2.0);
 				
 				player.teleport(tmp);
 				player.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);	
