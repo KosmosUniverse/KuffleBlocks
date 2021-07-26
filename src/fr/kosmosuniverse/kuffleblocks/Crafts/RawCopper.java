@@ -13,6 +13,7 @@ import org.bukkit.inventory.RecipeChoice.MaterialChoice;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
+import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 
 public class RawCopper extends ACrafts {
 	MaterialChoice mc;
@@ -25,7 +26,10 @@ public class RawCopper extends ACrafts {
 		ArrayList<Material> ores = new ArrayList<Material>();
 		
 		ores.add(Material.COPPER_ORE);
-		ores.add(Material.DEEPSLATE_COPPER_ORE);
+		
+		if (Utils.findVersionNumber(_km, Utils.getVersion()) >= Utils.findVersionNumber(_km, "1.17")) {
+			ores.add(Material.DEEPSLATE_COPPER_ORE);
+		}
 		
 		mc = new MaterialChoice(ores);
 		
@@ -50,7 +54,7 @@ public class RawCopper extends ACrafts {
 		itM.setDisplayName("<- Back");
 		redPane.setItemMeta(itM);
 		
-		ItemStack customOre = new ItemStack(Material.DEEPSLATE_COPPER_ORE);
+		ItemStack customOre = new ItemStack(Material.COPPER_ORE);
 		itM = customOre.getItemMeta();
 		itM.setDisplayName(ChatColor.BLUE + "Any" + ChatColor.GREEN + " Copper " + ChatColor.RED + "Ore");
 		customOre.setItemMeta(itM);

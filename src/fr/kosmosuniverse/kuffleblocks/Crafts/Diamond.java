@@ -13,6 +13,7 @@ import org.bukkit.inventory.RecipeChoice.MaterialChoice;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
+import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 
 public class Diamond extends ACrafts {
 	MaterialChoice mc;
@@ -25,7 +26,10 @@ public class Diamond extends ACrafts {
 		ArrayList<Material> ores = new ArrayList<Material>();
 		
 		ores.add(Material.DIAMOND_ORE);
-		ores.add(Material.DEEPSLATE_DIAMOND_ORE);
+		
+		if (Utils.findVersionNumber(_km, Utils.getVersion()) >= Utils.findVersionNumber(_km, "1.17")) {
+			ores.add(Material.DEEPSLATE_DIAMOND_ORE);
+		}
 		
 		mc = new MaterialChoice(ores);
 		
@@ -61,7 +65,7 @@ public class Diamond extends ACrafts {
 			} else if (i == 3) {
 				inv.setItem(i, customOre);
 			} else if (i == 16) {
-				inv.setItem(i, new ItemStack(Material.DIAMOND, 2));
+				inv.setItem(i, new ItemStack(Material.DIAMOND_ORE, 2));
 			} else if (i == 4 || i == 5 || i == 12 || i == 13 || i == 14 || i == 21 || i == 22 || i == 23) {
 				inv.setItem(i, new ItemStack(grayPane));
 			} else {

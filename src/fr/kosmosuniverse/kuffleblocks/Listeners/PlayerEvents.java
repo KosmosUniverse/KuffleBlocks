@@ -11,6 +11,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.block.Sign;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -259,6 +260,11 @@ public class PlayerEvents implements Listener {
 				}
 				
 				tmpGame.getPlayer().teleport(loc);
+				
+				for (Entity e : tmpGame.getPlayer().getNearbyEntities(3.0, 3.0, 3.0)) {
+					e.remove();
+				}
+				
 				tmpGame.restorePlayerInv();
 
 				for (PotionEffect p : tmpGame.getPlayer().getActivePotionEffects()) {

@@ -1,41 +1,25 @@
 package fr.kosmosuniverse.kuffleblocks.Crafts;
 
-import java.util.ArrayList;
-
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapelessRecipe;
-import org.bukkit.inventory.RecipeChoice.MaterialChoice;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.kosmosuniverse.kuffleblocks.KuffleMain;
-import fr.kosmosuniverse.kuffleblocks.utils.Utils;
 
-public class Redstone extends ACrafts {
-	MaterialChoice mc;
-	
-	public Redstone(KuffleMain _km) {
-		name = "Redstone";
+public class ExposedCopper extends ACrafts {
+	public ExposedCopper(KuffleMain _km) {
+		name = "ExposedCopper";
 		
-		recipe = new ShapelessRecipe(new NamespacedKey(_km, name), new ItemStack(Material.REDSTONE, 5));
+		recipe = new ShapelessRecipe(new NamespacedKey(_km, name), new ItemStack(Material.EXPOSED_COPPER));
 		
-		ArrayList<Material> ores = new ArrayList<Material>();
+		((ShapelessRecipe) recipe).addIngredient(Material.COPPER_BLOCK);
+		((ShapelessRecipe) recipe).addIngredient(Material.WATER_BUCKET);
 		
-		ores.add(Material.REDSTONE_ORE);
-		
-		if (Utils.findVersionNumber(_km, Utils.getVersion()) >= Utils.findVersionNumber(_km, "1.17")) {
-			ores.add(Material.DEEPSLATE_REDSTONE_ORE);
-		}
-		
-		mc = new MaterialChoice(ores);
-		
-		((ShapelessRecipe) recipe).addIngredient(mc);
-		
-		item = new ItemStack(Material.REDSTONE);
+		item = new ItemStack(Material.EXPOSED_COPPER);
 	}
 	
 	public Inventory getInventoryRecipe() {
@@ -54,19 +38,16 @@ public class Redstone extends ACrafts {
 		itM.setDisplayName("<- Back");
 		redPane.setItemMeta(itM);
 		
-		ItemStack customOre = new ItemStack(Material.REDSTONE_ORE);
-		itM = customOre.getItemMeta();
-		itM.setDisplayName(ChatColor.BLUE + "Any" + ChatColor.GREEN + " Redstone " + ChatColor.RED + "Ore");
-		customOre.setItemMeta(itM);
-		
 		for (int i = 0; i < 27; i++) {
 			if (i == 0) {
 				inv.setItem(i, new ItemStack(redPane));
 			} else if (i == 3) {
-				inv.setItem(i, customOre);
+				inv.setItem(i, new ItemStack(Material.COPPER_BLOCK));
+			} else if (i == 4) {
+				inv.setItem(i, new ItemStack(Material.WATER_BUCKET));
 			} else if (i == 16) {
-				inv.setItem(i, new ItemStack(Material.REDSTONE, 5));
-			} else if (i == 4 || i == 5 || i == 12 || i == 13 || i == 14 || i == 21 || i == 22 || i == 23) {
+				inv.setItem(i, new ItemStack(Material.EXPOSED_COPPER));
+			} else if (i == 5 || i == 12 || i == 13 || i == 14 || i == 21 || i == 22 || i == 23) {
 				inv.setItem(i, new ItemStack(grayPane));
 			} else {
 				inv.setItem(i, new ItemStack(limePane));

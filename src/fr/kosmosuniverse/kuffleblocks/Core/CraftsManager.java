@@ -16,6 +16,13 @@ public class CraftsManager {
 	public CraftsManager(KuffleMain _km) {
 		recipes.add(new EndPortalFrame(_km));
 		
+		if (Utils.findVersionNumber(_km, Utils.getVersion()) >= Utils.findVersionNumber(_km, "1.17")) {
+			recipes.add(new MossBlock(_km));
+			recipes.add(new SmallDripleaf(_km));
+			recipes.add(new PowderSnowBucket(_km));
+			recipes.add(new BuddingAmethyst(_km));
+		}
+		
 		if (!_km.config.getCrafts()) {
 			return;
 		}
@@ -43,7 +50,6 @@ public class CraftsManager {
 		recipes.add(new Cobweb(_km));
 		
 		if (Utils.findVersionNumber(_km, Utils.getVersion()) >= Utils.findVersionNumber(_km, "1.17")) {
-			recipes.add(new BuddingAmethyst(_km));
 			recipes.add(new CoalOreDeepslate(_km));
 			recipes.add(new CopperOreDeepslate(_km));
 			recipes.add(new DiamondOreDeepslate(_km));
@@ -58,10 +64,10 @@ public class CraftsManager {
 			recipes.add(new RawCopper(_km));
 			recipes.add(new RawGold(_km));
 			recipes.add(new RawIron(_km));
-			recipes.add(new MossBlock(_km));
-			recipes.add(new SmallDripleaf(_km));
-			recipes.add(new PowderSnowBucket(_km));
 			recipes.add(new PointedDripstone(_km));
+			recipes.add(new ExposedCopper(_km));
+			recipes.add(new WeatheredCopper(_km));
+			recipes.add(new OxidizedCopper(_km));
 		}
 	}
 	
