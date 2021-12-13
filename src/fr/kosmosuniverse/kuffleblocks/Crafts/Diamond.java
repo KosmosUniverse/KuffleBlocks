@@ -54,7 +54,8 @@ public class Diamond extends ACrafts {
 		itM.setDisplayName("<- Back");
 		redPane.setItemMeta(itM);
 		
-		ItemStack customOre = new ItemStack(Material.DEEPSLATE_DIAMOND_ORE);
+		ItemStack customOre = new ItemStack(Material.DIAMOND_ORE);
+		
 		itM = customOre.getItemMeta();
 		itM.setDisplayName(ChatColor.BLUE + "Any" + ChatColor.GREEN + " Diamond " + ChatColor.RED + "Ore");
 		customOre.setItemMeta(itM);
@@ -65,7 +66,7 @@ public class Diamond extends ACrafts {
 			} else if (i == 3) {
 				inv.setItem(i, customOre);
 			} else if (i == 16) {
-				inv.setItem(i, new ItemStack(Material.DIAMOND_ORE, 2));
+				inv.setItem(i, new ItemStack(Material.DIAMOND, 2));
 			} else if (i == 4 || i == 5 || i == 12 || i == 13 || i == 14 || i == 21 || i == 22 || i == 23) {
 				inv.setItem(i, new ItemStack(grayPane));
 			} else {
